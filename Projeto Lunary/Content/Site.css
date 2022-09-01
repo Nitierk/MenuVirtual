@@ -28,3 +28,14 @@ textarea {
     background-color: #777;
     border-color: #fff
 }
+
+h1 {
+    text-align: center;
+    color: brown;
+    margin-bottom: 50px;
+}
+
+p {
+    text-align: center;
+    color: brown;
+}
