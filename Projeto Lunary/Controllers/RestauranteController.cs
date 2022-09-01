@@ -35,5 +35,27 @@ namespace Projeto_Lunary.Controllers
             return RedirectToAction("Index");
         }
 
+        [HttpGet]
+        public ActionResult Edit(int? id)
+        {
+            Restaurante Localizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+            return View(Localizarrestaurante);
+        }
+
+        [HttpPost]
+        public ActionResult Edit(int? id, string nome, string preco,string descricao,string precopromocao,string categoria)
+        {
+            Restaurante atualizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+            atualizarrestaurante.RESTANOME = nome;
+            atualizarrestaurante.RESTAPRECO = Convert.ToInt32(preco);
+            atualizarrestaurante.RESTADESCRICAO = descricao;
+            atualizarrestaurante.RESTAPREPROMOCAO = nome;
+
+
+            bd.Entry(atualizarProduto).State = EntityState.Modified;
+            bd.SaveChanges();
+            return RedirectToAction("index");
+        }
+
     }
 }

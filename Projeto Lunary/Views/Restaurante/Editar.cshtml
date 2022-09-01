@@ -10,17 +10,26 @@
         <label for="nome">Nome</label>
         <input type="text" class="form-control" maxlength="100" id="nome" name="nome" value=@Model.RESTANOME required />
         <div>
-            <label for="descricao">Descrição</label>
-            <input type="text" class="form-control" maxlength="100" id="" name="descricao" value=@Model.RESTADESCRICAO required />
+            <label for="preco">Preço</label>
+            <input type="number" class="form-control" id="" name="preco" value=@Model.RESTAPRECO required />
         </div>
         <div>
-            <label for="Preco"></label>
-            <input type="text" class="form-control" maxlength="100" id="" name="descricao" value=@Model.RESTADESCRICAO required />
+            <label for="descricao">Descrição</label>
+            <input type="text" class="form-control" maxlength="300" id="" name="descricao" value=@Model.RESTADESCRICAO required />
         </div>
+        <div>
+            <label for="precopromocional">Preço Promocional</label>
+            <input type="number" class="form-control" id="" name="precopromocional" value=@Model.RESTAPREPROMOCAO required />
+        </div>
+        <div>
+            <label for="categoria">Categoria</label>
+            <input type="text" class="form-control" maxlength="300" id="" name="categoria" value=@Model.RESTACATEGORIA required />
+        </div>
+
 
         <br />
         <div>
-            <a href="/Produto/Index"> <button type="button" class="btn btn-primary">Voltar</button>  </a>
+            <a href="/Restaurante/Index"> <button type="button" class="btn btn-primary">Voltar</button>  </a>
             <button type="submit" class="btn btn-success">Salvar</button>
         </div>
 
