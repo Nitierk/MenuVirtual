@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="LunaryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="LunaryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Restaurante">
           <Key>
             <PropertyRef Name="RESTAUID" />
@@ -15,31 +15,28 @@
           <Property Name="RESTADESCRICAO" Type="varchar" MaxLength="300" />
           <Property Name="RESTAPREPROMOCAO" Type="float" />
           <Property Name="RESTACATEGORIA" Type="varchar" MaxLength="300" Nullable="false" />
-          <Property Name="RESTASUBCATEGORIA" Type="varchar" MaxLength="200" />
         </EntityType>
         <EntityContainer Name="LunaryModelStoreContainer">
           <EntitySet Name="Restaurante" EntityType="Self.Restaurante" Schema="dbo" store:Type="Tables" />
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="LunaryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityContainer Name="BDLunary" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Restaurante" EntityType="LunaryModel.Restaurante" />
+        </EntityContainer>
         <EntityType Name="Restaurante">
           <Key>
             <PropertyRef Name="RESTAUID" />
           </Key>
           <Property Name="RESTAUID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RESTANOME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="RESTANOME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="RESTAPRECO" Type="Double" Nullable="false" />
           <Property Name="RESTADESCRICAO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="RESTAPREPROMOCAO" Type="Double" />
-          <Property Name="RESTACATEGORIA" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
-          <Property Name="RESTASUBCATEGORIA" Type="String" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="RESTACATEGORIA" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
         </EntityType>
-        <EntityContainer Name="BDLunary" annotation:LazyLoadingEnabled="true">
-          <EntitySet Name="Restaurante" EntityType="Self.Restaurante" />
-        </EntityContainer>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
@@ -49,13 +46,12 @@
           <EntitySetMapping Name="Restaurante">
             <EntityTypeMapping TypeName="LunaryModel.Restaurante">
               <MappingFragment StoreEntitySet="Restaurante">
-                <ScalarProperty Name="RESTAUID" ColumnName="RESTAUID" />
-                <ScalarProperty Name="RESTANOME" ColumnName="RESTANOME" />
-                <ScalarProperty Name="RESTAPRECO" ColumnName="RESTAPRECO" />
-                <ScalarProperty Name="RESTADESCRICAO" ColumnName="RESTADESCRICAO" />
-                <ScalarProperty Name="RESTAPREPROMOCAO" ColumnName="RESTAPREPROMOCAO" />
                 <ScalarProperty Name="RESTACATEGORIA" ColumnName="RESTACATEGORIA" />
-                <ScalarProperty Name="RESTASUBCATEGORIA" ColumnName="RESTASUBCATEGORIA" />
+                <ScalarProperty Name="RESTAPREPROMOCAO" ColumnName="RESTAPREPROMOCAO" />
+                <ScalarProperty Name="RESTADESCRICAO" ColumnName="RESTADESCRICAO" />
+                <ScalarProperty Name="RESTAPRECO" ColumnName="RESTAPRECO" />
+                <ScalarProperty Name="RESTANOME" ColumnName="RESTANOME" />
+                <ScalarProperty Name="RESTAUID" ColumnName="RESTAUID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

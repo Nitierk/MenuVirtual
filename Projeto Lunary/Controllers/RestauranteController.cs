@@ -29,7 +29,6 @@ namespace Projeto_Lunary.Controllers
             novoRestaurante.RESTADESCRICAO = descricao;
             novoRestaurante.RESTAPREPROMOCAO = precopromocao;
             novoRestaurante.RESTACATEGORIA = categoria;
-            novoRestaurante.RESTASUBCATEGORIA = categoria;
 
             bd.Restaurante.Add(novoRestaurante);
 

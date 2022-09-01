@@ -20,6 +20,5 @@ namespace Projeto_Lunary.Models
         public string RESTADESCRICAO { get; set; }
         public Nullable<double> RESTAPREPROMOCAO { get; set; }
         public string RESTACATEGORIA { get; set; }
-        public string RESTASUBCATEGORIA { get; set; }
     }
 }

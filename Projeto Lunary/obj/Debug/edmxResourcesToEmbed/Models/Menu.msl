@@ -4,13 +4,12 @@
     <EntitySetMapping Name="Restaurante">
       <EntityTypeMapping TypeName="LunaryModel.Restaurante">
         <MappingFragment StoreEntitySet="Restaurante">
-          <ScalarProperty Name="RESTAUID" ColumnName="RESTAUID" />
-          <ScalarProperty Name="RESTANOME" ColumnName="RESTANOME" />
-          <ScalarProperty Name="RESTAPRECO" ColumnName="RESTAPRECO" />
-          <ScalarProperty Name="RESTADESCRICAO" ColumnName="RESTADESCRICAO" />
-          <ScalarProperty Name="RESTAPREPROMOCAO" ColumnName="RESTAPREPROMOCAO" />
           <ScalarProperty Name="RESTACATEGORIA" ColumnName="RESTACATEGORIA" />
-          <ScalarProperty Name="RESTASUBCATEGORIA" ColumnName="RESTASUBCATEGORIA" />
+          <ScalarProperty Name="RESTAPREPROMOCAO" ColumnName="RESTAPREPROMOCAO" />
+          <ScalarProperty Name="RESTADESCRICAO" ColumnName="RESTADESCRICAO" />
+          <ScalarProperty Name="RESTAPRECO" ColumnName="RESTAPRECO" />
+          <ScalarProperty Name="RESTANOME" ColumnName="RESTANOME" />
+          <ScalarProperty Name="RESTAUID" ColumnName="RESTAUID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
