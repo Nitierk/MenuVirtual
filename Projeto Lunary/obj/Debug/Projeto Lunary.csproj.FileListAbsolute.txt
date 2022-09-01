@@ -178,3 +178,7 @@ C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\roslyn\vbc.exe.
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\roslyn\vbc.rsp
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\roslyn\VBCSCompiler.exe
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\android\Desktop\Gtihub Kauan\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.AssemblyReference.cache
+C:\Users\android\Desktop\Gtihub Kauan\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.CoreCompileInputs.cache
+C:\Users\android\Desktop\Gtihub Kauan\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.dll
+C:\Users\android\Desktop\Gtihub Kauan\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.pdb
