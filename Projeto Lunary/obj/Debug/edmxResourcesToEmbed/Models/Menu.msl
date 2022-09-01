@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="LunaryModelStoreContainer" CdmEntityContainer="BDLunary">
+    <EntitySetMapping Name="Restaurante">
+      <EntityTypeMapping TypeName="LunaryModel.Restaurante">
+        <MappingFragment StoreEntitySet="Restaurante">
+          <ScalarProperty Name="RESTAUID" ColumnName="RESTAUID" />
+          <ScalarProperty Name="RESTANOME" ColumnName="RESTANOME" />
+          <ScalarProperty Name="RESTAPRECO" ColumnName="RESTAPRECO" />
+          <ScalarProperty Name="RESTADESCRICAO" ColumnName="RESTADESCRICAO" />
+          <ScalarProperty Name="RESTAPREPROMOCAO" ColumnName="RESTAPREPROMOCAO" />
+          <ScalarProperty Name="RESTACATEGORIA" ColumnName="RESTACATEGORIA" />
+          <ScalarProperty Name="RESTASUBCATEGORIA" ColumnName="RESTASUBCATEGORIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

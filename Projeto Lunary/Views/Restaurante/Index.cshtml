@@ -1,0 +1,47 @@
+﻿@model IEnumerable<Projeto_Lunary.Models.Restaurante>
+@{
+    ViewBag.Title = "Pratos";
+}
+
+<h2>Pratos</h2>
+<a class="btn btn-success" href="/Restaurante/Create">Novo Prato</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Prato</td> 
+            <td>Preço</td>
+            <td>Descrição</td>
+            <td>Preço Promoção</td>
+            <td>Categoria</td>
+            <td>Sub-Categoria</td>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+           <tr>
+               <td>@item.RESTAUID</td>
+               <td>@item.RESTANOME</td>
+               <td>R$@item.RESTAPRECO</td>
+               <td>@item.RESTADESCRICAO</td>
+                   @if (@item.RESTAPREPROMOCAO != null)
+                   {
+                       <td>
+                          R$ @item.RESTAPREPROMOCAO
+                       </td>
+                   }
+                   else
+                   {
+                       <td> </td>
+                   }
+               <td>@item.RESTACATEGORIA</td>
+               <td>@item.RESTASUBCATEGORIA</td>
+           </tr>     
+        }
+    </tbody>
+   
+</table>
+
