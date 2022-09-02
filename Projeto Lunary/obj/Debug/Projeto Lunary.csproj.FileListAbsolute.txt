@@ -88,47 +88,11 @@ C:\Users\android\Documents\GitHub\Projeto Lunary\Projeto Lunary\bin\pt-br\System
 C:\Users\android\Documents\GitHub\Projeto Lunary\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.CopyComplete
 C:\Users\android\Documents\GitHub\Projeto Lunary\Projeto Lunary\obj\Debug\Projeto Lunary.dll
 C:\Users\android\Documents\GitHub\Projeto Lunary\Projeto Lunary\obj\Debug\Projeto Lunary.pdb
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.AssemblyReference.cache
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.CoreCompileInputs.cache
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Projeto Lunary.dll.config
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Projeto Lunary.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Projeto Lunary.pdb
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Antlr3.Runtime.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\EntityFramework.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\EntityFramework.SqlServer.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Newtonsoft.Json.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.Helpers.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.Mvc.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.Optimization.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.Razor.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.WebPages.Deployment.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.WebPages.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.WebPages.Razor.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\WebGrease.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\EntityFramework.xml
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\EntityFramework.SqlServer.xml
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.Helpers.xml
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.Mvc.xml
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.Optimization.xml
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.Razor.xml
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.WebPages.xml
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.WebPages.Deployment.xml
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.WebPages.Razor.xml
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Newtonsoft.Json.xml
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Antlr3.Runtime.pdb
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.Helpers.resources.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.Mvc.resources.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.Optimization.resources.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.Razor.resources.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.WebPages.resources.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.WebPages.Razor.resources.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.AssemblyReference.cache
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.CoreCompileInputs.cache
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.CopyComplete
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.pdb
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\roslyn\csc.exe
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\roslyn\csc.exe.config
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\roslyn\csc.rsp
@@ -178,3 +142,39 @@ C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\roslyn\vbc.exe.
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\roslyn\vbc.rsp
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\roslyn\VBCSCompiler.exe
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\roslyn\VBCSCompiler.exe.config
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Antlr3.Runtime.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\EntityFramework.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\EntityFramework.SqlServer.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Newtonsoft.Json.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.Helpers.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.Mvc.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.Optimization.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.Razor.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.WebPages.Deployment.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.WebPages.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.WebPages.Razor.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\WebGrease.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\EntityFramework.xml
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\EntityFramework.SqlServer.xml
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.Helpers.xml
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.Mvc.xml
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.Optimization.xml
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.Razor.xml
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.WebPages.xml
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.WebPages.Deployment.xml
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.WebPages.Razor.xml
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Newtonsoft.Json.xml
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Antlr3.Runtime.pdb
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.Helpers.resources.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.Mvc.resources.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.Optimization.resources.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.Razor.resources.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.WebPages.resources.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.WebPages.Razor.resources.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.CopyComplete
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.pdb

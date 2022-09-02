@@ -182,6 +182,7 @@
       <DependentUpon>Menu.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
+    <Content Include="Scripts\Create\SalvarImagem.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
     <Content Include="Scripts\jquery-3.4.1.slim.js" />
@@ -209,9 +210,11 @@
     <Content Include="Views\Restaurante\Index.cshtml" />
     <Content Include="Views\Restaurante\Create.cshtml" />
     <Content Include="Views\Restaurante\Editar.cshtml" />
+    <Content Include="Views\Restaurante\Excluir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="imagens\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

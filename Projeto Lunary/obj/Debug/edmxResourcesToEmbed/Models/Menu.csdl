@@ -11,7 +11,8 @@
     <Property Name="RESTANOME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
     <Property Name="RESTAPRECO" Type="Double" Nullable="false" />
     <Property Name="RESTADESCRICAO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-    <Property Name="RESTAPREPROMOCAO" Type="Double" />
+    <Property Name="RESTAPREPROMOCAO" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="RESTACATEGORIA" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="imagem" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

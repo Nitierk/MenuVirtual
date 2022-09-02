@@ -8,8 +8,9 @@
     <Property Name="RESTANOME" Type="varchar" MaxLength="200" Nullable="false" />
     <Property Name="RESTAPRECO" Type="float" Nullable="false" />
     <Property Name="RESTADESCRICAO" Type="varchar" MaxLength="300" />
-    <Property Name="RESTAPREPROMOCAO" Type="float" />
+    <Property Name="RESTAPREPROMOCAO" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="RESTACATEGORIA" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="imagem" Type="varchar" MaxLength="100" />
   </EntityType>
   <EntityContainer Name="LunaryModelStoreContainer">
     <EntitySet Name="Restaurante" EntityType="Self.Restaurante" Schema="dbo" store:Type="Tables" />
