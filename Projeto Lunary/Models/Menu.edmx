@@ -5,6 +5,18 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="LunaryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'Lunary.dbo.imagens' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="imagens">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="nm_arquivo" />
+            <PropertyRef Name="vb_imagem" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="nm_arquivo" Type="varchar" MaxLength="1000" Nullable="false" />
+          <Property Name="vb_imagem" Type="varbinary(max)" Nullable="false" />
+        </EntityType>
         <EntityType Name="Restaurante">
           <Key>
             <PropertyRef Name="RESTAUID" />
@@ -13,12 +25,19 @@
           <Property Name="RESTANOME" Type="varchar" MaxLength="200" Nullable="false" />
           <Property Name="RESTAPRECO" Type="float" Nullable="false" />
           <Property Name="RESTADESCRICAO" Type="varchar" MaxLength="300" />
-          <Property Name="RESTAPREPROMOCAO" Type="float" />
+          <Property Name="RESTAPREPROMOCAO" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="RESTACATEGORIA" Type="varchar" MaxLength="300" Nullable="false" />
           <Property Name="imagem" Type="varchar" MaxLength="100" Nullable="false" />
         </EntityType>
         <EntityContainer Name="LunaryModelStoreContainer">
           <EntitySet Name="Restaurante" EntityType="Self.Restaurante" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="imagens" EntityType="Self.imagens" store:Type="Tables" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [imagens].[id] AS [id], 
+    [imagens].[nm_arquivo] AS [nm_arquivo], 
+    [imagens].[vb_imagem] AS [vb_imagem]
+    FROM [dbo].[imagens] AS [imagens]</DefiningQuery>
+          </EntitySet>
         </EntityContainer>
       </Schema></edmx:StorageModels>
     <!-- CSDL content -->
@@ -26,6 +45,7 @@
       <Schema Namespace="LunaryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="BDLunary" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Restaurante" EntityType="LunaryModel.Restaurante" />
+          <EntitySet Name="imagens" EntityType="LunaryModel.imagens" />
         </EntityContainer>
         <EntityType Name="Restaurante">
           <Key>
@@ -35,9 +55,19 @@
           <Property Name="RESTANOME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
           <Property Name="RESTAPRECO" Type="Double" Nullable="false" />
           <Property Name="RESTADESCRICAO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Name="RESTAPREPROMOCAO" Type="Double" />
+          <Property Name="RESTAPREPROMOCAO" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="RESTACATEGORIA" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="imagem" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="imagens">
+          <Key>
+            <PropertyRef Name="id" />
+            <PropertyRef Name="nm_arquivo" />
+            <PropertyRef Name="vb_imagem" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="nm_arquivo" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
+          <Property Name="vb_imagem" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>
@@ -55,6 +85,15 @@
                 <ScalarProperty Name="RESTAPRECO" ColumnName="RESTAPRECO" />
                 <ScalarProperty Name="RESTANOME" ColumnName="RESTANOME" />
                 <ScalarProperty Name="RESTAUID" ColumnName="RESTAUID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="imagens">
+            <EntityTypeMapping TypeName="LunaryModel.imagens">
+              <MappingFragment StoreEntitySet="imagens">
+                <ScalarProperty Name="vb_imagem" ColumnName="vb_imagem" />
+                <ScalarProperty Name="nm_arquivo" ColumnName="nm_arquivo" />
+                <ScalarProperty Name="id" ColumnName="id" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

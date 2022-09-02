@@ -22,15 +22,15 @@ namespace Projeto_Lunary.Controllers
             return View();
         }
         [HttpPost]
-        public ActionResult Create(string nome, float preco, string descricao, float precopromocao, string categoria, string subCategoria)
+        public ActionResult Create(string nome,decimal preco, string descricao,string precopromocao, string categoria,string imagem)
         {
             Restaurante novoRestaurante = new Restaurante();
             novoRestaurante.RESTANOME = nome;
-            novoRestaurante.RESTAPRECO = preco;
+            novoRestaurante.RESTAPRECO = (double)Convert.ToDecimal(preco);
             novoRestaurante.RESTADESCRICAO = descricao;
             novoRestaurante.RESTAPREPROMOCAO = precopromocao;
             novoRestaurante.RESTACATEGORIA = categoria;
-            novoRestaurante.
+            novoRestaurante.imagem = imagem;
 
             bd.Restaurante.Add(novoRestaurante);
 
@@ -51,7 +51,7 @@ namespace Projeto_Lunary.Controllers
             atualizarrestaurante.RESTANOME = nome;
             atualizarrestaurante.RESTAPRECO = Convert.ToInt32(preco);
             atualizarrestaurante.RESTADESCRICAO = descricao;
-            atualizarrestaurante.RESTAPREPROMOCAO = Convert.ToInt32(precopromocao);
+            atualizarrestaurante.RESTAPREPROMOCAO = precopromocao;
 
 
             bd.Entry(atualizarrestaurante).State = EntityState.Modified;
