@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+
 .titulo{
     text-align: center;
     color: brown;
@@ -5,9 +7,13 @@
     margin-top: 50px;
 }
 
+.body{
+    position: fixed;
+}
+
 .subtitulo{
     text-align: center;
-    color: brown; 
+    color: #a52a2a; 
     margin-bottom: 60px;
 }
 
@@ -15,6 +21,8 @@
     text-align: left;
     color: brown;
     margin-left: 20px;
+    margin-bottom: 30px;
+    margin-top: 15px;
 }
 
 .Oferta{
@@ -26,16 +34,17 @@
 .Refeições{
     text-align: center;
     color: brown;
-    margin-top: 60px; 
+    margin-top: 40px; 
 }
 
 .Ofertasdehoje{
     text-align: center;
-    color: brown;
+    color: rgb(126, 23, 23);
 }
 
 .row{
     margin-top: 40px;
+    
 }
 
 .barraVermelha{
@@ -44,3 +53,48 @@
     background-color: brown;
     color: brown;
 }
+
+.btn-group{
+    margin-left: 169px;
+}
+
+.comida_prin{
+    
+}
+
+.preco{
+    margin-left: 114px;
+    margin-top: 20px;
+    color: rgb(126, 23, 23);
+}
+
+.Pastel{
+    color: brown;
+    margin-top: 15px;
+}
+
+.progress{
+   margin-left: 130px;
+   margin-top: 15px;
+   margin-bottom: 15px;
+   margin-right: 130px;
+    
+}
+
+.btn-group{
+    margin-left: 120px;
+}
+
+.botao{
+    border-top: 3px solid brown;
+    border-bottom: 3px solid brown;
+    border-left: 3px solid brown;
+    border-right: 3px solid brown;
+}
+
+
+
+
+
+
+
