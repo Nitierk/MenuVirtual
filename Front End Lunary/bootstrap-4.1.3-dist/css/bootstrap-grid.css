@@ -90,12 +90,17 @@ html {
   min-height: 1px;
   padding-right: 15px;
   padding-left: 15px;
+<<<<<<< Updated upstream
   display: flow-root;
   text-align: center;
 }
 
 
 
+=======
+}
+
+>>>>>>> Stashed changes
 .col {
   -ms-flex-preferred-size: 0;
   flex-basis: 0;
