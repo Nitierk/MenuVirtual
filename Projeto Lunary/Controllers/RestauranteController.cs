@@ -1,6 +1,7 @@
 ﻿using Projeto_Lunary.Models;
 using System;
 using System.Collections.Generic;
+using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -29,6 +30,7 @@ namespace Projeto_Lunary.Controllers
             novoRestaurante.RESTADESCRICAO = descricao;
             novoRestaurante.RESTAPREPROMOCAO = precopromocao;
             novoRestaurante.RESTACATEGORIA = categoria;
+            novoRestaurante.
 
             bd.Restaurante.Add(novoRestaurante);
 
@@ -49,10 +51,10 @@ namespace Projeto_Lunary.Controllers
             atualizarrestaurante.RESTANOME = nome;
             atualizarrestaurante.RESTAPRECO = Convert.ToInt32(preco);
             atualizarrestaurante.RESTADESCRICAO = descricao;
-            atualizarrestaurante.RESTAPREPROMOCAO = nome;
+            atualizarrestaurante.RESTAPREPROMOCAO = Convert.ToInt32(precopromocao);
 
 
-            bd.Entry(atualizarProduto).State = EntityState.Modified;
+            bd.Entry(atualizarrestaurante).State = EntityState.Modified;
             bd.SaveChanges();
             return RedirectToAction("index");
         }

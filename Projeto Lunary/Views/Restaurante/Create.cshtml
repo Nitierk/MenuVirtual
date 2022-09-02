@@ -17,7 +17,7 @@
         </div>
         <div>
             <label>Descrição:</label><br />
-            <input type="text" name="descricao" id="descricao"  required />
+            <input type="text" name="descricao" id="descricao" required />
         </div>
         <div>
             <label>Preço Promocional:</label><br />
@@ -27,11 +27,19 @@
             <label>Categoria:</label><br />
             <input type="text" name="categoria" id="categoria" required />
         </div>
-        <br />  
+        <div class="row">
+            <div class="col-md-12">
+                <label>Imagem:</label><br />
+                <input type="image" name="imagem" id="imagem" required />
+                @Html.Label("txt_imagem", "Imagem", new { @class = "control-label" })
+                @Html.TextBox("txt_imagem", null, new { @class = "form-control", type = "file", accepet = "image/jpe,image/jpeg" })
+            </div>
+        </div>
+        <br />
         <div>
             <a class="btn btn-default" href="/Restaurante/Index">Voltar</a>
             <button class="btn btn-success" type="submit">Salvar</button>
         </div>
-        
+
     </form>
 </div>
