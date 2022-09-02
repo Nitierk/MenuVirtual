@@ -1,4 +1,3 @@
-<<<<<<< Updated upstream
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
 
 .titulo{
@@ -70,52 +69,6 @@
 }
 
 .Pastel{
-=======
-.titulo{
-    text-align: center;
-    color: brown;
-    margin-bottom: 60px;
-    margin-top: 50px;
-}
-
-.subtitulo{
-    text-align: center;
-    color: brown; 
-    margin-bottom: 60px;
-}
-
-.barra{
-    text-align: left;
-    color: brown;
-    margin-left: 20px;
-}
-
-.Oferta{
-    text-align: center;
-    color: brown;
-    margin-top: 30px;
-}
-
-.Refeições{
-    text-align: center;
-    color: brown;
-    margin-top: 60px; 
-}
-
-.Ofertasdehoje{
-    text-align: center;
-    color: brown;
-}
-
-.row{
-    margin-top: 40px;
-}
-
-.barraVermelha{
-    margin-top: 15px;
-    margin-bottom: 1px;
-    background-color: brown;
->>>>>>> Stashed changes
     color: brown;
     margin-top: 15px;
 }
