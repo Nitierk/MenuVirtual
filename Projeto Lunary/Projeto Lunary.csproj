@@ -133,9 +133,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\imagens.cs">
-      <DependentUpon>Menu.tt</DependentUpon>
-    </Compile>
     <Compile Include="Models\Menu.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -213,9 +210,11 @@
     <Content Include="Views\Restaurante\Index.cshtml" />
     <Content Include="Views\Restaurante\Create.cshtml" />
     <Content Include="Views\Restaurante\Editar.cshtml" />
+    <Content Include="Views\Restaurante\Excluir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="imagens\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

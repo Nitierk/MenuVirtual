@@ -26,6 +26,5 @@ namespace Projeto_Lunary.Models
         }
     
         public virtual DbSet<Restaurante> Restaurante { get; set; }
-        public virtual DbSet<imagens> imagens { get; set; }
     }
 }

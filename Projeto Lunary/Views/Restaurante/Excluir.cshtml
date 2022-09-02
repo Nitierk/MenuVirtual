@@ -1,0 +1,50 @@
+﻿@model Projeto_Lunary.Models.Restaurante
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<div>
+<form action="/Excluir/ExcluirConfirma?id=@Model.RESTAUID" method="post">
+    <label>Prato: </label>
+    <label>@Model.RESTANOME</label>
+
+    <div>
+        <label>Preço: </label>
+        <label>@Model.RESTAPRECO</label>
+
+    </div>
+
+    <div>
+        <label>Descrição: </label>
+        <label>@Model.RESTADESCRICAO</label>
+
+    </div>
+
+    <div>
+        <label>Preço Promocional: </label>
+        <label>@Model.RESTAPREPROMOCAO</label>
+    </div>
+
+    <div>
+        <label>Categoria: </label>
+        <label>@Model.RESTACATEGORIA</label>
+    </div>
+
+    <div>
+        <label></label>
+        <label>@Model.imagem</label>
+    </div>
+
+    <div>
+        <a href="/Restaurante/Index"><button type="button" class="btn btn-primary">Voltar</button></a>
+        <a href="/Restaurante/Index"><button type="submit" class="btn btn-danger">Excluir</button></a>
+    </div>
+
+</form>
+
+</div>
+
+
+

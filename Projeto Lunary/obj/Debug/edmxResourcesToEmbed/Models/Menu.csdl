@@ -2,7 +2,6 @@
 <Schema Namespace="LunaryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="BDLunary" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Restaurante" EntityType="LunaryModel.Restaurante" />
-    <EntitySet Name="imagens" EntityType="LunaryModel.imagens" />
   </EntityContainer>
   <EntityType Name="Restaurante">
     <Key>
@@ -14,16 +13,6 @@
     <Property Name="RESTADESCRICAO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
     <Property Name="RESTAPREPROMOCAO" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="RESTACATEGORIA" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
-    <Property Name="imagem" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
-  </EntityType>
-  <EntityType Name="imagens">
-    <Key>
-      <PropertyRef Name="id" />
-      <PropertyRef Name="nm_arquivo" />
-      <PropertyRef Name="vb_imagem" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nm_arquivo" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="false" />
-    <Property Name="vb_imagem" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="imagem" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

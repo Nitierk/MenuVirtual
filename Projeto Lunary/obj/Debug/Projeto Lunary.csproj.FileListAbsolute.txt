@@ -88,6 +88,8 @@ C:\Users\android\Documents\GitHub\Projeto Lunary\Projeto Lunary\bin\pt-br\System
 C:\Users\android\Documents\GitHub\Projeto Lunary\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.CopyComplete
 C:\Users\android\Documents\GitHub\Projeto Lunary\Projeto Lunary\obj\Debug\Projeto Lunary.dll
 C:\Users\android\Documents\GitHub\Projeto Lunary\Projeto Lunary\obj\Debug\Projeto Lunary.pdb
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.AssemblyReference.cache
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.CoreCompileInputs.cache
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Projeto Lunary.dll.config
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Projeto Lunary.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Projeto Lunary.pdb
@@ -173,8 +175,6 @@ C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.We
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.WebPages.resources.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.WebPages.Deployment.resources.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.WebPages.Razor.resources.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.AssemblyReference.cache
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.CoreCompileInputs.cache
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.CopyComplete
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.pdb

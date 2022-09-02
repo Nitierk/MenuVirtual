@@ -14,14 +14,5 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="imagens">
-      <EntityTypeMapping TypeName="LunaryModel.imagens">
-        <MappingFragment StoreEntitySet="imagens">
-          <ScalarProperty Name="vb_imagem" ColumnName="vb_imagem" />
-          <ScalarProperty Name="nm_arquivo" ColumnName="nm_arquivo" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>
