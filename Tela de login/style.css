@@ -1,5 +1,108 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:600&display=swap');
 
 :root{
-    --gradiente: linear-gradiente(to left, #fca)
+    --gradiente: linear-gradiente(to left, #a30606,#a52a2a, #ac6464, #ce9292, #e0c0c0, #f0eaea);
+    --vermelho : #a52a2a;
+    --branco: #ffffff;
+    --preto: #000000;
+    --amarelo:#ffff00;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-image: radial-gradient(circle at 14.64% 111.24%, #f25553 0, #f25353 50%, #f25153 100%);
+    font-family: 'Poppins', sans-serif;
+}
+
+form{
+    display: flex;
+    flex-direction: column;
+    background-color: var(--preto);
+    width: 360px;
+    height: 360px;
+    border-radius: 6px;
+    padding: 20px 30px;
+    box-shadow: 3px 3px 6px 2px rgba(0, 0, 0, 0.2), -4px -4px 7px 3px rgba(0, 0, 0, 0.15);
+    align-items: center;
+    justify-content: center;
+}
+
+form h2 {
+    color: var(--amarelo);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 16px;
+}
+
+input{
+    height: 45px;
+    margin: 20px;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+.input-field{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    position: relative;
+    justify-content: center;
+    
+}
+
+.input-field i{
+    width: 10%;
+    font-size: 1.6rem;
+    color: var(--amarelo);
+}
+
+input[type='text'], input[type='password']{
+    width: 90%;
+    padding-left: 10px;
+    background-color: transparent;
+    border: 2px solid rgb(131, 121, 121);
+    outline: none;
+    color: var(--amarelo);
+    border-radius: 15px;
+    
+
+}
+
+span{
+    content: '';
+    position: absolute;
+    top: 50px;
+    left: 0;
+    width: 0;
+    height: 1px;
+    margin-top: 10px;
+    background-color: var(--gradiente);
+}
+
+input[type='text']:focus ~ span, input[type='password']:focus ~ span{
+    display: inline-block;
+    width: 100%;
+}
+
+.entrar{
+    
+    background-color: #ffff00;
+    width: 250px;
+    height: 220px;
+    
+}
+
+.entrar:active{
+    background-color: #d8d860;
+    transform: scale(0.98);
+    transition: 0.125s;
 }
