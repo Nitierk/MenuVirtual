@@ -137,6 +137,8 @@ textarea {
     cursor: pointer;
 }
 
+
+
 .heart {
     position: absolute;
     background: url('img/heartanimation.png');
@@ -156,7 +158,7 @@ textarea {
     font-family: 'Montserrat',sans-serif;
 }
 
-.heart-active {
+.heart-active{
     content: '13';
     color: #000;
 }

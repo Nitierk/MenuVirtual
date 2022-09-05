@@ -1,23 +1,50 @@
 ﻿@model IEnumerable<Projeto_Lunary.Models.Restaurante>
 @{
     ViewBag.Title = "Pratos";
-
-
 }
-<link href="~/Content/Menu/Menu.css" rel="stylesheet" />
-<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<head>
+
+    <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+
+</head>
 
 
 
+<!--
 <h2>Pratos</h2>
 <a class="btn btn-success" href="/Restaurante/Create">Novo Prato</a>
-
+-->
 
 <thead>
     <h1 class="titulo">Lunary</h1>
     <p class="subtitulo">Cardápio</p>
-
 </thead>
+
+
+<div class="barraVermelha">.</div>
+
+<thead>
+
+    <p class="barra">Menu</p>
+
+    <div class="botao btn-group">
+
+        <div class="dropdown">
+            <select class="Filtro_Categorias btn btn-danger dropdown-toggle">
+
+                @foreach (var item in ViewBag.ListCategorias)
+                {
+                    <option value="value">@item.RESTACATEGORIA</option>
+
+                }
+            </select>
+        </div>
+    </div>
+    </div>
+</thead>
+
+
 
 <nav class="navbar navbar-expand-lg navbar-light">
     <div class="collapse navbar-collapse">
@@ -29,16 +56,8 @@
     </div>
 </nav>
 
-<div class="dropdown">
-    <select class="Filtro_Categorias">
 
-        @foreach (var item in ViewBag.ListCategorias)
-        {
-            <option value="value">@item.RESTACATEGORIA</option>
 
-        }
-    </select>
-</div>
 
 @foreach (var item in Model)
 {
@@ -48,20 +67,13 @@
             <h3 class="text-center Pastel">@item.RESTANOME</h3>
 
             <div class="heart-btn">
-                <div class="content">
+                <div class="content" id="@item.RESTAUID">
                     <span class="heart"></span>
                 </div>
             </div>
 
-            <script>
-                $(document).ready(function () {
-                    $('.content').click(function () {
-                        $('.content').toggleClass("heart-active")
-                        $('.text').toggleClass("heart-active")
-                        $('.heart').toggleClass("heart-active")
-                    });
-                });
-            </script>
+
+
 
             <p class="preco">R$ @item.RESTAPRECO</p>
         </div>
@@ -70,5 +82,19 @@
 
 
 
+<script>
 
+    window.onload = () => {
+        document.queryCommandIndeterm
+    }
+
+
+    $(document).ready(function () {
+        $('.content').click(function () {
+            $('.content').toggleClass("heart-active")
+            $('.text').toggleClass("heart-active")
+            $('.heart').toggleClass("heart-active")
+        });
+    });
+</script>
 
