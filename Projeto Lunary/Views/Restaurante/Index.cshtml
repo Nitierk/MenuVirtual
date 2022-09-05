@@ -38,55 +38,81 @@
 
 @foreach (var item in Model)
 {
-    <div class="container-fluid Frases-Motivacionais text-center margin">
-        <div class="row">
-            <div class="col-lg-12">
-                <img src="./img/230346.webp" width="232" height="232">
-                <h1>@item.RESTANOME</h1>
-                <p>R$ @item.RESTAPRECO</p>
+    <div class="row">
+        <div class="col-lg-12">
+            <img class="img" src="./img/230346.webp" width="232" height="232">
+            <h3 class="text-center Pastel">@item.RESTANOME</h3>
+
+            <div class="heart-btn">
+                <div class="content">
+                    <span class="heart"></span>
+                </div>
+            </div>
+
+            <script>
+            $(document).ready(function(){
+              $('.content').click(function(){
+                $('.content').toggleClass("heart-active")
+                $('.text').toggleClass("heart-active")
+                $('.heart').toggleClass("heart-active")
+              });
+            });
+            </script>
+
+            <p class="preco">R$ @item.RESTAPRECO</p>
+        </div>
+
+
+
+        <div class="container-fluid Frases-Motivacionais text-center margin">
+            <div class="row">
+                <div class="col-lg-12">
+                    <img src="./img/230346.webp" width="232" height="232">
+                    <h1>@item.RESTANOME</h1>
+                    <p>R$ @item.RESTAPRECO</p>
+                </div>
             </div>
         </div>
-    </div>
-}
-
-
-<table class="table">
-    <thead>
-        <tr>
-            <td>Id</td>
-            <td>Prato</td>
-            <td>Preço</td>
-            <td>Descrição</td>
-            <td>Preço Promoção</td>
-            <td>Categoria</td>
-            <td>Imagem</td>
-        </tr>
-
-    </thead>
-    <tbody>
-        @foreach (var item in Model)
-        {
-            <tr>
-                <td>@item.RESTAUID</td>
-                <td>@item.RESTANOME</td>
-                <td>R$@item.RESTAPRECO</td>
-                <td>@item.RESTADESCRICAO</td>
-                @if (@item.RESTAPREPROMOCAO != null)
-                {
-                    <td>
-                        R$ @item.RESTAPREPROMOCAO
-                    </td>
-                }
-                else
-                {
-                    <td> </td>
-                }
-                <td>@item.RESTACATEGORIA</td>
-                <td>@item.imagem</td>
-            </tr>
-
         }
-    </tbody>
 
-</table>
+
+        <table class="table">
+            <thead>
+                <tr>
+                    <td>Id</td>
+                    <td>Prato</td>
+                    <td>Preço</td>
+                    <td>Descrição</td>
+                    <td>Preço Promoção</td>
+                    <td>Categoria</td>
+                    <td>Imagem</td>
+                </tr>
+
+            </thead>
+            <tbody>
+                @foreach (var item in Model)
+                {
+                    <tr>
+                        <td>@item.RESTAUID</td>
+                        <td>@item.RESTANOME</td>
+                        <td>R$@item.RESTAPRECO</td>
+                        <td>@item.RESTADESCRICAO</td>
+                        @if (@item.RESTAPREPROMOCAO != null)
+                        {
+                            <td>
+                                R$ @item.RESTAPREPROMOCAO
+                            </td>
+                        }
+                        else
+                        {
+                            <td> </td>
+                        }
+                        <td>@item.RESTACATEGORIA</td>
+                        <td>@item.imagem</td>
+                    </tr>
+
+                }
+            </tbody>
+
+        </table>
 
