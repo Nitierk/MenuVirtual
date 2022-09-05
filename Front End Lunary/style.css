@@ -54,18 +54,11 @@
     color: brown;
 }
 
-.btn-group{
-    margin-left: 169px;
-}
-
-.comida_prin{
-    
-}
-
 .preco{
-    margin-left: 114px;
-    margin-top: 20px;
-    color: rgb(126, 23, 23);
+    margin-left: 110px;
+    margin-top: 28px;
+    color: #000;
+    font-size: 20px;
 }
 
 .Pastel{
@@ -82,19 +75,76 @@
 }
 
 .btn-group{
-    margin-left: 120px;
+    margin-left: 95px;
+    border: 2px solid #a52a2a;
+    padding: 6px 20px;
 }
 
-.botao{
-    border-top: 3px solid brown;
-    border-bottom: 3px solid brown;
-    border-left: 3px solid brown;
-    border-right: 3px solid brown;
+.img{
+    border-top: 4px solid brown;
+    border-bottom: 4px solid brown;
+    border-left: 4px solid brown;
+    border-right: 4px solid brown;
+    margin-left: 80px;
 }
 
 
 
 
 
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+.heart-btn{
+  position: absolute;
+  top: 92%;
+  left: 70%;
+  transform: translate(-50%,-50%);
+}
+.content{
+  padding: 7px 10px;
+  display: flex;
+  /*border: 2px solid #eae2e1;
+  border-radius: 5px;*/
+  cursor: pointer;
+}
+.content.heart-active{
+  /*border-color: #f9b9c4;
+  background: #fbd0d8;*/
+}
+.heart{
+  position: absolute;
+  background: url("img.png") no-repeat;
+  background-position: left;
+  background-size: 2900%;
+  height: 90px;
+  width: 90px;
+  top: 50%;
+  left: 21%;
+  transform: translate(-50%,-50%);
+}
+.text{
+  font-size: 21px;
+  margin-left: 30px;
+  color: grey;
+  font-family: 'Montserrat',sans-serif;
+}
 
+.heart-active{
+  content: '13';
+  color: #000;
+}
+.text.heart-active{
+  color: #000;
+}
+.heart.heart-active{
+  animation: animate .8s steps(28) 1;
+  background-position: right;
+}
+@keyframes animate {
+  0%{
+    background-position: left;
+  }
+  100%{
+    background-position: right;
+  }
+}
 
