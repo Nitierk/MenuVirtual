@@ -1,0 +1,182 @@
+﻿body {
+    padding-top: 50px;
+    padding-bottom: 20px;
+}
+
+/* Set padding to keep content from hitting the edges */
+.body-content {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+/* Override the default bootstrap behavior where horizontal description lists 
+   will truncate terms that are too long to fit in the left column 
+*/
+.dl-horizontal dt {
+    white-space: normal;
+}
+
+/* Set width on the form input elements since they're 100% wide by default */
+input,
+select,
+textarea {
+    max-width: 280px;
+}
+
+.navbar-inverse .navbar-toggle:hover,
+.navbar-inverse .navbar-toggle:focus {
+    background-color: #777;
+    border-color: #fff
+}
+
+/* Layout */
+
+
+.titulo {
+    text-align: center;
+    color: brown;
+    margin-bottom: 60px;
+    margin-top: 50px;
+}
+
+.body {
+    position: fixed;
+}
+
+.subtitulo {
+    text-align: center;
+    color: #a52a2a;
+    margin-bottom: 60px;
+}
+
+.barra {
+    text-align: left;
+    color: brown;
+    margin-left: 20px;
+    margin-bottom: 30px;
+    margin-top: 15px;
+}
+
+.Oferta {
+    text-align: center;
+    color: brown;
+    margin-top: 30px;
+}
+
+.Refeições {
+    text-align: center;
+    color: brown;
+    margin-top: 40px;
+}
+
+.Ofertasdehoje {
+    text-align: center;
+    color: rgb(126, 23, 23);
+}
+
+.row {
+    margin-top: 40px;
+}
+
+.barraVermelha {
+    margin-top: 15px;
+    margin-bottom: 1px;
+    background-color: brown;
+    color: brown;
+}
+
+.preco {
+    margin-right: 110px;
+    margin-top: 28px;
+    color: #000;
+    font-size: 20px;
+}
+
+.Pastel {
+    color: brown;
+    margin-top: 15px;
+}
+
+.progress {
+    margin-left: 130px;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-right: 130px;
+}
+
+.btn-group {
+    margin-left: 95px;
+    border: 2px solid #a52a2a;
+    padding: 6px 20px;
+}
+
+.img {
+    border-top: 4px solid brown;
+    border-bottom: 4px solid brown;
+    border-left: 4px solid brown;
+    border-right: 4px solid brown;
+    margin-left: 80px;
+}
+
+
+
+/* Botão de Like */
+
+@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
+
+.heart-btn {
+    position: absolute;
+    top: 92%;
+    left: 70%;
+    transform: translate(-50%,-50%);
+}
+
+.content {
+    padding: 7px 10px;
+    display: flex;
+    cursor: pointer;
+}
+
+.heart {
+    position: absolute;
+    background: url('img/heartanimation.png');
+    background-position: left;
+    background-size: 2900%;
+    height: 90px;
+    width: 90px;
+    top: 75%;
+    left: 21%;
+    transform: translate(-50%,-50%);
+}
+
+.text {
+    font-size: 21px;
+    margin-left: 30px;
+    color: grey;
+    font-family: 'Montserrat',sans-serif;
+}
+
+.heart-active {
+    content: '13';
+    color: #000;
+}
+
+.text.heart-active {
+    color: #000;
+}
+
+.heart.heart-active {
+    animation: animate .8s steps(28) 1;
+    background-position: right;
+}
+
+@keyframes animate {
+    0% {
+        background-position: left;
+    }
+
+    100% {
+        background-position: right;
+    }
+}
+
