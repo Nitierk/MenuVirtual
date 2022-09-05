@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
@@ -16,73 +17,16 @@ namespace Projeto_Lunary.Controllers
         {
             return View(bd.Restaurante.ToList());
         }
+    
         [HttpGet]
-        public ActionResult Create()
-        {
-            return View();
-        }
-        [HttpPost]
-        public ActionResult Create(string nome,decimal preco, string descricao,string precopromocao, string categoria,byte imagem)
-        {
-            Restaurante novoRestaurante = new Restaurante();
-            novoRestaurante.RESTANOME = nome;
-            novoRestaurante.RESTAPRECO = (double)Convert.ToDecimal(preco);
-            novoRestaurante.RESTADESCRICAO = descricao;
-            novoRestaurante.RESTAPREPROMOCAO = precopromocao;
-            novoRestaurante.RESTACATEGORIA = categoria;
-            novoRestaurante.imagem = Convert.ToString(imagem);
-
-
-            bd.Restaurante.Add(novoRestaurante);
-
-            return RedirectToAction("Index");
-        }
-
-        public ActionResult GetImagemDoArrayBytes()
-        {
-            try
-            {
-                // caminho da imagem
-                string imgPath = Server.MapPath("~/Imagens/simplista.png");
-                // Converte a imagem em um array de bytes
-                byte[] dadosByte = System.IO.File.ReadAllBytes(imgPath);
-                //Converte o array de bytes para base64string   
-                string imreBase64Dados = Convert.ToBase64String(dadosByte);
-                string imagemDadosURL = string.Format("data:image/png;base64,{0}", imreBase64Dados);
-                //Passando os dados da imagem para a viewbag
-                ViewBag.DadosImagem = imagemDadosURL;
-                //exibe a view
-                return View();
-            }
-            catch
-            {
-                throw;
-            }
-        }
-
-        public ActionResult GetImagem()
-        {
-            try
-            {
-                string path = Server.MapPath("~/Imagens/andromeda.png");
-                byte[] imagemByteDados = System.IO.File.ReadAllBytes(path);
-                return File(imagemByteDados, "image/png");
-            }
-            catch
-            {
-                throw;
-            }
-        }
-
-        [HttpGet]
-        public ActionResult Edit(int? id)
+        public ActionResult Editar(int? id)
         {
             Restaurante Localizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
             return View(Localizarrestaurante);
         }
 
         [HttpPost]
-        public ActionResult Edit(int? id, string nome, string preco,string descricao,string precopromocao,string categoria,byte imagem)
+        public ActionResult Editar(int? id, string nome, string preco,string descricao,decimal precopromocao,string categoria,byte imagem)
         {
             Restaurante atualizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
             atualizarrestaurante.RESTANOME = nome;
@@ -90,7 +34,7 @@ namespace Projeto_Lunary.Controllers
             atualizarrestaurante.RESTADESCRICAO = descricao;
             atualizarrestaurante.RESTAPREPROMOCAO = precopromocao;
             atualizarrestaurante.RESTACATEGORIA = categoria;
-            atualizarrestaurante.imagem = Convert.ToString(imagem);
+            
 
 
             bd.Entry(atualizarrestaurante).State = EntityState.Modified;
@@ -120,6 +64,35 @@ namespace Projeto_Lunary.Controllers
             }
 
             return RedirectToAction("index");
+        }
+
+
+        public ActionResult Create()
+        {
+            var model = new Restauranteimanges();
+            return View(model);
+        }
+
+        [HttpPost]
+        public ActionResult Create (Restauranteimanges model, string nome, decimal preco, string descricao, decimal precopromocao, string categoria, byte imagem)
+        {
+
+            if (ModelState.IsValid)
+            {
+                Restaurante novoRestaurante = new Restaurante();
+                novoRestaurante.RESTANOME = nome;
+                novoRestaurante.RESTAPRECO = preco;
+                novoRestaurante.RESTADESCRICAO = descricao;
+                novoRestaurante.RESTAPREPROMOCAO = precopromocao;
+                novoRestaurante.RESTACATEGORIA = categoria;
+                using (var binaryReader = new BinaryReader(model.Imagens.InputStream))
+                novoRestaurante.imagem = binaryReader.ReadBytes(model.Imagens.ContentLength);
+
+                bd.Restaurante.Add(novoRestaurante);
+                bd.SaveChanges();
+                return RedirectToAction("Index");
+            }
+
         }
 
     }

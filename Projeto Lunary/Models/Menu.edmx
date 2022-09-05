@@ -15,7 +15,7 @@
           <Property Name="RESTADESCRICAO" Type="varchar" MaxLength="300" />
           <Property Name="RESTAPREPROMOCAO" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="RESTACATEGORIA" Type="varchar" MaxLength="300" Nullable="false" />
-          <Property Name="imagem" Type="varchar" MaxLength="100" />
+          <Property Name="imagem" Type="varbinary(max)" />
         </EntityType>
         <EntityContainer Name="LunaryModelStoreContainer">
           <EntitySet Name="Restaurante" EntityType="Self.Restaurante" Schema="dbo" store:Type="Tables" />
@@ -37,7 +37,7 @@
           <Property Name="RESTADESCRICAO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="RESTAPREPROMOCAO" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="RESTACATEGORIA" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Name="imagem" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
         </EntityType>
       </Schema>
     </edmx:ConceptualModels>

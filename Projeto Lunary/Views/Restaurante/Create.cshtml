@@ -1,45 +1,55 @@
-﻿
+﻿@model Projeto_Lunary.Models.Restaurante
 @{
     ViewBag.Title = "Create";
 }
 
-<h2>Create</h2>
-
+<h2>Cadastro de Produto</h2>
 <div>
-    <form action="/Restaurante/Create" method="post" enctype="multipart/form-data">
-        <div>
-            <label>Prato:</label><br />
-            <input type="text" name="nome" id="nome" required />
+    <form action="/Produto/Create" method="post">
+        <div class="form-group">
+            <label for="nome">Nome Do Prato</label>
+            <input type="text" class="form-control"
+                   maxlength="100"
+                   id="nome" name="nome"
+                   required />
         </div>
-        <div>
-            <label>Preço: R$</label><br />
-            <input type="number" name="preco" id="preco" required />
+        <div class="form-group">
+            <label for="preco">Preço</label>
+            <input type="number" class="form-control"
+                   id="preco" name="preco" min="0"
+                   required />
         </div>
-        <div>
-            <label>Descrição:</label><br />
-            <input type="text" name="descricao" id="descricao" required />
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <input type="text" class="form-control"
+                   id="descricao" name="descricao" min="0"
+                   required />
         </div>
-        <div>
-            <label>Preço Promocional:</label><br />
-            <input type="number" name="precopromocao" id="precopromocao" step="0.010" />
-        </div>
-        <div>
-            <label>Categoria:</label><br />
-            <input type="text" name="categoria" id="categoria" required />
-        </div>
-        <div class="row">
-            <div class="col-md-12">
-                <label>Imagem:</label><br />
-                <input type="image" name="imagem" id="imagem" required />
-                @Html.Label("txt_imagem", "Imagem", new { @class = "control-label" })
-                @Html.TextBox("txt_imagem", null, new { @class = "form-control", type = "file", accepet = "image/jpe,image/jpeg" })
-            </div>
-        </div>
-        <br />
-        <div>
-            <a href="/Restaurante/Index"><button type="button" class="btn btn-primary">Voltar</button></a>
-            <a href="/Restaurante/Index"><button type="submit" class="btn btn-success">Salvar</button></a>
+        <div class="form-group">
+            <label for="precopromocao">Preço Promoção</label>
+            <input type="number" class="form-control"
+                   id="precopromocao" name="precopromocao" min="0"
+                   required />
         </div>
 
+        <div class="form-group">
+            <label for="categoria">Categoria</label>
+            <input type="text" class="form-control"
+                   id="categoria" name="categoria" min="0"
+                   required />
+        </div>
+
+        <div class="col-md-12">
+            <input type="image" name="imagem" id="imagem" required />
+            @Html.Label("txt_imagem", "Imagem", new { @class = "control-label" })
+            @Html.TextBox("txt_imagem", null, new { @class = "form-control", type = "file", accepet = "image/jpe,image/jpeg" })
+        </div>
+
+        <div>
+            <a href="/Restaurante/Index"> <button type="button" class="btn btn-primary">Voltar</button>  </a>
+            <a href="/Restaurante/Index"> <button type="submit" class="btn btn-success">Salvar</button>  </a>
+        </div>
     </form>
 </div>
+
+

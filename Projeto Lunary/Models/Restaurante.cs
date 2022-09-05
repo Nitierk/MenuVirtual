@@ -16,10 +16,10 @@ namespace Projeto_Lunary.Models
     {
         public int RESTAUID { get; set; }
         public string RESTANOME { get; set; }
-        public double RESTAPRECO { get; set; }
+        public decimal RESTAPRECO { get; set; }
         public string RESTADESCRICAO { get; set; }
-        public string RESTAPREPROMOCAO { get; set; }
+        public decimal RESTAPREPROMOCAO { get; set; }
         public string RESTACATEGORIA { get; set; }
-        public string imagem { get; set; }
+        public byte[] imagem { get; set; }
     }
 }
