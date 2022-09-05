@@ -133,7 +133,7 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\imagens.cs">
+    <Compile Include="Models\Categorias.cs">
       <DependentUpon>Menu.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Menu.Context.cs">

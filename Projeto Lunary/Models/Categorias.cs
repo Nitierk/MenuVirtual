@@ -12,10 +12,8 @@ namespace Projeto_Lunary.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class imagens
+    public partial class Categorias
     {
-        public int id { get; set; }
-        public string nm_arquivo { get; set; }
-        public byte[] vb_imagem { get; set; }
+        public string RESTACATEGORIA { get; set; }
     }
 }

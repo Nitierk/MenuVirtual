@@ -14,6 +14,7 @@ namespace Projeto_Lunary.Controllers
         BDLunary bd = new BDLunary();
         public ActionResult Index()
         {
+            ViewBag.ListCategorias = bd.Categorias.ToList();
             return View(bd.Restaurante.ToList());
         }
         [HttpGet]
@@ -30,7 +31,7 @@ namespace Projeto_Lunary.Controllers
             novoRestaurante.RESTADESCRICAO = descricao;
             novoRestaurante.RESTAPREPROMOCAO = precopromocao;
             novoRestaurante.RESTACATEGORIA = categoria;
-            novoRestaurante.imagem = imagem;
+            
 
             bd.Restaurante.Add(novoRestaurante);
 
