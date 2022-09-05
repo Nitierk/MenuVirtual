@@ -8,10 +8,11 @@
 <h2>Pratos</h2>
 <a class="btn btn-success" href="/Restaurante/Create">Novo Prato</a>
 
-Vie
+
 <thead>
     <h1>Lunary</h1>
     <p>Cardápio</p>
+
 </thead>
 
 <nav class="navbar navbar-expand-lg navbar-light">
@@ -34,6 +35,20 @@ Vie
         }
     </select>
 </div>
+
+@foreach (var item in Model)
+{
+    <div class="container-fluid Frases-Motivacionais text-center margin">
+        <div class="row">
+            <div class="col-lg-12">
+                <img src="./img/230346.webp" width="232" height="232">
+                <h1>@item.RESTANOME</h1>
+                <p>R$ @item.RESTAPRECO</p>
+            </div>
+        </div>
+    </div>
+}
+
 
 <table class="table">
     <thead>
