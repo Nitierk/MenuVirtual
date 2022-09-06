@@ -6,95 +6,92 @@
 
     <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-
+    <script src="~/Scripts/Menu/FilterCate.js"></script>
 </head>
 
 
 
-<!--
-<h2>Pratos</h2>
-<a class="btn btn-success" href="/Restaurante/Create">Novo Prato</a>
--->
-
-<thead>
-    <h1 class="titulo">Lunary</h1>
-    <p class="subtitulo">Cardápio</p>
-</thead>
+    <thead>
+        <h1 class="titulo">Lunary</h1>
+        <p class="subtitulo">Cardápio</p>
+    </thead>
 
 
-<div class="barraVermelha">.</div>
+    <div class="barraVermelha">.</div>
 
-<thead>
+    <thead>
 
-    <p class="barra">Menu</p>
+        <p class="barra">Menu</p>
 
-    <div class="botao btn-group">
+        <div class="botao btn-group">
 
-        <div class="dropdown">
-            <select class="Filtro_Categorias btn btn-danger dropdown-toggle">
+            <div class="dropdown">
+                <select onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
 
-                @foreach (var item in ViewBag.ListCategorias)
-                {
-                    <option value="value">@item.RESTACATEGORIA</option>
+                    @foreach (var item in ViewBag.ListCategorias)
+                    {
+                        <option value="@item.RESTACATEGORIA">@item.RESTACATEGORIA</option>
 
-                }
-            </select>
-        </div>
-    </div>
-    </div>
-</thead>
-
-
-
-<nav class="navbar navbar-expand-lg navbar-light">
-    <div class="collapse navbar-collapse">
-        <ul class="navbar-nav">
-            <li class="nav-item">
-
-            </li>
-        </ul>
-    </div>
-</nav>
-
-
-
-
-@foreach (var item in Model)
-{
-    <div class="row">
-        <div class="col-lg-12">
-            <img class="img" src="~/Content/Menu/img/PratoExemplo.png" width="232" height="232">
-            <h3 class="text-center Pastel">@item.RESTANOME</h3>
-
-            <div class="heart-btn">
-                <div class="content" id="@item.RESTAUID">
-                    <span class="heart"></span>
-                </div>
+                    }
+                </select>
             </div>
-
-
-
-
-            <p class="preco">R$ @item.RESTAPRECO</p>
         </div>
-    </div>
-}
+        </div>
+    </thead>
 
 
 
-<script>
+    <nav class="navbar navbar-expand-lg navbar-light">
+        <div class="collapse navbar-collapse">
+            <ul class="navbar-nav">
+                <li class="nav-item">
 
-    window.onload = () => {
-        document.queryCommandIndeterm
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+
+
+
+    @foreach (var item in Model)
+    {
+        <div onload="FiltroCategorias()" class="row pratos @item.RESTACATEGORIA">
+            <div class="col-lg-12">
+                <img class="img" src="~/Content/Menu/img/PratoExemplo.png" width="232" height="232">
+                <h3 class="text-center name">@item.RESTANOME</h3>
+
+                <div class="heart-btn">
+                    <div class="content" id="@item.RESTAUID">
+                        <span class="heart"></span>
+                    </div>
+                </div>
+
+
+
+
+                <p class="preco">R$ @item.RESTAPRECO</p>
+            </div>
+        </div>
     }
 
 
-    $(document).ready(function () {
-        $('.content').click(function () {
-            $('.content').toggleClass("heart-active")
-            $('.text').toggleClass("heart-active")
-            $('.heart').toggleClass("heart-active")
+
+    <script>
+
+        window.onload = () => {
+            document.queryCommandIndeterm
+        }
+
+
+        $(document).ready(function () {
+            $('.content').click(function () {
+                $('.content').toggleClass("heart-active")
+                $('.text').toggleClass("heart-active")
+                $('.heart').toggleClass("heart-active")
+            });
         });
-    });
-</script>
+    </script>
+
+
 

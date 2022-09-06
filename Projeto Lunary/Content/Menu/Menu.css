@@ -78,6 +78,13 @@ textarea {
     margin-top: 40px;
 }
 
+.pratos{
+    display: none;
+}
+.show {
+    display: block;
+}
+
 .barraVermelha {
     margin-top: 15px;
     margin-bottom: 1px;
@@ -86,13 +93,14 @@ textarea {
 }
 
 .preco {
+    
     margin-right: 110px;
     margin-top: 28px;
-    color: #000;
+    
     font-size: 20px;
 }
 
-.Pastel {
+.name {
     color: brown;
     margin-top: 15px;
 }
@@ -110,7 +118,7 @@ textarea {
     padding: 6px 20px;
 }
 
-.img {
+.img{
     border-top: 4px solid brown;
     border-bottom: 4px solid brown;
     border-left: 4px solid brown;

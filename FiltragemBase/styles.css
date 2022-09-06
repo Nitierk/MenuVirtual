@@ -1,0 +1,41 @@
+
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    height: 100vh;
+    background-color: aquamarine;
+    display: flex;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    background-color: white;
+    cursor: pointer;
+}
+.box{
+    float: left;
+    background-color: blue;
+    color: #f1f1f1;
+    width: 125px;
+    line-height: 125px;
+    text-align: center;
+    margin: 12px;
+    display: none;
+}
+
+.btn:hover{
+    background-color: #ddd;
+}
+.show{
+    display: block;
+}
+.btn{
+    border: none;
+    outline: none;
+    margin-bottom: 20px;
+    padding: 12px 16px;
+    background-color: #f1f1f1;
+    cursor: pointer;
+}
