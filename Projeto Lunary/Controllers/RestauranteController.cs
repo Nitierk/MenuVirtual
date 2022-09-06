@@ -25,11 +25,11 @@ namespace Projeto_Lunary.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create (string nome, float preco, string descricao, string precopromocao, string categoria, HttpPostedFileBase imagem)
+        public ActionResult Create (string nome,decimal preco, string descricao, string precopromocao, string categoria, HttpPostedFileBase imagem)
         {
             Restaurante novoRestaurante = new Restaurante();
             novoRestaurante.RESTANOME = nome;
-            novoRestaurante.RESTAPRECO = preco;
+            novoRestaurante.RESTAPRECO = Convert.ToDouble(preco);
             novoRestaurante.RESTADESCRICAO = descricao;
             novoRestaurante.RESTAPREPROMOCAO = precopromocao;
             novoRestaurante.RESTACATEGORIA = categoria;
@@ -52,15 +52,19 @@ namespace Projeto_Lunary.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(int? id, string nome, float preco,string descricao,string precopromocao,string categoria,byte imagem)
+        public ActionResult Editar(int? id, string nome, float preco, string descricao, string precopromocao, string categoria, HttpPostedFileBase imagem)
         {
             Restaurante atualizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
             atualizarrestaurante.RESTANOME = nome;
-            atualizarrestaurante.RESTAPRECO = Convert.ToInt32(preco);
+            atualizarrestaurante.RESTAPRECO = preco;
             atualizarrestaurante.RESTADESCRICAO = descricao;
             atualizarrestaurante.RESTAPREPROMOCAO = precopromocao;
             atualizarrestaurante.RESTACATEGORIA = categoria;
-            
+            using (var memoryStream = new MemoryStream())
+            {
+                imagem.InputStream.CopyTo(memoryStream);
+                atualizarrestaurante.imagem = memoryStream.ToArray();
+            }
 
 
             bd.Entry(atualizarrestaurante).State = EntityState.Modified;

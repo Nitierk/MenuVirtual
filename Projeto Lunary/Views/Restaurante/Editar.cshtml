@@ -8,14 +8,14 @@
 <div>
     <form action="/Restaurante/Editar?id=@Model.RESTAUID" method="post">
         <label for="nome">Nome</label>
-        <input type="text" class="form-control" maxlength="100" id="nome" name="nome" value=@Model.RESTANOME required />
+        <input type="text" class="form-control" maxlength="100" id="nome" name="nome" value="@Model.RESTANOME" required />
         <div>
             <label for="preco">Preço</label>
-            <input type="number" class="form-control" id="" name="preco" value=@Model.RESTAPRECO required />
+            <input type="text" class="form-control" id="" name="preco" value=@Model.RESTAPRECO required />
         </div>
         <div>
             <label for="descricao">Descrição</label>
-            <input type="text" class="form-control" maxlength="300" id="" name="descricao" value=@Model.RESTADESCRICAO required />
+            <input type="text" class="form-control" maxlength="300" id="" name="descricao" value="@Model.RESTADESCRICAO" required />
         </div>
         <div>
             <label for="precopromocional">Preço Promocional</label>
@@ -28,9 +28,8 @@
 
         <div>
             <label for="imagem"></label>
-            <input type="image" class="form-control" id="" name="imagem" value=@Model.imagem required />
+            <input type="file" class="form-control" id="imagem" name="imagem" value=@Model.imagem required />
         </div>
-
 
         <br />
         <div>

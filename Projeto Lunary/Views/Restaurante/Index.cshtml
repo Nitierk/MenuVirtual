@@ -5,8 +5,6 @@
 }
 
 <h2>Pratos</h2>
-<a class="btn btn-success" href="/Restaurante/Create">Novo Prato</a>
-
 
 <thead>
         <h1>Lunary</h1>
@@ -71,7 +69,9 @@
                    }
 
                </td>
-
+               <td>
+                   <a href="/Restaurante/Editar?id=@item.RESTAUID"><button type="button" class="btn btn-warning">Editar</button></a>
+               </td>
            </tr>
            
         }
