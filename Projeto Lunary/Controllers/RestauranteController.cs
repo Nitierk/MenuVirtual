@@ -17,7 +17,33 @@ namespace Projeto_Lunary.Controllers
         {
             return View(bd.Restaurante.ToList());
         }
-    
+
+        public ActionResult Create()
+        {
+            
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Create (string nome, float preco, string descricao, string precopromocao, string categoria, HttpPostedFileBase imagem)
+        {
+            Restaurante novoRestaurante = new Restaurante();
+            novoRestaurante.RESTANOME = nome;
+            novoRestaurante.RESTAPRECO = preco;
+            novoRestaurante.RESTADESCRICAO = descricao;
+            novoRestaurante.RESTAPREPROMOCAO = precopromocao;
+            novoRestaurante.RESTACATEGORIA = categoria;
+            using (var memoryStream = new MemoryStream())
+            {
+                imagem.InputStream.CopyTo(memoryStream);
+                novoRestaurante.imagem = memoryStream.ToArray();
+            }
+
+            bd.Restaurante.Add(novoRestaurante);
+            bd.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
         [HttpGet]
         public ActionResult Editar(int? id)
         {
@@ -26,7 +52,7 @@ namespace Projeto_Lunary.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(int? id, string nome, string preco,string descricao,decimal precopromocao,string categoria,byte imagem)
+        public ActionResult Editar(int? id, string nome, float preco,string descricao,string precopromocao,string categoria,byte imagem)
         {
             Restaurante atualizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
             atualizarrestaurante.RESTANOME = nome;
@@ -64,35 +90,6 @@ namespace Projeto_Lunary.Controllers
             }
 
             return RedirectToAction("index");
-        }
-
-
-        public ActionResult Create()
-        {
-            var model = new Restauranteimanges();
-            return View(model);
-        }
-
-        [HttpPost]
-        public ActionResult Create (Restauranteimanges model, string nome, decimal preco, string descricao, decimal precopromocao, string categoria, byte imagem)
-        {
-
-            if (ModelState.IsValid)
-            {
-                Restaurante novoRestaurante = new Restaurante();
-                novoRestaurante.RESTANOME = nome;
-                novoRestaurante.RESTAPRECO = preco;
-                novoRestaurante.RESTADESCRICAO = descricao;
-                novoRestaurante.RESTAPREPROMOCAO = precopromocao;
-                novoRestaurante.RESTACATEGORIA = categoria;
-                using (var binaryReader = new BinaryReader(model.Imagens.InputStream))
-                novoRestaurante.imagem = binaryReader.ReadBytes(model.Imagens.ContentLength);
-
-                bd.Restaurante.Add(novoRestaurante);
-                bd.SaveChanges();
-                return RedirectToAction("Index");
-            }
-
         }
 
     }

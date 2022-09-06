@@ -59,6 +59,19 @@
                <td>@item.RESTACATEGORIA</td>
                <td>@item.imagem</td>
 
+               <td>
+                   @{
+                       if (item.imagem != null)
+                       {
+                           var base64 = Convert.ToBase64String(item.imagem);
+                           var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                           <img src='@imgSrc' style="max-width:100px; max-height:100px;" />
+                       }
+
+                   }
+
+               </td>
+
            </tr>
            
         }

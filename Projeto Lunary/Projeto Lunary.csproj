@@ -239,7 +239,6 @@
     <Compile Include="Models\Restaurante.cs">
       <DependentUpon>Menu.tt</DependentUpon>
     </Compile>
-    <Compile Include="Models\Restauranteimanges.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -303,6 +302,7 @@
     <Content Include="Views\Restaurante\Create.cshtml" />
     <Content Include="Views\Restaurante\Editar.cshtml" />
     <Content Include="Views\Restaurante\Excluir.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
