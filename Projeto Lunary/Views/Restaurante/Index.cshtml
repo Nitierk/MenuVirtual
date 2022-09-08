@@ -20,6 +20,8 @@
 
     <p class="barra">Menu</p>
 
+
+
     <!-- Filtro Categorias -->
     <div class="botao btn-group">
         <div class="dropdown">
@@ -38,15 +40,18 @@
     <div>
         @foreach (var item in Model)
         {
-            <div class="row pratos @item.RESTACATEGORIA" data-toggle="modal" data-target="#exampleModal" data-whatever="@item.RESTAUID">
+            <div class="row pratos @item.RESTACATEGORIA" >
                 <div class="col-lg-12">
-                    <img class="img" src="~/Content/Menu/img/PratoExemplo.png" width="232" height="232">
+                    <div data-toggle="modal" data-target="#PratosDetalhe" data-descricao="@item.RESTADESCRICAO" data-nome="@item.RESTANOME">
+                        <img class="img" src="~/Content/Menu/img/PratoExemplo.png" width="232" height="232">
+                    </div>
+                    
                     <h3 class="text-center name">@item.RESTANOME</h3>
 
                     <div class="heart-btn">
                         <div class="content" id="@item.RESTAUID">
-                            <form><span class="heart"></span></form>
-                            @*<form><a href="/Menu/Curtida/@item.RESTAUID"><span class="heart"></span></a></form> *@
+                            <span class="heart" id="@item.RESTAUID"></span>
+                          
                         </div>
                     </div>
 
@@ -60,6 +65,41 @@
 
     </div>
 
+
+    <!-- Modal Exibir-->
+    <div class="modal fade" id="PratosDetalhe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Prato Detalhes</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    
+                    <img class="img" src="~/Content/Menu/img/PratoExemplo.png" width="232" height="232">
+                </div>
+                <div class="modal-body">
+                    <div class="col-lg-12">
+
+                        <h3 class="text-center name">RESTANOME</h3>
+
+                        <div class="heart-btn">
+                            <div class="content" id="RESTAUID">
+
+
+                            </div>
+                        </div>
+                        <p>R$ RESTAPRECO</p>
+                    </div>
+                </div>
+               
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>                    
+                </div>
+            </div>
+        </div>
+    </div>
+
     <script>
 
         window.onload = () => {
@@ -68,8 +108,23 @@
         }
 
 
+        $('#PratosDetalhe').on('show.bs.modal', function (event) {
+            var prato = $(event.relatedTarget) // Button that triggered the modal
+            var descricao = prato.data('nome') // Extract info from data-* attributes
+            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
+            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
+            var modal = $(this)
+            modal.find('.modal-title').text('New message to ' + descricao)
+            modal.find('.modal-body h3').val(descricao)
+            bootbox.dialog(
+
+            );
+
+        })
+        
+
         $(document).ready(function () {
-            $('.content').click(function () {             
+            $('.content').click(function () {
                 $('.heart').toggleClass("heart-active")
             });
         });
