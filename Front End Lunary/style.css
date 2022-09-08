@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
 
-@media screen and (max-width:600px) {
+
 
   .titulo{
     text-align: center;
@@ -11,6 +11,7 @@
 
 .body{
     position: fixed;
+    
     
 }
 
@@ -43,6 +44,7 @@
 .Ofertasdehoje{
     text-align: center;
     color: rgb(126, 23, 23);
+    margin-top: 30px;
 }
 
 .row{
@@ -73,20 +75,33 @@
     
 }
 
+.semiprogress{
+  position: relative;
+  margin-top: 15px;
+  margin-bottom: 15px;
+}
+
 .progress{
-   margin-left: 130px;
-   margin-top: 15px;
-   margin-bottom: 15px;
-   margin-right: 130px;
-    
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+ 
+}
+
+.semibotao{
+  height: 80vh;
+  position: relative;
 }
 
 .btn-group{
-    width:50%;
-    margin-left:25%;
-    margin-right:25%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
     border: 2px solid #a52a2a;
     padding: 6px 20px;
+    margin-top: 15px;
 }
 
 .img2{
@@ -160,7 +175,46 @@
   }
 }
 
+@media screen and (min-width: 350px){
+.titulo{
+  font-size: 60px;
 }
+
+.subtitulo{
+  font-size: 30px;
+}
+
+.barra{
+  font-size: 25px;
+}
+
+.Refeições{
+  font-size: 40px;
+}
+
+.Ofertasdehoje{
+  font-size: 20px;
+}
+
+.Pastel{
+  font-size: 40px;
+}
+
+.preco{
+  font-size: 22px;
+}
+
+.heart{
+  height: 110px;
+  width: 110px;
+}
+
+.img{
+  height: 250px;
+  width: 250px;
+}
+}
+
 
 
 
