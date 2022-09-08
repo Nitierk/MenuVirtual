@@ -389,6 +389,25 @@ DROP TABLE imagens;
 
 SELECT * FROM Restaurante
 
+select * from Restaurante
+select * from Estabelecimento
+
+UPDATE Restaurante
+SET RESTACATEGORIA='Petiscos'
+WHERE RESTACATEGORIA='Petisco';
+
+Create table Estabelecimento (
+ ESTABID int identity (1,1) Primary Key not null,
+ ESTABNOME Varchar(100) NOT null,
+ ESTABENDERECO Varchar(100) not null,
+ ESTABBAIRRO Varchar(100) not null,
+ ESTATELEFONE INT not null,
+ ESTABCEP int not null,
+ ESTABLOGIN Varchar(100) not null,
+ ESTABSENHA varchar (100) not null,
+ ESTATIPO Varchar(100) null,
+ )
+
 
 
 

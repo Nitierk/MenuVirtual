@@ -2,6 +2,7 @@
 @model IEnumerable<Projeto_Lunary.Models.Restaurante>
 @{
     ViewBag.Title = "Pratos";
+   
 }
 
 <h2>Pratos</h2>
@@ -65,13 +66,13 @@
                            var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
                            <img src='@imgSrc' style="max-width:100px; max-height:100px;" />
                        }
-
                    }
-
                </td>
                <td>
                    <a href="/Restaurante/Editar?id=@item.RESTAUID"><button type="button" class="btn btn-warning">Editar</button></a>
+                   <a href="/Restaurante/Excluir?id=@item.RESTAUID"><button type="button" class="btn btn-danger">Excluir</button></a>
                </td>
+              
            </tr>
            
         }

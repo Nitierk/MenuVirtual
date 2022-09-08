@@ -2,6 +2,7 @@
 <Schema Namespace="LunaryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="BDLunary" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Restaurante" EntityType="LunaryModel.Restaurante" />
+    <EntitySet Name="Categorias" EntityType="LunaryModel.Categorias" />
   </EntityContainer>
   <EntityType Name="Restaurante">
     <Key>
@@ -14,5 +15,11 @@
     <Property Name="RESTAPREPROMOCAO" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="RESTACATEGORIA" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
     <Property Name="imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="RESTACATEGORIA" />
+    </Key>
+    <Property Name="RESTACATEGORIA" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
   </EntityType>
 </Schema>

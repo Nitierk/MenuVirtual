@@ -2,6 +2,7 @@
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -15,21 +16,29 @@ namespace Projeto_Lunary.Controllers
         BDLunary bd = new BDLunary();
         public ActionResult Index()
         {
-            return View(bd.Restaurante.ToList());
+            if (Session["MyCurso"] != null)
+            {
+                return View(bd.Restaurante.ToList());
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home");
+            }
+            
         }
 
         public ActionResult Create()
         {
-            
+            ViewBag.listacategoria = bd.Categorias.ToList();
             return View();
         }
 
         [HttpPost]
-        public ActionResult Create (string nome,decimal preco, string descricao, string precopromocao, string categoria, HttpPostedFileBase imagem)
+        public ActionResult Create (string nome,float preco, string descricao, string precopromocao, string categoria, HttpPostedFileBase imagem)
         {
             Restaurante novoRestaurante = new Restaurante();
             novoRestaurante.RESTANOME = nome;
-            novoRestaurante.RESTAPRECO = Convert.ToDouble(preco);
+            novoRestaurante.RESTAPRECO = preco;
             novoRestaurante.RESTADESCRICAO = descricao;
             novoRestaurante.RESTAPREPROMOCAO = precopromocao;
             novoRestaurante.RESTACATEGORIA = categoria;
@@ -40,6 +49,7 @@ namespace Projeto_Lunary.Controllers
             }
 
             bd.Restaurante.Add(novoRestaurante);
+
             bd.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -48,6 +58,7 @@ namespace Projeto_Lunary.Controllers
         public ActionResult Editar(int? id)
         {
             Restaurante Localizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+            ViewBag.listacategoria = bd.Categorias.ToList();
             return View(Localizarrestaurante);
         }
 
@@ -72,18 +83,18 @@ namespace Projeto_Lunary.Controllers
             return RedirectToAction("index");
         }
 
-        public ActionResult Excluir(int? id)
+        public ActionResult Excluir(int? id,HttpPostedFileBase imagem)
         {
-            Restaurante excluirprato = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-            return View(excluirprato);
+            Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+            return View(excluiroproduto);
+
         }
-
-
         [HttpPost]
-        public ActionResult ExcluirConfirma(int? id)
+        public ActionResult ExcluirConfirma(int? id, HttpPostedFileBase imagem)
         {
-            Restaurante excluirprato = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-            bd.Restaurante.Remove(excluirprato);
+            Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+            bd.Restaurante.Remove(excluiroproduto);
+
             try
             {
                 bd.SaveChanges();
@@ -92,9 +103,9 @@ namespace Projeto_Lunary.Controllers
             {
                 return RedirectToAction("index");
             }
-
             return RedirectToAction("index");
         }
+
 
     }
 }

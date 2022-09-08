@@ -39,17 +39,16 @@ namespace Projeto_Lunary.Controllers
         [HttpPost]
         public ActionResult VerificarLogin(string login, string senha)
         {
-            bool validado = true;
-            if (validado == true)
+            foreach (var item in bd.Estabelecimento)
             {
-                Session["MyCurso"] = "MyCurso";
-                return RedirectToAction("Index");
+                if ((item.ESTABLOGIN == login) && (item.ESTABSENHA == senha))
+                {
+                    Session["MyCurso"] = "MyCurso";
+                    return RedirectToAction("Index");
+                }
             }
-            else
-            {
-                ViewBag.textoErro = "Login ou senha incorreto";
-                return RedirectToAction("Login");
-            }
+
+            return RedirectToAction("Login");
 
         }
     }

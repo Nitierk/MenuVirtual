@@ -19,16 +19,22 @@
         </div>
         <div>
             <label for="precopromocional">Preço Promocional</label>
-            <input type="number" class="form-control" id="" name="precopromocional" value=@Model.RESTAPREPROMOCAO required />
+            <input type="text" class="form-control" id="" name="precopromocional" value=@Model.RESTAPREPROMOCAO required />
         </div>
         <div>
-            <label for="categoria">Categoria</label>
-            <input type="text" class="form-control" maxlength="300" id="" name="categoria" value=@Model.RESTACATEGORIA required />
+            <br />
+            <label for="categoria">Categoria: </label>
+            <select id="categoria" name="categoria">
+                @foreach (var item in ViewBag.listacategoria)
+                {
+                    <option>@item.RESTACATEGORIA</option>
+                }
+            </select>
         </div>
 
         <div>
             <label for="imagem"></label>
-            <input type="file" class="form-control" id="imagem" name="imagem" value=@Model.imagem required />
+            <input type="file" class="form-control" id="imagem" name="imagem" value=@Model.imagem  required />
         </div>
 
         <br />

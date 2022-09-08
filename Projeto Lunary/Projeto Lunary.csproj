@@ -221,6 +221,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Categorias.cs">
+      <DependentUpon>Menu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Estabelecimento.cs">
+      <DependentUpon>Menu.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Menu.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -303,6 +309,7 @@
     <Content Include="Views\Restaurante\Editar.cshtml" />
     <Content Include="Views\Restaurante\Excluir.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
+    <Content Include="Views\Restaurante\MenuVirtual.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
