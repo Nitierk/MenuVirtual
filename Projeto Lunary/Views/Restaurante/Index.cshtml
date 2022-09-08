@@ -3,7 +3,6 @@
     ViewBag.Title = "Pratos";
 }
 <head>
-
     <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
     <script src="~/Scripts/Menu/FilterCate.js"></script>
@@ -23,7 +22,6 @@
 
     <!-- Filtro Categorias -->
     <div class="botao btn-group">
-
         <div class="dropdown">
             <select onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
 
@@ -34,19 +32,7 @@
                 }
             </select>
         </div>
-
     </div>
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    Refeições
-                </li>
-            </ul>
-        </div>
-    </nav>
-
-
 
     <!-- Pratos -->
     <div>
@@ -74,8 +60,6 @@
 
     </div>
 
-
-
     <script>
 
         window.onload = () => {
@@ -85,9 +69,7 @@
 
 
         $(document).ready(function () {
-            $('.content').click(function () {
-                $('.content').toggleClass("heart-active")
-                $('.text').toggleClass("heart-active")
+            $('.content').click(function () {             
                 $('.heart').toggleClass("heart-active")
             });
         });
