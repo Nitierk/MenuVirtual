@@ -29,8 +29,16 @@ namespace Projeto_Lunary.Controllers
 
         public ActionResult Create()
         {
-            ViewBag.listacategoria = bd.Categorias.ToList();
-            return View();
+            if (Session["MyCurso"] != null)
+            {
+                ViewBag.listacategoria = bd.Categorias.ToList();
+                return View();
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home");
+            }
+
         }
 
         [HttpPost]
@@ -47,9 +55,7 @@ namespace Projeto_Lunary.Controllers
                 imagem.InputStream.CopyTo(memoryStream);
                 novoRestaurante.imagem = memoryStream.ToArray();
             }
-
             bd.Restaurante.Add(novoRestaurante);
-
             bd.SaveChanges();
             return RedirectToAction("Index");
         }
@@ -57,9 +63,17 @@ namespace Projeto_Lunary.Controllers
         [HttpGet]
         public ActionResult Editar(int? id)
         {
-            Restaurante Localizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-            ViewBag.listacategoria = bd.Categorias.ToList();
-            return View(Localizarrestaurante);
+            if (Session["MyCurso"] != null)
+            {
+                Restaurante Localizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+                ViewBag.listacategoria = bd.Categorias.ToList();
+                return View(Localizarrestaurante);
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home");
+            }
+          
         }
 
         [HttpPost]
@@ -83,14 +97,21 @@ namespace Projeto_Lunary.Controllers
             return RedirectToAction("index");
         }
 
-        public ActionResult Excluir(int? id,HttpPostedFileBase imagem)
+        public ActionResult Excluir(int ? id)
         {
-            Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-            return View(excluiroproduto);
+            if (Session["MyCurso"] != null)
+            {
+                Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+                return RedirectToAction("index");
+            }
+            else
+            {
+                return RedirectToAction("Login", "Home");
+            }
 
         }
         [HttpPost]
-        public ActionResult ExcluirConfirma(int? id, HttpPostedFileBase imagem)
+        public ActionResult ExcluirConfirma(int? id)
         {
             Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
             bd.Restaurante.Remove(excluiroproduto);
