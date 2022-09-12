@@ -36,70 +36,73 @@
         </div>
     </div>
 
+
     <!-- Pratos -->
     <div>
         @foreach (var item in Model)
         {
-            <div class="row pratos @item.RESTACATEGORIA" >
+            <div class="row pratos @item.RESTACATEGORIA">
                 <div class="col-lg-12">
-                    <div data-toggle="modal" data-target="#PratosDetalhe" data-descricao="@item.RESTADESCRICAO" data-nome="@item.RESTANOME">
+                    <div data-toggle="modal" data-target="#PratosDetalhe-@item.RESTAUID" data-descricao="@item.RESTADESCRICAO">
                         <img class="img" src="~/Content/Menu/img/PratoExemplo.png" width="232" height="232">
                     </div>
-                    
+
                     <h3 class="text-center name">@item.RESTANOME</h3>
 
+                    <!--Btn Coração-->
                     <div class="heart-btn">
                         <div class="content" id="@item.RESTAUID">
                             <span class="heart" id="@item.RESTAUID"></span>
-                          
+
                         </div>
                     </div>
-
-
-
-
-                    <p class="preco">R$ @item.RESTAPRECO</p>
+                    <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
                 </div>
             </div>
+
+            <!-- Modal Exibir-->
+            <div class="modal fade" id="PratosDetalhe-@item.RESTAUID" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Prato Detalhes</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+
+
+                        </div>
+                        <div class="modal-body">
+                            
+                            <div class="col-lg-12">
+                                <img class="imgmodal" src="~/Content/Menu/img/PratoExemplo.png" width="232" height="232">
+                                <h3 class="text-center name">@item.RESTANOME</h3>
+
+                                <p> @item.RESTADESCRICAO</p>
+                                <h3 class="text-center name">R$ @item.RESTAPRECO.ToString("F")</h3>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
         }
 
     </div>
 
 
-    <!-- Modal Exibir-->
-    <div class="modal fade" id="PratosDetalhe" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Prato Detalhes</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                    
-                    <img class="img" src="~/Content/Menu/img/PratoExemplo.png" width="232" height="232">
-                </div>
-                <div class="modal-body">
-                    <div class="col-lg-12">
-
-                        <h3 class="text-center name">RESTANOME</h3>
-
-                        <div class="heart-btn">
-                            <div class="content" id="RESTAUID">
 
 
-                            </div>
-                        </div>
-                        <p>R$ RESTAPRECO</p>
-                    </div>
-                </div>
-               
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>                    
-                </div>
-            </div>
-        </div>
-    </div>
 
+
+
+    
+   
     <script>
 
         window.onload = () => {
@@ -107,10 +110,10 @@
             FiltroCategorias()
         }
 
-
+        //Modal
         $('#PratosDetalhe').on('show.bs.modal', function (event) {
             var prato = $(event.relatedTarget) // Button that triggered the modal
-            var descricao = prato.data('nome') // Extract info from data-* attributes
+            var descricao = prato.data('descricao') // Extract info from data-* attributes
             // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
             // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
             var modal = $(this)
@@ -121,13 +124,15 @@
             );
 
         })
+       
         
+    $(document).ready(function HeartClick() {
+        $('.content').click(function () {   
 
-        $(document).ready(function () {
-            $('.content').click(function () {
-                $('.heart').toggleClass("heart-active")
-            });
+            $('.heart').toggleClass("heart-active")
         });
+    });
+        
     </script>
 </body>
 

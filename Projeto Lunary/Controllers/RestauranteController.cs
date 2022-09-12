@@ -12,8 +12,10 @@ namespace Projeto_Lunary.Controllers
     {
         // GET: Restaurante
         BDLunary bd = new BDLunary();
+        
         public ActionResult Index()
         {
+            
             ViewBag.ListCategorias = bd.Categorias.ToList();
             return View(bd.Restaurante.ToList());
         }
