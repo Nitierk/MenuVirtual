@@ -307,9 +307,9 @@
     <Content Include="Views\Restaurante\Index.cshtml" />
     <Content Include="Views\Restaurante\Create.cshtml" />
     <Content Include="Views\Restaurante\Editar.cshtml" />
-    <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Restaurante\indexADM.cshtml" />
     <Content Include="Views\Restaurante\Excluir.cshtml" />
+    <Content Include="Views\Home\Login.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
