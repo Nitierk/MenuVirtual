@@ -16,29 +16,13 @@ namespace Projeto_Lunary.Controllers
         BDLunary bd = new BDLunary();
         public ActionResult Index()
         {
-            if (Session["MyCurso"] != null)
-            {
-                return View(bd.Restaurante.ToList());
-            }
-            else
-            {
-                return RedirectToAction("Login", "Home");
-            }
-            
+            return View(bd.Restaurante.ToList());
         }
 
         public ActionResult Create()
         {
-            if (Session["MyCurso"] != null)
-            {
-                ViewBag.listacategoria = bd.Categorias.ToList();
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login", "Home");
-            }
-
+            ViewBag.listacategoria = bd.Categorias.ToList();
+            return View();
         }
 
         [HttpPost]
@@ -63,17 +47,9 @@ namespace Projeto_Lunary.Controllers
         [HttpGet]
         public ActionResult Editar(int? id)
         {
-            if (Session["MyCurso"] != null)
-            {
-                Restaurante Localizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-                ViewBag.listacategoria = bd.Categorias.ToList();
-                return View(Localizarrestaurante);
-            }
-            else
-            {
-                return RedirectToAction("Login", "Home");
-            }
-          
+            Restaurante Localizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+            ViewBag.listacategoria = bd.Categorias.ToList();
+            return View(Localizarrestaurante);
         }
 
         [HttpPost]
@@ -90,8 +66,6 @@ namespace Projeto_Lunary.Controllers
                 imagem.InputStream.CopyTo(memoryStream);
                 atualizarrestaurante.imagem = memoryStream.ToArray();
             }
-
-
             bd.Entry(atualizarrestaurante).State = EntityState.Modified;
             bd.SaveChanges();
             return RedirectToAction("index");
@@ -99,16 +73,8 @@ namespace Projeto_Lunary.Controllers
 
         public ActionResult Excluir(int ? id)
         {
-            if (Session["MyCurso"] != null)
-            {
-                Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-                return RedirectToAction("index");
-            }
-            else
-            {
-                return RedirectToAction("Login", "Home");
-            }
-
+            Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+            return RedirectToAction("index");
         }
         [HttpPost]
         public ActionResult ExcluirConfirma(int? id)
