@@ -70,7 +70,6 @@ namespace Projeto_Lunary.Controllers
             bd.SaveChanges();
             return RedirectToAction("index");
         }
-
         public ActionResult Excluir(int ? id)
         {
             Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
