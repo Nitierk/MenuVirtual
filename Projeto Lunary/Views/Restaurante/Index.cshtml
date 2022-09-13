@@ -25,11 +25,11 @@
     <!-- Filtro Categorias -->
     <div class="botao btn-group">
         <div class="dropdown">
-            <select onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
+            <select style="text-transform: uppercase;" onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
 
                 @foreach (var item in ViewBag.ListCategorias)
                 {
-                    <option onchange="FiltroCategorias()" value="@item.RESTACATEGORIA">@item.RESTACATEGORIA</option>
+                    <option  onchange="FiltroCategorias()" value="@item.RESTACATEGORIA">@item.RESTACATEGORIA</option>
 
                 }
             </select>
@@ -50,8 +50,8 @@
                     <h3 class="text-center name">@item.RESTANOME</h3>
 
                     <!--Btn Coração-->
-                    <div class="heart-btn">
-                        <div class="content" id="@item.RESTAUID">
+                    <div class="heart-btn" >
+                        <div class="content" id="Heart-@item.RESTAUID">
                             <span class="heart" id="@item.RESTAUID"></span>
 
                         </div>
@@ -126,11 +126,13 @@
         })
        
         
-    $(document).ready(function HeartClick() {
+    $(document).ready(function () {
         $('.content').click(function () {   
 
             $('.heart').toggleClass("heart-active")
         });
+
+       
     });
         
     </script>
