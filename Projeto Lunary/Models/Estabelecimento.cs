@@ -12,15 +12,16 @@ namespace Projeto_Lunary.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Restaurante
+    public partial class Estabelecimento
     {
-        public int RESTAUID { get; set; }
-        public string RESTANOME { get; set; }
-        public double RESTAPRECO { get; set; }
-        public string RESTADESCRICAO { get; set; }
-        public string RESTAPREPROMOCAO { get; set; }
-        public string RESTACATEGORIA { get; set; }
-        public byte[] imagem { get; set; }
-        public Nullable<int> Curtidas { get; set; }
+        public int ESTABID { get; set; }
+        public string ESTABNOME { get; set; }
+        public string ESTABENDERECO { get; set; }
+        public string ESTABBAIRRO { get; set; }
+        public int ESTATELEFONE { get; set; }
+        public int ESTABCEP { get; set; }
+        public string ESTABLOGIN { get; set; }
+        public string ESTABSENHA { get; set; }
+        public string ESTATIPO { get; set; }
     }
 }

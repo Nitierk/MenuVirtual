@@ -132,7 +132,27 @@
             var t = (this.id);
             let el = document.getElementById(t);
 
+           
             el.classList.add('heart-active');
+            
+
+            //$('.heart').toggleClass("heart-active")
+        });
+
+        $('.heart-active').click(function () {
+
+            var t = (this.id);
+            let el = document.getElementById(t);
+
+            /*if (el.hasClass('heart-active')) {
+                el.classList.remove('heart-active');
+            }
+            else {
+                el.classList.add('heart-active');
+            } */
+
+            el.classList.remove('heart-active');
+
 
             //$('.heart').toggleClass("heart-active")
         });
