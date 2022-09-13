@@ -39,3 +39,15 @@ p {
     text-align: center;
     color: brown;
 }
+
+.ContainerR {
+    height: 80vh;
+    position: relative;
+}
+
+.navbar-nav {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
