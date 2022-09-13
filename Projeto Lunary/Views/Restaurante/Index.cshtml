@@ -51,8 +51,8 @@
 
                     <!--Btn Coração-->
                     <div class="heart-btn" >
-                        <div class="content" id="Heart-@item.RESTAUID">
-                            <span class="heart" id="@item.RESTAUID"></span>
+                        <div class="content">
+                            <span class="heart" id="Heart-@item.RESTAUID"></span>
 
                         </div>
                     </div>
@@ -127,9 +127,14 @@
        
         
     $(document).ready(function () {
-        $('.content').click(function () {   
+        $('.heart').click(function () {   
 
-            $('.heart').toggleClass("heart-active")
+            var t = (this.id);
+            let el = document.getElementById(t);
+
+            el.classList.add('heart-active');
+
+            //$('.heart').toggleClass("heart-active")
         });
 
        
