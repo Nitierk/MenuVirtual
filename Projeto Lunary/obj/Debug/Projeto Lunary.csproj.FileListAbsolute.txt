@@ -235,3 +235,4 @@ C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.We
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.CopyComplete
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.pdb
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\QRCoder.dll

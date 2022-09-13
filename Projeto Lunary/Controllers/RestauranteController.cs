@@ -1,7 +1,9 @@
 ﻿using Projeto_Lunary.Models;
+using QRCoder;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
@@ -53,6 +55,7 @@ namespace Projeto_Lunary.Controllers
         }
 
         [HttpPost]
+        [HandleError]
         public ActionResult Editar(int? id, string nome, float preco, string descricao, string precopromocao, string categoria, HttpPostedFileBase imagem)
         {
             Restaurante atualizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
@@ -66,6 +69,7 @@ namespace Projeto_Lunary.Controllers
                 imagem.InputStream.CopyTo(memoryStream);
                 atualizarrestaurante.imagem = memoryStream.ToArray();
             }
+
             bd.Entry(atualizarrestaurante).State = EntityState.Modified;
             bd.SaveChanges();
             return RedirectToAction("index");
@@ -91,7 +95,28 @@ namespace Projeto_Lunary.Controllers
             }
             return RedirectToAction("index");
         }
+        public ActionResult QRCODindex()
+        {
+            return View();
+        }
 
+        [HttpPost]
+        public ActionResult QRCODindex(string qrcode)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                QRCodeGenerator qRCodeGenerator = new QRCodeGenerator();
+                QRCodeData qrCodeData = qRCodeGenerator.CreateQrCode(qrcode, QRCodeGenerator.ECCLevel.Q);
+                QRCode qrCode = new QRCode(qrCodeData);
+
+                using (Bitmap bitmap = qrCode.GetGraphic(20))
+                {
+                    bitmap.Save(ms, ImageFormat.Png);
+                    ViewBag.QRCodeImage = "data:image/png;base64," + Convert.ToBase64String(ms.ToArray());
+                }
+            }
+            return View();
+        }
 
     }
 }
