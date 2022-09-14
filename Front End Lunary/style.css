@@ -267,6 +267,7 @@ section{
 
 
 
+
 @media screen and (min-width: 350px){
 .titulo{
   font-size: 60px;
@@ -298,7 +299,11 @@ section{
 
 .heart-btn{
   top: 92%;
+
   left: 37%;
+
+  left: 75%;
+
 }
 
 .heart{
@@ -318,6 +323,7 @@ section{
     width: 300px;
     
   }
+
 
   .heart-btn{
     top: 92%;
@@ -421,5 +427,106 @@ section{
 }
 
 
+  .heart-btn{
+    top: 92%;
+    left: 73%;
+  }
 
+  .heart{
+  height: 110px;
+  width: 110px;
+}
+
+
+@media screen and (min-width: 440px){
+.img{
+    height: 350px;
+    width: 350px;
+  }
+
+  .heart-btn{
+    top: 93%;
+    left: 70%;
+  }
+
+  .heart{
+    top: 97%;
+  }
+}
+
+@media screen and (min-width: 500px){
+  .img{
+    height: 400px;
+    width: 400px;
+  }
+
+  .heart-btn{
+    top: 93%;
+    left: 64%;
+  }
+
+  .heart{
+    top: 110%;
+    
+  }
+}
+
+@media screen and (min-width: 600px){
+  .img{
+    height: 450px;
+    width: 450px;
+  }
+
+  .heart-btn{
+    top: 93%;
+    left: 70%;
+  }
+
+  .heart{
+    height: 120px;
+    width: 120px;
+  }
+
+  .titulo{
+    font-size: 63px;
+  }
+  
+  .subtitulo{
+    font-size: 33px;
+  }
+  
+  .barra{
+    font-size: 28px;
+  }
+  
+  .Refeições{
+    font-size: 43px;
+  }
+  
+  .Ofertasdehoje{
+    font-size: 23px;
+  }
+  
+  .Pastel{
+    font-size: 43px;
+  }
+  
+  .preco{
+    font-size: 25px;
+  }
+}
+
+@media screen and (min-width: 280px){
+  .heart-btn{
+    top: 91%;
+    left: 80%;
+  }
+
+  .heart{
+    height: 110px;
+    width: 110px;
+  }
+}
+
+/* Deixar responsivo para galaxy fold(o coração)*\
 
