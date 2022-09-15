@@ -20,6 +20,7 @@ namespace Projeto_Lunary.Models
         public string RESTADESCRICAO { get; set; }
         public string RESTAPREPROMOCAO { get; set; }
         public string RESTACATEGORIA { get; set; }
+        public Nullable<int> Curtidas { get; set; }
         public byte[] imagem { get; set; }
     }
 }

@@ -1,14 +1,19 @@
-﻿using Projeto_Lunary.Models;
+﻿using Microsoft.Ajax.Utilities;
+using Projeto_Lunary.Models;
 using QRCoder;
 using System;
+using System.Activities.Validation;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Validation;
 using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
+using System.Runtime.Remoting.Contexts;
 using System.Web;
 using System.Web.Mvc;
+using System.Windows.Controls;
 
 namespace Projeto_Lunary.Controllers
 {
@@ -55,36 +60,43 @@ namespace Projeto_Lunary.Controllers
         }
 
         [HttpPost]
-        [HandleError]
+        
         public ActionResult Editar(int? id, string nome, float preco, string descricao, string precopromocao, string categoria, HttpPostedFileBase imagem)
         {
-            Restaurante atualizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-            atualizarrestaurante.RESTANOME = nome;
-            atualizarrestaurante.RESTAPRECO = preco;
-            atualizarrestaurante.RESTADESCRICAO = descricao;
-            atualizarrestaurante.RESTAPREPROMOCAO = precopromocao;
-            atualizarrestaurante.RESTACATEGORIA = categoria;
+
+            
+            Restaurante atualizarProduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+            atualizarProduto.RESTANOME = nome;
+            atualizarProduto.RESTAPRECO = preco;
+            atualizarProduto.RESTADESCRICAO = descricao;
+            atualizarProduto.RESTAPREPROMOCAO = precopromocao;
+            atualizarProduto.RESTACATEGORIA = categoria;
             using (var memoryStream = new MemoryStream())
             {
                 imagem.InputStream.CopyTo(memoryStream);
-                atualizarrestaurante.imagem = memoryStream.ToArray();
+                atualizarProduto.imagem = memoryStream.ToArray();
             }
-
-            bd.Entry(atualizarrestaurante).State = EntityState.Modified;
+            
+            bd.Entry(atualizarProduto).State = EntityState.Modified;
             bd.SaveChanges();
-            return RedirectToAction("index");
-        }
-        public ActionResult Excluir(int ? id)
-        {
-            Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-            return RedirectToAction("index");
-        }
-        [HttpPost]
-        public ActionResult ExcluirConfirma(int? id)
-        {
-            Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-            bd.Restaurante.Remove(excluiroproduto);
 
+            return RedirectToAction("index");
+
+        }
+
+
+
+        public ActionResult Excluir(int? id)
+        {
+            Restaurante excluirprato = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+            return View(excluirprato);
+        }
+
+        [HttpPost]
+        public ActionResult ExcluirConfirmar(int? id)
+        {
+            Restaurante excluirprato = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+            bd.Restaurante.Remove(excluirprato);
             try
             {
                 bd.SaveChanges();
@@ -93,8 +105,10 @@ namespace Projeto_Lunary.Controllers
             {
                 return RedirectToAction("index");
             }
+
             return RedirectToAction("index");
         }
+
         public ActionResult QRCODindex()
         {
             return View();

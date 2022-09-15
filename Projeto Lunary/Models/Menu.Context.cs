@@ -25,8 +25,8 @@ namespace Projeto_Lunary.Models
             throw new UnintentionalCodeFirstException();
         }
     
+        public virtual DbSet<Estabelecimento> Estabelecimento { get; set; }
         public virtual DbSet<Restaurante> Restaurante { get; set; }
         public virtual DbSet<Categorias> Categorias { get; set; }
-        public virtual DbSet<Estabelecimento> Estabelecimento { get; set; }
     }
 }

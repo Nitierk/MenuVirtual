@@ -33,7 +33,7 @@
                 <td>Descrição</td>
                 <td>Preço Promoção</td>
                 <td>Categoria</td>
-                <td></td>
+                <td>Imagem</td>
             </tr>
 
         </thead>
@@ -56,18 +56,19 @@
                         <td> </td>
                     }
                     <td>@item.RESTACATEGORIA</td>
-                    <td>@item.imagem</td>
-
                     <td>
-                        @{
-                            if (item.imagem != null)
-                            {
-                                var base64 = Convert.ToBase64String(item.imagem);
-                                var imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
-                                <img src='@imgSrc' style="max-width:100px; max-height:100px;" />
-                            }
-                        }
+                        @item.imagem
+                                       @{
+                                            if (item.imagem != null)
+                                            {
+                                                var base64 = Convert.ToBase64String(item.imagem);
+                                                var imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+                                                <img src='@imgSrc' style="max-width:300px; max-height:300px;" />
+                                            }
+                                        }
                     </td>
+
+                   
                     <td>
                         <a href="/Restaurante/Editar?id=@item.RESTAUID"><button type="button" class="btn btn-warning">Editar</button></a>
                         <a href="/Restaurante/Excluir?id=@item.RESTAUID"><button type="button" class="btn btn-danger">Excluir</button></a>

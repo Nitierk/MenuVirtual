@@ -24,6 +24,7 @@
     <Property Name="RESTADESCRICAO" Type="varchar" MaxLength="300" />
     <Property Name="RESTAPREPROMOCAO" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="RESTACATEGORIA" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="Curtidas" Type="int" />
     <Property Name="imagem" Type="varbinary(max)" />
   </EntityType>
   <!--Errors Found During Generation:
