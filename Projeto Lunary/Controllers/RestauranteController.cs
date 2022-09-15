@@ -16,7 +16,7 @@ namespace Projeto_Lunary.Controllers
         BDLunary bd = new BDLunary();
         public ActionResult Index()
         {
-            if (Session["MyCurso"] != null)
+            if (Session["MyCurso"] == null)
             {
                 return View(bd.Restaurante.ToList());
             }

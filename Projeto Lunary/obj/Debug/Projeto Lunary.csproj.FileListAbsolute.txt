@@ -268,3 +268,5 @@ C:\Users\android\Desktop\Gtihub Kauan\MenuVirtual\Projeto Lunary\obj\Debug\Proje
 C:\Users\android\Desktop\Gtihub Kauan\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.CopyComplete
 C:\Users\android\Desktop\Gtihub Kauan\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.dll
 C:\Users\android\Desktop\Gtihub Kauan\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.pdb
+C:\Users\android\Desktop\Gtihub Kauan\MenuVirtual\Projeto Lunary\bin\System.Buffers.dll
+C:\Users\android\Desktop\Gtihub Kauan\MenuVirtual\Projeto Lunary\bin\System.Memory.dll

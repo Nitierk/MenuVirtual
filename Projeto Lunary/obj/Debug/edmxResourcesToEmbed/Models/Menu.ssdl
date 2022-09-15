@@ -1,5 +1,19 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="LunaryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Estabelecimento">
+    <Key>
+      <PropertyRef Name="ESTABID" />
+    </Key>
+    <Property Name="ESTABID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ESTABNOME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ESTABENDERECO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ESTABBAIRRO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ESTATELEFONE" Type="int" Nullable="false" />
+    <Property Name="ESTABCEP" Type="int" Nullable="false" />
+    <Property Name="ESTABLOGIN" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ESTABSENHA" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ESTATIPO" Type="varchar" MaxLength="100" />
+  </EntityType>
   <EntityType Name="Restaurante">
     <Key>
       <PropertyRef Name="RESTAUID" />
@@ -11,6 +25,7 @@
     <Property Name="RESTAPREPROMOCAO" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="RESTACATEGORIA" Type="varchar" MaxLength="300" Nullable="false" />
     <Property Name="imagem" Type="varbinary(max)" />
+    <Property Name="Curtidas" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'Lunary.dbo.Categorias' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -21,6 +36,7 @@ warning 6002: The table/view 'Lunary.dbo.Categorias' does not have a primary key
     <Property Name="RESTACATEGORIA" Type="varchar" MaxLength="300" Nullable="false" />
   </EntityType>
   <EntityContainer Name="LunaryModelStoreContainer">
+    <EntitySet Name="Estabelecimento" EntityType="Self.Estabelecimento" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Restaurante" EntityType="Self.Restaurante" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Categorias" EntityType="Self.Categorias" store:Type="Views" store:Schema="dbo">
       <DefiningQuery>SELECT 

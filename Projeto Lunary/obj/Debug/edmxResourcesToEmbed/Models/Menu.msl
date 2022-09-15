@@ -11,6 +11,7 @@
     <EntitySetMapping Name="Restaurante">
       <EntityTypeMapping TypeName="LunaryModel.Restaurante">
         <MappingFragment StoreEntitySet="Restaurante">
+          <ScalarProperty Name="Curtidas" ColumnName="Curtidas" />
           <ScalarProperty Name="imagem" ColumnName="imagem" />
           <ScalarProperty Name="RESTACATEGORIA" ColumnName="RESTACATEGORIA" />
           <ScalarProperty Name="RESTAPREPROMOCAO" ColumnName="RESTAPREPROMOCAO" />
@@ -18,6 +19,21 @@
           <ScalarProperty Name="RESTAPRECO" ColumnName="RESTAPRECO" />
           <ScalarProperty Name="RESTANOME" ColumnName="RESTANOME" />
           <ScalarProperty Name="RESTAUID" ColumnName="RESTAUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Estabelecimento">
+      <EntityTypeMapping TypeName="LunaryModel.Estabelecimento">
+        <MappingFragment StoreEntitySet="Estabelecimento">
+          <ScalarProperty Name="ESTATIPO" ColumnName="ESTATIPO" />
+          <ScalarProperty Name="ESTABSENHA" ColumnName="ESTABSENHA" />
+          <ScalarProperty Name="ESTABLOGIN" ColumnName="ESTABLOGIN" />
+          <ScalarProperty Name="ESTABCEP" ColumnName="ESTABCEP" />
+          <ScalarProperty Name="ESTATELEFONE" ColumnName="ESTATELEFONE" />
+          <ScalarProperty Name="ESTABBAIRRO" ColumnName="ESTABBAIRRO" />
+          <ScalarProperty Name="ESTABENDERECO" ColumnName="ESTABENDERECO" />
+          <ScalarProperty Name="ESTABNOME" ColumnName="ESTABNOME" />
+          <ScalarProperty Name="ESTABID" ColumnName="ESTABID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
