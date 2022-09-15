@@ -4,7 +4,7 @@
 }
 <head>
     <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="~/Scripts/Menu/FilterCate.js"></script>
 </head>
 
@@ -132,27 +132,17 @@
             var t = (this.id);
             let el = document.getElementById(t);
 
-           
-            el.classList.add('heart-active');
+
             
-
-            //$('.heart').toggleClass("heart-active")
-        });
-
-        $('.heart-active').click(function () {
-
-            var t = (this.id);
-            let el = document.getElementById(t);
-
-            /*if (el.hasClass('heart-active')) {
+            if (el.classList.contains('heart-active')){
                 el.classList.remove('heart-active');
             }
             else {
                 el.classList.add('heart-active');
-            } */
+            }
 
-            el.classList.remove('heart-active');
-
+            
+           
 
             //$('.heart').toggleClass("heart-active")
         });
