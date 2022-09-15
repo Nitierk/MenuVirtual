@@ -18,6 +18,7 @@ namespace Projeto_Lunary.Controllers
         BDLunary bd = new BDLunary();
         public ActionResult Index()
         {
+            ViewBag.ListCategorias = bd.Categorias.ToList();
             return View(bd.Restaurante.ToList());
         }
 
@@ -116,6 +117,24 @@ namespace Projeto_Lunary.Controllers
                 }
             }
             return View();
+        }
+
+        [HttpPost]
+        public ActionResult ContagemLikes(int? id, bool status)
+        {
+            Restaurante atulizarLikes = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+            if (status)
+            {
+                atulizarLikes.Curtidas += 1;
+            }
+            else
+            {
+                atulizarLikes.Curtidas -= 1;
+            }
+
+            bd.Entry(atulizarLikes).State = EntityState.Modified;
+            bd.SaveChanges();
+            return RedirectToAction("index");
         }
 
     }

@@ -25,6 +25,7 @@
     <Property Name="RESTAPREPROMOCAO" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="RESTACATEGORIA" Type="varchar" MaxLength="300" Nullable="false" />
     <Property Name="imagem" Type="varbinary(max)" />
+    <Property Name="Curtidas" Type="int" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'Lunary.dbo.Categorias' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->

@@ -1,83 +1,156 @@
-﻿<link href="~/Content/Site.css" rel="stylesheet" />
-@model IEnumerable<Projeto_Lunary.Models.Restaurante>
+﻿@model IEnumerable<Projeto_Lunary.Models.Restaurante>
 @{
     ViewBag.Title = "Pratos";
-   
 }
+<head>
+    <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <script src="~/Scripts/Menu/FilterCate.js"></script>
+</head>
 
-<h2>Pratos</h2>
+<body>
 
-<thead>
-        <h1>Lunary</h1>
-        <p>Cardápio</p>
-    </thead>
+    <h1 class="titulo">Lunary</h1>
+    <p class="subtitulo">Cardápio</p>
 
-    <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="collapse navbar-collapse">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    
-                </li>
-            </ul>
+
+
+    <div class="barraVermelha">.</div>
+
+
+    <p class="barra">Menu</p>
+
+
+
+    <!-- Filtro Categorias -->
+    <div class="botao btn-group">
+        <div class="dropdown">
+            <select style="text-transform: uppercase;" onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
+
+                @foreach (var item in ViewBag.ListCategorias)
+                {
+                    <option  onchange="FiltroCategorias()" value="@item.RESTACATEGORIA">@item.RESTACATEGORIA</option>
+
+                }
+            </select>
         </div>
-    </nav>
+    </div>
+
+
+    <!-- Pratos -->
+    <div>
+        @foreach (var item in Model)
+        {
+            <div class="row pratos @item.RESTACATEGORIA">
+                <div class="col-lg-12">
+                    <div data-toggle="modal" data-target="#PratosDetalhe-@item.RESTAUID" data-descricao="@item.RESTADESCRICAO">
+                        <img class="img" src="~/Content/Menu/img/PratoExemplo.png" width="232" height="232">
+                    </div>
+
+                    <h3 class="text-center name">@item.RESTANOME</h3>
+
+                    <!--Btn Coração-->
+                    <div class="heart-btn" >
+                        <div class="content">
+                            <form action="" method="post">
+                                @*<button type="submit" class="heart btn" id="Heart-@item.RESTAUID"></button>*@
+                                <span class="heart" id="@item.RESTAUID"></span>
+                            </form>
+                           
+
+                        </div>
+                    </div>
+                    <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
+                </div>
+            </div>
+
+            <!-- Modal Exibir/Detalhes-->
+            <div class="modal fade" id="PratosDetalhe-@item.RESTAUID" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <div class="modal-dialog" role="document">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="exampleModalLabel">Prato Detalhes</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                <span aria-hidden="true">&times;</span>
+                            </button>
+
+
+                        </div>
+                        <div class="modal-body">
+                            
+                            <div class="col-lg-12">
+                                <img class="imgmodal" src="~/Content/Menu/img/PratoExemplo.png" width="232" height="232">
+                                <h3 class="text-center name">@item.RESTANOME</h3>
+
+                                <p> @item.RESTADESCRICAO</p>
+                                <h3 class="text-center name">R$ @item.RESTAPRECO.ToString("F")</h3>
+                            </div>
+                        </div>
+
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        }
+
+    </div>
 
 
 
-    <table class="table">
-        <thead>
-            <tr>
-                <td>Id</td>
-                <td>Prato</td>
-                <td>Preço</td>
-                <td>Descrição</td>
-                <td>Preço Promoção</td>
-                <td>Categoria</td>
-                <td></td>
-            </tr>
 
-        </thead>
-        <tbody>
-            @foreach (var item in Model)
-            {
-                <tr>
-                    <td>@item.RESTAUID</td>
-                    <td>@item.RESTANOME</td>
-                    <td>R$@item.RESTAPRECO</td>
-                    <td>@item.RESTADESCRICAO</td>
-                    @if (@item.RESTAPREPROMOCAO != null)
-                    {
-                        <td>
-                            R$ @item.RESTAPREPROMOCAO
-                        </td>
-                    }
-                    else
-                    {
-                        <td> </td>
-                    }
-                    <td>@item.RESTACATEGORIA</td>
-                    <td>@item.imagem</td>
 
-                    <td>
-                        @{
-                            if (item.imagem != null)
-                            {
-                                var base64 = Convert.ToBase64String(item.imagem);
-                                var imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
-                                <img src='@imgSrc' style="max-width:100px; max-height:100px;" />
-                            }
-                        }
-                    </td>
-                    <td>
-                        <a href="/Restaurante/Editar?id=@item.RESTAUID"><button type="button" class="btn btn-warning">Editar</button></a>
-                        <a href="/Restaurante/Excluir?id=@item.RESTAUID"><button type="button" class="btn btn-danger">Excluir</button></a>
 
-                    </td>
-                </tr>
+
+    
+   
+    <script>
+
+        window.onload = () => {
+            document.queryCommandIndeterm
+            FiltroCategorias()
+        }
+  
+        $(document).ready(function () {
+
+        //Like
+        $('.heart').click(function () {   
+
+            var id = (this.id);
+            var url = "/Restaurante/ContagemLikes";
+            var status;
+            let el = document.getElementById(id);
+            if (el.classList.contains('heart-active')){
+                el.classList.remove('heart-active');
+                status = false;
+                $.post(url, { id: id, status: status }, function (data) {
+
+                });
             }
-        </tbody>
+            else {
+                el.classList.add('heart-active');
+                status = true;
+                $.post(url, { id: id, status: status }, function (data) {
 
-       
+                });
+            }
 
-    </table>
+            
+            });
+
+        });
+
+
+
+ 
+
+        
+    </script>
+</body>
+
+
+
 

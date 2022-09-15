@@ -30,6 +30,7 @@
           <Property Name="RESTAPREPROMOCAO" Type="varchar" MaxLength="100" Nullable="false" />
           <Property Name="RESTACATEGORIA" Type="varchar" MaxLength="300" Nullable="false" />
           <Property Name="imagem" Type="varbinary(max)" />
+          <Property Name="Curtidas" Type="int" />
         </EntityType>
         <!--Errors Found During Generation:
 warning 6002: The table/view 'Lunary.dbo.Categorias' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -68,6 +69,7 @@ warning 6002: The table/view 'Lunary.dbo.Categorias' does not have a primary key
           <Property Name="RESTAPREPROMOCAO" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="RESTACATEGORIA" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
           <Property Name="imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="Curtidas" Type="Int32" />
         </EntityType>
         <EntityType Name="Categorias">
           <Key>
@@ -98,6 +100,7 @@ warning 6002: The table/view 'Lunary.dbo.Categorias' does not have a primary key
           <EntitySetMapping Name="Restaurante">
             <EntityTypeMapping TypeName="LunaryModel.Restaurante">
               <MappingFragment StoreEntitySet="Restaurante">
+                <ScalarProperty Name="Curtidas" ColumnName="Curtidas" />
                 <ScalarProperty Name="imagem" ColumnName="imagem" />
                 <ScalarProperty Name="RESTACATEGORIA" ColumnName="RESTACATEGORIA" />
                 <ScalarProperty Name="RESTAPREPROMOCAO" ColumnName="RESTAPREPROMOCAO" />
