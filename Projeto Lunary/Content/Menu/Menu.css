@@ -1,4 +1,7 @@
-﻿body {
+﻿
+
+
+body {
     padding-top: 50px;
     padding-bottom: 20px;
 }
@@ -28,6 +31,58 @@ textarea {
     background-color: #777;
     border-color: #fff
 }
+
+
+/* Scrol to Top */
+
+html {
+    scroll-behavior: smooth;
+}
+
+#progress {
+    position: fixed;
+    bottom: 20px;
+    right: 10px;
+    height: 50px;
+    width: 50px;
+    display: none;
+    place-items: center;
+    border-radius: 50%;
+    box-shadow: 0 0 10px brown;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+#progress-value {
+    display: block;
+    height: calc(100% - 15px);
+    width: calc(100% - 15px);
+    background-color: rgba(165, 42, 42, 0.89);
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 25px;
+    color: #001a2e;
+}
+
+.cor {
+    background-color: #ffffff;
+}
+
+.gotopbtn {
+    position: fixed;
+    width: 50px;
+    height: 50px;
+    background: #27ae60;
+    bottom: 40px;
+    right: 50px;
+    text-decoration: none;
+    text-align: center;
+    line-height: 50px;
+    color: white;
+    font-size: 22px;
+}
+
 
 /* Layout */
 
@@ -71,16 +126,18 @@ textarea {
 
 .Ofertasdehoje {
     text-align: center;
-    color: rgb(126, 23, 23);
+    color: brown;
+    margin-top: 30px;
 }
 
 .row {
     margin-top: 40px;
 }
 
-.pratos{
+.pratos {
     display: none;
 }
+
 .show {
     display: block;
 }
@@ -93,11 +150,12 @@ textarea {
 }
 
 .preco {
-    
-    margin-right: 110px;
     margin-top: 28px;
-    
+    color: brown;
+    font-style: italic;
+    font-weight: bold;
     font-size: 20px;
+    font-family: arial, sans-serif;
 }
 
 .name {
@@ -106,10 +164,15 @@ textarea {
 }
 
 .progress {
-    margin-left: 130px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    margin-right: 130px;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.semibotao {
+    height: 80vh;
+    position: relative;
 }
 
 .btn-group {
@@ -118,12 +181,16 @@ textarea {
     padding: 6px 20px;
 }
 
-.img{
+.img2 {
+    text-align: center;
+}
+
+.img {
     border-top: 4px solid brown;
     border-bottom: 4px solid brown;
     border-left: 4px solid brown;
     border-right: 4px solid brown;
-    margin-left: 80px;
+    border-radius: 15px
 }
 
 .imgmodal {
@@ -137,14 +204,16 @@ textarea {
 
 
 
+
+
 /* Botão de Like */
 
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
 
 .heart-btn {
     position: absolute;
-    top: 92%;
-    left: 70%;
+    top: 91%;
+    left: 40%;
     transform: translate(-50%,-50%);
 }
 
@@ -175,7 +244,7 @@ textarea {
     font-family: 'Montserrat',sans-serif;
 }
 
-.heart-active{
+.heart-active {
     content: '13';
     color: #000;
 }
@@ -189,20 +258,6 @@ textarea {
     background-position: right;
 }
 
-.jumbotron .btn:focus{
-    outline: thin dotted;
-        outline: 0px auto -webkit-focus-ring-color;
-        outline-offset: 0px;
-    }
-.jumbotron:focus {
-     outline: thin dotted;
-     outline: 0px auto -webkit-focus-ring-color;
-        outline-offset: 0px;
-    }
-    .jumbotron:hover {
-        border:none!important;
-        background-color: white!important;
-    }       
 
 @keyframes animate {
     0% {
@@ -211,6 +266,170 @@ textarea {
 
     100% {
         background-position: right;
+    }
+}
+
+/* Responsivo */
+
+@media screen and (min-width: 350px) {
+    .titulo {
+        font-size: 60px;
+    }
+
+    .subtitulo {
+        font-size: 30px;
+    }
+
+    .barra {
+        font-size: 25px;
+    }
+
+    .Refeições {
+        font-size: 40px;
+    }
+
+    .Ofertasdehoje {
+        font-size: 20px;
+    }
+
+    .Pastel {
+        font-size: 30px;
+    }
+
+    .preco {
+        font-size: 22px;
+    }
+
+    .heart-btn {
+        top: 92%;
+        left: 20%;
+    }
+
+    .heart {
+        height: 110px;
+        width: 110px;
+    }
+
+    .img {
+        height: 250px;
+        width: 250px;
+    }
+}
+
+@media screen and (min-width: 390px) {
+    .img {
+        height: 300px;
+        width: 300px;
+    }
+
+
+    .heart-btn {
+        top: 92%;
+        left: 38%;
+    }
+
+    .heart {
+        height: 110px;
+        width: 110px;
+    }
+}
+
+
+
+
+
+
+
+@media screen and (min-width: 280px) {
+    .heart-btn {
+        top: 91%;
+        left: 27%;
+    }
+
+    .heart {
+        height: 110px;
+        width: 110px;
+    }
+}
+
+
+
+
+
+@media screen and (min-width: 440px) {
+    .img {
+        height: 350px;
+        width: 350px;
+    }
+
+    .heart-btn {
+        top: 93%;
+        left: 30%;
+    }
+
+    .heart {
+        top: 97%;
+    }
+}
+
+@media screen and (min-width: 500px) {
+    .img {
+        height: 400px;
+        width: 400px;
+    }
+
+    .heart-btn {
+        top: 93%;
+        left: 30%;
+    }
+
+    .heart {
+        top: 110%;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .img {
+        height: 450px;
+        width: 450px;
+    }
+
+    .heart-btn {
+        top: 93%;
+        left: 30%;
+    }
+
+    .heart {
+        height: 120px;
+        width: 120px;
+    }
+
+    .titulo {
+        font-size: 63px;
+    }
+
+    .subtitulo {
+        font-size: 33px;
+    }
+
+    .barra {
+        font-size: 28px;
+    }
+
+    .Refeições {
+        font-size: 43px;
+    }
+
+    .Ofertasdehoje {
+        font-size: 23px;
+    }
+
+    .Pastel {
+        font-size: 43px;
+    }
+
+    .preco {
+        font-size: 25px;
     }
 }
 
