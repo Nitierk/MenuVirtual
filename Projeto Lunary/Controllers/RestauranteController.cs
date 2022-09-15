@@ -129,6 +129,12 @@ namespace Projeto_Lunary.Controllers
             return RedirectToAction("index");
         }
 
+        [HttpPost]
+        public ActionResult ContagemLikes()
+        {
 
+
+
+        }
     }
 }

@@ -52,7 +52,11 @@
                     <!--Btn Coração-->
                     <div class="heart-btn" >
                         <div class="content">
-                            <span class="heart" id="Heart-@item.RESTAUID"></span>
+                            <form action="/Restaurante/Index/ContagemLikes" method="post">
+                                <button type="submit"  class="heart" id="Heart-@item.RESTAUID"></button>
+                                @*@<span  class="heart" id="Heart-@item.RESTAUID"></span>*@
+                            </form>
+                           
 
                         </div>
                     </div>
@@ -60,7 +64,7 @@
                 </div>
             </div>
 
-            <!-- Modal Exibir-->
+            <!-- Modal Exibir/Detalhes-->
             <div class="modal fade" id="PratosDetalhe-@item.RESTAUID" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                 <div class="modal-dialog" role="document">
                     <div class="modal-content">
@@ -109,45 +113,22 @@
             document.queryCommandIndeterm
             FiltroCategorias()
         }
+  
+        $(document).ready(function () {
 
-        //Modal
-        $('#PratosDetalhe').on('show.bs.modal', function (event) {
-            var prato = $(event.relatedTarget) // Button that triggered the modal
-            var descricao = prato.data('descricao') // Extract info from data-* attributes
-            // If necessary, you could initiate an AJAX request here (and then do the updating in a callback).
-            // Update the modal's content. We'll use jQuery here, but you could use a data binding library or other methods instead.
-            var modal = $(this)
-            modal.find('.modal-title').text('New message to ' + descricao)
-            modal.find('.modal-body h3').val(descricao)
-            bootbox.dialog(
-
-            );
-
-        })
-       
-        
-    $(document).ready(function () {
+        //Like
         $('.heart').click(function () {   
 
             var t = (this.id);
             let el = document.getElementById(t);
-
-
-            
             if (el.classList.contains('heart-active')){
                 el.classList.remove('heart-active');
             }
             else {
                 el.classList.add('heart-active');
             }
-
-            
-           
-
-            //$('.heart').toggleClass("heart-active")
         });
-
-       
+ 
     });
         
     </script>
