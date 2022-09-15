@@ -63,8 +63,6 @@ namespace Projeto_Lunary.Controllers
         
         public ActionResult Editar(int? id, string nome, float preco, string descricao, string precopromocao, string categoria, HttpPostedFileBase imagem)
         {
-
-            
             Restaurante atualizarProduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
             atualizarProduto.RESTANOME = nome;
             atualizarProduto.RESTAPRECO = preco;
@@ -76,10 +74,18 @@ namespace Projeto_Lunary.Controllers
                 imagem.InputStream.CopyTo(memoryStream);
                 atualizarProduto.imagem = memoryStream.ToArray();
             }
-            
-            bd.Entry(atualizarProduto).State = EntityState.Modified;
-            bd.SaveChanges();
 
+            bd.Entry(atualizarProduto).State = EntityState.Modified;
+            try
+            {
+                bd.SaveChanges();
+            }
+            catch (Exception)
+            {
+                return RedirectToAction("index");
+                
+            }
+            
             return RedirectToAction("index");
 
         }
