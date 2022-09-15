@@ -29,16 +29,19 @@
 
 
     <!-- Filtro Categorias -->
-    <div class="botao btn-group">
-        <div class="dropdown">
-            <select style="text-transform: uppercase;" onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
+    <div class="semibotao">
+        <div class="botao btn-group">
+            <div class="dropdown">
 
-                @foreach (var item in ViewBag.ListCategorias)
-                {
-                    <option onchange="FiltroCategorias()" value="@item.RESTACATEGORIA">@item.RESTACATEGORIA</option>
+                <select style="text-transform: uppercase;" onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
 
-                }
-            </select>
+                    @foreach (var item in ViewBag.ListCategorias)
+                    {
+                        <option onchange="FiltroCategorias()" value="@item.RESTACATEGORIA">@item.RESTACATEGORIA</option>
+
+                    }
+                </select>
+            </div>
         </div>
     </div>
 

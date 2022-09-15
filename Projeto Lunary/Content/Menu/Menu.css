@@ -170,13 +170,12 @@ html {
     transform: translate(-50%, -50%);
 }
 
-.semibotao {
-    height: 80vh;
+.semibotao {   
     position: relative;
+    text-align: center;
 }
 
 .btn-group {
-    margin-left: 95px;
     border: 2px solid #a52a2a;
     padding: 6px 20px;
 }
@@ -212,7 +211,7 @@ html {
 
 .heart-btn {
     position: absolute;
-    top: 91%;
+    top: 95%;
     left: 40%;
     transform: translate(-50%,-50%);
 }
@@ -301,7 +300,7 @@ html {
     }
 
     .heart-btn {
-        top: 92%;
+        top: 95%;
         left: 20%;
     }
 
@@ -324,7 +323,7 @@ html {
 
 
     .heart-btn {
-        top: 92%;
+        top: 95%;
         left: 38%;
     }
 
@@ -342,7 +341,7 @@ html {
 
 @media screen and (min-width: 280px) {
     .heart-btn {
-        top: 91%;
+        top: 95%;
         left: 27%;
     }
 
@@ -363,12 +362,12 @@ html {
     }
 
     .heart-btn {
-        top: 93%;
+        top: 95%;
         left: 30%;
     }
 
     .heart {
-        top: 97%;
+        top: 95%;
     }
 }
 
@@ -379,7 +378,7 @@ html {
     }
 
     .heart-btn {
-        top: 93%;
+        top: 95%;
         left: 30%;
     }
 
@@ -395,7 +394,7 @@ html {
     }
 
     .heart-btn {
-        top: 93%;
+        top: 95%;
         left: 30%;
     }
 
