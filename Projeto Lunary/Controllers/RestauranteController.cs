@@ -1,7 +1,9 @@
 ﻿using Projeto_Lunary.Models;
+using QRCoder;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Drawing;
 using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
@@ -16,35 +18,17 @@ namespace Projeto_Lunary.Controllers
         BDLunary bd = new BDLunary();
         public ActionResult Index()
         {
-            ViewBag.ListCategorias = bd.Categorias.ToList();
-            if (Session["MyCurso"] == null)
-            {
-                
-                return View(bd.Restaurante.ToList());
-            }
-            else
-            {
-                return RedirectToAction("Login", "Home");
-            }
-
+            return View(bd.Restaurante.ToList());
         }
 
         public ActionResult Create()
         {
-            if (Session["MyCurso"] != null)
-            {
-                ViewBag.listacategoria = bd.Categorias.ToList();
-                return View();
-            }
-            else
-            {
-                return RedirectToAction("Login", "Home");
-            }
-
+            ViewBag.listacategoria = bd.Categorias.ToList();
+            return View();
         }
 
         [HttpPost]
-        public ActionResult Create(string nome, float preco, string descricao, string precopromocao, string categoria, HttpPostedFileBase imagem)
+        public ActionResult Create (string nome,float preco, string descricao, string precopromocao, string categoria, HttpPostedFileBase imagem)
         {
             Restaurante novoRestaurante = new Restaurante();
             novoRestaurante.RESTANOME = nome;
@@ -65,20 +49,13 @@ namespace Projeto_Lunary.Controllers
         [HttpGet]
         public ActionResult Editar(int? id)
         {
-            if (Session["MyCurso"] != null)
-            {
-                Restaurante Localizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-                ViewBag.listacategoria = bd.Categorias.ToList();
-                return View(Localizarrestaurante);
-            }
-            else
-            {
-                return RedirectToAction("Login", "Home");
-            }
-
+            Restaurante Localizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+            ViewBag.listacategoria = bd.Categorias.ToList();
+            return View(Localizarrestaurante);
         }
 
         [HttpPost]
+        [HandleError]
         public ActionResult Editar(int? id, string nome, float preco, string descricao, string precopromocao, string categoria, HttpPostedFileBase imagem)
         {
             Restaurante atualizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
@@ -93,24 +70,14 @@ namespace Projeto_Lunary.Controllers
                 atualizarrestaurante.imagem = memoryStream.ToArray();
             }
 
-
             bd.Entry(atualizarrestaurante).State = EntityState.Modified;
             bd.SaveChanges();
             return RedirectToAction("index");
         }
-
-        public ActionResult Excluir(int? id)
+        public ActionResult Excluir(int ? id)
         {
-            if (Session["MyCurso"] != null)
-            {
-                Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-                return RedirectToAction("index");
-            }
-            else
-            {
-                return RedirectToAction("Login", "Home");
-            }
-
+            Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+            return RedirectToAction("index");
         }
         [HttpPost]
         public ActionResult ExcluirConfirma(int? id)
@@ -128,23 +95,28 @@ namespace Projeto_Lunary.Controllers
             }
             return RedirectToAction("index");
         }
+        public ActionResult QRCODindex()
+        {
+            return View();
+        }
 
         [HttpPost]
-        public ActionResult ContagemLikes(int? id, bool status)
+        public ActionResult QRCODindex(string qrcode)
         {
-            Restaurante atulizarLikes = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-            if (status)
+            using (MemoryStream ms = new MemoryStream())
             {
-                atulizarLikes.Curtidas += 1;
-            }
-            else
-            {
-                atulizarLikes.Curtidas -= 1;
-            }
+                QRCodeGenerator qRCodeGenerator = new QRCodeGenerator();
+                QRCodeData qrCodeData = qRCodeGenerator.CreateQrCode(qrcode, QRCodeGenerator.ECCLevel.Q);
+                QRCode qrCode = new QRCode(qrCodeData);
 
-            bd.Entry(atulizarLikes).State = EntityState.Modified;
-            bd.SaveChanges();
-            return RedirectToAction("index");
+                using (Bitmap bitmap = qrCode.GetGraphic(20))
+                {
+                    bitmap.Save(ms, ImageFormat.Png);
+                    ViewBag.QRCodeImage = "data:image/png;base64," + Convert.ToBase64String(ms.ToArray());
+                }
+            }
+            return View();
         }
+
     }
 }
