@@ -19,6 +19,8 @@ body{
     align-items: center;
     justify-content: center;
     height: 100vh;
+  
+    
     background-image: radial-gradient(circle at 14.64% 111.24%, #f25553 0, #f25353 50%, #f25153 100%);
     font-family: 'Poppins', sans-serif;
 }
@@ -46,8 +48,9 @@ form h2 {
 input{
     height: 45px;
     margin: 20px;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 500;
+    
 }
 
 .input-field{
@@ -105,4 +108,35 @@ input[type='text']:focus ~ span, input[type='password']:focus ~ span{
     background-color: #d8d860;
     transform: scale(0.98);
     transition: 0.125s;
+}
+
+
+@media screen and (min-width: 725px){
+    .h2{
+        color: #ffff00;
+    }
+}
+
+@media screen and (max-width: 725px){
+    .form{
+        width: 320px;
+        height: 320px;
+    }
+    .h2{
+        color: #ffff00;
+    }
+    
+    
+    
+}
+
+@media screen and (max-width: 635px){
+    .form{
+        width: 300px;
+        height: 300px;
+    }
+    .h2{
+        margin-bottom: 7px;
+        color: #ffff00;
+    }
 }
