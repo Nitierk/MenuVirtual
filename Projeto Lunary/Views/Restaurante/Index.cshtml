@@ -52,9 +52,9 @@
                     <!--Btn Coração-->
                     <div class="heart-btn" >
                         <div class="content">
-                            <form action="/Restaurante/Index/ContagemLikes" method="post">
-                                <button type="submit"  class="heart" id="Heart-@item.RESTAUID"></button>
-                                @*@<span  class="heart" id="Heart-@item.RESTAUID"></span>*@
+                            <form action="" method="post">
+                                @*<button type="submit" class="heart btn" id="Heart-@item.RESTAUID"></button>*@
+                                <span class="heart" id="@item.RESTAUID"></span>
                             </form>
                            
 
@@ -119,17 +119,34 @@
         //Like
         $('.heart').click(function () {   
 
-            var t = (this.id);
-            let el = document.getElementById(t);
+            var id = (this.id);
+            var url = "/Restaurante/ContagemLikes";
+            var status;
+            let el = document.getElementById(id);
             if (el.classList.contains('heart-active')){
                 el.classList.remove('heart-active');
+                status = false;
+                $.post(url, { id: id, status: status }, function (data) {
+
+                });
             }
             else {
                 el.classList.add('heart-active');
+                status = true;
+                $.post(url, { id: id, status: status }, function (data) {
+
+                });
             }
+
+            
+            });
+
         });
+
+
+
  
-    });
+
         
     </script>
 </body>

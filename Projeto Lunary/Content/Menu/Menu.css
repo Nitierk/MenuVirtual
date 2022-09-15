@@ -189,6 +189,21 @@ textarea {
     background-position: right;
 }
 
+.jumbotron .btn:focus{
+    outline: thin dotted;
+        outline: 0px auto -webkit-focus-ring-color;
+        outline-offset: 0px;
+    }
+.jumbotron:focus {
+     outline: thin dotted;
+     outline: 0px auto -webkit-focus-ring-color;
+        outline-offset: 0px;
+    }
+    .jumbotron:hover {
+        border:none!important;
+        background-color: white!important;
+    }       
+
 @keyframes animate {
     0% {
         background-position: left;
