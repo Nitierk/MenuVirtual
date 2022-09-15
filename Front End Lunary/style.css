@@ -8,7 +8,7 @@
 
 html{
   scroll-behavior: smooth;
-  background-color: #000;
+  background-color: #ffffff;
 }
 
 #progress{
@@ -21,7 +21,7 @@ html{
   display: none;
   place-items: center;
   border-radius: 50%;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 0 10px brown;
   cursor: pointer;
   z-index: 1000;
 }
@@ -30,7 +30,7 @@ html{
   display: block;
   height: calc(100% - 15px);
   width: calc(100% - 15px);
-  background-color: #ffffff ;
+  background-color: rgba(165, 42, 42, 0.89);
   border-radius: 50%;
   display: grid;
   place-items: center;
@@ -39,7 +39,7 @@ html{
 }
 
 .cor{
-  background-color: #000;
+  background-color: #ffffff;
 }
 
 body{
@@ -71,7 +71,7 @@ section{
 
   .titulo{
     text-align: center;
-    color: #a52a2a;
+    color: brown;
     margin-bottom: 60px;
     margin-top: 50px;
 }
@@ -84,7 +84,7 @@ section{
 
 .subtitulo{
     text-align: center;
-    color: #a52a2a; 
+    color: brown; 
     margin-bottom: 60px;
 }
 
@@ -110,7 +110,7 @@ section{
 
 .Ofertasdehoje{
     text-align: center;
-    color: rgb(126, 23, 23);
+    color: brown;
     margin-top: 30px;
 }
 
@@ -129,7 +129,7 @@ section{
 .preco{
     
     margin-top: 28px;
-    color: #000;
+    color: brown;
     font-style: italic;
 	font-weight: bold;
 	font-size: 20px;
@@ -166,7 +166,7 @@ section{
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    border: 2px solid #a52a2a;
+    border: 2px solid brown;
     padding: 6px 20px;
     margin-top: 15px;
 }
@@ -191,6 +191,7 @@ section{
   position: absolute;
   top: 91%;
   left: 40%;
+  
   transform: translate(-50%,-50%);
 }
 .content{
@@ -215,12 +216,12 @@ section{
   left: 21%;
   transform: translate(-50%,-50%);
 }
-.text{
+/*.text{
   font-size: 21px;
   margin-left: 30px;
   color: grey;
   font-family: 'Montserrat',sans-serif;
-}
+}*/
 
 .heart-active{
   content: '13';
@@ -300,10 +301,7 @@ section{
 .heart-btn{
   top: 92%;
 
-  left: 37%;
-
-  left: 75%;
-
+  left: 30%;
 }
 
 .heart{
@@ -427,15 +425,7 @@ section{
 }
 
 
-  .heart-btn{
-    top: 92%;
-    left: 73%;
-  }
-
-  .heart{
-  height: 110px;
-  width: 110px;
-}
+  
 
 
 @media screen and (min-width: 440px){
@@ -446,7 +436,7 @@ section{
 
   .heart-btn{
     top: 93%;
-    left: 70%;
+    left: 30%;
   }
 
   .heart{
@@ -462,7 +452,7 @@ section{
 
   .heart-btn{
     top: 93%;
-    left: 64%;
+    left: 30%;
   }
 
   .heart{
@@ -479,7 +469,7 @@ section{
 
   .heart-btn{
     top: 93%;
-    left: 70%;
+    left: 30%;
   }
 
   .heart{
@@ -516,17 +506,7 @@ section{
   }
 }
 
-@media screen and (min-width: 280px){
-  .heart-btn{
-    top: 91%;
-    left: 80%;
-  }
 
-  .heart{
-    height: 110px;
-    width: 110px;
-  }
-}
 
-/* Deixar responsivo para galaxy fold(o coração)*\
+
 
