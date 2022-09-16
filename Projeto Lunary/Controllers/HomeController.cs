@@ -9,7 +9,7 @@ namespace Projeto_Lunary.Controllers
 {
     public class HomeController : Controller
     {
-        BDLunary bd = new BDLunary();
+        LunaryEntities bd = new LunaryEntities();
         public ActionResult Index()
         {
             return View();

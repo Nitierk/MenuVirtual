@@ -5,6 +5,7 @@ using System;
 using System.Activities.Validation;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Data.Entity.Migrations;
 using System.Data.Entity.Validation;
 using System.Drawing;
 using System.Drawing.Imaging;
@@ -20,7 +21,7 @@ namespace Projeto_Lunary.Controllers
     public class RestauranteController : Controller
     {
         // GET: Restaurante
-        BDLunary bd = new BDLunary();
+        LunaryEntities bd = new LunaryEntities();
         public ActionResult Index()
         {
             return View(bd.Restaurante.ToList());
@@ -33,7 +34,7 @@ namespace Projeto_Lunary.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create (string nome,float preco, string descricao, string precopromocao, string categoria, HttpPostedFileBase imagem)
+        public ActionResult Create (string nome,float preco, string descricao, float precopromocao, string categoria, HttpPostedFileBase imagem)
         {
             Restaurante novoRestaurante = new Restaurante();
             novoRestaurante.RESTANOME = nome;
@@ -61,8 +62,9 @@ namespace Projeto_Lunary.Controllers
 
         [HttpPost]
         
-        public ActionResult Editar(int? id, string nome, float preco, string descricao, string precopromocao, string categoria, HttpPostedFileBase imagem)
+        public ActionResult Editar(int? id, string nome, float preco, string descricao, float precopromocao, string categoria, HttpPostedFileBase imagem)
         {
+           
             Restaurante atualizarProduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
             atualizarProduto.RESTANOME = nome;
             atualizarProduto.RESTAPRECO = preco;
@@ -74,18 +76,9 @@ namespace Projeto_Lunary.Controllers
                 imagem.InputStream.CopyTo(memoryStream);
                 atualizarProduto.imagem = memoryStream.ToArray();
             }
-
-            bd.Entry(atualizarProduto).State = EntityState.Modified;
-            try
-            {
-                bd.SaveChanges();
-            }
-            catch (Exception)
-            {
-                return RedirectToAction("index");
-                
-            }
             
+            bd.Entry(atualizarProduto).State = EntityState.Modified;
+            bd.SaveChanges();
             return RedirectToAction("index");
 
         }

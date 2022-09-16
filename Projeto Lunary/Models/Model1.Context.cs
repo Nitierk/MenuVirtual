@@ -13,10 +13,10 @@ namespace Projeto_Lunary.Models
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class BDLunary : DbContext
+    public partial class LunaryEntities : DbContext
     {
-        public BDLunary()
-            : base("name=BDLunary")
+        public LunaryEntities()
+            : base("name=LunaryEntities")
         {
         }
     
