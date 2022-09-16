@@ -10,6 +10,7 @@ html{
   scroll-behavior: smooth;
   background-color: #ffffff;
 }
+/*  ---&#x1F8158----110*/
 
 #progress{
   
@@ -77,9 +78,7 @@ section{
 }
 
 .body{
-    position: fixed;
-    
-    
+    position: fixed; 
 }
 
 .subtitulo{
@@ -127,7 +126,6 @@ section{
 }
 
 .preco{
-    
     margin-top: 28px;
     color: brown;
     font-style: italic;
@@ -139,7 +137,6 @@ section{
 .Pastel{
     color: brown;
     margin-top: 15px;
-    
 }
 
 .semiprogress{
@@ -153,7 +150,6 @@ section{
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
- 
 }
 
 .semibotao{
@@ -185,7 +181,7 @@ section{
 
 
 
-
+      /*Botão like*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
 .heart-btn{
   position: absolute;
@@ -244,11 +240,17 @@ section{
 }
 
 
-
-
-
-
-
+        /*responsivo*/
+@media screen and (max-width: 350px){
+  #progress{
+    width: 45px;
+    height: 45px;
+    border-radius: 45%;
+  }
+  #progress-value{
+    font-size: 21px;
+  }
+}
 
 
 @media screen and (min-width: 350px){
@@ -297,13 +299,12 @@ section{
 }
 }
 
+
 @media screen and (min-width: 390px){
 .img{
     height: 300px;
     width: 300px;
-    
   }
-
 
   .heart-btn{
     top: 92%;
@@ -317,11 +318,6 @@ section{
 }
 
 
-
-
-
-
-
 @media screen and (min-width: 280px){
   .heart-btn{
     top: 91%;
@@ -333,9 +329,6 @@ section{
     width: 110px;
   }
 }
-
-
-  
 
 
 @media screen and (min-width: 440px){
@@ -354,6 +347,7 @@ section{
   }
 }
 
+
 @media screen and (min-width: 500px){
   .img{
     height: 400px;
@@ -367,9 +361,9 @@ section{
 
   .heart{
     top: 110%;
-    
   }
 }
+
 
 @media screen and (min-width: 600px){
   .img{
