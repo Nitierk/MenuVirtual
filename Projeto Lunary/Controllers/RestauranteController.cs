@@ -20,6 +20,7 @@ namespace Projeto_Lunary.Controllers
         {
             ViewBag.ListCategorias = bd.Categorias.ToList();
             return View(bd.Restaurante.ToList());
+
         }
 
         public ActionResult Create()
@@ -29,7 +30,7 @@ namespace Projeto_Lunary.Controllers
         }
 
         [HttpPost]
-        public ActionResult Create (string nome,float preco, string descricao, string precopromocao, string categoria, HttpPostedFileBase imagem)
+        public ActionResult Create (string nome,float preco, string descricao, double precopromocao, string categoria, HttpPostedFileBase imagem)
         {
             Restaurante novoRestaurante = new Restaurante();
             novoRestaurante.RESTANOME = nome;
@@ -57,7 +58,7 @@ namespace Projeto_Lunary.Controllers
 
         [HttpPost]
         [HandleError]
-        public ActionResult Editar(int? id, string nome, float preco, string descricao, string precopromocao, string categoria, HttpPostedFileBase imagem)
+        public ActionResult Editar(int? id, string nome, float preco, string descricao, double precopromocao, string categoria, HttpPostedFileBase imagem)
         {
             Restaurante atualizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
             atualizarrestaurante.RESTANOME = nome;

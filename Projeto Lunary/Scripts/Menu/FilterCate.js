@@ -10,6 +10,7 @@
         if (x[i].className.indexOf(c) > -1) addClass(x[i], "show");
 
     }
+
 }
 
 function addClass(element, name) {

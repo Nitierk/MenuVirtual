@@ -29,6 +29,7 @@
 
 
     <!-- Filtro Categorias -->
+
     <div class="semibotao">
         <div class="botao btn-group">
             <div class="dropdown">
@@ -45,111 +46,152 @@
         </div>
     </div>
 
+    @{ 
+        var Categorias = ViewBag.ListCategorias as IEnumerable<Projeto_Lunary.Models.Restaurante>;
+    }
+    
 
-    <!-- Pratos -->
-    <div>
-        @foreach (var item in Model)
-        {
-            <div class="row pratos @item.RESTACATEGORIA">
-                <div class="col-lg-12">
-                    <div class="img2" data-toggle="modal" data-target="#PratosDetalhe-@item.RESTAUID" data-descricao="@item.RESTADESCRICAO">
-                        <img class="img" src="~/Content/Menu/img/PratoExemplo.png" width="232" height="232">
-                    </div>
+<div>
+    <h3 id="Categoria" class="Categoria"></h3>
+    
 
-                    <h3 class="text-center name">@item.RESTANOME</h3>
-
-                    <!--Btn Coração-->
-                    <div class="heart-btn">
-                        <div class="content">
-                            <form action="" method="post">
-                                @*<button type="submit" class="heart btn" id="Heart-@item.RESTAUID"></button>*@
-                                <span class="heart" id="@item.RESTAUID"></span>
-                            </form>
-
-
-                        </div>
-                    </div>
-                    <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
-                </div>
-            </div>
-
-            <!-- Modal Exibir/Detalhes-->
-            <div class="modal fade" id="PratosDetalhe-@item.RESTAUID" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                <div class="modal-dialog" role="document">
-                    <div class="modal-content">
-                        <div class="modal-header">
-                            <h5 class="modal-title" id="exampleModalLabel">Prato Detalhes</h5>
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                <span aria-hidden="true">&times;</span>
-                            </button>
-
-
-                        </div>
-                        <div class="modal-body">
-
-                            <div class="col-lg-12">
-                                <img class="imgmodal" src="~/Content/Menu/img/PratoExemplo.png" width="232" height="232">
-                                <h3 class="text-center name">@item.RESTANOME</h3>
-
-                                <p> @item.RESTADESCRICAO</p>
-                                <h3 class="text-center name">R$ @item.RESTAPRECO.ToString("F")</h3>
-                            </div>
-                        </div>
-
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        }
-
+    <div class="semiprogress">
+        <div class="progress" style="height: 2px; width: 160px;">
+            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        </div>
     </div>
 
-    <script>
+</div>
 
-        window.onload = () => {
-            document.queryCommandIndeterm
-            FiltroCategorias()
-        }
 
-        $(document).ready(function () {
 
-            //Like
-            $('.heart').click(function () {
 
-                var id = (this.id);
-                var url = "/Restaurante/ContagemLikes";
-                var status;
-                let el = document.getElementById(id);
-                if (el.classList.contains('heart-active')) {
-                    el.classList.remove('heart-active');
-                    status = false;
-                    $.post(url, { id: id, status: status }, function (data) {
 
-                    });
+        <!-- Pratos -->
+        <div>
+            @{
+                var imgDefault = "/Content/Menu/img/LogoLunary.png";
+            }
+            @foreach (var item in Model)
+            {
+
+                <!-- Conversão da img-->
+
+                var imgSrc = "";
+
+
+                if (item.imagem != null)
+                {
+                    var base64 = Convert.ToBase64String(item.imagem);
+                    imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
                 }
-                else {
-                    el.classList.add('heart-active');
-                    status = true;
-                    $.post(url, { id: id, status: status }, function (data) {
-
-                    });
+                else
+                {
+                    imgSrc = imgDefault;
                 }
 
+
+                <div class="row pratos @item.RESTACATEGORIA">
+                    <div class="col-lg-12">
+                        <div class="img2" data-toggle="modal" data-target="#PratosDetalhe-@item.RESTAUID" data-descricao="@item.RESTADESCRICAO">
+                            <img class="img" src="@imgSrc" width="232" height="232">
+                        </div>
+
+                        <h3 class="text-center name">@item.RESTANOME</h3>
+
+                        <!--Btn Coração-->
+                        <div class="heart-btn">
+                            <div class="content">
+                                <form action="" method="post">
+                                    @*<button type="submit" class="heart btn" id="Heart-@item.RESTAUID"></button>*@
+                                    <span class="heart" id="@item.RESTAUID"></span>
+                                </form>
+
+
+                            </div>
+                        </div>
+                        <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
+                    </div>
+                </div>
+
+                <!-- Modal Exibir/Detalhes-->
+                <div class="modal fade" id="PratosDetalhe-@item.RESTAUID" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                            <div class="modal-header">
+                                <h5 class="modal-title" id="exampleModalLabel">Prato Detalhes</h5>
+                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+
+
+                            </div>
+                            <div class="modal-body">
+
+                                <div class="col-lg-12">
+                                    <img class="imgmodal" src="~/Content/Menu/img/PratoExemplo.png" width="232" height="232">
+                                    <h3 class="text-center name">@item.RESTANOME</h3>
+
+                                    <p> @item.RESTADESCRICAO</p>
+                                    <h3 class="text-center name">R$ @item.RESTAPRECO.ToString("F")</h3>
+                                </div>
+                            </div>
+
+                            <div class="modal-footer">
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+            }
+
+        </div>
+
+        <script>
+
+            window.onload = () => {
+                document.queryCommandIndeterm
+                FiltroCategorias()
+            }
+
+            $(document).ready(function () {
+
+                //Like
+                $('.heart').click(function () {
+
+                    var id = (this.id);
+                    var url = "/Restaurante/ContagemLikes";
+                    var status;
+                    let el = document.getElementById(id);
+                    if (el.classList.contains('heart-active')) {
+                        el.classList.remove('heart-active');
+                        status = false;
+                        $.post(url, { id: id, status: status }, function (data) {
+
+                        });
+                    }
+                    else {
+                        el.classList.add('heart-active');
+                        status = true;
+                        $.post(url, { id: id, status: status }, function (data) {
+
+                        });
+                    }
+
+
+                });
 
             });
 
-        });
 
 
 
 
 
-
-    </script>
+        </script>
 </body>
 
 

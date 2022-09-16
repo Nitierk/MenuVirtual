@@ -259,6 +259,7 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Menu\img\HeartAnimation.png" />
+    <Content Include="Content\Menu\img\LogoLunary.png" />
     <Content Include="Content\Menu\img\PratoExemplo.png" />
     <Content Include="Content\Menu\Menu.css" />
     <Content Include="Content\QRCODE.css" />

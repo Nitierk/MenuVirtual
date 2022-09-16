@@ -118,7 +118,7 @@ html {
     margin-top: 30px;
 }
 
-.Refeições {
+.Categoria {
     text-align: center;
     color: brown;
     margin-top: 40px;
@@ -147,6 +147,7 @@ html {
     margin-bottom: 1px;
     background-color: brown;
     color: brown;
+    
 }
 
 .preco {
@@ -163,11 +164,23 @@ html {
     margin-top: 15px;
 }
 
+.semiprogress {
+    position: relative;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    
+}
+
+.progress-bar {
+    background-color: brown;
+}
 .progress {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    color: brown;
+    background-color: brown;
 }
 
 .semibotao {   
@@ -283,7 +296,7 @@ html {
         font-size: 25px;
     }
 
-    .Refeições {
+    .Categoria {
         font-size: 40px;
     }
 
@@ -415,7 +428,7 @@ html {
         font-size: 28px;
     }
 
-    .Refeições {
+    .Categoria {
         font-size: 43px;
     }
 
