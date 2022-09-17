@@ -4,17 +4,21 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Web.Security;
 
 namespace Projeto_Lunary.Controllers
 {
+    [AllowAnonymous]
     public class HomeController : Controller
     {
         BDLunary bd = new BDLunary();
+
+        
         public ActionResult Index()
         {
             return View();
         }
-
+        [AllowAnonymous]
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";
@@ -29,12 +33,7 @@ namespace Projeto_Lunary.Controllers
             return View();
         }
 
-        [HttpGet]
-        public ActionResult Login()
-        {
-            return View();
-        }
-
+        
 
         [HttpPost]
         public ActionResult VerificarLogin(string login, string senha)

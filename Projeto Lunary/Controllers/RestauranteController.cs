@@ -12,10 +12,15 @@ using System.Web.Mvc;
 
 namespace Projeto_Lunary.Controllers
 {
+    [AllowAnonymous]
     public class RestauranteController : Controller
     {
         // GET: Restaurante
         BDLunary bd = new BDLunary();
+
+        
+        [HttpGet]
+        [AllowAnonymous]
         public ActionResult Index()
         {
             ViewBag.ListCategorias = bd.Categorias.ToList();
@@ -23,13 +28,15 @@ namespace Projeto_Lunary.Controllers
 
         }
 
+       
         public ActionResult Create()
         {
             ViewBag.listacategoria = bd.Categorias.ToList();
             return View();
         }
-
+        
         [HttpPost]
+       
         public ActionResult Create (string nome,float preco, string descricao, double precopromocao, string categoria, HttpPostedFileBase imagem)
         {
             Restaurante novoRestaurante = new Restaurante();
@@ -47,8 +54,9 @@ namespace Projeto_Lunary.Controllers
             bd.SaveChanges();
             return RedirectToAction("Index");
         }
-
+       
         [HttpGet]
+       
         public ActionResult Editar(int? id)
         {
             Restaurante Localizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
@@ -58,6 +66,7 @@ namespace Projeto_Lunary.Controllers
 
         [HttpPost]
         [HandleError]
+       
         public ActionResult Editar(int? id, string nome, float preco, string descricao, double precopromocao, string categoria, HttpPostedFileBase imagem)
         {
             Restaurante atualizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
@@ -76,12 +85,17 @@ namespace Projeto_Lunary.Controllers
             bd.SaveChanges();
             return RedirectToAction("index");
         }
+
+        [HttpGet]
+       
         public ActionResult Excluir(int ? id)
         {
             Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
             return RedirectToAction("index");
         }
+      
         [HttpPost]
+        
         public ActionResult ExcluirConfirma(int? id)
         {
             Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
@@ -97,17 +111,19 @@ namespace Projeto_Lunary.Controllers
             }
             return RedirectToAction("index");
         }
+
         public ActionResult QRCODindex()
         {
             return View();
         }
-
+        /*
         [HttpPost]
+        [Authorize]
         public ActionResult QRCODindex(string qrcode)
         {
             using (MemoryStream ms = new MemoryStream())
             {
-                QRCodeGenerator qRCodeGenerator = new QRCodeGenerator();
+                QRCode  Generator qRCodeGenerator = new QRCodeGenerator();
                 QRCodeData qrCodeData = qRCodeGenerator.CreateQrCode(qrcode, QRCodeGenerator.ECCLevel.Q);
                 QRCode qrCode = new QRCode(qrCodeData);
 
@@ -119,8 +135,9 @@ namespace Projeto_Lunary.Controllers
             }
             return View();
         }
-
+        */
         [HttpPost]
+        [AllowAnonymous]
         public ActionResult ContagemLikes(int? id, bool status)
         {
             Restaurante atulizarLikes = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
@@ -137,6 +154,8 @@ namespace Projeto_Lunary.Controllers
             bd.SaveChanges();
             return RedirectToAction("index");
         }
+
+
 
     }
 }
