@@ -22,5 +22,6 @@ namespace Projeto_Lunary.Models
         public Nullable<int> Curtidas { get; set; }
         public byte[] imagem { get; set; }
         public Nullable<double> RESTAPREPROMOCAO { get; set; }
+        public bool Oferta { get; set; }
     }
 }
