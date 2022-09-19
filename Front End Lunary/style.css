@@ -152,20 +152,24 @@ section{
   transform: translate(-50%, -50%);
 }
 
-.semibotao{
-  height: 80vh;
-  position: relative;
+
+
+.dropdown{
+    position: absolute;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 15px; 
+    
+    
 }
 
-.btn-group{
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    border: 2px solid brown;
-    padding: 6px 20px;
-    margin-top: 15px;
+.btn-danger{
+  width: 220px;
+  border: 2px solid brown;
 }
+
+
 
 .img2{
   text-align: center;
