@@ -11,8 +11,7 @@ namespace Projeto_Lunary.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel.DataAnnotations;
-
+    
     public partial class Estabelecimento
     {
         public int ESTABID { get; set; }
@@ -21,11 +20,7 @@ namespace Projeto_Lunary.Models
         public string ESTABBAIRRO { get; set; }
         public int ESTATELEFONE { get; set; }
         public int ESTABCEP { get; set; }
-        [Required(ErrorMessage = "Informe o usuário")]
-        [Display(Name = "Usuário:")]
         public string ESTABLOGIN { get; set; }
-        [Required(ErrorMessage = "Informe a senha")]
-        [Display(Name = "Senha:")]
         public string ESTABSENHA { get; set; }
         public string ESTATIPO { get; set; }
     }

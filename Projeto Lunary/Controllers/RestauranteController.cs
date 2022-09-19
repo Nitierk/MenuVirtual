@@ -37,7 +37,7 @@ namespace Projeto_Lunary.Controllers
         
         [HttpPost]
        
-        public ActionResult Create (string nome,float preco, string descricao, double precopromocao, string categoria, HttpPostedFileBase imagem)
+        public ActionResult Create (string nome,float preco, string descricao, float precopromocao, string categoria, HttpPostedFileBase imagem, string oferta)
         {
             Restaurante novoRestaurante = new Restaurante();
             novoRestaurante.RESTANOME = nome;
@@ -45,14 +45,28 @@ namespace Projeto_Lunary.Controllers
             novoRestaurante.RESTADESCRICAO = descricao;
             novoRestaurante.RESTAPREPROMOCAO = precopromocao;
             novoRestaurante.RESTACATEGORIA = categoria;
-            using (var memoryStream = new MemoryStream())
+            if (imagem != null)
             {
-                imagem.InputStream.CopyTo(memoryStream);
-                novoRestaurante.imagem = memoryStream.ToArray();
+                using (var memoryStream = new MemoryStream())
+                {
+                    imagem.InputStream.CopyTo(memoryStream);
+                    novoRestaurante.imagem = memoryStream.ToArray();
+                }
             }
+            
+            if (oferta == "true")
+            {
+                novoRestaurante.Oferta = true;
+            }
+            else
+            {
+                novoRestaurante.Oferta = false;
+            }
+
+            //novoRestaurante.Oferta = oferta;
             bd.Restaurante.Add(novoRestaurante);
             bd.SaveChanges();
-            return RedirectToAction("Index");
+            return RedirectToAction("Index", "Home");
         }
        
         [HttpGet]
@@ -67,7 +81,7 @@ namespace Projeto_Lunary.Controllers
         [HttpPost]
         [HandleError]
        
-        public ActionResult Editar(int? id, string nome, float preco, string descricao, double precopromocao, string categoria, HttpPostedFileBase imagem)
+        public ActionResult Editar(int? id, string nome, float preco, string descricao, float precopromocao, string categoria, HttpPostedFileBase imagem)
         {
             Restaurante atualizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
             atualizarrestaurante.RESTANOME = nome;

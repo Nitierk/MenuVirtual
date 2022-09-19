@@ -6,8 +6,10 @@
     <edmx:Diagrams>
       <Diagram DiagramId="826127b371a34ff5b378d1b48877c8d4" Name="Diagram1">
         <EntityTypeShape EntityType="LunaryModel.Estabelecimento" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="LunaryModel.Restaurante" Width="1.5" PointX="2.75" PointY="0.75" />
         <EntityTypeShape EntityType="LunaryModel.Categorias" Width="1.5" PointX="4.75" PointY="0.75" />
+        <EntityTypeShape EntityType="LunaryModel.Campanhas" Width="1.5" PointX="1" PointY="4.75" />
+        <EntityTypeShape EntityType="LunaryModel.Ranking" Width="1.5" PointX="4.75" PointY="4.75" />
+        <EntityTypeShape EntityType="LunaryModel.Restaurante" Width="1.5" PointX="7.375" PointY="0.75" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

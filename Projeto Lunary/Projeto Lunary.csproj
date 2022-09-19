@@ -228,6 +228,9 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Campanhas.cs">
+      <DependentUpon>Menu.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Categorias.cs">
       <DependentUpon>Menu.tt</DependentUpon>
     </Compile>
@@ -249,6 +252,9 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>Menu.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Ranking.cs">
+      <DependentUpon>Menu.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Restaurante.cs">
       <DependentUpon>Menu.tt</DependentUpon>

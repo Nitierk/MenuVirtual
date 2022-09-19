@@ -16,9 +16,26 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Restaurante">
-      <EntityTypeMapping TypeName="LunaryModel.Restaurante">
-        <MappingFragment StoreEntitySet="Restaurante">
+    <EntitySetMapping Name="Categorias">
+      <EntityTypeMapping TypeName="LunaryModel.Categorias">
+        <MappingFragment StoreEntitySet="Categorias">
+          <ScalarProperty Name="RESTACATEGORIA" ColumnName="RESTACATEGORIA" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Campanhas">
+      <EntityTypeMapping TypeName="LunaryModel.Campanhas">
+        <MappingFragment StoreEntitySet="Campanhas">
+          <ScalarProperty Name="CAMPRECO" ColumnName="CAMPRECO" />
+          <ScalarProperty Name="CAMFOTO" ColumnName="CAMFOTO" />
+          <ScalarProperty Name="CAMDESCRICAO" ColumnName="CAMDESCRICAO" />
+          <ScalarProperty Name="CAMID" ColumnName="CAMID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Ranking">
+      <EntityTypeMapping TypeName="LunaryModel.Ranking">
+        <MappingFragment StoreEntitySet="Ranking">
           <ScalarProperty Name="RESTAPREPROMOCAO" ColumnName="RESTAPREPROMOCAO" />
           <ScalarProperty Name="imagem" ColumnName="imagem" />
           <ScalarProperty Name="Curtidas" ColumnName="Curtidas" />
@@ -30,10 +47,18 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="Categorias">
-      <EntityTypeMapping TypeName="LunaryModel.Categorias">
-        <MappingFragment StoreEntitySet="Categorias">
+    <EntitySetMapping Name="Restaurante">
+      <EntityTypeMapping TypeName="LunaryModel.Restaurante">
+        <MappingFragment StoreEntitySet="Restaurante">
+          <ScalarProperty Name="Oferta" ColumnName="Oferta" />
+          <ScalarProperty Name="RESTAPREPROMOCAO" ColumnName="RESTAPREPROMOCAO" />
+          <ScalarProperty Name="imagem" ColumnName="imagem" />
+          <ScalarProperty Name="Curtidas" ColumnName="Curtidas" />
           <ScalarProperty Name="RESTACATEGORIA" ColumnName="RESTACATEGORIA" />
+          <ScalarProperty Name="RESTADESCRICAO" ColumnName="RESTADESCRICAO" />
+          <ScalarProperty Name="RESTAPRECO" ColumnName="RESTAPRECO" />
+          <ScalarProperty Name="RESTANOME" ColumnName="RESTANOME" />
+          <ScalarProperty Name="RESTAUID" ColumnName="RESTAUID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

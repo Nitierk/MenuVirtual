@@ -12,63 +12,60 @@
 
 <body>
 
-    <script src="~/Scripts/Menu/ScrollToTop.js"></script>
-
-    <div id="progress">
-        <span id="progress-value">&#x1F815;</span>
+    <div class="loading" style="display:block">
+        Carregando
     </div>
-    <h1 class="titulo">Lunary</h1>
-    <p class="subtitulo">Cardápio</p>
+    
+    <div class="Conteudo" style="display:none">
+        <script src="~/Scripts/Menu/ScrollToTop.js"></script>
+
+        <div id="progress">
+            <span id="progress-value">&#x1F815;</span>
+        </div>
+        <h1 class="titulo">Lunary</h1>
+        <p class="subtitulo">Cardápio</p>
 
 
 
-    <div class="barraVermelha">.</div>
+        <div class="barraVermelha">.</div>
 
 
-    <p class="barra">Menu</p>
+        <p class="barra">Menu</p>
 
 
 
-    <!-- Filtro Categorias -->
-    <div class="semibotao">
-        <div class="botao btn-group">
-            <div class="dropdown">
+        <!-- Filtro Categorias -->
+        <div class="semibotao">
+            <div class="botao btn-group">
+                <div class="dropdown">
 
-                <select style="text-transform: uppercase;" onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
+                    <select style="text-transform: uppercase;" onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
 
-                    @foreach (var item in ViewBag.ListCategorias)
-                    {
-                        if (item.RESTACATEGORIA == "Refeições")
-                        {
-                            <option onchange="FiltroCategorias()" selected value="@item.RESTACATEGORIA">@item.RESTACATEGORIA</option>
-                        }
-                        else
+                        <option onchange="FiltroCategorias()" value='Oferta do Dia'>Oferta do Dia</option>
+                        @foreach (var item in ViewBag.ListCategorias)
                         {
                             <option onchange="FiltroCategorias()" value="@item.RESTACATEGORIA">@item.RESTACATEGORIA</option>
                         }
-
-
-                    }
-                </select>
-            </div>
-        </div>
-    </div>
-
-    @{ 
-        var Categorias = ViewBag.ListCategorias as IEnumerable<Projeto_Lunary.Models.Restaurante>;
-    }
-
-    <div>
-
-        <div id="Categoria" class="Categoria"></div>
-
-        <div class="semiprogress">
-            <div class="progress" style="height: 2px; width: 160px;">
-                <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                    </select>
+                </div>
             </div>
         </div>
 
-    </div>
+        @{
+            var Categorias = ViewBag.ListCategorias as IEnumerable<Projeto_Lunary.Models.Restaurante>;
+        }
+
+        <div>
+
+            <div id="Categoria" class="Categoria"></div>
+
+            <div class="semiprogress">
+                <div class="progress" style="height: 2px; width: 160px;">
+                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+
+        </div>
 
 
 
@@ -98,8 +95,18 @@
                     imgSrc = imgDefault;
                 }
 
+                <!-- Oferta do Dia-->
 
-                <div class="row pratos @item.RESTACATEGORIA">
+
+                string oferta = "";
+                if (item.Oferta)
+                {
+                    oferta = "Oferta do Dia";
+                }
+
+
+
+                <div class="row pratos @item.RESTACATEGORIA @oferta">
                     <div class="col-lg-12">
                         <div class="img2" data-toggle="modal" data-target="#PratosDetalhe-@item.RESTAUID" data-descricao="@item.RESTADESCRICAO">
                             <img class="img" src="@imgSrc" width="232" height="232">
@@ -138,9 +145,9 @@
 
                                 <div class="col-lg-12">
                                     <div class="img2">
-                                        <img class="img" src="@imgSrc" width="232" height="232">        
+                                        <img class="img" src="@imgSrc" width="232" height="232">
                                     </div>
-                                    
+
                                     <h3 class="text-center name">@item.RESTANOME</h3>
 
                                     <p> @item.RESTADESCRICAO</p>
@@ -159,49 +166,50 @@
             }
 
         </div>
+    </div>
 
-        <script>
+    <script>
 
-            window.onload = () => {
-                document.queryCommandIndeterm
-                FiltroCategorias()
-            }
+        window.onload = () => {
+            document.queryCommandIndeterm
+            FiltroCategorias()
+        }
 
-            $(document).ready(function () {
+        $(document).ready(function () {
 
-                //Like
-                $('.heart').click(function () {
+            //Like
+            $('.heart').click(function () {
 
-                    var id = (this.id);
-                    var url = "/Restaurante/ContagemLikes";
-                    var status;
-                    let el = document.getElementById(id);
-                    if (el.classList.contains('heart-active')) {
-                        el.classList.remove('heart-active');
-                        status = false;
-                        $.post(url, { id: id, status: status }, function (data) {
+                var id = (this.id);
+                var url = "/Restaurante/ContagemLikes";
+                var status;
+                let el = document.getElementById(id);
+                if (el.classList.contains('heart-active')) {
+                    el.classList.remove('heart-active');
+                    status = false;
+                    $.post(url, { id: id, status: status }, function (data) {
 
-                        });
-                    }
-                    else {
-                        el.classList.add('heart-active');
-                        status = true;
-                        $.post(url, { id: id, status: status }, function (data) {
+                    });
+                }
+                else {
+                    el.classList.add('heart-active');
+                    status = true;
+                    $.post(url, { id: id, status: status }, function (data) {
 
-                        });
-                    }
+                    });
+                }
 
-
-                });
 
             });
 
+        });
 
 
 
 
 
-        </script>
+
+    </script>
 </body>
 
 

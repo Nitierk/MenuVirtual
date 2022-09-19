@@ -8,53 +8,58 @@
 <div>
 
     <form action="/Restaurante/Create" enctype="multipart/form-data" method="post">
-    
-    <div class="form-group">
-        <label for="nome">Nome Do Prato</label>
-        <input type="text" class="form-control"
-               maxlength="100"
-               id="nome" name="nome"
-               required />
-    </div>
-    <div class="form-group">
-        <label for="preco">Preço</label>
-        <input type="text" class="form-control" step="0.010"
-               id="preco" name="preco"
-               required />
-    </div>
-    <div class="form-group">
-        <label for="descricao">Descrição</label>
-        <input type="text" class="form-control"
-               id="descricao" name="descricao"
-               >
-    </div>
-    <div class="form-group">
-        <label for="precopromocao">Preço Promoção</label>
-        <input type="text" class="form-control" step="0.010"
-               id="precopromocao" name="precopromocao"
-               />
-    </div>
 
-    <div class="form-group">
-        <select id="categoria" name="categoria">
-            @foreach (var item in ViewBag.listacategoria)
-            {
-                <option>@item.RESTACATEGORIA</option>
-            }
-        </select>
-    </div>
+        <div class="form-group">
+            <label for="nome">Nome Do Prato</label>
+            <input type="text" class="form-control"
+                   maxlength="100"
+                   id="nome" name="nome"
+                   required />
+        </div>
+        <div class="form-group">
+            <label for="preco">Preço</label>
+            <input type="text" class="form-control" step="0.010"
+                   id="preco" name="preco"
+                   required />
+        </div>
+        <div class="form-group">
+            <label for="descricao">Descrição</label>
+            <input type="text" class="form-control"
+                   id="descricao" name="descricao">
+        </div>
+        <div class="form-group">
+            <label for="precopromocao">Preço Promoção</label>
+            <input type="text" class="form-control" step="0.010"
+                   id="precopromocao" name="precopromocao" />
+        </div>
 
-    <div class="form-group">
-        <label for="arquivo">Imagem</label>
-        <input type="file" class="form-control"
-               id="imagem" name="imagem" >
-    </div>
+        <div class="form-group">
+            <select id="categoria" name="categoria">
+                @foreach (var item in ViewBag.listacategoria)
+                {
+                    <option>@item.RESTACATEGORIA</option>
+                }
+            </select>
+        </div>
 
-    <div>
-        <a href="/Restaurante/Index"><button type="button" class="btn btn-primary">Voltar</button>  </a>
-        <a href="/Restaurante/Index"><button type="submit" class="btn btn-success">Salvar</button>  </a>
-    </div>
-</form>
+        <div class="form-group" typeof="checkbox">
+            <input type='checkbox' value='false' onchange="this.value=this.checked" name="oferta" id="oferta">
+            <label class="form-check-label" for="oferta">
+                Oferta do Dia
+            </label>
+        </div>
+
+        <div class="form-group">
+            <label for="arquivo">Imagem</label>
+            <input type="file" class="form-control"
+                   id="imagem" name="imagem">
+        </div>
+
+        <div>
+            <a href="/Restaurante/Index"><button type="button" class="btn btn-primary">Voltar</button>  </a>
+            <a href="/Restaurante/Index"><button type="submit" class="btn btn-success">Salvar</button>  </a>
+        </div>
+    </form>
 </div>
 
 
