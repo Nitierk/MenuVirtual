@@ -43,7 +43,7 @@ namespace Projeto_Lunary.Controllers
             }
             else
             {
-                ModelState.AddModelError("", "Login inválido.");
+                ModelState.AddModelError("msg_Error", "Login inválido.");
             }
 
             return View(login);

@@ -26,6 +26,17 @@
     }
 }
 
+.msg_Error{
+    color:white;
+    position:relative;
+    top: 100px;
+    left: 30px;
+}
+
+li {
+    color: red;
+    position: relative;
+}
 :root {
     --gradiente: linear-gradiente(to left, #a30606,#a52a2a, #ac6464, #ce9292, #e0c0c0, #f0eaea);
     --vermelho: #a52a2a;
