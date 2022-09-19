@@ -8,17 +8,16 @@ using System.Web.Security;
 
 namespace Projeto_Lunary.Controllers
 {
-    [AllowAnonymous]
+    [Authorize]
     public class HomeController : Controller
     {
         BDLunary bd = new BDLunary();
 
-        
         public ActionResult Index()
         {
             return View();
         }
-        [AllowAnonymous]
+        
         public ActionResult About()
         {
             ViewBag.Message = "Your application description page.";

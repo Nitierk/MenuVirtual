@@ -29,7 +29,6 @@
 
 
     <!-- Filtro Categorias -->
-
     <div class="semibotao">
         <div class="botao btn-group">
             <div class="dropdown">
@@ -38,7 +37,15 @@
 
                     @foreach (var item in ViewBag.ListCategorias)
                     {
-                        <option onchange="FiltroCategorias()" value="@item.RESTACATEGORIA">@item.RESTACATEGORIA</option>
+                        if (item.RESTACATEGORIA == "Refeições")
+                        {
+                            <option onchange="FiltroCategorias()" selected value="@item.RESTACATEGORIA">@item.RESTACATEGORIA</option>
+                        }
+                        else
+                        {
+                            <option onchange="FiltroCategorias()" value="@item.RESTACATEGORIA">@item.RESTACATEGORIA</option>
+                        }
+
 
                     }
                 </select>
@@ -49,21 +56,18 @@
     @{ 
         var Categorias = ViewBag.ListCategorias as IEnumerable<Projeto_Lunary.Models.Restaurante>;
     }
-    
 
-<div>
+    <div>
 
-    <div id="Categoria" class="Categoria"></div>
-   
-    
+        <div id="Categoria" class="Categoria"></div>
 
-    <div class="semiprogress">
-        <div class="progress" style="height: 2px; width: 160px;">
-            <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+        <div class="semiprogress">
+            <div class="progress" style="height: 2px; width: 160px;">
+                <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
         </div>
-    </div>
 
-</div>
+    </div>
 
 
 

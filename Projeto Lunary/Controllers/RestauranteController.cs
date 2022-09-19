@@ -12,7 +12,7 @@ using System.Web.Mvc;
 
 namespace Projeto_Lunary.Controllers
 {
-    [AllowAnonymous]
+    [Authorize]
     public class RestauranteController : Controller
     {
         // GET: Restaurante
