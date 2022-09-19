@@ -22,10 +22,10 @@
     <Property Name="RESTANOME" Type="varchar" MaxLength="200" Nullable="false" />
     <Property Name="RESTAPRECO" Type="float" Nullable="false" />
     <Property Name="RESTADESCRICAO" Type="varchar" MaxLength="300" />
-    <Property Name="RESTAPREPROMOCAO" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="RESTACATEGORIA" Type="varchar" MaxLength="300" Nullable="false" />
-    <Property Name="imagem" Type="varbinary(max)" />
     <Property Name="Curtidas" Type="int" />
+    <Property Name="imagem" Type="varbinary(max)" />
+    <Property Name="RESTAPREPROMOCAO" Type="float" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'Lunary.dbo.Categorias' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
