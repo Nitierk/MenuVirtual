@@ -61,5 +61,15 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
+    <EntitySetMapping Name="Campanhas">
+      <EntityTypeMapping TypeName="LunaryModel.Campanhas">
+        <MappingFragment StoreEntitySet="Campanhas">
+          <ScalarProperty Name="CAMPRECO" ColumnName="CAMPRECO" />
+          <ScalarProperty Name="CAMFOTO" ColumnName="CAMFOTO" />
+          <ScalarProperty Name="CAMDESCRICAO" ColumnName="CAMDESCRICAO" />
+          <ScalarProperty Name="CAMID" ColumnName="CAMID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
   </EntityContainerMapping>
 </Mapping>

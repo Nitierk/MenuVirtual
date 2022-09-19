@@ -138,5 +138,27 @@ namespace Projeto_Lunary.Controllers
             return RedirectToAction("index");
         }
 
+        public ActionResult Campanha()
+        {
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult Campanha(string Descricao, float CAMPRECO, HttpPostedFileBase Foto)
+        {
+            Restaurante novacampanha = new Restaurante();
+            novacampanha. = nome;
+            using (var memoryStream = new MemoryStream())
+            {
+                imagem.InputStream.CopyTo(memoryStream);
+                novoRestaurante.imagem = memoryStream.ToArray();
+            }
+            bd.Restaurante.Add(novacampanha);
+            bd.SaveChanges();
+            return RedirectToAction("Index");
+        }
+
+
+
     }
 }

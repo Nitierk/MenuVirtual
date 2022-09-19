@@ -9,6 +9,15 @@
     <Property Name="CAMFOTO" Type="varbinary(max)" Nullable="false" />
     <Property Name="CAMPRECO" Type="float" />
   </EntityType>
+  <EntityType Name="Campanhas">
+    <Key>
+      <PropertyRef Name="CAMID" />
+    </Key>
+    <Property Name="CAMID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CAMDESCRICAO" Type="varchar" MaxLength="100" />
+    <Property Name="CAMFOTO" Type="varbinary(max)" />
+    <Property Name="CAMPRECO" Type="float" />
+  </EntityType>
   <EntityType Name="Estabelecimento">
     <Key>
       <PropertyRef Name="ESTABID" />
@@ -64,6 +73,7 @@ warning 6002: The table/view 'Lunary.dbo.Ranking' does not have a primary key de
   </EntityType>
   <EntityContainer Name="LunaryModelStoreContainer">
     <EntitySet Name="Campanha" EntityType="Self.Campanha" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Campanhas" EntityType="Self.Campanhas" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Estabelecimento" EntityType="Self.Estabelecimento" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Restaurante" EntityType="Self.Restaurante" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Categorias" EntityType="Self.Categorias" store:Type="Views" store:Schema="dbo">
