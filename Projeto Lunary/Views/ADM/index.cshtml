@@ -1,7 +1,84 @@
-﻿
+﻿<link href="~/Content/Site.css" rel="stylesheet" />
+@model IEnumerable<Projeto_Lunary.Models.Restaurante>
 @{
-    ViewBag.Title = "index";
+    ViewBag.Title = "Pratos";
+
 }
 
-<h2>index</h2>
+<h2>Pratos</h2>
+
+<thead>
+    <h1>Lunary</h1>
+    <p>Cardápio</p>
+</thead>
+
+<nav class="navbar navbar-expand-lg navbar-light">
+    <div class="collapse navbar-collapse">
+        <ul class="navbar-nav">
+            <li class="nav-item">
+
+            </li>
+        </ul>
+    </div>
+</nav>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Prato</td>
+            <td>Preço</td>
+            <td>Descrição</td>
+            <td>Preço Promoção</td>
+            <td>Categoria</td>
+            <td></td>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.RESTAUID</td>
+                <td>@item.RESTANOME</td>
+                <td>R$@item.RESTAPRECO</td>
+                <td>@item.RESTADESCRICAO</td>
+                @if (@item.RESTAPREPROMOCAO != null)
+                {
+                    <td>
+                        R$ @item.RESTAPREPROMOCAO
+                    </td>
+                }
+                else
+                {
+                    <td> </td>
+                }
+                <td>@item.RESTACATEGORIA</td>
+                <td>
+                    @item.imagem
+                    @{
+                        if (item.imagem != null)
+                        {
+                            var base64 = Convert.ToBase64String(item.imagem);
+                            var imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+                            <img src='@imgSrc' style="max-width:300px; max-height:300px;" />
+                        }
+                    }
+                </td>
+
+
+                <td>
+                    <a href="/ADM/Editar?id=@item.RESTAUID"><button type="button" class="btn btn-warning">Editar</button></a>
+                    <a href="/ADM/Excluir?id=@item.RESTAUID"><button type="button" class="btn btn-danger">Excluir</button></a>
+
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+
+</table>
 
