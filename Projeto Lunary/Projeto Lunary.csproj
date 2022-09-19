@@ -333,6 +333,8 @@
     <Content Include="Views\Restaurante\QRCODindex.cshtml" />
     <Content Include="Views\Campanhas\index.cshtml" />
     <Content Include="Views\Campanhas\Create.cshtml" />
+    <Content Include="Views\Campanhas\Editar.cshtml" />
+    <Content Include="Views\Campanhas\Excluir.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
