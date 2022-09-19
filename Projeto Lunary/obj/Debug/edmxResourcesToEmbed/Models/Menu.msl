@@ -1,24 +1,13 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
   <EntityContainerMapping StorageEntityContainer="LunaryModelStoreContainer" CdmEntityContainer="BDLunary">
-    <EntitySetMapping Name="Restaurante">
-      <EntityTypeMapping TypeName="LunaryModel.Restaurante">
-        <MappingFragment StoreEntitySet="Restaurante">
-          <ScalarProperty Name="Curtidas" ColumnName="Curtidas" />
-          <ScalarProperty Name="imagem" ColumnName="imagem" />
-          <ScalarProperty Name="RESTACATEGORIA" ColumnName="RESTACATEGORIA" />
-          <ScalarProperty Name="RESTAPREPROMOCAO" ColumnName="RESTAPREPROMOCAO" />
-          <ScalarProperty Name="RESTADESCRICAO" ColumnName="RESTADESCRICAO" />
-          <ScalarProperty Name="RESTAPRECO" ColumnName="RESTAPRECO" />
-          <ScalarProperty Name="RESTANOME" ColumnName="RESTANOME" />
-          <ScalarProperty Name="RESTAUID" ColumnName="RESTAUID" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Categorias">
-      <EntityTypeMapping TypeName="LunaryModel.Categorias">
-        <MappingFragment StoreEntitySet="Categorias">
-          <ScalarProperty Name="RESTACATEGORIA" ColumnName="RESTACATEGORIA" />
+    <EntitySetMapping Name="Campanha">
+      <EntityTypeMapping TypeName="LunaryModel.Campanha">
+        <MappingFragment StoreEntitySet="Campanha">
+          <ScalarProperty Name="CAMPRECO" ColumnName="CAMPRECO" />
+          <ScalarProperty Name="CAMFOTO" ColumnName="CAMFOTO" />
+          <ScalarProperty Name="CAMDescricao" ColumnName="CAMDescricao" />
+          <ScalarProperty Name="CAMID" ColumnName="CAMID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -34,6 +23,27 @@
           <ScalarProperty Name="ESTABENDERECO" ColumnName="ESTABENDERECO" />
           <ScalarProperty Name="ESTABNOME" ColumnName="ESTABNOME" />
           <ScalarProperty Name="ESTABID" ColumnName="ESTABID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Restaurante">
+      <EntityTypeMapping TypeName="LunaryModel.Restaurante">
+        <MappingFragment StoreEntitySet="Restaurante">
+          <ScalarProperty Name="RESTAPREPROMOCAO" ColumnName="RESTAPREPROMOCAO" />
+          <ScalarProperty Name="imagem" ColumnName="imagem" />
+          <ScalarProperty Name="Curtidas" ColumnName="Curtidas" />
+          <ScalarProperty Name="RESTACATEGORIA" ColumnName="RESTACATEGORIA" />
+          <ScalarProperty Name="RESTADESCRICAO" ColumnName="RESTADESCRICAO" />
+          <ScalarProperty Name="RESTAPRECO" ColumnName="RESTAPRECO" />
+          <ScalarProperty Name="RESTANOME" ColumnName="RESTANOME" />
+          <ScalarProperty Name="RESTAUID" ColumnName="RESTAUID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Categorias">
+      <EntityTypeMapping TypeName="LunaryModel.Categorias">
+        <MappingFragment StoreEntitySet="Categorias">
+          <ScalarProperty Name="RESTACATEGORIA" ColumnName="RESTACATEGORIA" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

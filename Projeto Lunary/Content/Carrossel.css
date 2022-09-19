@@ -12,44 +12,60 @@
     overflow: hidden;
 }
 
-    .carrosel ul {
+.carrosel ul {
         display: flex;
         list-style: none;
         width: 1200px;
         height: 250px;
-    }
+}
 
-    .carrosel il {
-        position: relative;
-        animation: slide 15s infinite ease-out;
-    }
+.carrosel il {
+  position: relative;
+  animation: slide 15s infinite ease-out;
+}
 
 @keyframes slide {
     0% {
         left: 0px;
     }
 
-    20% {
+    10% {
         left: 0px;
+    }
+
+    20% {
+        left: -400px;
     }
 
     30% {
         left: -400px;
     }
 
+    40% {
+        left: -800px;
+    }
+
     50% {
-        left: -400px;
+        left: -800px;
     }
 
     60% {
-        left: -800px;
+        left: -1200px;
+    }
+
+    70% {
+        left: -1200px;
+    }
+
+    80% {
+        left: -1600px;
     }
 
     90% {
-        left: -800px;
+        left: -1600px;
     }
 
     100% {
         left: 0px;
-    }
+    }    
 }

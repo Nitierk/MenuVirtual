@@ -1,29 +1,20 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Schema Namespace="LunaryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
   <EntityContainer Name="BDLunary" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Campanha" EntityType="LunaryModel.Campanha" />
+    <EntitySet Name="Estabelecimento" EntityType="LunaryModel.Estabelecimento" />
     <EntitySet Name="Restaurante" EntityType="LunaryModel.Restaurante" />
     <EntitySet Name="Categorias" EntityType="LunaryModel.Categorias" />
-    <EntitySet Name="Estabelecimento" EntityType="LunaryModel.Estabelecimento" />
     <EntitySet Name="Ranking" EntityType="LunaryModel.Ranking" />
   </EntityContainer>
-  <EntityType Name="Restaurante">
+  <EntityType Name="Campanha">
     <Key>
-      <PropertyRef Name="RESTAUID" />
+      <PropertyRef Name="CAMID" />
     </Key>
-    <Property Name="RESTAUID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="RESTANOME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-    <Property Name="RESTAPRECO" Type="Double" Nullable="false" />
-    <Property Name="RESTADESCRICAO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-    <Property Name="RESTAPREPROMOCAO" Type="String" />
-    <Property Name="RESTACATEGORIA" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
-    <Property Name="imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="Curtidas" Type="Int32" />
-  </EntityType>
-  <EntityType Name="Categorias">
-    <Key>
-      <PropertyRef Name="RESTACATEGORIA" />
-    </Key>
-    <Property Name="RESTACATEGORIA" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="CAMID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CAMDescricao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAMFOTO" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+    <Property Name="CAMPRECO" Type="Double" />
   </EntityType>
   <EntityType Name="Estabelecimento">
     <Key>
@@ -38,6 +29,25 @@
     <Property Name="ESTABLOGIN" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="ESTABSENHA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
     <Property Name="ESTATIPO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Restaurante">
+    <Key>
+      <PropertyRef Name="RESTAUID" />
+    </Key>
+    <Property Name="RESTAUID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RESTANOME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RESTAPRECO" Type="Double" Nullable="false" />
+    <Property Name="RESTADESCRICAO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="RESTACATEGORIA" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="Curtidas" Type="Int32" />
+    <Property Name="imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="RESTAPREPROMOCAO" Type="Double" />
+  </EntityType>
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="RESTACATEGORIA" />
+    </Key>
+    <Property Name="RESTACATEGORIA" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
   </EntityType>
   <EntityType Name="Ranking">
     <Key>

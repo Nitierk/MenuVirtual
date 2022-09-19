@@ -227,6 +227,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\Campanha.cs">
+      <DependentUpon>Menu.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Campanhas.cs">
+      <DependentUpon>Menu.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Categorias.cs">
       <DependentUpon>Menu.tt</DependentUpon>
     </Compile>
@@ -327,6 +333,7 @@
     <Content Include="Views\Restaurante\Excluir.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
     <Content Include="Views\Restaurante\QRCODindex.cshtml" />
+    <Content Include="Views\Restaurante\Campanhas.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

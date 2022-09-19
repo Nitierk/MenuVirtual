@@ -5,6 +5,24 @@
     <!-- SSDL content -->
     <edmx:StorageModels>
     <Schema Namespace="LunaryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Campanha">
+          <Key>
+            <PropertyRef Name="CAMID" />
+          </Key>
+          <Property Name="CAMID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CAMDescricao" Type="varchar" MaxLength="100" />
+          <Property Name="CAMFOTO" Type="varbinary(max)" Nullable="false" />
+          <Property Name="CAMPRECO" Type="float" />
+        </EntityType>
+        <EntityType Name="Campanhas">
+          <Key>
+            <PropertyRef Name="CAMID" />
+          </Key>
+          <Property Name="CAMID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CAMDESCRICAO" Type="varchar" MaxLength="100" />
+          <Property Name="CAMFOTO" Type="varbinary(max)" />
+          <Property Name="CAMPRECO" Type="float" />
+        </EntityType>
         <EntityType Name="Estabelecimento">
           <Key>
             <PropertyRef Name="ESTABID" />
@@ -59,6 +77,8 @@ warning 6002: The table/view 'Lunary.dbo.Ranking' does not have a primary key de
           <Property Name="RESTAPREPROMOCAO" Type="float" />
         </EntityType>
         <EntityContainer Name="LunaryModelStoreContainer">
+          <EntitySet Name="Campanha" EntityType="Self.Campanha" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Campanhas" EntityType="Self.Campanhas" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Estabelecimento" EntityType="Self.Estabelecimento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Restaurante" EntityType="Self.Restaurante" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Categorias" EntityType="Self.Categorias" store:Type="Views" store:Schema="dbo">
@@ -84,29 +104,21 @@ warning 6002: The table/view 'Lunary.dbo.Ranking' does not have a primary key de
     <edmx:ConceptualModels>
       <Schema Namespace="LunaryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityContainer Name="BDLunary" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Campanha" EntityType="LunaryModel.Campanha" />
+          <EntitySet Name="Estabelecimento" EntityType="LunaryModel.Estabelecimento" />
           <EntitySet Name="Restaurante" EntityType="LunaryModel.Restaurante" />
           <EntitySet Name="Categorias" EntityType="LunaryModel.Categorias" />
-          <EntitySet Name="Estabelecimento" EntityType="LunaryModel.Estabelecimento" />
           <EntitySet Name="Ranking" EntityType="LunaryModel.Ranking" />
+          <EntitySet Name="Campanhas" EntityType="LunaryModel.Campanhas" />
         </EntityContainer>
-        <EntityType Name="Restaurante">
+        <EntityType Name="Campanha">
           <Key>
-            <PropertyRef Name="RESTAUID" />
+            <PropertyRef Name="CAMID" />
           </Key>
-          <Property Name="RESTAUID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-          <Property Name="RESTANOME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
-          <Property Name="RESTAPRECO" Type="Double" Nullable="false" />
-          <Property Name="RESTADESCRICAO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Name="RESTAPREPROMOCAO" Type="String" />
-          <Property Name="RESTACATEGORIA" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
-          <Property Name="imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="Curtidas" Type="Int32" />
-        </EntityType>
-        <EntityType Name="Categorias">
-          <Key>
-            <PropertyRef Name="RESTACATEGORIA" />
-          </Key>
-          <Property Name="RESTACATEGORIA" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="CAMID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CAMDescricao" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CAMFOTO" Type="Binary" Nullable="false" MaxLength="Max" FixedLength="false" />
+          <Property Name="CAMPRECO" Type="Double" />
         </EntityType>
         <EntityType Name="Estabelecimento">
           <Key>
@@ -121,6 +133,25 @@ warning 6002: The table/view 'Lunary.dbo.Ranking' does not have a primary key de
           <Property Name="ESTABLOGIN" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="ESTABSENHA" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="false" />
           <Property Name="ESTATIPO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+        </EntityType>
+        <EntityType Name="Restaurante">
+          <Key>
+            <PropertyRef Name="RESTAUID" />
+          </Key>
+          <Property Name="RESTAUID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="RESTANOME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+          <Property Name="RESTAPRECO" Type="Double" Nullable="false" />
+          <Property Name="RESTADESCRICAO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="RESTACATEGORIA" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+          <Property Name="Curtidas" Type="Int32" />
+          <Property Name="imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="RESTAPREPROMOCAO" Type="Double" />
+        </EntityType>
+        <EntityType Name="Categorias">
+          <Key>
+            <PropertyRef Name="RESTACATEGORIA" />
+          </Key>
+          <Property Name="RESTACATEGORIA" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
         </EntityType>
         <EntityType Name="Ranking">
           <Key>
@@ -138,30 +169,28 @@ warning 6002: The table/view 'Lunary.dbo.Ranking' does not have a primary key de
           <Property Name="imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
           <Property Name="RESTAPREPROMOCAO" Type="Double" />
         </EntityType>
+        <EntityType Name="Campanhas">
+          <Key>
+            <PropertyRef Name="CAMID" />
+          </Key>
+          <Property Name="CAMID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CAMDESCRICAO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+          <Property Name="CAMFOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+          <Property Name="CAMPRECO" Type="Double" />
+        </EntityType>
       </Schema>
     </edmx:ConceptualModels>
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
         <EntityContainerMapping StorageEntityContainer="LunaryModelStoreContainer" CdmEntityContainer="BDLunary">
-          <EntitySetMapping Name="Restaurante">
-            <EntityTypeMapping TypeName="LunaryModel.Restaurante">
-              <MappingFragment StoreEntitySet="Restaurante">
-                <ScalarProperty Name="Curtidas" ColumnName="Curtidas" />
-                <ScalarProperty Name="imagem" ColumnName="imagem" />
-                <ScalarProperty Name="RESTACATEGORIA" ColumnName="RESTACATEGORIA" />
-                <ScalarProperty Name="RESTAPREPROMOCAO" ColumnName="RESTAPREPROMOCAO" />
-                <ScalarProperty Name="RESTADESCRICAO" ColumnName="RESTADESCRICAO" />
-                <ScalarProperty Name="RESTAPRECO" ColumnName="RESTAPRECO" />
-                <ScalarProperty Name="RESTANOME" ColumnName="RESTANOME" />
-                <ScalarProperty Name="RESTAUID" ColumnName="RESTAUID" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="Categorias">
-            <EntityTypeMapping TypeName="LunaryModel.Categorias">
-              <MappingFragment StoreEntitySet="Categorias">
-                <ScalarProperty Name="RESTACATEGORIA" ColumnName="RESTACATEGORIA" />
+          <EntitySetMapping Name="Campanha">
+            <EntityTypeMapping TypeName="LunaryModel.Campanha">
+              <MappingFragment StoreEntitySet="Campanha">
+                <ScalarProperty Name="CAMPRECO" ColumnName="CAMPRECO" />
+                <ScalarProperty Name="CAMFOTO" ColumnName="CAMFOTO" />
+                <ScalarProperty Name="CAMDescricao" ColumnName="CAMDescricao" />
+                <ScalarProperty Name="CAMID" ColumnName="CAMID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -180,6 +209,27 @@ warning 6002: The table/view 'Lunary.dbo.Ranking' does not have a primary key de
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="Restaurante">
+            <EntityTypeMapping TypeName="LunaryModel.Restaurante">
+              <MappingFragment StoreEntitySet="Restaurante">
+                <ScalarProperty Name="RESTAPREPROMOCAO" ColumnName="RESTAPREPROMOCAO" />
+                <ScalarProperty Name="imagem" ColumnName="imagem" />
+                <ScalarProperty Name="Curtidas" ColumnName="Curtidas" />
+                <ScalarProperty Name="RESTACATEGORIA" ColumnName="RESTACATEGORIA" />
+                <ScalarProperty Name="RESTADESCRICAO" ColumnName="RESTADESCRICAO" />
+                <ScalarProperty Name="RESTAPRECO" ColumnName="RESTAPRECO" />
+                <ScalarProperty Name="RESTANOME" ColumnName="RESTANOME" />
+                <ScalarProperty Name="RESTAUID" ColumnName="RESTAUID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Categorias">
+            <EntityTypeMapping TypeName="LunaryModel.Categorias">
+              <MappingFragment StoreEntitySet="Categorias">
+                <ScalarProperty Name="RESTACATEGORIA" ColumnName="RESTACATEGORIA" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Ranking">
             <EntityTypeMapping TypeName="LunaryModel.Ranking">
               <MappingFragment StoreEntitySet="Ranking">
@@ -191,6 +241,16 @@ warning 6002: The table/view 'Lunary.dbo.Ranking' does not have a primary key de
                 <ScalarProperty Name="RESTAPRECO" ColumnName="RESTAPRECO" />
                 <ScalarProperty Name="RESTANOME" ColumnName="RESTANOME" />
                 <ScalarProperty Name="RESTAUID" ColumnName="RESTAUID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Campanhas">
+            <EntityTypeMapping TypeName="LunaryModel.Campanhas">
+              <MappingFragment StoreEntitySet="Campanhas">
+                <ScalarProperty Name="CAMPRECO" ColumnName="CAMPRECO" />
+                <ScalarProperty Name="CAMFOTO" ColumnName="CAMFOTO" />
+                <ScalarProperty Name="CAMDESCRICAO" ColumnName="CAMDESCRICAO" />
+                <ScalarProperty Name="CAMID" ColumnName="CAMID" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

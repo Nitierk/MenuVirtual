@@ -6,13 +6,14 @@
     <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="~/Scripts/Menu/FilterCate.js"></script>
+    <link href="~/Content/Carrossel.css" rel="stylesheet" />
 </head>
 
 <body>
 
     <h1 class="titulo">Lunary</h1>
     <p class="subtitulo">Cardápio</p>
-
+    <div class="barraVermelha">.</div>
     <div class="carrosel">
         <ul>
             <il>
@@ -22,7 +23,7 @@
 
                     if (item.imagem != null)
                     {
-                        var base64 = Convert.ToBase64String(item.PROIMAGEM);
+                        var base64 = Convert.ToBase64String(item.imagem);
                         var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
                         <img src='@imgSrc' style="max-width:400px; max-height:250px;" />
                     }
@@ -31,10 +32,6 @@
             </il>
         </ul>
     </div>
-
-
-
-    <div class="barraVermelha">.</div>
 
 
     <p class="barra">Menu</p>
