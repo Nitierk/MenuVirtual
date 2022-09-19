@@ -222,6 +222,7 @@
     <Compile Include="App_Start\BundleConfig.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="Controllers\ADMController.cs" />
     <Compile Include="Controllers\CampanhasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\RestauranteController.cs" />
@@ -335,6 +336,12 @@
     <Content Include="Views\Campanhas\Create.cshtml" />
     <Content Include="Views\Campanhas\Editar.cshtml" />
     <Content Include="Views\Campanhas\Excluir.cshtml" />
+    <Content Include="Views\ADM\index.cshtml" />
+    <Content Include="Views\ADM\Excluir.cshtml" />
+    <Content Include="Views\ADM\Editar.cshtml" />
+    <Content Include="Views\Create.cshtml" />
+    <Content Include="Views\ADM\Create.cshtml" />
+    <Content Include="Views\ADM\QRCODindex.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
