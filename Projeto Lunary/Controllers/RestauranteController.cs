@@ -19,6 +19,7 @@ namespace Projeto_Lunary.Controllers
         public ActionResult Index()
         {
             ViewBag.ListCategorias = bd.Categorias.ToList();
+            ViewBag.Ranking = bd.
             return View(bd.Restaurante.ToList());
         }
 
