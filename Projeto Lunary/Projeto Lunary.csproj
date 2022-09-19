@@ -248,6 +248,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Menu.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Ranking.cs">
+      <DependentUpon>Menu.tt</DependentUpon>
+    </Compile>
     <Compile Include="Models\Restaurante.cs">
       <DependentUpon>Menu.tt</DependentUpon>
     </Compile>

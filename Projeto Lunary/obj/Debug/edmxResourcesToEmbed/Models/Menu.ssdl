@@ -22,10 +22,10 @@
     <Property Name="RESTANOME" Type="varchar" MaxLength="200" Nullable="false" />
     <Property Name="RESTAPRECO" Type="float" Nullable="false" />
     <Property Name="RESTADESCRICAO" Type="varchar" MaxLength="300" />
-    <Property Name="RESTAPREPROMOCAO" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="RESTACATEGORIA" Type="varchar" MaxLength="300" Nullable="false" />
-    <Property Name="imagem" Type="varbinary(max)" />
     <Property Name="Curtidas" Type="int" />
+    <Property Name="imagem" Type="varbinary(max)" />
+    <Property Name="RESTAPREPROMOCAO" Type="float" />
   </EntityType>
   <!--Errors Found During Generation:
 warning 6002: The table/view 'Lunary.dbo.Categorias' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
@@ -35,6 +35,24 @@ warning 6002: The table/view 'Lunary.dbo.Categorias' does not have a primary key
     </Key>
     <Property Name="RESTACATEGORIA" Type="varchar" MaxLength="300" Nullable="false" />
   </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Lunary.dbo.Ranking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Ranking">
+    <Key>
+      <PropertyRef Name="RESTAUID" />
+      <PropertyRef Name="RESTANOME" />
+      <PropertyRef Name="RESTAPRECO" />
+      <PropertyRef Name="RESTACATEGORIA" />
+    </Key>
+    <Property Name="RESTAUID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RESTANOME" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="RESTAPRECO" Type="float" Nullable="false" />
+    <Property Name="RESTADESCRICAO" Type="varchar" MaxLength="300" />
+    <Property Name="RESTACATEGORIA" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="Curtidas" Type="int" />
+    <Property Name="imagem" Type="varbinary(max)" />
+    <Property Name="RESTAPREPROMOCAO" Type="float" />
+  </EntityType>
   <EntityContainer Name="LunaryModelStoreContainer">
     <EntitySet Name="Estabelecimento" EntityType="Self.Estabelecimento" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Restaurante" EntityType="Self.Restaurante" Schema="dbo" store:Type="Tables" />
@@ -42,6 +60,18 @@ warning 6002: The table/view 'Lunary.dbo.Categorias' does not have a primary key
       <DefiningQuery>SELECT 
     [Categorias].[RESTACATEGORIA] AS [RESTACATEGORIA]
     FROM [dbo].[Categorias] AS [Categorias]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Ranking" EntityType="Self.Ranking" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Ranking].[RESTAUID] AS [RESTAUID], 
+    [Ranking].[RESTANOME] AS [RESTANOME], 
+    [Ranking].[RESTAPRECO] AS [RESTAPRECO], 
+    [Ranking].[RESTADESCRICAO] AS [RESTADESCRICAO], 
+    [Ranking].[RESTACATEGORIA] AS [RESTACATEGORIA], 
+    [Ranking].[Curtidas] AS [Curtidas], 
+    [Ranking].[imagem] AS [imagem], 
+    [Ranking].[RESTAPREPROMOCAO] AS [RESTAPREPROMOCAO]
+    FROM [dbo].[Ranking] AS [Ranking]</DefiningQuery>
     </EntitySet>
   </EntityContainer>
 </Schema>

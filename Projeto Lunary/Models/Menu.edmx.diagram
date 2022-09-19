@@ -8,6 +8,7 @@
         <EntityTypeShape EntityType="LunaryModel.Restaurante" Width="1.5" PointX="0.75" PointY="0.75" />
         <EntityTypeShape EntityType="LunaryModel.Categorias" Width="1.5" PointX="3.375" PointY="0.75" />
         <EntityTypeShape EntityType="LunaryModel.Estabelecimento" Width="1.5" PointX="3.375" PointY="2.75" />
+        <EntityTypeShape EntityType="LunaryModel.Ranking" Width="1.5" PointX="6.25" PointY="2.125" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
