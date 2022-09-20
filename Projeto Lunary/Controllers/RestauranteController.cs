@@ -28,7 +28,17 @@ namespace Projeto_Lunary.Controllers
 
         }
 
-       
+        [HttpGet]
+        [AllowAnonymous]
+        public ActionResult Detalhes(int? id)
+        {
+
+            Restaurante restaurante = bd.Restaurante.Find(id);    
+            return PartialView(restaurante);
+        }
+
+
+
         public ActionResult Create()
         {
             ViewBag.listacategoria = bd.Categorias.ToList();
