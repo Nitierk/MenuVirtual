@@ -271,6 +271,7 @@
     <Content Include="Content\Menu\img\LogoLunary.png" />
     <Content Include="Content\Menu\img\PratoExemplo.png" />
     <Content Include="Content\Menu\Menu.css" />
+    <Content Include="Content\Menu\Preloader.css" />
     <Content Include="Content\QRCODE.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -310,6 +311,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Menu\bootbox.min.js" />
     <Content Include="Scripts\Menu\FilterCate.js" />
+    <Content Include="Scripts\Menu\preloader.js" />
     <Content Include="Scripts\Menu\ScrollToTop.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Scripts\QR\QRCOD.js" />

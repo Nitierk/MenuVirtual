@@ -8,15 +8,24 @@
     <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="~/Scripts/Menu/FilterCate.js"></script>
+    <link href="~/Content/Menu/Preloader.css" rel="stylesheet" />
 </head>
 
 <body>
+    <!-- PRELOADER! -->
+    <div id="preloader">
+        <div class="inner">
 
-    <div class="loading" style="display:block">
-        Carregando
+            <div class="bolas">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
     </div>
-    
-    <div class="Conteudo" style="display:none">
+
+    <!-- CONTENT -->
+    <div class="Conteudo">
         <script src="~/Scripts/Menu/ScrollToTop.js"></script>
 
         <div id="progress">
@@ -130,7 +139,7 @@
                 </div>
 
                 <!-- Modal Exibir/Detalhes-->
-                <div class="modal fade" id="PratosDetalhe-@item.RESTAUID" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                @*<div class="modal fade" id="PratosDetalhe-@item.RESTAUID" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                     <div class="modal-dialog" role="document">
                         <div class="modal-content">
                             <div class="modal-header">
@@ -160,13 +169,16 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </div>*@
 
 
             }
 
         </div>
     </div>
+
+
+    <script src="~/Scripts/Menu/preloader.js"></script>
 
     <script>
 
