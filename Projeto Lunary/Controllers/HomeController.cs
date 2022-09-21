@@ -7,6 +7,7 @@ using System.Web.Mvc;
 
 namespace Projeto_Lunary.Controllers
 {
+    [Authorize]
     public class HomeController : Controller
     {
         LunaryEntities bd = new LunaryEntities();

@@ -37,7 +37,7 @@ namespace Projeto_Lunary.Controllers
                     }
                     else
                     {
-                        return RedirectToAction("Index", "Home");
+                        return RedirectToAction("Index", "Admin");
                     }
          
             }

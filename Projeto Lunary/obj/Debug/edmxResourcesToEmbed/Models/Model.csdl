@@ -1,0 +1,69 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LunaryModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Campanhas">
+    <Key>
+      <PropertyRef Name="CAMID" />
+    </Key>
+    <Property Name="CAMID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="CAMDESCRICAO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+    <Property Name="CAMFOTO" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="CAMPRECO" Type="Double" />
+  </EntityType>
+  <EntityType Name="Estabelecimento">
+    <Key>
+      <PropertyRef Name="ESTABID" />
+    </Key>
+    <Property Name="ESTABID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="ESTABNOME" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ESTABENDERECO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ESTABBAIRRO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ESTATELEFONE" Type="Int32" Nullable="false" />
+    <Property Name="ESTABCEP" Type="Int32" Nullable="false" />
+    <Property Name="ESTABLOGIN" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ESTABSENHA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="ESTATIPO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <EntityType Name="Restaurante">
+    <Key>
+      <PropertyRef Name="RESTAUID" />
+    </Key>
+    <Property Name="RESTAUID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RESTANOME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RESTAPRECO" Type="Double" Nullable="false" />
+    <Property Name="RESTADESCRICAO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="RESTACATEGORIA" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Curtidas" Type="Int32" />
+    <Property Name="imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="RESTAPREPROMOCAO" Type="Double" />
+    <Property Name="Oferta" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="RESTACATEGORIA" />
+    </Key>
+    <Property Name="RESTACATEGORIA" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Ranking">
+    <Key>
+      <PropertyRef Name="RESTAUID" />
+      <PropertyRef Name="RESTANOME" />
+      <PropertyRef Name="RESTAPRECO" />
+      <PropertyRef Name="RESTACATEGORIA" />
+    </Key>
+    <Property Name="RESTAUID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RESTANOME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="RESTAPRECO" Type="Double" Nullable="false" />
+    <Property Name="RESTADESCRICAO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="RESTACATEGORIA" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
+    <Property Name="Curtidas" Type="Int32" />
+    <Property Name="imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="RESTAPREPROMOCAO" Type="Double" />
+  </EntityType>
+  <EntityContainer Name="LunaryEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Campanhas" EntityType="Self.Campanhas" />
+    <EntitySet Name="Estabelecimento" EntityType="Self.Estabelecimento" />
+    <EntitySet Name="Restaurante" EntityType="Self.Restaurante" />
+    <EntitySet Name="Categorias" EntityType="Self.Categorias" />
+    <EntitySet Name="Ranking" EntityType="Self.Ranking" />
+  </EntityContainer>
+</Schema>
