@@ -18,6 +18,12 @@ namespace Projeto_Lunary.Controllers
         {
             return View();
         }
+        public ActionResult ListPratos()
+        {
+            
+            return View(bd.Restaurante);
+        }
+
         public ActionResult Create()
         {
             ViewBag.listacategoria = bd.Categorias.ToList();
@@ -55,7 +61,7 @@ namespace Projeto_Lunary.Controllers
             //novoRestaurante.Oferta = oferta;
             bd.Restaurante.Add(novoRestaurante);
             bd.SaveChanges();
-            return RedirectToAction("Index", "Home");
+            return RedirectToAction("Index", "Admin");
         }
 
         [HttpGet]
@@ -78,15 +84,20 @@ namespace Projeto_Lunary.Controllers
             atualizarrestaurante.RESTADESCRICAO = descricao;
             atualizarrestaurante.RESTAPREPROMOCAO = precopromocao;
             atualizarrestaurante.RESTACATEGORIA = categoria;
-            using (var memoryStream = new MemoryStream())
+
+            if (imagem != null)
             {
-                imagem.InputStream.CopyTo(memoryStream);
-                atualizarrestaurante.imagem = memoryStream.ToArray();
+                using (var memoryStream = new MemoryStream())
+                {
+                    imagem.InputStream.CopyTo(memoryStream);
+                    atualizarrestaurante.imagem = memoryStream.ToArray();
+                }
             }
+            
 
             bd.Entry(atualizarrestaurante).State = EntityState.Modified;
             bd.SaveChanges();
-            return RedirectToAction("index");
+            return RedirectToAction("ListPratos");
         }
 
         [HttpGet]
@@ -94,7 +105,7 @@ namespace Projeto_Lunary.Controllers
         public ActionResult Excluir(int? id)
         {
             Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-            return RedirectToAction("index");
+            return RedirectToAction("ListPratos");
         }
 
         [HttpPost]

@@ -6,7 +6,7 @@
 <h2>Excluir</h2>
 
 <div>
-    <form action="/Restaurante/ExcluirConfirmar?id=@Model.RESTAUID" enctype="multipart/form-data" method="post">
+    <form action="/Admin/ExcluirConfirmar?id=@Model.RESTAUID" enctype="multipart/form-data" method="post">
         <label>Prato: </label>
         <label>@Model.RESTANOME</label>
 
@@ -49,8 +49,8 @@
 
 
         <div>
-            <a href="/Restaurante/Index"> <button type="button" class="btn btn-primary">Voltar</button></a>
-            <a href="/Restaurante/Index"><button type="submit" class="btn btn-danger">Excluir</button> </a>
+            <a href="/Admin/Index"> <button type="button" class="btn btn-primary">Voltar</button></a>
+            <a href="/Admin/Index"><button type="submit" class="btn btn-danger">Excluir</button> </a>
         </div>
 
     </form>
