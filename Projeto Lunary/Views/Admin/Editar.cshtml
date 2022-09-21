@@ -6,7 +6,7 @@
 <h2>Editar</h2>
 
 <div>
-    <form action="/Restaurante/Editar?id=@Model.RESTAUID"  enctype="multipart/form-data"  method="post">
+    <form action="/Admin/Editar?id=@Model.RESTAUID"  enctype="multipart/form-data"  method="post">
         <label for="nome">Nome</label>
         <input type="text" class="form-control" maxlength="500" id="nome" name="nome" value="@Model.RESTANOME" required />
         <div>
@@ -56,8 +56,8 @@
         </div>
         <br />
         <div>
-            <a href="/Restaurante/Index"> <button type="button" class="btn btn-primary">Voltar</button>  </a>
-            <button type="submit" class="btn btn-success">Salvar</button>
+            <a href="/Admin/Index"><button type="button" class="btn btn-primary">Voltar</button>  </a>
+            <a href="/Admin/Index"><button type="submit" class="btn btn-success">Salvar</button>  </a>
         </div>
 
     </form>
