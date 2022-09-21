@@ -174,7 +174,6 @@ C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Componen
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Diagnostics.DiagnosticSource.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Memory.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Numerics.Vectors.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Runtime.CompilerServices.Unsafe.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Text.Encodings.Web.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Threading.Tasks.Extensions.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.Helpers.dll
@@ -212,7 +211,6 @@ C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Collecti
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Diagnostics.DiagnosticSource.xml
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Memory.xml
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Numerics.Vectors.xml
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Runtime.CompilerServices.Unsafe.xml
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Text.Encodings.Web.xml
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Threading.Tasks.Extensions.xml
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.Helpers.xml
