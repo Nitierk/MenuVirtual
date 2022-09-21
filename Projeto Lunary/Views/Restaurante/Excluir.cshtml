@@ -6,44 +6,53 @@
 <h2>Excluir</h2>
 
 <div>
-<form action="/Excluir/ExcluirConfirma?id=@Model.RESTAUID" method="post">
-    <label>Prato: </label>
-    <label>@Model.RESTANOME</label>
+    <form action="/Restaurante/ExcluirConfirmar?id=@Model.RESTAUID" enctype="multipart/form-data" method="post">
+        <label>Prato: </label>
+        <label>@Model.RESTANOME</label>
 
-    <div>
-        <label>Preço: </label>
-        <label>@Model.RESTAPRECO</label>
+        <div>
+            <label>Preço: </label>
+            <label>@Model.RESTAPRECO</label>
 
-    </div>
+        </div>
 
-    <div>
-        <label>Descrição: </label>
-        <label>@Model.RESTADESCRICAO</label>
+        <div>
+            <label>Descrição: </label>
+            <label>@Model.RESTADESCRICAO</label>
 
-    </div>
+        </div>
 
-    <div>
-        <label>Preço Promocional: </label>
-        <label>@Model.RESTAPREPROMOCAO</label>
-    </div>
+        <div>
+            <label>Preço Promocional: </label>
+            <label>@Model.RESTAPREPROMOCAO</label>
+        </div>
 
-    <div>
-        <label>Categoria: </label>
-        <label>@Model.RESTACATEGORIA</label>
-    </div>
+        <div>
+            <label>Categoria: </label>
+            <label>@Model.RESTACATEGORIA</label>
+        </div>
 
-    <div>
-        <label>Imagem: </label>
-        <label>@Model.imagem</label>
-        
-    <div>
-        <a href="/Restaurante/Index"><button type="button" class="btn btn-primary">Voltar</button></a>
-        <a href="/Restaurante/Index"><button type="button" class="btn btn-danger">Excluir</button></a>
-    </div>
+        <div>
+            <label>Imagem: </label>
+            <label>@Model.imagem</label>
+            <td>
+                @{
+                    if (Model.imagem != null)
+                    {
+                        var base64 = Convert.ToBase64String(Model.imagem);
+                        var imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+                        <img src='@imgSrc' style="max-width:100px; max-height:100px;" />
+                    }
+                }
+            </td>
+        </div>
 
-</form>
+
+        <div>
+            <a href="/Restaurante/Index"> <button type="button" class="btn btn-primary">Voltar</button></a>
+            <a href="/Restaurante/Index"><button type="submit" class="btn btn-danger">Excluir</button> </a>
+        </div>
+
+    </form>
 
 </div>
-
-
-

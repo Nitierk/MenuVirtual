@@ -393,8 +393,8 @@ select * from Restaurante
 select * from Estabelecimento
 
 UPDATE Restaurante
-SET RESTACATEGORIA='Petiscos'
-WHERE RESTACATEGORIA='Petisco';
+SET RESTACATEGORIA='Refeições'
+WHERE RESTACATEGORIA='REFEIÇÕES';
 
 Create table Estabelecimento (
  ESTABID int identity (1,1) Primary Key not null,
