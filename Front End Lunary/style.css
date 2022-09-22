@@ -8,7 +8,7 @@
 
 html{
   scroll-behavior: smooth;
-  background-color: #ffffff;
+  
 }
 /*  ---&#x1F8158----110*/
 
@@ -48,27 +48,10 @@ body{
   padding: 0;
 }
 
-section{
-  width: 100%;
-  
-  background-color: url(bg.jpg) no-repeat;
-  background-size: cover;
-}
 
-.gotopbtn{
-  position: fixed;
-  width: 50px;
-  height: 50px;
-  background: #27ae60;
-  bottom: 40px;
-  right: 50px;
 
-  text-decoration: none;
-  text-align: center;
-  line-height: 50px;
-  color: white;
-  font-size: 22px;
-}
+
+
 
   .titulo{
     text-align: center;
@@ -180,6 +163,12 @@ section{
     border-left: 4px solid brown;
     border-right: 4px solid brown;
     border-radius: 15px
+}
+
+.img2-indisponivel{
+  text-align: center;
+  filter: grayscale(1);
+  z-index: 10000;
 }
 
 
