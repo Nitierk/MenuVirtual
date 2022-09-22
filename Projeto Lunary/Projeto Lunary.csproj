@@ -274,6 +274,7 @@
     <Content Include="Content\Menu\img\PratoExemplo.png" />
     <Content Include="Content\Menu\Menu.css" />
     <Content Include="Content\Menu\Preloader.css" />
+    <Content Include="Content\Modal.css" />
     <Content Include="Content\QRCODE.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />

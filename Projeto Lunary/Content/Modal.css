@@ -1,0 +1,40 @@
+﻿body {
+}
+
+.Nome{
+    margin-top:10px;
+    margin-bottom:5px;
+}
+
+.descricao {
+    letter-spacing:1px;
+}
+
+.preco{
+    text-align:center;
+}
+
+#dov{
+    display:flex;
+    justify-content:center;
+}
+.imgModal {
+    border-top: 4px solid brown;
+    border-bottom: 4px solid brown;
+    border-left: 4px solid brown;
+    border-right: 4px solid brown;
+    border-radius: 15px;
+    width: 500px;
+    height: 500px;
+}
+
+@media screen and (min-width: 280px) {
+    .imgModal {
+        width: 200px;
+        height: 200px;
+    }
+}
+
+
+
+

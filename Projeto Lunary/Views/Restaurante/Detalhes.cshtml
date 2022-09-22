@@ -1,38 +1,42 @@
 ﻿@model Projeto_Lunary.Models.Restaurante
 
-@{
-    ViewBag.Title = "Detalhes";
-    <!-- Conversão img -->
-    var imgDefault = "/Content/Menu/img/LogoLunary.png";
-    var imgSrc = "";
-    if (Model.imagem != null)
-    {
-        var base64 = Convert.ToBase64String(Model.imagem);
-        imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+<head>
+    <link href="~/Content/Modal.css" rel="stylesheet" />
+</head>
+    @{
+        ViewBag.Title = "Detalhes";
+        <!-- Conversão img -->
+        var imgDefault = "/Content/Menu/img/LogoLunary.png";
+        var imgSrc = "";
+        if (Model.imagem != null)
+        {
+            var base64 = Convert.ToBase64String(Model.imagem);
+            imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
 
+        }
+        else
+        {
+            imgSrc = imgDefault;
+        }
+        <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
     }
-    else
-    {
-        imgSrc = imgDefault;
-    }
-    <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
-}
-<h3><i class="glyphicon glyphicon-circle-arrow-left" data-dismiss="modal"></i></h3>
+    <h3><i class="glyphicon glyphicon-circle-arrow-left" data-dismiss="modal"></i></h3>
 
-<h2>
-Detalhes
-</h2>
+    <h2 class=" detalhes text-center">
+        Detalhes do produto:
+    </h2>
+    </br>
 
-
-<div class="">@Model.RESTANOME</div>
-
-<div>
-    <img class="img" src="@imgSrc" alt="@Model.RESTANOME" />
-</div>
-
-@if (Model.RESTADESCRICAO != null && Model.RESTADESCRICAO != "")
-{
-    <div class="">(@Model.RESTADESCRICAO)</div>
-}
-
-<div class="preco">R$@Model.RESTAPRECO.ToString("F")</div>
+    <div class="Nome text-center">@Model.RESTANOME</div>
+    </br>
+    
+    
+        <div id="dov">
+            <img class="imgModal" src="@imgSrc" alt="@Model.RESTANOME"/>
+        </div>
+    
+    @if (Model.RESTADESCRICAO != null && Model.RESTADESCRICAO != "")
+     {
+        <div class="descricao text-center">(@Model.RESTADESCRICAO)</div>
+     }                 
+     <div class="preco text-center">R$@Model.RESTAPRECO.ToString("F")</div>
