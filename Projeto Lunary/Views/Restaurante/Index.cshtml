@@ -7,36 +7,97 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="~/Scripts/Menu/FilterCate.js"></script>
     <link href="~/Content/Carrossel.css" rel="stylesheet" />
+    <link href="~/Content/campanhas.css" rel="stylesheet" />
+    <link href="~/Content/preco.css" rel="stylesheet" />
 </head>
 
 <body>
 
     <h1 class="titulo">Lunary</h1>
     <p class="subtitulo">Cardápio</p>
+
+    <!-- Carrossel das Campanhas -->
+    <form enctype="multipart/form-data">
+        <div class="campanhas">
+            <ul>
+                @foreach (var item in ViewBag.Campanha)
+                {
+                    var imgDefault = "~/Content/Menu/img/LogoLunary.png";
+                    var imgSrc = "";
+
+                    if (item.CAMFOTO != null)
+                    {
+                        var base64 = Convert.ToBase64String(item.imagem);
+                        imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
+                        <il>
+                            <img class="img3" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                        </il>
+                    }
+                    else
+                    {
+                        imgSrc = imgDefault;
+                        <il>
+                            <img class="img3" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                        </il>
+                    }
+                }
+            </ul>
+        </div>
+    </form>
+
     <div class="barraVermelha">.</div>
-    <div class="carrosel">
-        <ul>
-            <il>
+
+    <!-- Carrossel do Top Rank -->
+    <p>Produtos Mais Curtidos</p>
+    <form enctype="multipart/form-data">
+        <div class="carrossel">
+            <ul>
                 @foreach (var item in ViewBag.Rank)
                 {
-                    <img src="@item.imagem" alt="" height="250px" width="400px">
+                    var imgDefault = "~/Content/Menu/img/LogoLunary.png";
+
+                    var imgSrc = "";
 
                     if (item.imagem != null)
                     {
                         var base64 = Convert.ToBase64String(item.imagem);
-                        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
-                        <img src='@imgSrc' style="max-width:400px; max-height:250px;" />
+                        imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+                        <il>
+                            <img class="img2" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                        </il>
                     }
+                    else
+                    {
 
+                        imgSrc = imgDefault;
+                        <il>
+                            <img class="img2" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                        </il>
+                    }
                 }
-            </il>
-        </ul>
+            </ul>
+        </div>
+    </form>
+    
+    <div class="subir text-center">
+        <p>Preços</p>
+        <form>
+            <ul>
+                @foreach (var item in ViewBag.Rank)
+                {
+                    <li>
+                        @item.RESTANOME :
+                        R$@item.RESTAPRECO.ToString("F")
+                    </li>
+                }
+            </ul>
+        </form>
     </div>
+   
 
 
     <p class="barra">Menu</p>
-
-
 
     <!-- Filtro Categorias -->
     <div class="botao btn-group">
@@ -57,10 +118,30 @@
     <div>
         @foreach (var item in Model)
         {
+
+            var imgDefault = "/Content/Menu/img/LogoLunary.png";
+
+
+            <!-- Conversão da img-->
+
+            var imgSrc = "";
+
+
+            if (item.imagem != null)
+            {
+                var base64 = Convert.ToBase64String(item.imagem);
+                imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
+            }
+            else
+            {
+                imgSrc = imgDefault;
+            }
+
             <div class="row pratos @item.RESTACATEGORIA">
                 <div class="col-lg-12">
                     <div data-toggle="modal" data-target="#PratosDetalhe-@item.RESTAUID" data-descricao="@item.RESTADESCRICAO">
-                        <img class="img" src="~/Content/Menu/img/PratoExemplo.png" width="232" height="232">
+                        <img class="img" src="@imgSrc" width="232" height="232">
                     </div>
 
                     <h3 class="text-center name">@item.RESTANOME</h3>

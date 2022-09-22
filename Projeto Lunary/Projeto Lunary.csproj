@@ -266,10 +266,17 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\campanhas.css" />
     <Content Include="Content\Carrossel.css" />
+    <Content Include="Content\Menu\img\1.jpg" />
+    <Content Include="Content\Menu\img\3.jpg" />
+    <Content Include="Content\Menu\img\4.png" />
+    <Content Include="Content\Menu\img\5.jfif" />
     <Content Include="Content\Menu\img\HeartAnimation.png" />
+    <Content Include="Content\Menu\img\LogoLunary.png" />
     <Content Include="Content\Menu\img\PratoExemplo.png" />
     <Content Include="Content\Menu\Menu.css" />
+    <Content Include="Content\preco.css" />
     <Content Include="Content\QRCODE.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
@@ -297,6 +304,7 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <Content Include="Content\Menu\img\2.webp" />
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />
     <Content Include="Scripts\jquery-3.4.1.min.js" />
@@ -326,12 +334,7 @@
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Restaurante\Index.cshtml" />
-    <Content Include="Views\Restaurante\Create.cshtml" />
-    <Content Include="Views\Restaurante\Editar.cshtml" />
-    <Content Include="Views\Restaurante\indexADM.cshtml" />
-    <Content Include="Views\Restaurante\Excluir.cshtml" />
     <Content Include="Views\Home\Login.cshtml" />
-    <Content Include="Views\Restaurante\QRCODindex.cshtml" />
     <Content Include="Views\Campanhas\index.cshtml" />
     <Content Include="Views\Campanhas\Create.cshtml" />
     <Content Include="Views\Campanhas\Editar.cshtml" />
@@ -345,7 +348,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\QrCode\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
