@@ -16,7 +16,7 @@
         qtdLikesBefore.remove()
         var Curti = document.createElement('span');
         Curti.setAttribute("class", "number");
-        Curti.setAttribute("id", id + "-Curtidadiv");
+        Curti.setAttribute("id", id + "-Curtida");
         Curti.innerHTML = parseInt(qtdCurtidas) - 1;
         document.getElementById(id + "-Curtidadiv").appendChild(Curti);
     }
