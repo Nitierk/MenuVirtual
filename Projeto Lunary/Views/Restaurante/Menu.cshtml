@@ -44,21 +44,20 @@
 
 
         <!-- Filtro Categorias -->
-        <div class="semibotao">
-            <div class="botao btn-group">
-                <div class="dropdown">
+    
+          
+        <div class="dropdown text-center">
 
-                    <select style="text-transform: uppercase;" onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
+            <select style="text-transform: uppercase;" onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
 
-                        <option onchange="FiltroCategorias()" value='Oferta do Dia'>Oferta do Dia</option>
-                        @foreach (var item in ViewBag.ListCategorias)
-                        {
-                            <option onchange="FiltroCategorias()" value="@item.RESTACATEGORIA">@item.RESTACATEGORIA</option>
-                        }
-                    </select>
-                </div>
-            </div>
+                <option onchange="FiltroCategorias()" value='Oferta do Dia'>Oferta do Dia</option>
+                @foreach (var item in ViewBag.ListCategorias)
+                {
+                    <option onchange="FiltroCategorias()" value="@item.RESTACATEGORIA">@item.RESTACATEGORIA</option>
+                }
+            </select>
         </div>
+
 
         @{
             var Categorias = ViewBag.ListCategorias as IEnumerable<Projeto_Lunary.Models.Restaurante>;
@@ -127,8 +126,11 @@
                         <div class="heart-btn">
                             <div class="content">
                                 <form action="" method="post">
-                                    @*<button type="submit" class="heart btn" id="Heart-@item.RESTAUID"></button>*@
                                     <span class="heart" id="@item.RESTAUID"></span>
+                                   
+                                     <span class="numb">@item.Curtidas</span>
+                                 
+                                    
                                 </form>
 
 

@@ -21,7 +21,7 @@ namespace Projeto_Lunary.Controllers
         
         [HttpGet]
      
-        public ActionResult Index()
+        public ActionResult Menu()
         {
             ViewBag.ListCategorias = bd.Categorias.ToList();
             return View(bd.Restaurante.ToList());

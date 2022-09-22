@@ -331,7 +331,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Restaurante\Index.cshtml" />
+    <Content Include="Views\Restaurante\Menu.cshtml" />
     <Content Include="Views\Admin\Create.cshtml" />
     <Content Include="Views\Admin\Editar.cshtml" />
     <Content Include="Views\Restaurante\indexADM.cshtml" />
