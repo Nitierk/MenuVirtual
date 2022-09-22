@@ -127,12 +127,11 @@
                             <div class="content">
                                 <form action="" method="post">
                                     <span class="heart" id="@item.RESTAUID"></span>
-                                   
-                                     <span class="numb">@item.Curtidas</span>
-                                 
-                                    
-                                </form>
 
+                                </form>
+                                <div id="curtidas">
+                                    <span class="number" id="@item.RESTAUID-Curtida" data-value="@item.Curtidas">@item.Curtidas</span>
+                                </div>
 
                             </div>
                         </div>
@@ -175,7 +174,7 @@
             }
 
 
-          
+
         $(document).ready(function () {
 
             $(".img2").click(function () {
@@ -192,34 +191,51 @@
             });
 
         });
-    
+
 
         $(document).ready(function () {
         //Like
-        $('.heart').click(function () {
+            $('.heart').click(function () {
 
-        var id = (this.id);
-        var url = "/Restaurante/ContagemLikes";
-        var status;
-        let el = document.getElementById(id);
-        if (el.classList.contains('heart-active')) {
-        el.classList.remove('heart-active');
-        status = false;
-        $.post(url, { id: id, status: status }, function (data) {
+                var id = (this.id);
+                var url = "/Restaurante/ContagemLikes";
+                var status;
+                let el = document.getElementById(id);
+                //Botão curtido
+                if (el.classList.contains('heart-active')) {
+                    el.classList.remove('heart-active');
+                    status = false;
+                    $.post(url, { id: id, status: status }, function (data) {
 
-        });
-        }
-        else {
-        el.classList.add('heart-active');
-        status = true;
-        $.post(url, { id: id, status: status }, function (data) {
+                    });
+                    var qtdLikesBefore = document.getElementById(this.id + "-Curtida")
+                    var qtdCurtidas = this.id
+                    console.log(qtdCurtidas)
+                    qtdLikesBefore.remove()
+                    var Curti = document.createElement('h1');
+                    Curti.setAttribute("class", "number");
+                    Curti.innerHTML = qtdCurtidas;
+                    document.getElementById("curtidas").appendChild(Curti);
+                }
+                //Botão sem curtir
+                else {
+                    el.classList.add('heart-active');
+                    status = true;
+                    $.post(url, { id: id, status: status }, function (data) {
 
-        });
-        }
+                    });
+                    var qtdLikesBefore = document.getElementById(this.id+"-Curtida")
+                    var qtdCurtidas = this.id
+                    console.log(qtdCurtidas)
+                    qtdLikesBefore.remove()
+                    var Curti = document.createElement('span');
+                    Curti.setAttribute("class", "number");
+                    Curti.innerHTML = qtdCurtidas + 1;
+                    document.getElementById("curtidas").appendChild(Curti);
+                }
 
 
-        });
-
+            });
         });
         </script>
     }

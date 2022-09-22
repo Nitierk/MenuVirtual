@@ -225,7 +225,7 @@ body {
     background-position: right;
 }
 
-.numb{
+.number{
     font-size: 21px;
     font-weight: 600;
     font-family: sans-serif;
@@ -236,7 +236,7 @@ body {
     transform: translate(-50%,-50%);
 }
 
-.numb.heart-active:before {
+.number.heart-active:before {
     color: black;
 }
 
@@ -361,7 +361,7 @@ body {
         background-color: transparent;
     }
 
-    .numb:before {
+    .number:before {
         top: 50%;
         left: 150%;
     }
@@ -384,7 +384,7 @@ body {
         background-color:transparent;
     }
 
-    .numb:before {
+    .number:before {
         top: 85%;
     }
 
