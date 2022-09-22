@@ -9,6 +9,8 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="~/Scripts/Menu/FilterCate.js"></script>
     <link href="~/Content/Menu/Preloader.css" rel="stylesheet" />
+    <script src="~/Scripts/Menu/HeartClick.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
 </head>
 
 <body>
@@ -126,11 +128,11 @@
                         <div class="heart-btn">
                             <div class="content">
                                 <form action="" method="post">
-                                    <span class="heart" id="@item.RESTAUID"></span>
+                                    <span onclick="Like(@item.RESTAUID)" class="heart" id="@item.RESTAUID"></span>
 
                                 </form>
-                                <div id="curtidas">
-                                    <span class="number" id="@item.RESTAUID-Curtida" data-value="@item.Curtidas">@item.Curtidas</span>
+                                <div id="@item.RESTAUID-Curtidadiv">
+                                    <span class="number" id="@item.RESTAUID-Curtida">@item.Curtidas</span>
                                 </div>
 
                             </div>
@@ -164,8 +166,7 @@
 
 
         <script src="~/Scripts/Menu/preloader.js"></script>
-        <script src="~/Scripts/Menu/bootbox.min.js"></script>
-        <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+        
         <script>
 
             window.onload = () => {
@@ -195,47 +196,7 @@
 
         $(document).ready(function () {
         //Like
-            $('.heart').click(function () {
-
-                var id = (this.id);
-                var url = "/Restaurante/ContagemLikes";
-                var status;
-                let el = document.getElementById(id);
-                //Botão curtido
-                if (el.classList.contains('heart-active')) {
-                    el.classList.remove('heart-active');
-                    status = false;
-                    $.post(url, { id: id, status: status }, function (data) {
-
-                    });
-                    var qtdLikesBefore = document.getElementById(this.id + "-Curtida")
-                    var qtdCurtidas = this.id
-                    console.log(qtdCurtidas)
-                    qtdLikesBefore.remove()
-                    var Curti = document.createElement('h1');
-                    Curti.setAttribute("class", "number");
-                    Curti.innerHTML = qtdCurtidas;
-                    document.getElementById("curtidas").appendChild(Curti);
-                }
-                //Botão sem curtir
-                else {
-                    el.classList.add('heart-active');
-                    status = true;
-                    $.post(url, { id: id, status: status }, function (data) {
-
-                    });
-                    var qtdLikesBefore = document.getElementById(this.id+"-Curtida")
-                    var qtdCurtidas = this.id
-                    console.log(qtdCurtidas)
-                    qtdLikesBefore.remove()
-                    var Curti = document.createElement('span');
-                    Curti.setAttribute("class", "number");
-                    Curti.innerHTML = qtdCurtidas + 1;
-                    document.getElementById("curtidas").appendChild(Curti);
-                }
-
-
-            });
+           
         });
         </script>
     }
