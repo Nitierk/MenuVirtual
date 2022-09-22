@@ -11,11 +11,12 @@
 
         });
         var qtdLikesBefore = document.getElementById(id + "-Curtida")
-        var qtdCurtidas = qtdLikesBefore.innerHTML;
-        console.log(qtdCurtidas)
+        var qtdCurtidas = qtdLikesBefore.innerText;
+        console.log(qtdCurtidas)    
         qtdLikesBefore.remove()
         var Curti = document.createElement('span');
         Curti.setAttribute("class", "number");
+        Curti.setAttribute("id", id + "-Curtidadiv");
         Curti.innerHTML = parseInt(qtdCurtidas) - 1;
         document.getElementById(id + "-Curtidadiv").appendChild(Curti);
     }
@@ -27,11 +28,12 @@
 
         });
         var qtdLikesBefore = document.getElementById(id + "-Curtida")
-        var qtdCurtidas = qtdLikesBefore.innerHTML;
+        var qtdCurtidas = qtdLikesBefore.innerText;
         console.log(qtdCurtidas)
         qtdLikesBefore.remove()
         var Curti = document.createElement('span');
         Curti.setAttribute("class", "number");
+        Curti.setAttribute("id", id + "-Curtida");
         Curti.innerHTML = parseInt(qtdCurtidas) + 1;
         document.getElementById(id + "-Curtidadiv").appendChild(Curti);
     }
