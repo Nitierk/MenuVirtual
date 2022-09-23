@@ -6,22 +6,22 @@
 .carrosel {
     width: 400px;
     height: 250px;
-    outline: 3px solid black;
+    outline: 3px solid brown;
     margin: 50px auto;
     box-shadow: 10px 10px 15px rgba(0,0,0,7);
     overflow: hidden;
 }
 
 .carrosel ul {
-        display: flex;
-        list-style: none;
-        width: 1200px;
-        height: 250px;
+    display: flex;
+    list-style: none;
+    width: 1200px;
+    height: 250px;
 }
 
 .carrosel il {
-  position: relative;
-  animation: slide 15s infinite ease-out;
+        position: relative;
+        animation: slide 15s infinite ease-out;
 }
 
 @keyframes slide {
@@ -67,5 +67,5 @@
 
     100% {
         left: 0px;
-    }    
+    }
 }

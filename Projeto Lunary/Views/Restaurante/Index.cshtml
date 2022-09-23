@@ -18,7 +18,7 @@
 
     <!-- Carrossel das Campanhas -->
     <form enctype="multipart/form-data">
-        <div class="campanhas">
+        <div class="campanhas" enctype="multipart/form-data">
             <ul>
                 @foreach (var item in ViewBag.Campanha)
                 {
@@ -51,28 +51,27 @@
     <!-- Carrossel do Top Rank -->
     <p>Produtos Mais Curtidos</p>
     <form enctype="multipart/form-data">
-        <div class="carrossel">
+        <div class="carrosel">
             <ul>
                 @foreach (var item in ViewBag.Rank)
                 {
                     var imgDefault = "~/Content/Menu/img/LogoLunary.png";
-
                     var imgSrc = "";
 
                     if (item.imagem != null)
                     {
                         var base64 = Convert.ToBase64String(item.imagem);
                         imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
                         <il>
-                            <img class="img2" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                            <img class="imagem" src="@imgSrc" alt="" height="250px" width="400px"></img>
                         </il>
                     }
                     else
                     {
-
                         imgSrc = imgDefault;
                         <il>
-                            <img class="img2" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                            <img class="imagem" src="@imgSrc" alt="" height="250px" width="400px"></img>
                         </il>
                     }
                 }
