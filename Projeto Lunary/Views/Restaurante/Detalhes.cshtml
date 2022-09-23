@@ -1,7 +1,7 @@
 ﻿@model Projeto_Lunary.Models.Restaurante
 
 <head>
-    <link href="~/Content/Modal.css" rel="stylesheet" />
+    <link href="~/Content/Menu/Modal.css" rel="stylesheet" />
 </head>
     @{
         ViewBag.Title = "Detalhes";
@@ -34,7 +34,7 @@
         <div id="dov">
             <img class="imgModal" src="@imgSrc" alt="@Model.RESTANOME"/>
         </div>
-    
+     </br>
     @if (Model.RESTADESCRICAO != null && Model.RESTADESCRICAO != "")
      {
         <div class="descricao text-center">(@Model.RESTADESCRICAO)</div>
