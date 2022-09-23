@@ -9,6 +9,11 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="~/Scripts/Menu/FilterCate.js"></script>
     <link href="~/Content/Menu/Preloader.css" rel="stylesheet" />
+<<<<<<< HEAD:Projeto Lunary/Views/Restaurante/Index.cshtml
+=======
+    <script src="~/Scripts/Menu/HeartClick.js"></script>
+    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+>>>>>>> 08df0f6005c6ba5fca0b10459fcc0572a0279bf4:Projeto Lunary/Views/Restaurante/Menu.cshtml
 </head>
 
 <body>
@@ -44,21 +49,20 @@
 
 
         <!-- Filtro Categorias -->
-        <div class="semibotao">
-            <div class="botao btn-group">
-                <div class="dropdown">
+    
+          
+        <div class="dropdown text-center">
 
-                    <select style="text-transform: uppercase;" onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
+            <select style="text-transform: uppercase;" onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
 
-                        <option onchange="FiltroCategorias()" value='Oferta do Dia'>Oferta do Dia</option>
-                        @foreach (var item in ViewBag.ListCategorias)
-                        {
-                            <option onchange="FiltroCategorias()" value="@item.RESTACATEGORIA">@item.RESTACATEGORIA</option>
-                        }
-                    </select>
-                </div>
-            </div>
+                <option onchange="FiltroCategorias()" value='Oferta do Dia'>Oferta do Dia</option>
+                @foreach (var item in ViewBag.ListCategorias)
+                {
+                    <option onchange="FiltroCategorias()" value="@item.RESTACATEGORIA">@item.RESTACATEGORIA</option>
+                }
+            </select>
         </div>
+
 
         @{
             var Categorias = ViewBag.ListCategorias as IEnumerable<Projeto_Lunary.Models.Restaurante>;
@@ -127,10 +131,12 @@
                         <div class="heart-btn">
                             <div class="content">
                                 <form action="" method="post">
-                                    @*<button type="submit" class="heart btn" id="Heart-@item.RESTAUID"></button>*@
-                                    <span class="heart" id="@item.RESTAUID"></span>
-                                </form>
+                                    <span onclick="Like(@item.RESTAUID)" class="heart" id="@item.RESTAUID"></span>
 
+                                </form>
+                                <div id="@item.RESTAUID-Curtidadiv">
+                                    <span class="number" id="@item.RESTAUID-Curtida">@item.Curtidas</span>
+                                </div>
 
                             </div>
                         </div>
@@ -163,8 +169,7 @@
 
 
         <script src="~/Scripts/Menu/preloader.js"></script>
-        <script src="~/Scripts/Menu/bootbox.min.js"></script>
-        <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+        
         <script>
 
             window.onload = () => {
@@ -173,7 +178,7 @@
             }
 
 
-          
+
         $(document).ready(function () {
 
             $(".img2").click(function () {
@@ -190,34 +195,11 @@
             });
 
         });
-    
+
 
         $(document).ready(function () {
         //Like
-        $('.heart').click(function () {
-
-        var id = (this.id);
-        var url = "/Restaurante/ContagemLikes";
-        var status;
-        let el = document.getElementById(id);
-        if (el.classList.contains('heart-active')) {
-        el.classList.remove('heart-active');
-        status = false;
-        $.post(url, { id: id, status: status }, function (data) {
-
-        });
-        }
-        else {
-        el.classList.add('heart-active');
-        status = true;
-        $.post(url, { id: id, status: status }, function (data) {
-
-        });
-        }
-
-
-        });
-
+           
         });
         </script>
     }
