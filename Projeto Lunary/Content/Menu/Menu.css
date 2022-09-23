@@ -1,43 +1,16 @@
-﻿
+﻿@import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
 
-
-body {
-    padding-top: 50px;
-    padding-bottom: 20px;
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
 }
-
-/* Set padding to keep content from hitting the edges */
-.body-content {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-
-/* Override the default bootstrap behavior where horizontal description lists 
-   will truncate terms that are too long to fit in the left column 
-*/
-.dl-horizontal dt {
-    white-space: normal;
-}
-
-/* Set width on the form input elements since they're 100% wide by default */
-input,
-select,
-textarea {
-    max-width: 280px;
-}
-
-.navbar-inverse .navbar-toggle:hover,
-.navbar-inverse .navbar-toggle:focus {
-    background-color: #777;
-    border-color: #fff
-}
-
-
-/* Scroll to Top */
 
 html {
     scroll-behavior: smooth;
+    background-color: #ffffff;
 }
+/*  ---&#x1F8158----110*/
 
 #progress {
     position: fixed;
@@ -51,6 +24,10 @@ html {
     box-shadow: 0 0 10px brown;
     cursor: pointer;
     z-index: 1000;
+    
+}
+.progress-bar {
+    background-color: brown;
 }
 
 #progress-value {
@@ -69,6 +46,12 @@ html {
     background-color: #ffffff;
 }
 
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
 .gotopbtn {
     position: fixed;
     width: 50px;
@@ -83,10 +66,6 @@ html {
     font-size: 22px;
 }
 
-
-/* Layout */
-
-
 .titulo {
     text-align: center;
     color: brown;
@@ -100,7 +79,7 @@ html {
 
 .subtitulo {
     text-align: center;
-    color: #a52a2a;
+    color: brown;
     margin-bottom: 60px;
 }
 
@@ -134,20 +113,11 @@ html {
     margin-top: 40px;
 }
 
-.pratos {
-    display: none;
-}
-
-.show {
-    display: block;
-}
-
 .barraVermelha {
     margin-top: 15px;
     margin-bottom: 1px;
     background-color: brown;
     color: brown;
-    
 }
 
 .preco {
@@ -159,39 +129,49 @@ html {
     font-family: arial, sans-serif;
 }
 
-.name {
+.Pastel {
     color: brown;
     margin-top: 15px;
 }
+
+.pratos {
+    display: none;
+}
+
+.show {
+    display: block;
+}
+
 
 .semiprogress {
     position: relative;
     margin-top: 15px;
     margin-bottom: 15px;
-    
 }
 
-.progress-bar {
-    background-color: brown;
-}
 .progress {
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    color: brown;
-    background-color: brown;
 }
 
-.semibotao {   
+
+
+.dropdown {
     position: relative;
-    text-align: center;
+    justify-content: center;
+    align-items: center;
+    border-radius: 10px;
+    margin-top: 15px;
 }
 
-.btn-group {
-    border: 2px solid #a52a2a;
-    padding: 6px 20px;
+.btn-danger {
+    width: 220px;
+    border: 2px solid brown;
 }
+
+
 
 .img2 {
     text-align: center;
@@ -205,63 +185,38 @@ html {
     border-radius: 15px
 }
 
-.imgmodal {
-    border-top: 4px solid brown;
-    border-bottom: 4px solid brown;
-    border-left: 4px solid brown;
-    border-right: 4px solid brown;
-    align-content: center;
-    margin-left: 45px;
-}
 
 
 
-
-
-/* Botão de Like */
-
+/*Botão like*/
 @import url('https://fonts.googleapis.com/css?family=Montserrat:600&display=swap');
 
 .heart-btn {
     position: absolute;
-    top: 95%;
+    top: 100%;
     left: 40%;
     transform: translate(-50%,-50%);
 }
 
-.content {
-    padding: 7px 10px;
-    display: flex;
-    cursor: pointer;
-}
-
-
-
 .heart {
     position: absolute;
-    background: url('img/heartanimation.png');
+    background: url("/Content/Menu/img/HeartAnimation.png") no-repeat;
     background-position: left;
     background-size: 2900%;
     height: 90px;
     width: 90px;
-    top: 75%;
+    top: 150%;
     left: 21%;
     transform: translate(-50%,-50%);
 }
 
-.text {
-    font-size: 21px;
-    margin-left: 30px;
-    color: grey;
-    font-family: 'Montserrat',sans-serif;
-}
 
 .heart-active {
-    content: '13';
+    content: '1';
     color: #000;
 }
 
-.text.heart-active {
+.heart-active {
     color: #000;
 }
 
@@ -270,6 +225,20 @@ html {
     background-position: right;
 }
 
+.number{
+    font-size: 21px;
+    font-weight: 600;
+    font-family: sans-serif;
+    color: #9c9496;
+    position: absolute;
+    top: 150%;
+    left: 150%;
+    transform: translate(-50%,-50%);
+}
+
+.number.heart-active:before {
+    color: black;
+}
 
 @keyframes animate {
     0% {
@@ -281,7 +250,20 @@ html {
     }
 }
 
-/* Responsivo */
+
+/*responsivo*/
+@media screen and (max-width: 350px) {
+    #progress {
+        width: 45px;
+        height: 45px;
+        border-radius: 45%;
+    }
+
+    #progress-value {
+        font-size: 21px;
+    }
+}
+
 
 @media screen and (min-width: 350px) {
     .titulo {
@@ -313,7 +295,7 @@ html {
     }
 
     .heart-btn {
-        top: 95%;
+        top: 92%;
         left: 20%;
     }
 
@@ -328,15 +310,15 @@ html {
     }
 }
 
+
 @media screen and (min-width: 390px) {
     .img {
         height: 300px;
         width: 300px;
     }
 
-
     .heart-btn {
-        top: 95%;
+        top: 92%;
         left: 38%;
     }
 
@@ -347,26 +329,43 @@ html {
 }
 
 
-
-
-
-
-
 @media screen and (min-width: 280px) {
     .heart-btn {
-        top: 95%;
-        left: 27%;
+        top: 91%;
+        left: 22%;
     }
 
     .heart {
         height: 110px;
         width: 110px;
     }
+
+    .preco {
+        margin-left: 160px;
+    }
+
+    #progress {
+        width: 40px;
+        height: 40px;
+        border-radius: 45%;
+    }
+
+    #progress-value {
+        font-size: 17px;
+    }
+
+    .content {
+        padding: 7px 10px;
+        display: flex;
+        cursor: pointer;
+        background-color: transparent;
+    }
+
+    .number:before {
+        top: 50%;
+        left: 150%;
+    }
 }
-
-
-
-
 
 @media screen and (min-width: 440px) {
     .img {
@@ -374,15 +373,31 @@ html {
         width: 350px;
     }
 
-    .heart-btn {
-        top: 95%;
-        left: 30%;
+    .heart {
+        top: 97%;
     }
 
-    .heart {
-        top: 95%;
+    .content {
+        padding: 7px 10px;
+        display: flex;
+        cursor: pointer;
+        background-color:transparent;
+    }
+
+    .number:before {
+        top: 85%;
+    }
+
+    .preco {
+        margin-left: 300px;
+    }
+
+    .heart-btn {
+        top: 91%;
+        left: 19%;
     }
 }
+
 
 @media screen and (min-width: 500px) {
     .img {
@@ -391,14 +406,20 @@ html {
     }
 
     .heart-btn {
-        top: 95%;
-        left: 30%;
+        top: 91%;
+        left: 19%;
     }
 
     .heart {
         top: 110%;
     }
+
+    .preco {
+        margin-left: 390px;
+    }
 }
+
+
 
 @media screen and (min-width: 600px) {
     .img {
@@ -407,8 +428,8 @@ html {
     }
 
     .heart-btn {
-        top: 95%;
-        left: 30%;
+        top: 91%;
+        left: 20%;
     }
 
     .heart {
@@ -437,11 +458,148 @@ html {
     }
 
     .Pastel {
-        font-size: 43px;
+        font-size: 35px;
     }
 
     .preco {
         font-size: 25px;
+        margin-left: 430px;
     }
 }
 
+/*responsividade-preco*/
+@media screen and (min-width: 296px) {
+    .preco {
+        margin-left: 170px;
+    }
+
+    .heart-btn {
+        top: 91%;
+        left: 22%;
+    }
+}
+
+@media screen and (min-width: 314px) {
+    .preco {
+        margin-left: 180px;
+    }
+}
+
+@media screen and (min-width: 330px) {
+    .preco {
+        margin-left: 190px;
+    }
+
+    .heart-btn {
+        top: 91%;
+        left: 24%;
+    }
+}
+
+@media screen and (min-width: 345px) {
+    .preco {
+        margin-left: 200px;
+    }
+}
+
+@media screen and (min-width: 360px) {
+    .preco {
+        margin-left: 210px;
+    }
+}
+
+@media screen and (min-width: 375px) {
+    .preco {
+        margin-left: 220px;
+    }
+}
+
+@media screen and (min-width: 390px) {
+    .preco {
+        margin-left: 245px;
+    }
+
+    .heart-btn {
+        top: 91%;
+        left: 20%;
+    }
+}
+
+@media screen and (min-width: 405px) {
+    .preco {
+        margin-left: 255px;
+    }
+}
+
+@media screen and (min-width: 415px) {
+    .preco {
+        margin-left: 265px;
+    }
+}
+
+@media screen and (min-width: 430px) {
+    .preco {
+        margin-left: 270px;
+    }
+}
+
+
+
+@media screen and (min-width: 460px) {
+    .preco {
+        margin-left: 320px;
+    }
+}
+
+@media screen and (min-width: 475px) {
+    .preco {
+        margin-left: 320px;
+    }
+}
+
+@media screen and (min-width: 490px) {
+    .preco {
+        margin-left: 330px;
+    }
+}
+
+@media screen and (min-width: 525px) {
+    .preco {
+        margin-left: 370px;
+    }
+}
+
+@media screen and (min-width: 540px) {
+    .preco {
+        margin-left: 380px;
+    }
+}
+
+@media screen and (min-width: 555px) {
+    .preco {
+        margin-left: 390px;
+    }
+}
+
+@media screen and (min-width: 570px) {
+    .preco {
+        margin-left: 395px;
+    }
+
+    .heart-btn {
+        top: 91%;
+        left: 21%;
+    }
+}
+
+@media screen and (min-width: 585px) {
+    .preco {
+        margin-left: 405px;
+    }
+}
+
+@media screen and (min-width: 615px) {
+    .preco {
+        margin-left: 440px;
+    }
+}

@@ -312,8 +312,8 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
-    <Content Include="Scripts\Menu\bootbox.min.js" />
     <Content Include="Scripts\Menu\FilterCate.js" />
+    <Content Include="Scripts\Menu\HeartClick.js" />
     <Content Include="Scripts\Menu\preloader.js" />
     <Content Include="Scripts\Menu\ScrollToTop.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
@@ -332,7 +332,7 @@
     <Content Include="Views\Home\About.cshtml" />
     <Content Include="Views\Home\Contact.cshtml" />
     <Content Include="Views\Admin\Index.cshtml" />
-    <Content Include="Views\Restaurante\Index.cshtml" />
+    <Content Include="Views\Restaurante\Menu.cshtml" />
     <Content Include="Views\Admin\Create.cshtml" />
     <Content Include="Views\Admin\Editar.cshtml" />
     <Content Include="Views\Restaurante\indexADM.cshtml" />

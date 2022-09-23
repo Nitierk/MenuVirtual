@@ -21,7 +21,7 @@ namespace Projeto_Lunary.Controllers
         
         [HttpGet]
      
-        public ActionResult Index()
+        public ActionResult Menu()
         {
             ViewBag.ListCategorias = bd.Categorias.ToList();
             return View(bd.Restaurante.ToList());
@@ -34,6 +34,24 @@ namespace Projeto_Lunary.Controllers
 
             Restaurante restaurante = bd.Restaurante.Find(id);    
             return PartialView(restaurante);
+        }
+
+        [HttpPost]
+        public ActionResult ContagemLikes(int? id, bool status)
+        {
+            Restaurante atulizarLikes = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+            if (status)
+            {
+                atulizarLikes.Curtidas += 1;
+            }
+            else
+            {
+                atulizarLikes.Curtidas -= 1;
+            }
+
+            bd.Entry(atulizarLikes).State = EntityState.Modified;
+            bd.SaveChanges();
+            return RedirectToAction("menu");
         }
 
 
