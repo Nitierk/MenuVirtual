@@ -23,20 +23,6 @@
     <Property Name="ESTABSENHA" Type="String" MaxLength="100" FixedLength="false" Unicode="false" Nullable="false" />
     <Property Name="ESTATIPO" Type="String" MaxLength="100" FixedLength="false" Unicode="false" />
   </EntityType>
-  <EntityType Name="Restaurante">
-    <Key>
-      <PropertyRef Name="RESTAUID" />
-    </Key>
-    <Property Name="RESTAUID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="RESTANOME" Type="String" MaxLength="200" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="RESTAPRECO" Type="Double" Nullable="false" />
-    <Property Name="RESTADESCRICAO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
-    <Property Name="RESTACATEGORIA" Type="String" MaxLength="300" FixedLength="false" Unicode="false" Nullable="false" />
-    <Property Name="Curtidas" Type="Int32" />
-    <Property Name="imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="RESTAPREPROMOCAO" Type="Double" />
-    <Property Name="Oferta" Type="Boolean" Nullable="false" />
-  </EntityType>
   <EntityType Name="Categorias">
     <Key>
       <PropertyRef Name="RESTACATEGORIA" />
@@ -62,8 +48,23 @@
   <EntityContainer Name="LunaryEntities" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="Campanhas" EntityType="Self.Campanhas" />
     <EntitySet Name="Estabelecimento" EntityType="Self.Estabelecimento" />
-    <EntitySet Name="Restaurante" EntityType="Self.Restaurante" />
     <EntitySet Name="Categorias" EntityType="Self.Categorias" />
     <EntitySet Name="Ranking" EntityType="Self.Ranking" />
+    <EntitySet Name="Restaurante" EntityType="LunaryModel.Restaurante" />
   </EntityContainer>
+  <EntityType Name="Restaurante">
+    <Key>
+      <PropertyRef Name="RESTAUID" />
+    </Key>
+    <Property Name="RESTAUID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="RESTANOME" Type="String" Nullable="false" MaxLength="200" FixedLength="false" Unicode="false" />
+    <Property Name="RESTAPRECO" Type="Double" Nullable="false" />
+    <Property Name="RESTADESCRICAO" Type="String" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="RESTACATEGORIA" Type="String" Nullable="false" MaxLength="300" FixedLength="false" Unicode="false" />
+    <Property Name="imagem" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Oferta" Type="Boolean" Nullable="false" />
+    <Property Name="RESTAPREPROMOCAO" Type="Double" />
+    <Property Name="Disponibilidade" Type="Boolean" Nullable="false" />
+    <Property Name="Curtidas" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>

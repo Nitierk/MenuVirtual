@@ -10,7 +10,6 @@
     <script src="~/Scripts/Menu/FilterCate.js"></script>
     <link href="~/Content/Menu/Preloader.css" rel="stylesheet" />
     <script src="~/Scripts/Menu/HeartClick.js"></script>
-    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
 </head>
 
 <body>
@@ -46,8 +45,8 @@
 
 
         <!-- Filtro Categorias -->
-    
-          
+
+
         <div class="dropdown text-center">
 
             <select style="text-transform: uppercase;" onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
@@ -86,65 +85,125 @@
             @{
                 var imgDefault = "/Content/Menu/img/LogoLunary.png";
             }
+            <!-- Disponivel -->
             @foreach (var item in Model)
             {
-
-                <!-- Conversão da img-->
-
-                var imgSrc = "";
-
-
-                if (item.imagem != null)
+                if (item.Disponibilidade)
                 {
-                    var base64 = Convert.ToBase64String(item.imagem);
-                    imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+                    <!-- Conversão da img-->
 
-                }
-                else
-                {
-                    imgSrc = imgDefault;
-                }
-
-                <!-- Oferta do Dia-->
+                    var imgSrc = "";
 
 
-                string oferta = "";
-                if (item.Oferta)
-                {
-                    oferta = "Oferta do Dia";
-                }
+                    if (item.imagem != null)
+                    {
+                        var base64 = Convert.ToBase64String(item.imagem);
+                        imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
+                    }
+                    else
+                    {
+                        imgSrc = imgDefault;
+                    }
+
+                    <!-- Oferta do Dia-->
+
+
+                    string oferta = "";
+                    if (item.Oferta)
+                    {
+                        oferta = "Oferta do Dia";
+                    }
 
 
 
-                <div class="row pratos @item.RESTACATEGORIA @oferta">
-                    <div class="col-lg-12">
-                        <div class="img2" data-value="@item.RESTAUID">
-                            <img class="img" src="@imgSrc" width="232" height="232">
-                        </div>
-
-                        <h3 class="text-center name">@item.RESTANOME</h3>
-
-                        <!--Btn Coração-->
-                        <div class="heart-btn">
-                            <div class="content">
-                                <form action="" method="post">
-                                    <span onclick="Like(@item.RESTAUID)" class="heart" id="@item.RESTAUID"></span>
-
-                                </form>
-                                <div id="@item.RESTAUID-Curtidadiv">
-                                    <span class="number" id="@item.RESTAUID-Curtida">@item.Curtidas</span>
-                                </div>
-
+                    <div class="row pratos @item.RESTACATEGORIA @oferta">
+                        <div class="col-lg-12">
+                            <div class="img2" onclick="OpenModal(@item.RESTAUID)">
+                                <img class="img" src="@imgSrc" width="232" height="232">
                             </div>
+
+                            <h3 class="text-center name">@item.RESTANOME</h3>
+
+                            <!--Btn Coração-->
+                            <div class="heart-btn">
+                                <div class="content">
+                                    <form action="" method="post">
+                                        <span onclick="Like(@item.RESTAUID)" class="heart" id="@item.RESTAUID"></span>
+
+                                    </form>
+                                    <div id="@item.RESTAUID-Curtidadiv">
+                                        <span class="number" id="@item.RESTAUID-Curtida">@item.Curtidas</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
                         </div>
-                        <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
                     </div>
-                </div>
-
-              
-
+                }
             }
+            <!-- Indisponivel -->
+            @foreach (var item in Model)
+            {
+                if (item.Disponibilidade == false)
+                {
+                    <!-- Conversão da img-->
 
+                    var imgSrc = "";
+
+
+                    if (item.imagem != null)
+                    {
+                        var base64 = Convert.ToBase64String(item.imagem);
+                        imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
+                    }
+                    else
+                    {
+                        imgSrc = imgDefault;
+                    }
+
+                    <!-- Oferta do Dia-->
+
+
+                    string oferta = "";
+                    if (item.Oferta)
+                    {
+                        oferta = "Oferta do Dia";
+                    }
+
+
+
+                    <div class="row pratos @item.RESTACATEGORIA @oferta">
+                        <div class="col-lg-12">
+                            <div class="img2-indisponivel" data-value="@item.RESTAUID">
+                                <img class="img" src="@imgSrc" width="232" height="232">
+                            </div>
+
+                            <h3 class="text-center name">@item.RESTANOME</h3>
+
+                            <!--Btn Coração-->
+                            <div class="heart-btn">
+                                <div class="content">
+                                    <form action="" method="post">
+                                        <span class="heart" id="@item.RESTAUID"></span>
+
+                                    </form>
+                                    <div id="@item.RESTAUID-Curtidadiv">
+                                        <span class="number" id="@item.RESTAUID-Curtida">@item.Curtidas</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
+                        </div>
+                    </div>
+
+
+
+                }
+            }
         </div>
     </div>
 
@@ -154,7 +213,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div id="conteudoModal">
-                        
+
                     </div>
                 </div>
             </div>
@@ -164,9 +223,9 @@
     @section scripts{
 
 
-
+        <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
         <script src="~/Scripts/Menu/preloader.js"></script>
-        
+
         <script>
 
             window.onload = () => {
@@ -175,29 +234,16 @@
             }
 
 
-
-        $(document).ready(function () {
-
-            $(".img2").click(function () {
-
-
-                var id = $(this).data("value")
+            function OpenModal(id) {
                 console.log(id)
-
                 $("#conteudoModal").load("/Restaurante/Detalhes/" + id,
                     function () {
                         $('#myModal').modal("show")
                     }
                 );
-            });
-
-        });
+            }
 
 
-        $(document).ready(function () {
-        //Like
-           
-        });
         </script>
     }
 </body>
