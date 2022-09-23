@@ -32,7 +32,7 @@ namespace Projeto_Lunary.Controllers
 
         [HttpPost]
 
-        public ActionResult Create(string nome, float preco, string descricao, float precopromocao, string categoria, HttpPostedFileBase imagem, string oferta)
+        public ActionResult Create(string nome, float preco, string descricao, float precopromocao, string categoria, HttpPostedFileBase imagem, string oferta  )
         {
             Restaurante novoRestaurante = new Restaurante();
             novoRestaurante.RESTANOME = nome;
@@ -68,15 +68,20 @@ namespace Projeto_Lunary.Controllers
 
         public ActionResult Editar(int? id)
         {
-            Restaurante Localizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-            ViewBag.listacategoria = bd.Categorias.ToList();
-            return View(Localizarrestaurante);
+            if (id != null)
+            {
+                Restaurante Localizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+                ViewBag.listacategoria = bd.Categorias.ToList();
+                return View(Localizarrestaurante);
+            }
+            return RedirectToAction("Index");
+            
         }
 
         [HttpPost]
         [HandleError]
 
-        public ActionResult Editar(int? id, string nome, float preco, string descricao, float precopromocao, string categoria, HttpPostedFileBase imagem)
+        public ActionResult Editar(int? id, string nome, float preco, string descricao, float precopromocao, string categoria, HttpPostedFileBase imagem, string oferta, string disponibilidade)
         {
             Restaurante atualizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
             atualizarrestaurante.RESTANOME = nome;
@@ -93,7 +98,26 @@ namespace Projeto_Lunary.Controllers
                     atualizarrestaurante.imagem = memoryStream.ToArray();
                 }
             }
-            
+
+            if (oferta == "true")
+            {
+                atualizarrestaurante.Oferta = true;
+            }
+            else
+            {
+                atualizarrestaurante.Oferta = false;
+            }
+
+
+            if (disponibilidade == "true")
+            {
+                atualizarrestaurante.Disponibilidade = true;
+            }
+            else
+            {
+                atualizarrestaurante.Disponibilidade = false;
+            }
+
 
             bd.Entry(atualizarrestaurante).State = EntityState.Modified;
             bd.SaveChanges();
@@ -105,7 +129,7 @@ namespace Projeto_Lunary.Controllers
         public ActionResult Excluir(int? id)
         {
             Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-            return RedirectToAction("ListPratos");
+            return RedirectToAction("ExcluirConfirma");
         }
 
         [HttpPost]
@@ -121,9 +145,9 @@ namespace Projeto_Lunary.Controllers
             }
             catch (Exception)
             {
-                return RedirectToAction("index");
+                return RedirectToAction("ListPratos");
             }
-            return RedirectToAction("index");
+            return RedirectToAction("ListPratos");
         }
 
         public ActionResult QRCODindex()
@@ -150,25 +174,5 @@ namespace Projeto_Lunary.Controllers
             return View();
         }
         */
-        [HttpPost]
-        [AllowAnonymous]
-        public ActionResult ContagemLikes(int? id, bool status)
-        {
-            Restaurante atulizarLikes = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-            if (status)
-            {
-                atulizarLikes.Curtidas += 1;
-            }
-            else
-            {
-                atulizarLikes.Curtidas -= 1;
-            }
-
-            bd.Entry(atulizarLikes).State = EntityState.Modified;
-            bd.SaveChanges();
-            return RedirectToAction("index");
-        }
-
-
     }
 }
