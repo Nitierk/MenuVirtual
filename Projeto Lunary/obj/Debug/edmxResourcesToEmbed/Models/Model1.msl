@@ -29,10 +29,10 @@
     <EntitySetMapping Name="Restaurante">
       <EntityTypeMapping TypeName="LunaryModel.Restaurante">
         <MappingFragment StoreEntitySet="Restaurante">
-          <ScalarProperty Name="Oferta" ColumnName="Oferta" />
           <ScalarProperty Name="RESTAPREPROMOCAO" ColumnName="RESTAPREPROMOCAO" />
+          <ScalarProperty Name="curtidas" ColumnName="curtidas" />
+          <ScalarProperty Name="Oferta" ColumnName="Oferta" />
           <ScalarProperty Name="imagem" ColumnName="imagem" />
-          <ScalarProperty Name="Curtidas" ColumnName="Curtidas" />
           <ScalarProperty Name="RESTACATEGORIA" ColumnName="RESTACATEGORIA" />
           <ScalarProperty Name="RESTADESCRICAO" ColumnName="RESTADESCRICAO" />
           <ScalarProperty Name="RESTAPRECO" ColumnName="RESTAPRECO" />

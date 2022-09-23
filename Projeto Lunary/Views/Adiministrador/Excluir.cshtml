@@ -1,0 +1,59 @@
+﻿@model Projeto_Lunary.Models.Restaurante
+@{
+    ViewBag.Title = "Excluir";
+}
+
+<h2>Excluir</h2>
+
+<div>
+    <form action="/Adiministrador/ExcluirConfirma?id=@Model.RESTAUID" enctype="multipart/form-data" method="post">
+        <label>Prato: </label>
+        <label>@Model.RESTANOME</label>
+
+        <div>
+            <label>Preço: </label>
+            <label>@Model.RESTAPRECO</label>
+
+        </div>
+
+        <div>
+            <label>Descrição: </label>
+            <label>@Model.RESTADESCRICAO</label>
+
+        </div>
+
+        <div>
+            <label>Preço Promocional: </label>
+            <label>R$@Model.RESTAPREPROMOCAO</label>
+        </div>
+
+        <div>
+            <label>Categoria: </label>
+            <label>@Model.RESTACATEGORIA</label>
+        </div>
+
+        <div>
+            <label>Categoria: </label>
+            <label>@Model.imagem</label>
+            <td>
+                @{
+                    if (Model.imagem != null)
+                    {
+                        var base64 = Convert.ToBase64String(Model.imagem);
+                        var imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+                        <img src='@imgSrc' style="max-width:100px; max-height:100px;" />
+                    }
+                }
+            </td>
+        </div>
+
+        <div>
+            <a href="/Adiministrador/Index"><button type="button" class="btn btn-primary">Voltar</button></a>
+            <a href="/Adiministrador/Index"><button type="submit" class="btn btn-danger">Excluir</button> </a>
+        </div>
+
+    </form>
+</div>
+
+
+

@@ -7,6 +7,13 @@
 
 <div>
     <form action="/Excluir/ExcluirConfirma?id=@Model.CAMID" method="post">
+
+        <div>
+            <label>Descrição: </label>
+            <label>@Model.CAMDESCRICAO</label>
+
+        </div>
+
         <div>
             <label></label>
             <label>@Model.CAMFOTO</label>
@@ -21,11 +28,6 @@
                 }
             </td>
         </div>
-        <div>
-            <label>Descrição: </label>
-            <label>@Model.CAMDESCRICAO</label>
-
-        </div>
 
         <div>
             <label>Preço: </label>
@@ -33,11 +35,10 @@
 
         </div>
 
-
-            <div>
-                <a href="/Campanhas/Index"><button type="button" class="btn btn-primary">Voltar</button></a>
-                <a href="/Campanhas/Index"><button type="button" class="btn btn-danger">Excluir</button></a>
-            </div>
+        <div>
+            <a href="/Campanhas/Index"><button type="button" class="btn btn-primary">Voltar</button></a>
+            <a href="/Campanhas/Index"><button type="button" class="btn btn-danger">Excluir</button></a>
+        </div>
 
     </form>
 

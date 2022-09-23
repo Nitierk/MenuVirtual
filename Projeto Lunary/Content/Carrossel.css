@@ -12,17 +12,17 @@
     overflow: hidden;
 }
 
-.carrosel ul {
-    display: flex;
-    list-style: none;
-    width: 1200px;
-    height: 250px;
-}
+    .carrosel ul {
+        display: flex;
+        list-style: none;
+        width: 1200px;
+        height: 250px;
+    }
 
-.carrosel il {
+    .carrosel il {
         position: relative;
         animation: slide 15s infinite ease-out;
-}
+    }
 
 @keyframes slide {
     0% {

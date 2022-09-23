@@ -12,7 +12,7 @@ using System.Web.Mvc;
 
 namespace Projeto_Lunary.Controllers
 {
-    public class ADMController : Controller
+    public class AdiministradorController : Controller
     {
         LunaryEntities bd = new LunaryEntities();
 
@@ -56,7 +56,7 @@ namespace Projeto_Lunary.Controllers
         }
 
         [HttpPost]
-        [HandleError]
+       
         public ActionResult Editar(int? id, string nome, float preco, string descricao, float precopromocao, string categoria, HttpPostedFileBase imagem)
         {
             Restaurante atualizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
@@ -85,7 +85,6 @@ namespace Projeto_Lunary.Controllers
         {
             Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
             bd.Restaurante.Remove(excluiroproduto);
-
             try
             {
                 bd.SaveChanges();
