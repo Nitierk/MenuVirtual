@@ -32,10 +32,33 @@
             <label>@Model.RESTACATEGORIA</label>
         </div>
 
+        
+        <div>
+            <label>Disponibilidade: </label>
+            @if (Model.Disponibilidade)
+            {
+                <label>Disponivel</label>
+            }
+            else
+            {
+                <label>Não Disponivel</label>
+            }
+        </div>
+        <div>
+            <label>Oferta do dia: </label>
+            @if (Model.Oferta)
+            {
+                <label>Ativado</label>
+            }
+            else
+            {
+                <label>Não Ativado</label>
+            }
+        </div>
+
         <div>
             <label>Imagem: </label>
-            <label>@Model.imagem</label>
-            <td>
+            <label>
                 @{
                     if (Model.imagem != null)
                     {
@@ -43,14 +66,19 @@
                         var imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
                         <img src='@imgSrc' style="max-width:100px; max-height:100px;" />
                     }
-                }
-            </td>
+                    else
+                    {
+                        <label>Sem Imagem</label>
+                    }
+                        }
+             </label>
+           
         </div>
 
 
         <div>
-            <a href="/Admin/Index"> <button type="button" class="btn btn-primary">Voltar</button></a>
-            <a href="/Admin/Index"><button type="submit" class="btn btn-danger">Excluir</button> </a>
+            <a href="/Admin/ListPratos"> <button type="button" class="btn btn-primary">Voltar</button></a>
+            <a href="/Admin/ListPratos"><button type="submit" class="btn btn-danger">Excluir</button> </a>
         </div>
 
     </form>

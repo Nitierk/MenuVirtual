@@ -44,19 +44,20 @@
 
 
         <div class="form-group" typeof="checkbox">
+
+            <!--  Disponibilidade  -->
             @if (Model.Disponibilidade)
             {
                 <input type='checkbox' value='true' onload="this.value=this.checked" onchange="this.value=this.checked" checked name="disponibilidade" id="disponibilidade">
             }
             else
             {
-                <input type='checkbox' value='false' onload="this.value=this.checked" onchange="this.value=this.checked"  name="disponibilidade" id="disponibilidade">
+                <input type='checkbox' value='false' onload="this.value=this.checked" onchange="this.value=this.checked" name="disponibilidade" id="disponibilidade">
             }
             <label class="form-check-label" for="disponibilidade">
                 Disponivel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </label>
-        </div>
-        <div class="form-group" typeof="checkbox">
+            <!--  Oferta do Dia  -->
             @if (Model.Oferta)
             {
                 <input checked type='checkbox' value='true' onload="this.value=this.checked" onchange="this.value=this.checked" name="oferta" id="oferta">
@@ -68,7 +69,6 @@
             <label class="form-check-label" for="oferta">
                 Oferta do Dia
             </label>
-
         </div>
         <div>
             <label for="imagem"></label>
@@ -86,8 +86,8 @@
         </div>
         <br />
         <div>
-            <a href="/Admin/Index"><button type="button" class="btn btn-primary">Voltar</button>  </a>
-            <a href="/Admin/Index"><button type="submit" class="btn btn-success">Salvar</button>  </a>
+            <a href="/Admin/ListPratos"><button type="button" class="btn btn-primary">Voltar</button>  </a>
+            <a href="/Admin/ListPratos"><button type="submit" class="btn btn-success">Salvar</button>  </a>
         </div>
 
     </form>

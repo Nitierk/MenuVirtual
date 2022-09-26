@@ -32,7 +32,7 @@ namespace Projeto_Lunary.Controllers
 
         [HttpPost]
 
-        public ActionResult Create(string nome, float preco, string descricao, float precopromocao, string categoria, HttpPostedFileBase imagem, string oferta  )
+        public ActionResult Create(int? id, string nome, float preco, string descricao, float precopromocao, string categoria, HttpPostedFileBase imagem, string oferta, string disponibilidade)
         {
             Restaurante novoRestaurante = new Restaurante();
             novoRestaurante.RESTANOME = nome;
@@ -57,6 +57,17 @@ namespace Projeto_Lunary.Controllers
             {
                 novoRestaurante.Oferta = false;
             }
+
+
+            if (disponibilidade == "true")
+            {
+                novoRestaurante.Disponibilidade = true;
+            }
+            else
+            {
+                novoRestaurante.Disponibilidade = false;
+            }
+
 
             //novoRestaurante.Oferta = oferta;
             bd.Restaurante.Add(novoRestaurante);
@@ -125,16 +136,18 @@ namespace Projeto_Lunary.Controllers
         }
 
         [HttpGet]
-
         public ActionResult Excluir(int? id)
         {
-            Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-            return RedirectToAction("ExcluirConfirma");
+            if (id != null)
+            {
+                Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+                return View(excluiroproduto);
+            }
+            return View("ListPratos");
         }
 
         [HttpPost]
-
-        public ActionResult ExcluirConfirma(int? id)
+        public ActionResult ExcluirConfirmar(int? id)
         {
             Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
             bd.Restaurante.Remove(excluiroproduto);
