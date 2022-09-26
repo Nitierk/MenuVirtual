@@ -81,11 +81,19 @@ namespace Projeto_Lunary.Controllers
         {
             if (id != null)
             {
-                Restaurante Localizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-                ViewBag.listacategoria = bd.Categorias.ToList();
-                return View(Localizarrestaurante);
+                try
+                {
+                    Restaurante Localizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+                    ViewBag.listacategoria = bd.Categorias.ToList();
+                    return View(Localizarrestaurante);
+                }
+                catch (Exception)
+                {
+                    return RedirectToAction("ListPratos");
+                }
+                
             }
-            return RedirectToAction("Index");
+            return RedirectToAction("ListPratos");
             
         }
 
@@ -140,8 +148,15 @@ namespace Projeto_Lunary.Controllers
         {
             if (id != null)
             {
-                Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-                return View(excluiroproduto);
+                try
+                {
+                    Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+                    return View(excluiroproduto);
+                }
+                catch (Exception)
+                {
+                    return View("ListPratos");
+                }
             }
             return View("ListPratos");
         }
@@ -149,17 +164,21 @@ namespace Projeto_Lunary.Controllers
         [HttpPost]
         public ActionResult ExcluirConfirmar(int? id)
         {
-            Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
-            bd.Restaurante.Remove(excluiroproduto);
+            if (id != null)
+            {
+                Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
+                bd.Restaurante.Remove(excluiroproduto);
 
-            try
-            {
-                bd.SaveChanges();
+                try
+                {
+                    bd.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    return RedirectToAction("ListPratos");
+                }
             }
-            catch (Exception)
-            {
-                return RedirectToAction("ListPratos");
-            }
+            
             return RedirectToAction("ListPratos");
         }
 
