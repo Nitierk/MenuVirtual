@@ -21,7 +21,7 @@ namespace Projeto_Lunary.Controllers
         }
 
         [HttpPost]
-        public ActionResult QRCode (string qrcode)
+        public ActionResult QR (string qrcode)
         {
             using (MemoryStream ms = new MemoryStream())
             {
