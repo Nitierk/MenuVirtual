@@ -27,10 +27,13 @@ namespace Projeto_Lunary.Controllers
             Campanhas novacampanha = new Campanhas();
             novacampanha.CAMDESCRICAO = Descricao;
             novacampanha.CAMPRECO = CAMPRECO;
-            using (var memoryStream = new MemoryStream())
+            if (Foto != null)
             {
-                Foto.InputStream.CopyTo(memoryStream);
-                novacampanha.CAMFOTO = memoryStream.ToArray();
+                using (var memoryStream = new MemoryStream())
+                {
+                    Foto.InputStream.CopyTo(memoryStream);
+                    novacampanha.CAMFOTO = memoryStream.ToArray();
+                }
             }
             bd.Campanhas.Add(novacampanha);
             bd.SaveChanges();
@@ -64,18 +67,44 @@ namespace Projeto_Lunary.Controllers
 
         public ActionResult Excluir(int? id)
         {
-            Campanhas excluircampanhas = bd.Campanhas.ToList().Where(x => x.CAMID == id).First();
-            return View(excluircampanhas);
+            if (id != null)
+            {
+                try
+                {
+                    Campanhas excluir = bd.Campanhas.ToList().Where(x => x.CAMID == id).First();
+                    return View(excluir);
+                }
+                catch (Exception)
+                {
+                    return RedirectToAction("index");
+                }
+            }
+            return RedirectToAction("index");
+
+
         }
 
 
         [HttpPost]
-        public ActionResult ExcluirConfirma(int? id)
+        public ActionResult ExcluirConfirmar(int? id)
         {
-            Campanhas excluircampanha = bd.Campanhas.ToList().Where(x => x.CAMID == id).First();
-            bd.Campanhas.Remove(excluircampanha);
-            bd.SaveChanges();
+            if (id != null)
+            {
+                try
+                {
+                    Campanhas excluir = bd.Campanhas.ToList().Where(x => x.CAMID == id).First();
+                    bd.Campanhas.Remove(excluir);
+                    bd.SaveChanges();
+                }
+                catch (Exception)
+                {
+                    return RedirectToAction("index");
+                }
+            }
             return RedirectToAction("index");
+            
+            
+
         }
 
 

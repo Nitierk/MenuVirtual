@@ -11,7 +11,7 @@
         <input type="text" class="form-control" id="descricao" name="descricao" value="@Model.CAMDESCRICAO" required />
         <div>
             <label for="preco">Preço</label>
-            <input type="text" class="form-control" id="preco" name="preco" value=@Model.CAMPRECO required />
+            <input type="text" class="form-control" id="preco" name="preco" value=@Model.CAMPRECO.ToString("F") required />
         </div>
         <div>
             <label for="foto"></label>
@@ -23,6 +23,10 @@
                         var base64 = Convert.ToBase64String(Model.CAMFOTO);
                         var imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
                         <img src='@imgSrc' style="max-width:250px; max-height:400px;" />
+                    }
+                    else
+                    {
+                        <label>SEM IMAGEM</label>
                     }
                 }
             </td>

@@ -11,7 +11,7 @@
         <input type="text" class="form-control" maxlength="500" id="nome" name="nome" value="@Model.RESTANOME" required />
         <div>
             <label for="preco">Preço</label>
-            <input type="text" class="form-control" id="" name="preco" step="0.010" value="@Model.RESTAPRECO" required />
+            <input type="text" class="form-control" id="" name="preco" step="0.010" value="@Model.RESTAPRECO.ToString("F")" required />
         </div>
         <div>
             <label for="descricao">Descrição</label>
@@ -19,7 +19,7 @@
         </div>
         <div>
             <label for="precopromocao">Preço Promocional</label>
-            <input type="text" class="form-control" id="precopromocao" step="0.010" name="precopromocao" value="@Model.RESTAPREPROMOCAO" >
+            <input type="text" class="form-control" id="precopromocao" step="0.010" name="precopromocao" value="@Model.RESTAPREPROMOCAO.ToString("F")" >
         </div>
         <div>
             <br />

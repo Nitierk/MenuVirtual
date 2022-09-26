@@ -31,10 +31,10 @@
                 <td>@item.RESTANOME</td>
                 <td>R$@item.RESTAPRECO.ToString("F")</td>
                 <td>@item.RESTADESCRICAO</td>
-                @if (@item.RESTAPREPROMOCAO != null)
+                @if (item.RESTAPREPROMOCAO != null)
                 {
                     <td>
-                        R$ @item.RESTAPREPROMOCAO
+                        R$ @item.RESTAPREPROMOCAO.ToString("F")
                     </td>
                 }
                 else

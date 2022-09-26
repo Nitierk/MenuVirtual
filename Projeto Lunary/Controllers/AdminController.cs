@@ -104,6 +104,7 @@ namespace Projeto_Lunary.Controllers
 
         public ActionResult Excluir(int? id)
         {
+
             Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
             return RedirectToAction("ListPratos");
         }
@@ -114,7 +115,6 @@ namespace Projeto_Lunary.Controllers
         {
             Restaurante excluiroproduto = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
             bd.Restaurante.Remove(excluiroproduto);
-
             try
             {
                 bd.SaveChanges();
