@@ -31,7 +31,6 @@ namespace Projeto_Lunary.Controllers
         [HttpGet]
         public ActionResult Detalhes(int? id)
         {
-
             Restaurante restaurante = bd.Restaurante.Find(id);    
             return PartialView(restaurante);
         }
@@ -46,7 +45,10 @@ namespace Projeto_Lunary.Controllers
             }
             else
             {
-                atulizarLikes.Curtidas -= 1;
+                if (atulizarLikes.Curtidas > 0)
+                {
+                    atulizarLikes.Curtidas -= 1;
+                }   
             }
 
             bd.Entry(atulizarLikes).State = EntityState.Modified;

@@ -308,6 +308,12 @@ body {
         height: 250px;
         width: 250px;
     }
+
+    .img2-indisponivel {
+        text-align: center;
+        filter: grayscale(1);
+        z-index: 10000;
+    }
 }
 
 
