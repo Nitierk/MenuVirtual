@@ -44,17 +44,19 @@ namespace Projeto_Lunary.Controllers
         }
 
         [HttpPost]
-        public ActionResult Editar(int? id, string Descricao, float CAMPRECO, HttpPostedFileBase Foto)
+        public ActionResult Editar(int? id, string Descricao, float preco, HttpPostedFileBase Foto)
         {
             Campanhas atualizarcampanhas = bd.Campanhas.ToList().Where(x => x.CAMID == id).First();
             atualizarcampanhas.CAMDESCRICAO = Descricao;
-            atualizarcampanhas.CAMPRECO = CAMPRECO;
-            using (var memoryStream = new MemoryStream())
+            atualizarcampanhas.CAMPRECO = preco;
+            if (Foto != null)
             {
-                Foto.InputStream.CopyTo(memoryStream);
-                atualizarcampanhas.CAMFOTO = memoryStream.ToArray();
+                using (var memoryStream = new MemoryStream())
+                {
+                    Foto.InputStream.CopyTo(memoryStream);
+                    atualizarcampanhas.CAMFOTO = memoryStream.ToArray();
+                }
             }
-
             bd.Entry(atualizarcampanhas).State = EntityState.Modified;
             bd.SaveChanges();
             return RedirectToAction("index");
@@ -62,22 +64,17 @@ namespace Projeto_Lunary.Controllers
 
         public ActionResult Excluir(int? id)
         {
-            Campanhas excluircampanha = bd.Campanhas.ToList().Where(x => x.CAMID == id).First();
-            return RedirectToAction("index");
+            Campanhas excluircampanhas = bd.Campanhas.ToList().Where(x => x.CAMID == id).First();
+            return View(excluircampanhas);
         }
+
+
         [HttpPost]
         public ActionResult ExcluirConfirma(int? id)
         {
             Campanhas excluircampanha = bd.Campanhas.ToList().Where(x => x.CAMID == id).First();
             bd.Campanhas.Remove(excluircampanha);
-            try
-            {
-                bd.SaveChanges();
-            }
-            catch (Exception)
-            {
-                return RedirectToAction("index");
-            }
+            bd.SaveChanges();
             return RedirectToAction("index");
         }
 
