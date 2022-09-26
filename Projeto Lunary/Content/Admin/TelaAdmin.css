@@ -134,16 +134,16 @@ input[type='text']:focus ~ span, input[type='password']:focus ~ span {
     width: 150px;
     height: 50px;
     position: absolute;
-    top: 71%; /* centralizar a parte interna do preload (onde fica a animação)*/
+    top: 75%; /* centralizar a parte interna do preload (onde fica a animação)*/
     left: 50%;
     transform: translate(-50%, -50%);
 }
 
-    .entrar:active {
-        background-color: #d8d860;
-        transform: scale(0);
-        transition: 0.125s;
-    }
+.Lembrame{
+    color: white;
+    position: relative;
+    bottom: 20%;
+}
 
 col-md-12 {
     color: white;

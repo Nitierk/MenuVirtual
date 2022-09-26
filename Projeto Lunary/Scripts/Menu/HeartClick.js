@@ -5,13 +5,15 @@
     let el = document.getElementById(id);
     //Botão curtido
     if (el.classList.contains('heart-active')) {
-        el.classList.remove('heart-active');
-        status = false;
-        $.post(url, { id: id, status: status }, function (data) {
-
-        });
         var qtdLikesBefore = document.getElementById(id + "-Curtida")
         var qtdCurtidas = qtdLikesBefore.innerText;
+        el.classList.remove('heart-active');
+        status = false;
+        if (parseInt(qtdCurtidas) > 0) {
+            $.post(url, { id: id, status: status }, function (data) {
+
+            });
+        }
         console.log(qtdCurtidas)    
         qtdLikesBefore.remove()
         var Curti = document.createElement('span');
