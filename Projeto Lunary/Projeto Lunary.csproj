@@ -267,6 +267,7 @@
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\Campanha.css" />
     <Content Include="Content\Dashboard.css" />
     <Content Include="Content\Menu\img\HeartAnimation.png" />
     <Content Include="Content\Menu\img\LogoLunary.png" />
@@ -274,7 +275,9 @@
     <Content Include="Content\Menu\Menu.css" />
     <Content Include="Content\Menu\Preloader.css" />
     <Content Include="Content\Modal.css" />
+    <Content Include="Content\preco.css" />
     <Content Include="Content\QRCODE.css" />
+    <Content Include="Content\rank.css" />
     <Content Include="favicon.ico" />
     <Content Include="fonts\glyphicons-halflings-regular.svg" />
     <Content Include="Global.asax" />

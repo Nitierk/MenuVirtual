@@ -10,6 +10,9 @@
     <script src="~/Scripts/Menu/FilterCate.js"></script>
     <link href="~/Content/Menu/Preloader.css" rel="stylesheet" />
     <script src="~/Scripts/Menu/HeartClick.js"></script>
+    <link href="~/Content/preco.css" rel="stylesheet" />
+    <link href="~/Content/Campanha.css" rel="stylesheet" />
+    <link href="~/Content/rank.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -41,12 +44,12 @@
                 <ul>
                     @foreach (var item in ViewBag.Campanha)
                     {
-                        
+
                         var imgSrc = "";
 
                         if (item.CAMFOTO != null)
                         {
-                            var base64 = Convert.ToBase64String(item.imagem);
+                            var base64 = Convert.ToBase64String(item.CAMFOTO);
                             imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
 
                             <il>
@@ -68,6 +71,7 @@
 
         <!-- Carrossel do Top Rank -->
         <p>Produtos Mais Curtidos</p>
+
         <form enctype="multipart/form-data">
             <div class="carrosel">
                 <ul>
@@ -94,6 +98,7 @@
                 </ul>
             </div>
         </form>
+
 
         <div class="subir text-center">
             <p>Preços</p>
