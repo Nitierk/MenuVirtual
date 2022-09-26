@@ -1,72 +1,74 @@
 ﻿* {
-    margin: 0;
-    padding: 0;
+ margin: 0;
+ padding: 0;
 }
 
 .carrossel {
-    width: 400px;
-    height: 250px;
-    outline: 3px solid brown;
-    margin: 50px auto;
-    box-shadow: 10px 10px 15px rgba(0,0,0,7);
-    overflow: hidden;
+ width: 400px;
+ height: 250px;
+ outline: 3px solid brown;
+ margin: 50px auto;
+ box-shadow: 10px 10px 15px rgba(0,0,0,7);
+ overflow: hidden;
 }
 
 
-    .carrossel ul {
-        display: flex;
-        list-style: none;
-        width: 1200px;
-        height: 250px;
-    }
+.carrossel ul {
+ display: flex;
+ list-style: none;
+ width: 1200px;
+ height: 250px;
+}
 
-    .carrossel il {
-        position: relative;
-        animation: slide 15s infinite ease-out;
-    }
+.carrossel il {
+ position: relative;
+ animation: slide 15s infinite ease-out;
+}
 
 @keyframes slide {
-    0% {
-        left: 0px;
-    }
 
-    10% {
-        left: 0px;
-    }
+0% {
+ left: 0px;
+}
 
-    20% {
-        left: -400px;
-    }
+10% {
+ left: 0px;
+}
 
-    30% {
-        left: -400px;
-    }
+20% {
+ left: -400px;
+}
 
-    40% {
-        left: -800px;
-    }
+30% {
+ left: -400px;
+}
 
-    50% {
-        left: -800px;
-    }
+40% {
+ left: -800px;
+}
 
-    60% {
-        left: -1200px;
-    }
+50% {
+ left: -800px;
+}
 
-    70% {
-        left: -1200px;
-    }
+60% {
+ left: -1200px;
+}
 
-    80% {
-        left: -1600px;
-    }
+70% {
+ left: -1200px;
+}
 
-    90% {
-        left: -1600px;
-    }
+80% {
+ left: -1600px;
+}
 
-    100% {
-        left: 0px;
-    }
+90% {
+ left: -1600px;
+}
+
+100% {
+ left: 0px;
+}
+
 }
