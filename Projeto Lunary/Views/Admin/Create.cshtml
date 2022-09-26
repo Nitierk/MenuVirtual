@@ -4,6 +4,7 @@
     ViewBag.Title = "Create";
 }
 <link href="~/Content/Admin/PictureInput.css" rel="stylesheet" />
+<script src="~/Scripts/Admin/InputPicture.js"></script>
 
 <h2>Cadastro de Produto</h2>
 <div>
@@ -11,25 +12,25 @@
     <form action="/Admin/Create" enctype="multipart/form-data" method="post">
 
         <div class="form-group">
-            <label for="nome">Nome Do Prato</label>
+            <label for="nome">Nome Do Prato:</label>
             <input type="text" class="form-control"
                    maxlength="100"
                    id="nome" name="nome"
                    required />
         </div>
         <div class="form-group">
-            <label for="preco">Preço</label>
+            <label for="preco">Preço:</label>
             <input type="text" class="form-control" step="0.010"
                    id="preco" name="preco"
                    required />
         </div>
         <div class="form-group">
-            <label for="descricao">Descrição</label>
+            <label for="descricao">Descrição:</label>
             <input type="text" class="form-control"
                    id="descricao" name="descricao">
         </div>
         <div class="form-group">
-            <label for="precopromocao">Preço Promoção</label>
+            <label for="precopromocao">Preço Promocional:</label>
             <input type="text" class="form-control" step="0.010"
                    id="precopromocao" name="precopromocao" />
         </div>
@@ -60,9 +61,9 @@
 
         <div class="form-group">
             <div>
-                <label for="arquivo">Imagem</label>
+                <label for="arquivo">Imagem:</label>
             </div>
-            
+
             <label class="picture" for="imagem" tabIndex="0">
                 <span class="imagem"></span>
             </label>
@@ -77,6 +78,16 @@
 </div>
 
 @section scripts{
-    <script src="~/Scripts/Admin/InputPicture.js"></script>
+
+    <script>
+        window.onload = () => {
+            document.queryCommandIndeterm
+            InputImgCreate()
+        }
+    </script>
+
+   
+    
+    
 }
 
