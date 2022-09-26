@@ -9,11 +9,10 @@
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
     <script src="~/Scripts/Menu/FilterCate.js"></script>
     <link href="~/Content/Menu/Preloader.css" rel="stylesheet" />
-<<<<<<< HEAD:Projeto Lunary/Views/Restaurante/Index.cshtml
-=======
     <script src="~/Scripts/Menu/HeartClick.js"></script>
-    <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
->>>>>>> 08df0f6005c6ba5fca0b10459fcc0572a0279bf4:Projeto Lunary/Views/Restaurante/Menu.cshtml
+    <link href="~/Content/preco.css" rel="stylesheet" />
+    <link href="~/Content/Campanha.css" rel="stylesheet" />
+    <link href="~/Content/rank.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -39,18 +38,89 @@
         <h1 class="titulo">Lunary</h1>
         <p class="subtitulo">Cardápio</p>
 
+        <!-- Carrossel das Campanhas -->
+        <form enctype="multipart/form-data">
+            <div class="campanhas" enctype="multipart/form-data">
+                <ul>
+                    @foreach (var item in ViewBag.Campanha)
+                    {
 
+                        var imgSrc = "";
+
+                        if (item.CAMFOTO != null)
+                        {
+                            var base64 = Convert.ToBase64String(item.CAMFOTO);
+                            imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
+                            <il>
+                                <img class="img3" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                            </il>
+                        }
+                        else
+                        {
+                            <il>
+                                <img class="img3" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                            </il>
+                        }
+                    }
+                </ul>
+            </div>
+        </form>
 
         <div class="barraVermelha">.</div>
 
+        <!-- Carrossel do Top Rank -->
+        <p>Produtos Mais Curtidos</p>
+        <form enctype="multipart/form-data">
+            <div class="carrossel">
+                <ul>
+                    @foreach (var item in ViewBag.Rank)
+                    {
+                        var imgSrc = "";
+
+                        if (item.imagem != null)
+                        {
+                            var base64 = Convert.ToBase64String(item.imagem);
+                            imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
+                            <il>
+                                <img class="imagem" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                            </il>
+                        }
+                        else
+                        {
+                            <il>
+                                <img class="imagem" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                            </il>
+                        }
+                    }
+                </ul>
+            </div>
+        </form>
+
+
+        <div class="subir text-center">
+            <p>Preços</p>
+            <form>
+                <ul>
+                    @foreach (var item in ViewBag.Rank)
+                    {
+                        <li>
+                            @item.RESTANOME :
+                            R$@item.RESTAPRECO.ToString("F")
+                        </li>
+                    }
+                </ul>
+            </form>
+        </div>
 
         <p class="barra">Menu</p>
 
 
 
         <!-- Filtro Categorias -->
-    
-          
+
+
         <div class="dropdown text-center">
 
             <select style="text-transform: uppercase;" onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
@@ -121,8 +191,8 @@
 
                 <div class="row pratos @item.RESTACATEGORIA @oferta">
                     <div class="col-lg-12">
-                        <div class="img2" data-value="@item.RESTAUID">
-                            <img class="img" src="@imgSrc" width="232" height="232">
+                        <div class="img2">
+                            <img class="img" src="@imgSrc" data-value="@item.RESTAUID" width="232" height="232">
                         </div>
 
                         <h3 class="text-center name">@item.RESTANOME</h3>
@@ -144,7 +214,7 @@
                     </div>
                 </div>
 
-              
+
 
             }
 
@@ -169,7 +239,7 @@
 
 
         <script src="~/Scripts/Menu/preloader.js"></script>
-        
+        <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
         <script>
 
             window.onload = () => {
@@ -181,7 +251,7 @@
 
         $(document).ready(function () {
 
-            $(".img2").click(function () {
+            $(".img").click(function () {
 
 
                 var id = $(this).data("value")

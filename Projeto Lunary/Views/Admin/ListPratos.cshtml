@@ -14,6 +14,7 @@
     <table class="table table-striped thead-dark">
         <thead class="thead-cor">
             <tr>
+<<<<<<< HEAD
                 <td class="text-center">Id</td>               
                 <td class="text-center">Prato</td>
                 <td class="text-center">Preço</td>
@@ -24,6 +25,41 @@
                 <td></td>
                 <td></td>
                 <td></td>
+=======
+                <td>@item.RESTAUID</td>
+                <td>@item.RESTANOME</td>
+                <td>R$@item.RESTAPRECO.ToString("F")</td>
+                <td>@item.RESTADESCRICAO</td>
+                @if (item.RESTAPREPROMOCAO != null)
+                {
+                    <td>
+                        R$ @item.RESTAPREPROMOCAO.ToString("F")
+                    </td>
+                }
+                else
+                {
+                    <td> </td>
+                }
+                <td>@item.RESTACATEGORIA</td>
+                <td>
+                    @{
+                        var imgSrc = "";
+                        if (item.imagem != null)
+                        {
+                            var base64 = Convert.ToBase64String(item.imagem);
+                            imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+                            <img src="@imgSrc" alt="@item.RESTANOME" width="100" height="100" />
+                        }
+                    }
+                </td>
+
+
+                <td>
+                    <a href="/Admin/Editar?id=@item.RESTAUID"><button type="button" class="btn btn-warning">Editar</button></a>
+                    <a href="/Admin/Excluir?id=@item.RESTAUID"><button type="button" class="btn btn-danger">Excluir</button></a>
+
+                </td>
+>>>>>>> 9b9c35f1d446ced61e3c64e3accaa2f843057330
             </tr>
 
         </thead>

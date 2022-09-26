@@ -24,6 +24,8 @@ namespace Projeto_Lunary.Controllers
         public ActionResult Menu()
         {
             ViewBag.ListCategorias = bd.Categorias.ToList();
+            ViewBag.Rank = bd.Ranking.ToList();
+            ViewBag.Campanha = bd.Campanhas.ToList();
             return View(bd.Restaurante.ToList());
 
         }
@@ -45,7 +47,10 @@ namespace Projeto_Lunary.Controllers
             }
             else
             {
-                atulizarLikes.Curtidas -= 1;
+                if (atulizarLikes.Curtidas > 0)
+                {
+                    atulizarLikes.Curtidas -= 1;
+                }   
             }
 
             bd.Entry(atulizarLikes).State = EntityState.Modified;

@@ -6,13 +6,14 @@
 <h2>Excluir</h2>
 
 <div>
-    <form action="/Campanhas/ExcluirConfirmar?id=@Model.CAMID" enctype="multipart/form-data" method="post">
+    <form action="/Campanha/ExcluirConfirma?id=@Model.CAMID" enctype="multipart/form-data" method="post">
+        <div>
+            <label>Descrição: </label>
+            <label>@Model.CAMDESCRICAO</label>
 
-        <label>Descrição: </label>
-        <label>@Model.CAMDESCRICAO</label>
+        </div>
 
         <div>
-
             <label></label>
             <td>
                 @{
@@ -20,7 +21,7 @@
                     {
                         var base64 = Convert.ToBase64String(Model.CAMFOTO);
                         var imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
-                        <img src='@imgSrc' style="max-width:250px; max-height:400px;" />
+                        <img src='@imgSrc' style="max-width:210px; max-height:450px;" />
                     }
                 }
             </td>
@@ -29,14 +30,16 @@
         <div>
             <label>Preço: </label>
             <label>@Model.CAMPRECO.ToString("F")</label>
-
         </div>
 
         <div>
-            <a href="/Campanhas/index"><button type="button" class="btn btn-primary">Voltar</button></a>
-            <a href="/Campanhas/index"><button type="submit" class="btn btn-danger">Excluir</button></a>
+            <a href="/Campanha/Index"><button type="button" class="btn btn-primary">Voltar</button></a>
+            <a href="/Campanha/Index"><button type="submit" class="btn btn-danger">Excluir</button></a>
         </div>
 
     </form>
 
 </div>
+
+
+

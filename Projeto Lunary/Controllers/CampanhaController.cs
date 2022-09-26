@@ -9,8 +9,9 @@ using System.Web.Mvc;
 
 namespace Projeto_Lunary.Controllers
 {
-    public class CampanhasController : Controller
+    public class CampanhaController : Controller
     {
+        // GET: Campanha
         LunaryEntities bd = new LunaryEntities();
         public ActionResult Index()
         {
@@ -67,33 +68,18 @@ namespace Projeto_Lunary.Controllers
 
         public ActionResult Excluir(int? id)
         {
-            if (id != null)
-            {
-                try
-                {
-                    Campanhas excluir = bd.Campanhas.ToList().Where(x => x.CAMID == id).First();
-                    return View(excluir);
-                }
-                catch (Exception)
-                {
-                    return RedirectToAction("index");
-                }
-            }
-            return RedirectToAction("index");
-
-
+            Campanhas excluir = bd.Campanhas.ToList().Where(x => x.CAMID == id).First();
+            return View(excluir);
         }
-
-
         [HttpPost]
-        public ActionResult ExcluirConfirmar(int? id)
+        public ActionResult ExcluirConfirma(int? id)
         {
             if (id != null)
             {
                 try
                 {
-                    Campanhas excluir = bd.Campanhas.ToList().Where(x => x.CAMID == id).First();
-                    bd.Campanhas.Remove(excluir);
+                    Campanhas excluircampanha = bd.Campanhas.ToList().Where(x => x.CAMID == id).First();
+                    bd.Campanhas.Remove(excluircampanha);
                     bd.SaveChanges();
                 }
                 catch (Exception)
@@ -102,11 +88,7 @@ namespace Projeto_Lunary.Controllers
                 }
             }
             return RedirectToAction("index");
-            
-            
-
         }
-
 
     }
 }
