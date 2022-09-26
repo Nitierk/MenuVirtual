@@ -223,6 +223,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
+    <Compile Include="Controllers\CampanhasController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\ContaController.cs" />
     <Compile Include="Controllers\RestauranteController.cs" />
@@ -342,6 +343,9 @@
     <Content Include="Views\Conta\Login.cshtml" />
     <Content Include="Views\Restaurante\Detalhes.cshtml" />
     <Content Include="Views\Admin\ListPratos.cshtml" />
+    <Content Include="Views\Campanhas\index.cshtml" />
+    <Content Include="Views\Campanhas\Excluir.cshtml" />
+    <Content Include="Views\Campanhas\Editar.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
