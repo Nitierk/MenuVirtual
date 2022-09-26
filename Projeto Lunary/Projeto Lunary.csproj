@@ -225,6 +225,7 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CampanhaController.cs" />
     <Compile Include="Controllers\ContaController.cs" />
+    <Compile Include="Controllers\QrCodeController.cs" />
     <Compile Include="Controllers\RestauranteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -346,10 +347,10 @@
     <Content Include="Views\Campanha\Create.cshtml" />
     <Content Include="Views\Campanha\Editar.cshtml" />
     <Content Include="Views\Campanha\Excluir.cshtml" />
+    <Content Include="Views\QrCode\QR.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\QrCode\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
