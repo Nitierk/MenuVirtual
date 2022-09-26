@@ -31,7 +31,6 @@ namespace Projeto_Lunary.Controllers
         [HttpGet]
         public ActionResult Detalhes(int? id)
         {
-
             Restaurante restaurante = bd.Restaurante.Find(id);    
             return PartialView(restaurante);
         }

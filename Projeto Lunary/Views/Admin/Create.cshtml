@@ -43,7 +43,15 @@
         </div>
 
         <div class="form-group" typeof="checkbox">
-            <input type='checkbox' value='false' onchange="this.value=this.checked" name="oferta" id="oferta">
+
+            <!--  Disponibilidade  -->
+           
+            <input type='checkbox' value='true' onchange="this.value=this.checked" checked name="disponibilidade" id="disponibilidade">
+            <label class="form-check-label" for="disponibilidade">
+                Disponivel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+            </label>
+            <!--  Oferta do Dia  -->
+            <input  type='checkbox' value='false' onchange="this.value=this.checked" c name="oferta" id="oferta">
             <label class="form-check-label" for="oferta">
                 Oferta do Dia
             </label>
