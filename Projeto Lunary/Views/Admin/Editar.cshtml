@@ -1,7 +1,10 @@
 ﻿@model Projeto_Lunary.Models.Restaurante
 @{
     ViewBag.Title = "Editar";
+    var base64 = Convert.ToBase64String(Model.imagem);
+    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
 }
+<link href="~/Content/Admin/PictureInput.css" rel="stylesheet" />
 
 <h2>Editar</h2>
 
@@ -39,10 +42,6 @@
                 }
             </select>
         </div>
-
-
-
-
         <div class="form-group" typeof="checkbox">
 
             <!--  Disponibilidade  -->
@@ -70,19 +69,29 @@
                 Oferta do Dia
             </label>
         </div>
-        <div>
-            <label for="imagem"></label>
-            <input type="file" class="form-control" id="" name="imagem" value=@Model.imagem>
-            <td>
-                @{
-                    if (Model.imagem != null)
-                    {
-                        var base64 = Convert.ToBase64String(Model.imagem);
-                        var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
-                        <img src='@imgSrc' style="max-width:300px; max-height:300px;" />
-                    }
+        <div class="form-group">
+            <div>
+                <label onclick="InputImgEdit(@imgSrc)" onload="InputImgEdit(@imgSrc)" for="arquivo">Imagem:</label>
+            </div>
+            @{
+                if (Model.imagem != null)
+                {
+                    base64 = Convert.ToBase64String(Model.imagem);
+                    imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+                    <label onload="InputImgCreate()" class="picture" for="imagem" tabIndex="0">
+                        <img class="imagem"></img>
+                    </label>
+                    <input type="file" class="form-control" name="imagem" id="imagem">
                 }
-            </td>
+                else
+                {
+                    <label onload="InputImgCreate()" class="picture" for="imagem" tabIndex="0">
+                        <span class="imagem"></span>                        
+                    </label>
+                    <input type="file" class="form-control" name="imagem" id="imagem">
+                }
+            }
+
         </div>
         <br />
         <div>
@@ -94,4 +103,17 @@
 
 </div>
 
+@section scripts {
+    <script src="~/Scripts/Admin/InputPicture.js"></script>
+
+<script>
+    $(".imagem").attr('src', '@imgSrc');
+
+
+        window.onload = () => {
+            document.queryCommandIndeterm
+            InputImgCreate()
+        }
+</script>
+}
 
