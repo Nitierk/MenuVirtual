@@ -45,7 +45,10 @@ namespace Projeto_Lunary.Controllers
             }
             else
             {
-                atulizarLikes.Curtidas -= 1;
+                if (atulizarLikes.Curtidas > 0)
+                {
+                    atulizarLikes.Curtidas -= 1;
+                }   
             }
 
             bd.Entry(atulizarLikes).State = EntityState.Modified;
