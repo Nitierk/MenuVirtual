@@ -79,7 +79,10 @@
                     base64 = Convert.ToBase64String(Model.imagem);
                     imgSrc = String.Format("data:image/gif;base64,{0}", base64);
                     <label onload="InputImgCreate()" class="picture" for="imagem" tabIndex="0">
-                        <img class="imagem"></img>
+                    <span class="imagem">
+                        <img class="imagem" id="imagemEdit"/>
+                    </span> 
+                        
                     </label>
                     <input type="file" class="form-control" name="imagem" id="imagem">
                 }
@@ -106,14 +109,15 @@
 @section scripts {
     <script src="~/Scripts/Admin/InputPicture.js"></script>
 
-<script>
-    $(".imagem").attr('src', '@imgSrc');
+    <script>
+
 
 
         window.onload = () => {
             document.queryCommandIndeterm
-            InputImgCreate()
+            InputImgEdit();
         }
-</script>
+        $("#imagemEdit").attr('src', '@imgSrc');
+    </script>
 }
 

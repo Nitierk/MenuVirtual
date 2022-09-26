@@ -28,24 +28,32 @@
         }
     }); 
 }
-function InputImgEdit(ImgSrc) {
+function InputImgEdit() {
     const inputFile = document.querySelector("#imagem");
-    const pictureImage = document.querySelector(".imagem");
-    const pictureImageTxt = "Escolha uma Imagem";
-    pictureImage.innerHTML = pictureImageTxt;
 
     inputFile.addEventListener("change", function (e) {
+       
+        
+
         const inputTarget = e.target;
         const file = inputTarget.files[0];
-        
+
         if (file) {
             const reader = new FileReader();
 
             reader.addEventListener("load", function (e) {
+                
+                try {
+                    const imgDb = document.getElementById("imagemEdit")
+                    imgDb.remove()
+                } catch (e) {
+
+                }
+                
                 const readerTarget = e.target;
 
                 const img = document.createElement("img");
-                img.src = ImgSrc;
+                img.src = readerTarget.result;
                 img.classList.add("imagem");
 
                 pictureImage.innerHTML = "";
@@ -56,15 +64,9 @@ function InputImgEdit(ImgSrc) {
         } else {
             pictureImage.innerHTML = pictureImageTxt;
         }
-    });
-        
-    if (ImgSrc != null) {
-                const img = document.createElement("img");
-                img.src = ImgSrc;
-                img.classList.add("imagem");
-                pictureImage.innerHTML = "";
-  
-        } else {
-            pictureImage.innerHTML = pictureImageTxt;
-        }
+        const pictureImage = document.querySelector(".imagem");
+        const pictureImageTxt = "Escolha uma Imagem";
+        pictureImage.innerHTML = pictureImageTxt;
+    });     
+   
 }
