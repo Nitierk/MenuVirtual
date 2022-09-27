@@ -17,12 +17,6 @@ body {
     position:relative;
 }
 
-.div {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-}
 
 .container {
     width: 1150px;
@@ -94,116 +88,236 @@ body {
                 Background-color: white;
             }
 
-
-@media screen and (max-width: 1228px) {
+@media screen and (min-width: 350px) {
     .container {
-        width: 1150px;
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        transition: 0.5s;
-        font-size: 2rem;
+        width: 400px;
+        margin-left: 10px;
     }
-}
 
-@media screen and (max-width: 700px) {
-    .container {
-        width: 1150px;
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        transition: 0.5s;
-        font-size: 2rem;
-    }
-}
-
-@media screen and (min-width: 530px) {
-    .container {
-        width: 500px;
-        padding: 20px;
-        display: flex;
-        align-items: center;
-        justify-content: center;
-        flex-wrap: wrap;
-        transition: 0.5s;
-        font-size: 2rem;
-}
-
-    body {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        min-height: 130vh;
-}
+       
 }
 
 @media screen and (min-width: 430px) {
     .container {
-        margin-left: 12rem;
-        margin-right: 10rem;
+        width: 400px;
+        margin-left: 10px;
+    }
+
+        .container .card {
+            width: 350px;
+        }
+}
+
+@media screen and (min-width: 450px) {
+    .container {
+       
+        margin-left: 15px;
+    }    
+}
+
+@media screen and (min-width: 465px) {
+    .container {
+       
+        margin-left: 20px;
+    } 
+}
+
+@media screen and (min-width: 480px) {
+    .container {
+        margin-left: 25px;
     }
 }
 
-    @media screen and (min-width: 400px) {
-        .container {
-            width: 500px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            transition: 0.5s;
-            font-size: 2rem;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 130vh;
-        }
+@media screen and (min-width: 495px) {
+    .container {
+        margin-left: 30px;
     }
+}
 
-    @media screen and (min-width: 350px) {
-        .container {
-            width: 500px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            transition: 0.5s;
-            font-size: 2rem;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 130vh;
-        }
+@media screen and (min-width: 510px) {
+    .container {
+        margin-left: 35px;
     }
+}
 
-    @media screen and (min-width: 300px) {
-        .container {
-            width: 500px;
-            padding: 20px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-wrap: wrap;
-            transition: 0.5s;
-            font-size: 2rem;
-        }
-
-        body {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            min-height: 130vh;
-        }
+@media screen and (min-width: 525px) {
+    .container {
+        margin-left: 40px;
     }
+}
+
+@media screen and (min-width: 540px) {
+    .container {
+        margin-left: 45px;
+    }
+}
+
+@media screen and (min-width: 555px) {
+    .container {
+        margin-left: 50px;
+    }
+}
+
+@media screen and (min-width: 570px) {
+    .container {
+        margin-left: 55px;
+    }
+}
+
+@media screen and (min-width: 585px) {
+    .container {
+        margin-left: 60px;
+    }
+}
+
+@media screen and (min-width: 600px) {
+    .container {
+        margin-left: 65px;
+    }
+}
+
+@media screen and (min-width: 615px) {
+    .container {
+        margin-left: 70px;
+    }
+}
+
+@media screen and (min-width: 630px) {
+    .container {
+        margin-left: 75px;
+    }
+}
+
+@media screen and (min-width: 645px) {
+    .container {
+        
+        margin-left: 80px;
+    }
+}
+
+@media screen and (min-width: 660px) {
+    .container {
+        margin-left: 85px;
+    }
+}
+
+@media screen and (min-width: 675px) {
+    .container {
+        margin-left: 90px;
+    }
+}
+
+@media screen and (min-width: 690px) {
+    .container {
+        margin-left: 95px;
+    }
+}
+
+@media screen and (min-width: 705px) {
+    .container {
+        margin-left: 100px;
+    }
+}
+
+@media screen and (min-width: 720px) {
+    .container {
+        margin-left: 105px;
+    }
+}
+
+@media screen and (min-width: 735px) {
+    .container {
+        margin-left: 110px;
+    }
+}
+
+@media screen and (min-width: 750px) {
+    .container {
+        margin-left: 115px;
+    }
+}
+
+@media screen and (min-width: 765px) {
+    .container {
+        margin-left: 120px;
+    }
+}
+
+@media screen and (min-width: 780px) {
+    .container {
+        margin-left: 125px;
+    }
+}
+
+@media screen and (min-width: 795px) {
+    .container {
+        margin-left: 130px;
+    }
+}
+
+@media screen and (min-width: 810px) {
+    .container {
+        margin-left: 135px;
+    }
+}
+
+@media screen and (min-width: 825px) {
+    .container {
+        margin-left: 140px;
+    }
+}
+
+@media screen and (min-width: 840px) {
+    .container {
+        margin-left: 145px;
+    }
+}
+
+@media screen and (min-width: 855px) {
+    .container {
+        margin-left: 150px;
+    }
+}
+
+@media screen and (min-width: 870px) {
+    .container {
+        margin-left: 155px;
+    }
+}
+
+@media screen and (min-width: 885px) {
+    .container {
+        margin-left: 160px;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .container {
+        margin-left: 165px;
+    }
+}
+
+    /*@media screen and (max-width: 1031px) {
+    .container .card {    
+        width: 400px;  
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width: 965px) {
+    .container .card {
+        margin-left:5rem;
+        margin-right:2rem;
+        margin:10px;
+    }
+}
+
+@media screen and (max-width: 945px) {
+    .container .card {
+        margin-left: 100px;
+        
+        margin: 10px;
+    }
+}*/
+
+
