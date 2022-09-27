@@ -13,6 +13,7 @@
     <link href="~/Content/preco.css" rel="stylesheet" />
     <link href="~/Content/Campanha.css" rel="stylesheet" />
     <link href="~/Content/rank.css" rel="stylesheet"/>
+    <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
 </head>
 
 <body>
@@ -210,7 +211,25 @@
 
                             </div>
                         </div>
-                        <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
+                        <!--Exibindo Preço/Preço Promocional-->
+                        <div>
+                            @if (item.RESTAPREPROMOCAO > 0)
+                            {
+                                <div class="por">
+                                    <p>POR</p>
+                                </div>
+                                <div class="de">
+                                    <p>DE</p>
+                                </div>
+                                <p class="preco-normal">R$ @item.RESTAPRECO.ToString("F")</p>
+                                <p class="preco-promocao">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
+
+                            }
+                            else
+                            {
+                                <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
+                            }
+                        </div>
                     </div>
                 </div>
 

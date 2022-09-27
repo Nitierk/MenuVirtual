@@ -24,8 +24,8 @@ html {
     box-shadow: 0 0 10px brown;
     cursor: pointer;
     z-index: 1000;
-    
 }
+
 .progress-bar {
     background-color: brown;
 }
@@ -129,7 +129,63 @@ body {
     font-family: arial, sans-serif;
 }
 
-.Pastel {
+.preco-normal {
+    margin-top: 28px;
+    color: brown;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 14px;
+    font-family: arial, sans-serif;
+    text-decoration: line-through;
+    padding: 0;
+    margin: 0;
+}
+
+
+.preco-promocao {
+    margin-top: 22px;
+    color: brown;
+    font-style: italic;
+    font-weight: bold;
+    font-size: 22px;
+    font-family: arial, sans-serif;
+    position: absolute;
+    top: 100%;
+    left: 14%;
+    transform: translate(-50%, -50%);
+}
+
+.de {
+    font-weight: bold;
+    margin-left: 30px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 83.5%;
+    left: 65%;
+    transform: translate(-50%, -50%);
+    font-size: 14px;
+    color: brown;
+    font-style: italic;
+}
+
+.por {
+    font-weight: bold;
+    margin-left: 30px;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    top: 95%;
+    left: 64%;
+    transform: translate(-50%, -50%);
+    font-size: 20px;
+    color: brown;
+    font-style: italic;
+}
+
+
+
+.name {
     color: brown;
     margin-top: 15px;
 }
@@ -185,6 +241,11 @@ body {
     border-radius: 15px
 }
 
+.img2-indisponivel {
+    text-align: center;
+    filter: grayscale(1);
+    z-index: 10000;
+}
 
 
 
@@ -212,7 +273,6 @@ body {
 
 
 .heart-active {
-    content: '1';
     color: #000;
 }
 
@@ -225,7 +285,7 @@ body {
     background-position: right;
 }
 
-.number{
+.number {
     font-size: 21px;
     font-weight: 600;
     font-family: sans-serif;
@@ -236,9 +296,9 @@ body {
     transform: translate(-50%,-50%);
 }
 
-.number.heart-active:before {
-    color: black;
-}
+    .number.heart-active:before {
+        color: black;
+    }
 
 @keyframes animate {
     0% {
@@ -286,11 +346,19 @@ body {
         font-size: 20px;
     }
 
-    .Pastel {
+    .name {
         font-size: 30px;
     }
 
     .preco {
+        font-size: 22px;
+    }
+
+    .preco-normal {
+        font-size: 14px;
+    }
+
+    .preco-promocao {
         font-size: 22px;
     }
 
@@ -350,6 +418,14 @@ body {
         margin-left: 160px;
     }
 
+    .preco-normal {
+        margin-left: 160px;
+    }
+
+    .preco-promocao {
+        margin-left: 160px;
+    }
+
     #progress {
         width: 40px;
         height: 40px;
@@ -387,7 +463,7 @@ body {
         padding: 7px 10px;
         display: flex;
         cursor: pointer;
-        background-color:transparent;
+        background-color: transparent;
     }
 
     .number:before {
@@ -463,7 +539,7 @@ body {
         font-size: 23px;
     }
 
-    .Pastel {
+    .name {
         font-size: 35px;
     }
 
@@ -471,12 +547,72 @@ body {
         font-size: 25px;
         margin-left: 430px;
     }
+
+    .preco-normal {
+        font-size: 14px;
+        margin-left: 430px;
+    }
+
+    .preco-promocao {
+        font-size: 25px;
+        margin-left: 430px;
+    }
+
+    .de {
+        top: 99%;
+        left: 55%;
+    }
+
+    .por {
+        top: 106%;
+        left: 47%;
+    }
 }
 
 /*responsividade-preco*/
+
+@media screen and (min-width: 280px) {
+    .preco-normal {
+        margin-left: 170px;
+    }
+
+    .preco-promocao {
+        margin-left: 170px;
+        font-size: 20px;
+    }
+
+    .de {
+        top: 98.5%;
+        left: 55%;
+    }
+
+    .por {
+        top: 109%;
+        left: 47%;
+    }
+}
+
 @media screen and (min-width: 296px) {
     .preco {
         margin-left: 170px;
+    }
+
+    .preco-normal {
+        margin-left: 170px;
+    }
+
+    .preco-promocao {
+        margin-left: 170px;
+    }
+
+    .de {
+        top: 98.5%;
+        left: 55%;
+    }
+
+    .por {
+        top: 109.7%;
+        left: 47%;
     }
 
     .heart-btn {
@@ -489,6 +625,24 @@ body {
     .preco {
         margin-left: 180px;
     }
+
+    .preco-normal {
+        margin-left: 180px;
+    }
+
+    .preco-promocao {
+        margin-left: 180px;
+    }
+
+    .de {
+        top: 98.5%;
+        left: 55%;
+    }
+
+    .por {
+        top: 109.5%;
+        left: 49%;
+    }
 }
 
 @media screen and (min-width: 330px) {
@@ -496,9 +650,27 @@ body {
         margin-left: 190px;
     }
 
+    .preco-normal {
+        margin-left: 190px;
+    }
+
+    .preco-promocao {
+        margin-left: 190px;
+    }
+
     .heart-btn {
         top: 91%;
         left: 24%;
+    }
+
+    .de {
+        top: 98.5%;
+        left: 55%;
+    }
+
+    .por {
+        top: 109.5%;
+        left: 49%;
     }
 }
 
@@ -506,17 +678,71 @@ body {
     .preco {
         margin-left: 200px;
     }
+
+    .preco-normal {
+        margin-left: 200px;
+    }
+
+    .preco-promocao {
+        margin-left: 200px;
+    }
+
+    .de {
+        top: 98.5%;
+        left: 55%;
+    }
+
+    .por {
+        top: 109.5%;
+        left: 50%;
+    }
 }
 
 @media screen and (min-width: 360px) {
     .preco {
         margin-left: 210px;
     }
+
+    .preco-normal {
+        margin-left: 210px;
+    }
+
+    .preco-promocao {
+        margin-left: 210px;
+    }
+
+    .de {
+        top: 99%;
+        left: 56%;
+    }
+
+    .por {
+        top: 109%;
+        left: 52%;
+    }
 }
 
 @media screen and (min-width: 375px) {
     .preco {
         margin-left: 220px;
+    }
+
+    .preco-normal {
+        margin-left: 220px;
+    }
+
+    .preco-promocao {
+        margin-left: 217px;
+    }
+
+    .de {
+        top: 99%;
+        left: 55%;
+    }
+
+    .por {
+        top: 109%;
+        left: 52%;
     }
 }
 
@@ -525,9 +751,27 @@ body {
         margin-left: 245px;
     }
 
+    .preco-normal {
+        margin-left: 245px;
+    }
+
+    .preco-promocao {
+        margin-left: 235px;
+    }
+
     .heart-btn {
         top: 91%;
         left: 20%;
+    }
+
+    .de {
+        top: 99%;
+        left: 60%;
+    }
+
+    .por {
+        top: 107.7%;
+        left: 57%;
     }
 }
 
@@ -535,25 +779,123 @@ body {
     .preco {
         margin-left: 255px;
     }
+
+    .preco-normal {
+        margin-left: 255px;
+    }
+
+    .preco-promocao {
+        margin-left: 245px;
+    }
+
+    .de {
+        top: 99%;
+        left: 60%;
+    }
+
+    .por {
+        top: 108%;
+        left: 58%;
+    }
 }
 
 @media screen and (min-width: 415px) {
     .preco {
         margin-left: 265px;
     }
-}
 
+    .preco-normal {
+        margin-left: 265px;
+    }
+
+    .preco-promocao {
+        margin-left: 255px;
+    }
+
+    .de {
+        top: 99%;
+        left: 62%;
+    }
+
+    .por {
+        top: 107.8%;
+        left: 59%;
+    }
+}
+/*Parei a formatacao do de e por aqui*/
 @media screen and (min-width: 430px) {
     .preco {
         margin-left: 270px;
+    }
+
+    .preco-normal {
+        margin-left: 270px;
+    }
+
+    .preco-promocao {
+        margin-left: 260px;
+    }
+
+    .de {
+        top: 99.2%;
+        left: 60%;
+    }
+
+    .por {
+        top: 107%;
+        left: 58%;
+    }
+
+    .img {
+        height: 350px;
+        width: 350px;
+    }
+
+    .heart {
+        top: 97%;
+    }
+
+    .content {
+        padding: 7px 10px;
+        display: flex;
+        border: 2px solid #eae2e1;
+        border-radius: 5px;
+        cursor: pointer;
+    }
+
+    .numb:before {
+        top: 85%;
+    }
+
+    .heart-btn {
+        top: 91%;
+        left: 19%;
     }
 }
 
 
 
-@media screen and (min-width: 460px) {
+@media screen and (min-width: 455px) {
     .preco {
         margin-left: 320px;
+    }
+
+    .preco-normal {
+        margin-left: 300px;
+    }
+
+    .preco-promocao {
+        margin-left: 285px;
+    }
+
+    .de {
+        top: 99%;
+        left: 62%;
+    }
+
+    .por {
+        top: 107.2%;
+        left: 59%;
     }
 }
 
@@ -561,11 +903,47 @@ body {
     .preco {
         margin-left: 320px;
     }
+
+    .preco-normal {
+        margin-left: 301px;
+    }
+
+    .preco-promocao {
+        margin-left: 285px;
+    }
+
+    .de {
+        top: 99.3%;
+        left: 60%;
+    }
+
+    .por {
+        top: 107%;
+        left: 57%;
+    }
 }
 
 @media screen and (min-width: 490px) {
     .preco {
         margin-left: 330px;
+    }
+
+    .preco-normal {
+        margin-left: 301px;
+    }
+
+    .preco-promocao {
+        margin-left: 285px;
+    }
+
+    .de {
+        top: 99.3%;
+        left: 57%;
+    }
+
+    .por {
+        top: 107%;
+        left: 55%;
     }
 }
 
@@ -573,17 +951,71 @@ body {
     .preco {
         margin-left: 370px;
     }
+
+    .preco-normal {
+        margin-left: 320px;
+    }
+
+    .preco-promocao {
+        margin-left: 296px;
+    }
+
+    .de {
+        top: 99.2%;
+        left: 57%;
+    }
+
+    .por {
+        top: 107%;
+        left: 55%;
+    }
 }
 
 @media screen and (min-width: 540px) {
     .preco {
         margin-left: 380px;
     }
+
+    .preco-normal {
+        margin-left: 340px;
+    }
+
+    .preco-promocao {
+        margin-left: 315px;
+    }
+
+    .de {
+        top: 99.2%;
+        left: 59%;
+    }
+
+    .por {
+        top: 107%;
+        left: 57%;
+    }
 }
 
 @media screen and (min-width: 555px) {
     .preco {
         margin-left: 390px;
+    }
+
+    .preco-normal {
+        margin-left: 350px;
+    }
+
+    .preco-promocao {
+        margin-left: 322px;
+    }
+
+    .de {
+        top: 99.2%;
+        left: 59%;
+    }
+
+    .por {
+        top: 107%;
+        left: 57%;
     }
 }
 
@@ -592,9 +1024,27 @@ body {
         margin-left: 395px;
     }
 
+    .preco-normal {
+        margin-left: 360px;
+    }
+
+    .preco-promocao {
+        margin-left: 330px;
+    }
+
     .heart-btn {
         top: 91%;
         left: 21%;
+    }
+
+    .de {
+        top: 99.2%;
+        left: 60%;
+    }
+
+    .por {
+        top: 107%;
+        left: 58%;
     }
 }
 
@@ -602,10 +1052,46 @@ body {
     .preco {
         margin-left: 405px;
     }
+
+    .preco-normal {
+        margin-left: 370px;
+    }
+
+    .preco-promocao {
+        margin-left: 340px;
+    }
+
+    .de {
+        top: 99.2%;
+        left: 60%;
+    }
+
+    .por {
+        top: 107%;
+        left: 58%;
+    }
 }
 
 @media screen and (min-width: 615px) {
     .preco {
         margin-left: 440px;
+    }
+
+    .preco-normal {
+        margin-left: 410px;
+    }
+
+    .preco-promocao {
+        margin-left: 380px;
+    }
+
+    .de {
+        top: 99%;
+        left: 60%;
+    }
+
+    .por {
+        top: 106.5%;
+        left: 58%;
     }
 }

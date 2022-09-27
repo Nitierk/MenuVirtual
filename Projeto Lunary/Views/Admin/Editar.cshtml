@@ -79,7 +79,7 @@
                     base64 = Convert.ToBase64String(Model.imagem);
                     imgSrc = String.Format("data:image/gif;base64,{0}", base64);
                     <label onload="InputImgCreate()" class="picture" for="imagem" tabIndex="0">
-                    <span class="imagem">
+                    <span title="Clique para adicionar Imagem" class="imagem">
                         <img class="imagem" id="imagemEdit"/>
                     </span> 
                         
@@ -89,7 +89,7 @@
                 else
                 {
                     <label onload="InputImgCreate()" class="picture" for="imagem" tabIndex="0">
-                        <span class="imagem"></span>                        
+                        <span title="Clique para adicionar Imagem" class="imagem"></span>                        
                     </label>
                     <input type="file" class="form-control" name="imagem" id="imagem">
                 }
