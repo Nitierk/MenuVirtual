@@ -1,0 +1,24 @@
+﻿<link href="~/Content/QRCODE.css" rel="stylesheet" />
+@{
+    ViewBag.Title = "QRCODindex";
+    Layout = null;
+}
+
+@using (Html.BeginForm("QRCODindex","Restaurante",FormMethod.Post))
+{
+    <div class="container">
+        <input type="text" name="qrcode"/>
+        <br />
+        <br />
+        <div class="QRCode">
+            <input type="submit" value="Generate" />
+        </div>
+     
+        @if (ViewBag.QrCodeImage!=null)
+        {
+            <img src="@ViewBag.QrCodeImage" alt="" style="height:300px;width:300px"/>
+        }
+    </div>
+}
+
+
