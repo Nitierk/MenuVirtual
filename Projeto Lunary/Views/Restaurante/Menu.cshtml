@@ -85,13 +85,13 @@
                             imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
 
                             <il>
-                                <img class="imagem" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                                <img class="imagem" src="@imgSrc" alt="" height="250px" width="380px"></img>
                             </il>
                         }
                         else
                         {
                             <il>
-                                <img class="imagem" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                                <img class="imagem" src="@imgSrc" alt="" height="250px" width="380px"></img>
                             </il>
                         }
                     }
@@ -213,10 +213,16 @@
                         </div>
                         <!--Exibindo Preço/Preço Promocional-->
                         <div>
-                            @if (item.RESTAPREPROMOCAO != 0)
+                            @if (item.RESTAPREPROMOCAO > 0)
                             {
-                                <p class="preco">De R$ @item.RESTAPRECO.ToString("F")</p>
-                                <p class="preco">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
+                                <div class="por">
+                                    <p>POR</p>
+                                </div>
+                                <div class="de">
+                                    <p>DE</p>
+                                </div>
+                                <p class="preco-normal">R$ @item.RESTAPRECO.ToString("F")</p>
+                                <p class="preco-promocao">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
 
                             }
                             else
