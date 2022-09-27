@@ -17,6 +17,6 @@ namespace Projeto_Lunary.Models
         public int CAMID { get; set; }
         public string CAMDESCRICAO { get; set; }
         public byte[] CAMFOTO { get; set; }
-        public double CAMPRECO { get; set; }
+        public Nullable<double> CAMPRECO { get; set; }
     }
 }

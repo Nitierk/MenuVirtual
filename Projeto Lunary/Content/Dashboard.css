@@ -14,6 +14,14 @@ body {
     background-image: url(https://img.freepik.com/vetores-premium/formas-geometricas-abstratas-de-ouro-vermelho-sobre-fundo-branco-adequado-para-plano-de-fundo-de-apresentacao-banner-pagina-de-destino-da-web-interface-do-usuario-aplicativo-movel-design-editorial-folheto-banner-e-outras-ocasioes-relacionadas_181182-14477.jpg);
     background-repeat: no-repeat;
     background-size: 1600px 790px;
+    position:relative;
+}
+
+.div {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
 
 .container {
@@ -26,6 +34,8 @@ body {
     transition: 0.5s;
     font-size: 2rem;
 }
+
+
 
     .container .card {
         position: relative;
@@ -83,3 +93,117 @@ body {
                 color: black;
                 Background-color: white;
             }
+
+
+@media screen and (max-width: 1228px) {
+    .container {
+        width: 1150px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        transition: 0.5s;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .container {
+        width: 1150px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        transition: 0.5s;
+        font-size: 2rem;
+    }
+}
+
+@media screen and (min-width: 530px) {
+    .container {
+        width: 500px;
+        padding: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-wrap: wrap;
+        transition: 0.5s;
+        font-size: 2rem;
+}
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        min-height: 130vh;
+}
+}
+
+@media screen and (min-width: 430px) {
+    .container {
+        margin-left: 12rem;
+        margin-right: 10rem;
+    }
+}
+
+    @media screen and (min-width: 400px) {
+        .container {
+            width: 500px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            transition: 0.5s;
+            font-size: 2rem;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 130vh;
+        }
+    }
+
+    @media screen and (min-width: 350px) {
+        .container {
+            width: 500px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            transition: 0.5s;
+            font-size: 2rem;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 130vh;
+        }
+    }
+
+    @media screen and (min-width: 300px) {
+        .container {
+            width: 500px;
+            padding: 20px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-wrap: wrap;
+            transition: 0.5s;
+            font-size: 2rem;
+        }
+
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            min-height: 130vh;
+        }
+    }
