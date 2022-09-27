@@ -28,7 +28,6 @@ namespace Projeto_Lunary.Controllers
                 QRCodeGenerator qRCodeGenerator = new QRCodeGenerator();
                 QRCodeData qrCodeData = qRCodeGenerator.CreateQrCode(qrcode, QRCodeGenerator.ECCLevel.Q);
                 QRCode qrCode = new QRCode(qrCodeData);
-
                 using (Bitmap bitmap = qrCode.GetGraphic(20))
                 {
                     bitmap.Save(ms, ImageFormat.Png);
