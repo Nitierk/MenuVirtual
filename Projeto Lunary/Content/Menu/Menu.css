@@ -129,7 +129,7 @@ body {
     font-family: arial, sans-serif;
 }
 
-.Pastel {
+.name {
     color: brown;
     margin-top: 15px;
 }
@@ -286,7 +286,7 @@ body {
         font-size: 20px;
     }
 
-    .Pastel {
+    .name {
         font-size: 30px;
     }
 
@@ -463,7 +463,7 @@ body {
         font-size: 23px;
     }
 
-    .Pastel {
+    .name {
         font-size: 35px;
     }
 
