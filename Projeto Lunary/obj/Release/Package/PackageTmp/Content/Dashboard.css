@@ -1,0 +1,85 @@
+﻿
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-image: url(https://img.freepik.com/vetores-premium/formas-geometricas-abstratas-de-ouro-vermelho-sobre-fundo-branco-adequado-para-plano-de-fundo-de-apresentacao-banner-pagina-de-destino-da-web-interface-do-usuario-aplicativo-movel-design-editorial-folheto-banner-e-outras-ocasioes-relacionadas_181182-14477.jpg);
+    background-repeat: no-repeat;
+    background-size: 1600px 790px;
+}
+
+.container {
+    width: 1150px;
+    padding: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+    transition: 0.5s;
+    font-size: 2rem;
+}
+
+    .container .card {
+        position: relative;
+        padding: 10px;
+        width: 300px;
+        background-color: #fff;
+        margin: 20px;
+        border: 1px solid black;
+        border-radius: 20px;
+        overflow: hidden;
+        transition: 0.5s;
+        text-align: center;
+    }
+
+        .container .card .content {
+            padding: 20px;
+            text-align: center;
+        }
+
+            .container .card .content p {
+                color: #666;
+                transition: 0.5s;
+            }
+
+            .container .card .content a {
+                position: relative;
+                display: inline-block;
+                padding: 10px 20px;
+                background-color: #000;
+                color: #fff;
+                border-radius: 40px;
+                text-decoration: none;
+                transition: 0.5s;
+                outline: none;
+                margin-top: 20px;
+            }
+
+        .container .card:hover {
+            background-color: brown;
+            color: white;
+            margin-top: -30px;
+            box-shadow: 2px 20px 25px #dc2e685d;
+            border-color: #dc2e69;
+        }
+
+            .container .card:hover img {
+                filter: invert(1);
+            }
+
+            .container .card:hover .content p {
+                color: white;
+            }
+
+            .container .card:hover .content a {
+                color: black;
+                Background-color: white;
+            }
