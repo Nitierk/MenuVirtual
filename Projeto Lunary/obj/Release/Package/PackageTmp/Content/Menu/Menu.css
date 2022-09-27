@@ -1095,3 +1095,9 @@ body {
         left: 58%;
     }
 }
+.curtidos {
+    font-weight: bold;
+}
+.curtir {
+    font-weight: 900;
+}
