@@ -3,6 +3,8 @@
 @{
     ViewBag.Title = "Create";
 }
+<link href="~/Content/Admin/PictureInput.css" rel="stylesheet" />
+<script src="~/Scripts/Admin/InputPicture.js"></script>
 
 <h2>Cadastro de Produto</h2>
 <div>
@@ -10,31 +12,32 @@
     <form action="/Admin/Create" enctype="multipart/form-data" method="post">
 
         <div class="form-group">
-            <label for="nome">Nome Do Prato</label>
+            <label for="nome">Nome Do Prato:</label>
             <input type="text" class="form-control"
                    maxlength="100"
                    id="nome" name="nome"
                    required />
         </div>
         <div class="form-group">
-            <label for="preco">Preço</label>
+            <label for="preco">Preço:</label>
             <input type="text" class="form-control" step="0.010"
                    id="preco" name="preco"
                    required />
         </div>
         <div class="form-group">
-            <label for="descricao">Descrição</label>
+            <label for="descricao">Descrição:</label>
             <input type="text" class="form-control"
                    id="descricao" name="descricao">
         </div>
         <div class="form-group">
-            <label for="precopromocao">Preço Promoção</label>
+            <label for="precopromocao">Preço Promocional:</label>
             <input type="text" class="form-control" step="0.010"
                    id="precopromocao" name="precopromocao" />
         </div>
 
         <div class="form-group">
-            <select id="categoria" name="categoria">
+            <label for="categoria">Categoria:</label>
+            <select id="categoria"  name="categoria">
                 @foreach (var item in ViewBag.listacategoria)
                 {
                     <option>@item.RESTACATEGORIA</option>
@@ -45,22 +48,27 @@
         <div class="form-group" typeof="checkbox">
 
             <!--  Disponibilidade  -->
-           
+
             <input type='checkbox' value='true' onchange="this.value=this.checked" checked name="disponibilidade" id="disponibilidade">
             <label class="form-check-label" for="disponibilidade">
                 Disponivel&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
             </label>
             <!--  Oferta do Dia  -->
-            <input  type='checkbox' value='false' onchange="this.value=this.checked" c name="oferta" id="oferta">
+            <input type='checkbox' value='false' onchange="this.value=this.checked" c name="oferta" id="oferta">
             <label class="form-check-label" for="oferta">
                 Oferta do Dia
             </label>
         </div>
 
         <div class="form-group">
-            <label for="arquivo">Imagem</label>
-            <input type="file" class="form-control"
-                   id="imagem" name="imagem">
+            <div>
+                <label for="arquivo">Imagem:</label>
+            </div>
+
+            <label class="picture" for="imagem" tabIndex="0">
+                <span class="imagem"></span>
+            </label>
+            <input type="file" class="form-control" name="imagem" id="imagem">
         </div>
 
         <div>
@@ -70,4 +78,17 @@
     </form>
 </div>
 
+@section scripts{
+
+    <script>
+        window.onload = () => {
+            document.queryCommandIndeterm
+            InputImgCreate()
+        }
+    </script>
+
+   
+    
+    
+}
 

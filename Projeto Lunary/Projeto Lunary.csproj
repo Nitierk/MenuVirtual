@@ -223,9 +223,7 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\AdminController.cs" />
-    <Compile Include="Controllers\CampanhaController.cs" />
     <Compile Include="Controllers\ContaController.cs" />
-    <Compile Include="Controllers\QrCodeController.cs" />
     <Compile Include="Controllers\RestauranteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -264,7 +262,7 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Admin\CRUD.css" />
+    <Content Include="Content\Admin\PictureInput.css" />
     <Content Include="Content\Admin\TelaAdmin.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -295,6 +293,8 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Content Include="Properties\Modal.css" />
+    <Content Include="Scripts\Admin\InputPicture.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="..\.editorconfig">
@@ -344,14 +344,10 @@
     <Content Include="Views\Conta\Login.cshtml" />
     <Content Include="Views\Restaurante\Detalhes.cshtml" />
     <Content Include="Views\Admin\ListPratos.cshtml" />
-    <Content Include="Views\Campanha\index.cshtml" />
-    <Content Include="Views\Campanha\Create.cshtml" />
-    <Content Include="Views\Campanha\Editar.cshtml" />
-    <Content Include="Views\Campanha\Excluir.cshtml" />
-    <Content Include="Views\QrCode\QR.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\QrCode\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
