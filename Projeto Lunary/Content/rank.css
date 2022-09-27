@@ -25,50 +25,51 @@
  animation: slide 15s infinite ease-out;
 }
 
+
+
+
 @keyframes slide {
+    0% {
+        left: 0px;
+    }
 
-0% {
- left: 0px;
-}
+    8% {
+        left: 0px;
+    }
 
-10% {
- left: 0px;
-}
+    13% {
+        left: -400px;
+    }
 
-20% {
- left: -400px;
-}
+    21% {
+        left: -400px;
+    }
 
-30% {
- left: -400px;
-}
+    29% {
+        left: -800px;
+    }
 
-40% {
- left: -800px;
-}
+    37% {
+        left: -800px;
+    }
 
-50% {
- left: -800px;
-}
+    45% {
+        left: -1200px;
+    }
 
-60% {
- left: -1200px;
-}
+    53% {
+        left: -1200px;
+    }
 
-70% {
- left: -1200px;
-}
+    61% {
+        left: -1600px;
+    }
 
-80% {
- left: -1600px;
-}
+    69% {
+        left: -1600px;
+    }
 
-90% {
- left: -1600px;
-}
-
-100% {
- left: 0px;
-}
-
+    77% {
+        left: 0px;
+    }    
 }
