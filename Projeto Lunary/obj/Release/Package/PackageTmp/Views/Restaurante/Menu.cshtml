@@ -12,7 +12,7 @@
     <script src="~/Scripts/Menu/HeartClick.js"></script>
     <link href="~/Content/preco.css" rel="stylesheet" />
     <link href="~/Content/Campanha.css" rel="stylesheet" />
-    <link href="~/Content/rank.css" rel="stylesheet" />
+    <link href="~/Content/rank.css" rel="stylesheet"/>
 </head>
 
 <body>
@@ -71,9 +71,8 @@
 
         <!-- Carrossel do Top Rank -->
         <p>Produtos Mais Curtidos</p>
-
         <form enctype="multipart/form-data">
-            <div class="carrosel">
+            <div class="carrossel">
                 <ul>
                     @foreach (var item in ViewBag.Rank)
                     {
