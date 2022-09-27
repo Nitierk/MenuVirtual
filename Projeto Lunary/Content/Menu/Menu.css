@@ -609,3 +609,9 @@ body {
         margin-left: 440px;
     }
 }
+
+.curtidos {
+    background-color: brown;
+    font-size: 15px;
+    font-weight: 900;
+}
