@@ -273,6 +273,7 @@
     <Content Include="Content\Campanha.css" />
     <Content Include="Content\Dashboard.css" />
     <Content Include="Content\Menu\img\HeartAnimation.png" />
+    <Content Include="Content\Menu\img\icons8-restaurant-60.png" />
     <Content Include="Content\Menu\img\LogoLunary.png" />
     <Content Include="Content\Menu\img\PratoExemplo.png" />
     <Content Include="Content\Menu\Menu.css" />

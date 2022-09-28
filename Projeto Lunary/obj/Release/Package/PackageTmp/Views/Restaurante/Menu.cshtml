@@ -17,18 +17,24 @@
 </head>
 
 <body>
-    <!-- PRELOADER! -->
-    <div id="preloader">
-        <div class="inner">
+    <!-- início do preloader -->
 
+    <div id="preloader">
+        <div>
+            <h1 class="NomeRest">Lunary</h1class="NomeRest">
+        </div>
+        <div class="inner">
+            <!-- HTML DA ANIMAÇÃO MUITO LOUCA DO SEU PRELOADER! -->
             <div class="bolas">
-                <div></div>
+                <div> </div>
                 <div></div>
                 <div></div>
             </div>
         </div>
+        <img class="icon" src="~/Content/Menu/img/icons8-restaurant-60.png">
     </div>
 
+    <!-- fim do preloader -->
     <!-- CONTENT -->
     <div class="Conteudo">
         <script src="~/Scripts/Menu/ScrollToTop.js"></script>
@@ -91,7 +97,7 @@
                         else
                         {
                             <il>
-                                <img class="imagem" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                                <img class="imagem" src="@imgSrc" alt="" height="250px" width="380px"></img>
                             </il>
                         }
                     }
@@ -246,7 +252,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div id="conteudoModal">
-                        
+
                     </div>
                 </div>
             </div>
@@ -268,28 +274,28 @@
 
 
 
-        $(document).ready(function () {
+            $(document).ready(function () {
 
-            $(".img").click(function () {
+                $(".img").click(function () {
 
 
-                var id = $(this).data("value")
-                console.log(id)
+                    var id = $(this).data("value")
+                    console.log(id)
 
-                $("#conteudoModal").load("/Restaurante/Detalhes/" + id,
-                    function () {
-                        $('#myModal').modal("show")
-                    }
-                );
+                    $("#conteudoModal").load("/Restaurante/Detalhes/" + id,
+                        function () {
+                            $('#myModal').modal("show")
+                        }
+                    );
+                });
+
             });
 
-        });
 
+            $(document).ready(function () {
+                //Like
 
-        $(document).ready(function () {
-        //Like
-           
-        });
+            });
         </script>
     }
 </body>

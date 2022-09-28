@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project>
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\android\Desktop\Mobile</_PublishTargetUrl>
-    <History>True|2022-09-27T22:35:56.9058195Z;True|2022-09-27T19:00:53.5707173-03:00;True|2022-09-27T19:00:47.0517612-03:00;False|2022-09-27T17:56:15.8499956-03:00;True|2022-09-27T15:41:25.4284010-03:00;True|2022-09-27T15:34:25.6558787-03:00;False|2022-09-27T15:05:59.3828810-03:00;</History>
+    <History>True|2022-09-28T22:24:46.4177087Z;True|2022-09-28T19:18:49.0866419-03:00;True|2022-09-28T18:54:57.6088640-03:00;True|2022-09-27T19:35:56.9058195-03:00;True|2022-09-27T19:00:53.5707173-03:00;True|2022-09-27T19:00:47.0517612-03:00;False|2022-09-27T17:56:15.8499956-03:00;True|2022-09-27T15:41:25.4284010-03:00;True|2022-09-27T15:34:25.6558787-03:00;False|2022-09-27T15:05:59.3828810-03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include=".editorconfig">
@@ -93,10 +93,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/27/2022 18:33:24</publishTime>
     </File>
     <File Include="bin/Projeto Lunary.dll">
-      <publishTime>09/27/2022 19:35:55</publishTime>
+      <publishTime>09/28/2022 18:54:55</publishTime>
     </File>
     <File Include="bin/Projeto Lunary.pdb">
-      <publishTime>09/27/2022 19:35:55</publishTime>
+      <publishTime>09/28/2022 18:54:55</publishTime>
     </File>
     <File Include="bin/pt-br/System.Web.Helpers.resources.dll">
       <publishTime>09/27/2022 18:33:24</publishTime>
@@ -318,10 +318,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/27/2022 18:33:24</publishTime>
     </File>
     <File Include="Content/Admin/PictureInput.css">
-      <publishTime>09/27/2022 19:24:03</publishTime>
+      <publishTime>09/28/2022 18:53:49</publishTime>
     </File>
     <File Include="Content/Admin/TelaAdmin.css">
-      <publishTime>09/27/2022 18:33:24</publishTime>
+      <publishTime>09/28/2022 18:53:56</publishTime>
     </File>
     <File Include="Content/bootstrap-theme.css">
       <publishTime>09/27/2022 18:33:24</publishTime>
@@ -348,13 +348,16 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/27/2022 18:33:24</publishTime>
     </File>
     <File Include="Content/Campanha.css">
-      <publishTime>09/27/2022 19:24:03</publishTime>
+      <publishTime>09/28/2022 18:53:49</publishTime>
     </File>
     <File Include="Content/Dashboard.css">
-      <publishTime>09/27/2022 19:35:04</publishTime>
+      <publishTime>09/28/2022 18:53:49</publishTime>
     </File>
     <File Include="Content/Menu/img/HeartAnimation.png">
       <publishTime>09/27/2022 18:33:24</publishTime>
+    </File>
+    <File Include="Content/Menu/img/icons8-restaurant-60.png">
+      <publishTime>09/28/2022 19:15:51</publishTime>
     </File>
     <File Include="Content/Menu/img/LogoLunary.png">
       <publishTime>09/27/2022 18:33:24</publishTime>
@@ -363,22 +366,22 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/27/2022 18:33:24</publishTime>
     </File>
     <File Include="Content/Menu/Menu.css">
-      <publishTime>09/27/2022 19:24:03</publishTime>
+      <publishTime>09/28/2022 18:53:56</publishTime>
     </File>
     <File Include="Content/Menu/Preloader.css">
-      <publishTime>09/27/2022 19:24:03</publishTime>
+      <publishTime>09/28/2022 19:17:31</publishTime>
     </File>
     <File Include="Content/Modal.css">
-      <publishTime>09/27/2022 19:24:03</publishTime>
+      <publishTime>09/28/2022 18:53:49</publishTime>
     </File>
     <File Include="Content/preco.css">
       <publishTime>09/27/2022 18:33:24</publishTime>
     </File>
     <File Include="Content/QRCODE.css">
-      <publishTime>09/27/2022 18:33:24</publishTime>
+      <publishTime>09/28/2022 18:53:49</publishTime>
     </File>
     <File Include="Content/rank.css">
-      <publishTime>09/27/2022 19:24:03</publishTime>
+      <publishTime>09/28/2022 18:53:49</publishTime>
     </File>
     <File Include="Content/Site.css">
       <publishTime>09/27/2022 18:33:24</publishTime>
@@ -405,13 +408,13 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/27/2022 18:33:24</publishTime>
     </File>
     <File Include="Models/Model.edmx.diagram">
-      <publishTime>09/27/2022 18:33:24</publishTime>
+      <publishTime>09/28/2022 18:53:49</publishTime>
     </File>
     <File Include="Properties/Modal.css">
-      <publishTime>09/27/2022 19:24:03</publishTime>
+      <publishTime>09/28/2022 18:53:49</publishTime>
     </File>
     <File Include="Scripts/Admin/InputPicture.js">
-      <publishTime>09/27/2022 19:24:03</publishTime>
+      <publishTime>09/28/2022 18:53:49</publishTime>
     </File>
     <File Include="Scripts/bootstrap.js">
       <publishTime>09/27/2022 18:33:24</publishTime>
@@ -450,7 +453,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/27/2022 18:33:24</publishTime>
     </File>
     <File Include="Scripts/Menu/FilterCate.js">
-      <publishTime>09/27/2022 19:24:03</publishTime>
+      <publishTime>09/28/2022 18:53:49</publishTime>
     </File>
     <File Include="Scripts/Menu/HeartClick.js">
       <publishTime>09/27/2022 18:33:24</publishTime>
@@ -459,7 +462,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/27/2022 18:33:24</publishTime>
     </File>
     <File Include="Scripts/Menu/preloader.js">
-      <publishTime>09/27/2022 18:33:24</publishTime>
+      <publishTime>09/28/2022 18:53:49</publishTime>
     </File>
     <File Include="Scripts/Menu/ScrollToTop.js">
       <publishTime>09/27/2022 18:33:24</publishTime>
@@ -471,19 +474,19 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/27/2022 15:22:14</publishTime>
     </File>
     <File Include="Views/Admin/Create.cshtml">
-      <publishTime>09/27/2022 19:24:03</publishTime>
+      <publishTime>09/28/2022 18:53:49</publishTime>
     </File>
     <File Include="Views/Admin/Editar.cshtml">
-      <publishTime>09/27/2022 19:24:03</publishTime>
+      <publishTime>09/28/2022 18:53:49</publishTime>
     </File>
     <File Include="Views/Admin/Excluir.cshtml">
       <publishTime>09/27/2022 18:33:24</publishTime>
     </File>
     <File Include="Views/Admin/Index.cshtml">
-      <publishTime>09/27/2022 19:24:03</publishTime>
+      <publishTime>09/28/2022 19:22:52</publishTime>
     </File>
     <File Include="Views/Admin/ListPratos.cshtml">
-      <publishTime>09/27/2022 19:24:03</publishTime>
+      <publishTime>09/28/2022 18:53:49</publishTime>
     </File>
     <File Include="Views/Admin/QRCODindex.cshtml">
       <publishTime>09/27/2022 18:33:24</publishTime>
@@ -501,22 +504,22 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/27/2022 18:33:24</publishTime>
     </File>
     <File Include="Views/Conta/Login.cshtml">
-      <publishTime>09/27/2022 18:33:24</publishTime>
+      <publishTime>09/28/2022 18:53:56</publishTime>
     </File>
     <File Include="Views/QrCode/QR.cshtml">
-      <publishTime>09/27/2022 18:33:24</publishTime>
+      <publishTime>09/28/2022 18:53:49</publishTime>
     </File>
     <File Include="Views/Restaurante/Detalhes.cshtml">
-      <publishTime>09/27/2022 19:24:03</publishTime>
+      <publishTime>09/28/2022 18:53:49</publishTime>
     </File>
     <File Include="Views/Restaurante/Menu.cshtml">
-      <publishTime>09/27/2022 19:24:03</publishTime>
+      <publishTime>09/28/2022 19:18:21</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
-      <publishTime>09/08/2022 17:01:25</publishTime>
+      <publishTime>08/09/2022 17:01:25</publishTime>
     </File>
     <File Include="Views/Shared/_Layout.cshtml">
-      <publishTime>09/27/2022 19:35:04</publishTime>
+      <publishTime>09/28/2022 18:53:49</publishTime>
     </File>
     <File Include="Views/Web.config">
       <publishTime>09/27/2022 18:33:24</publishTime>
@@ -525,7 +528,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>09/27/2022 18:33:24</publishTime>
     </File>
     <File Include="Web.config">
-      <publishTime>09/27/2022 18:33:24</publishTime>
+      <publishTime>09/28/2022 18:54:56</publishTime>
     </File>
   </ItemGroup>
 </Project>
