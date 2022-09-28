@@ -7,11 +7,27 @@
     left:0;
     right:0;
     bottom:0;
-    background: url(https://user-images.githubusercontent.com/105941143/191603772-325331ce-af44-4faf-9c7b-afd6119bc083.png); /* cor do background que vai ocupar o body */
-    background-repeat: no-repeat;
-    background-size: 500px 900px;
+    /* cor do background que vai ocupar o body */
+    background: linear-gradient(45deg, yellow, rgba(0, 0, 0, 0.37), rgba(165, 42, 42, 0.781), orange);
+    animation: colors 15s ease infinite;
+    background-size: auto;
     z-index:999; /* z-index para jogar para frente e sobrepor tudo */
 }
+
+@keyframes colors {
+    0% {
+        background-position: 0% 50%;
+    }
+
+    50% {
+        background-position: 100% 50%;
+    }
+
+    100% {
+        background-position: 0% 50%;
+    }
+}
+
 #preloader .inner {
     position: absolute;
     top: 85%; /* centralizar a parte interna do preload (onde fica a animação)*/
