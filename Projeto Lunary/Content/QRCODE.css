@@ -8,7 +8,7 @@
 
 .container {
     height: 350px;
-    background: #fff;
+    background: #db1515;
     max-width: 410px;
     border-radius: 7px;
     padding: 16px 25px;
@@ -24,5 +24,7 @@
         align-items: center;
         justify-content: center;
         border: 1px solid #987a71;
+
 }
+
 

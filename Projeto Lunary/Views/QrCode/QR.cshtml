@@ -7,11 +7,13 @@
 @using (Html.BeginForm("QR", "QrCode", FormMethod.Post))
 {
     <div class="container">
-        <input type="text" name="qrcode" />
+        <form>
+            <input type="hidden" name="qrcode" value="http://localhost:49783/Restaurante/index" />
+        </form>
         <br />
         <br />
         <div class="QRCode">
-            <input type="submit" value="Generate" />
+            <input class="butao" type="submit" value="Generate" />
         </div>
 
         @if (ViewBag.QrCodeImage != null)
