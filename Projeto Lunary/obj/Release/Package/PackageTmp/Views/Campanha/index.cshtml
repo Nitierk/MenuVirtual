@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Projeto_Lunary.Models.Campanhas>
+@{
+    ViewBag.Title = "index";
+}
+
+<h2>Campanhas</h2>
+<a href="/Campanha/Create">
+    <button type="button" class="btn btn-success">Novo</button>
+</a>
+
+<table class="table">
+    <thead>
+        <tr>
+            <td>Id</td>
+            <td>Descrição</td>
+            <td>Preço</td>
+            <td></td>
+        </tr>
+
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.CAMID</td>
+                <td>@item.CAMDESCRICAO</td>
+                <td>R$@item.CAMPRECO.ToString("F")</td>
+                <td>
+                    @{
+                        if (item.CAMFOTO != null)
+                        {
+                            var base64 = Convert.ToBase64String(item.CAMFOTO);
+                            var imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+                            <img src='@imgSrc' style="max-width:300px; max-height:300px;" />
+                        }
+                    }
+                </td>
+
+                <td>
+                    <a href="/Campanha/Editar?id=@item.CAMID"><button type="button" class="btn btn-warning">Editar</button></a>
+                    <a href="/Campanha/Excluir?id=@item.CAMID"><button type="button" class="btn btn-danger">Excluir</button></a>
+                </td>
+            </tr>
+        }
+    </tbody>
+
+
+
+</table>
+
+
+

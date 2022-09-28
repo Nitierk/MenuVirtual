@@ -24,12 +24,14 @@
 
                 <div class="navbar-collapse collapse">
                     <ul class="nav navbar-nav navbar-left">
+                        <li>&nbsp;&nbsp;&nbsp;</li>
+                        <li>&nbsp;&nbsp;&nbsp;</li>
                         <li>@Html.ActionLink("Inicio", "Index", "Admin")</li>
                         <li>@Html.ActionLink("Lista dos Pratos", "ListPratos", "Admin")</li>
                         <li>@Html.ActionLink("Adionar Pratos", "Create", "Admin")</li>
                         <li><a href="/Restaurante/Menu/" target="_blank">Menu Virtual</a></li>
-                        <li>@Html.ActionLink("QrCode", "QrCode", "Admin")</li>
-                        <li>@Html.ActionLink("Campanhas", "Campanhas", "Admin")</li>
+                        <li>@Html.ActionLink("QrCode", "Qr", "QrCode")</li>
+                        <li>@Html.ActionLink("Campanhas", "Index", "Campanha")</li>
                     </ul>
                     @using (Html.BeginForm("LogOff", "Conta", FormMethod.Post, new { id = "logoffForm" }))
                     {
@@ -38,7 +40,8 @@
                             <li><a href="#">Olá @User.Identity.Name</a></li>
 
                             <li><a href="javascript:document.getElementById('logoffForm').submit()">Sair</a></li>
-
+                            <li>&nbsp;&nbsp;&nbsp;</li>
+                            <li>&nbsp;&nbsp;&nbsp;</li>
                         </ul>
                     }
                     </div>        
