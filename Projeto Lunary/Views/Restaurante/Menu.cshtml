@@ -77,8 +77,7 @@
 
         <form enctype="multipart/form-data">
 
-
-            <div class="carrossel">
+            <div class="carrossel" id="carrosselsite">
                 <ul>
                     @foreach (var item in ViewBag.Rank)
                     {
@@ -92,17 +91,27 @@
                             <il>
                                 <img class="imagem" src="@imgSrc" alt="" height="250px" width="400px"></img>
                             </il>
-                        }
-                        else
-                        {
-                            <il>
-                                <img class="imagem" src="@imgSrc" alt="" height="250px" width="400px"></img>
-                            </il>
+
                         }
                     }
                 </ul>
+
             </div>
         </form>
+
+        <form>
+            <div>
+                <a class="carrossel-control-prev" href="#carrosselsite" role="button" data-slide="prev">
+                    <span class="carrossel-control-prev-icon"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carrossel-control-next" href="#carrosselsite" role="button" data-slide="next">
+                    <span class="carrossel-control-next-icon"></span>
+                    <span class="sr-only">Avançar</span>
+                </a>
+            </div>
+        </form>
+        
 
 
         <div class="subir text-center">

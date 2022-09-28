@@ -96,7 +96,7 @@ Insert Restaurante ( RESTANome,RESTAPRECO,RESTADESCRICAO,RESTACATEGORIA) values
 
 
 
-Insert Restaurante ( RESTANome,RESTAPRECO,RESTADESCRICAO,RESTACATEGORIA) values 
+Insert Restaurante( RESTANome,RESTAPRECO,RESTADESCRICAO,RESTACATEGORIA) values 
 ('FILÉ À CUBANA', '77.90', 'A MILANESA, BATATA PALHA, ARROZ À GREGA, BANANA OU ABACAXI À MILANESA, SALADA', 'REFEIÇÕES')
 
 Insert Restaurante ( RESTANome,RESTAPRECO,RESTADESCRICAO,RESTACATEGORIA) values
@@ -401,8 +401,8 @@ Create table Estabelecimento (
  ESTABNOME Varchar(100) NOT null,
  ESTABENDERECO Varchar(100) not null,
  ESTABBAIRRO Varchar(100) not null,
- ESTATELEFONE INT not null,
- ESTABCEP int not null,
+ ESTATELEFONE varchar (100) null,
+ ESTABCEP varchar (100) not null,
  ESTABLOGIN Varchar(100) not null,
  ESTABSENHA varchar (100) not null,
  ESTATIPO Varchar(100) null,

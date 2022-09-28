@@ -18,8 +18,8 @@ namespace Projeto_Lunary.Models
         public string ESTABNOME { get; set; }
         public string ESTABENDERECO { get; set; }
         public string ESTABBAIRRO { get; set; }
-        public int ESTATELEFONE { get; set; }
-        public int ESTABCEP { get; set; }
+        public string ESTATELEFONE { get; set; }
+        public string ESTABCEP { get; set; }
         public string ESTABLOGIN { get; set; }
         public string ESTABSENHA { get; set; }
         public string ESTATIPO { get; set; }
