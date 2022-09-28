@@ -134,7 +134,7 @@ body {
     color: brown;
     font-style: italic;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 13px;
     font-family: arial, sans-serif;
     text-decoration: line-through;
     padding: 0;
@@ -147,7 +147,7 @@ body {
     color: brown;
     font-style: italic;
     font-weight: bold;
-    font-size: 22px;
+    font-size: 14px;
     font-family: arial, sans-serif;
     position: absolute;
     top: 100%;
@@ -164,7 +164,7 @@ body {
     top: 83.5%;
     left: 65%;
     transform: translate(-50%, -50%);
-    font-size: 14px;
+    font-size: 13px;
     color: brown;
     font-style: italic;
 }
@@ -178,7 +178,7 @@ body {
     top: 95%;
     left: 64%;
     transform: translate(-50%, -50%);
-    font-size: 20px;
+    font-size: 14px;
     color: brown;
     font-style: italic;
 }
@@ -571,110 +571,9 @@ body {
 
 /*responsividade-preco*/
 
-@media screen and (min-width: 280px) {
-    .preco-normal {
-        margin-left: 170px;
-    }
 
-    .preco-promocao {
-        margin-left: 170px;
-        font-size: 20px;
-    }
 
-    .de {
-        top: 98.5%;
-        left: 55%;
-    }
-
-    .por {
-        top: 109%;
-        left: 47%;
-    }
-}
-
-@media screen and (min-width: 296px) {
-    .preco {
-        margin-left: 170px;
-    }
-
-    .preco-normal {
-        margin-left: 170px;
-    }
-
-    .preco-promocao {
-        margin-left: 170px;
-    }
-
-    .de {
-        top: 98.5%;
-        left: 55%;
-    }
-
-    .por {
-        top: 109.7%;
-        left: 47%;
-    }
-
-    .heart-btn {
-        top: 91%;
-        left: 22%;
-    }
-}
-
-@media screen and (min-width: 314px) {
-    .preco {
-        margin-left: 180px;
-    }
-
-    .preco-normal {
-        margin-left: 180px;
-    }
-
-    .preco-promocao {
-        margin-left: 180px;
-    }
-
-    .de {
-        top: 98.5%;
-        left: 55%;
-    }
-
-    .por {
-        top: 109.5%;
-        left: 49%;
-    }
-}
-
-@media screen and (min-width: 330px) {
-    .preco {
-        margin-left: 190px;
-    }
-
-    .preco-normal {
-        margin-left: 190px;
-    }
-
-    .preco-promocao {
-        margin-left: 190px;
-    }
-
-    .heart-btn {
-        top: 91%;
-        left: 24%;
-    }
-
-    .de {
-        top: 98.5%;
-        left: 55%;
-    }
-
-    .por {
-        top: 109.5%;
-        left: 49%;
-    }
-}
-
-@media screen and (min-width: 345px) {
+@media screen and (min-width: 350px) {
     .preco {
         margin-left: 200px;
     }
@@ -684,17 +583,18 @@ body {
     }
 
     .preco-promocao {
-        margin-left: 200px;
+        margin-left: 225px;
+       font-size:14px;
     }
 
     .de {
-        top: 98.5%;
-        left: 55%;
+        top: 98.7%;
+        left: 65%;
     }
 
     .por {
-        top: 109.5%;
-        left: 50%;
+        top: 108.7%;
+        left: 63%;
     }
 }
 
@@ -704,21 +604,22 @@ body {
     }
 
     .preco-normal {
-        margin-left: 210px;
+        margin-left: 190px;
     }
 
     .preco-promocao {
-        margin-left: 210px;
+        margin-left: 225px;
+        font-size: 14px;
     }
 
     .de {
-        top: 99%;
-        left: 56%;
+        top: 98.7%;
+        left: 62%;
     }
 
     .por {
-        top: 109%;
-        left: 52%;
+        top: 108.7%;
+        left: 60%;
     }
 }
 
@@ -728,7 +629,7 @@ body {
     }
 
     .preco-normal {
-        margin-left: 220px;
+        margin-left: 165px;
     }
 
     .preco-promocao {
@@ -737,12 +638,12 @@ body {
 
     .de {
         top: 99%;
-        left: 55%;
+        left: 60%;
     }
 
     .por {
-        top: 109%;
-        left: 52%;
+        top: 108.5%;
+        left: 57%;
     }
 }
 
@@ -752,7 +653,7 @@ body {
     }
 
     .preco-normal {
-        margin-left: 245px;
+        margin-left: 195px;
     }
 
     .preco-promocao {
@@ -765,13 +666,13 @@ body {
     }
 
     .de {
-        top: 99%;
-        left: 60%;
+        top: 99.4%;
+        left: 63%;
     }
 
     .por {
-        top: 107.7%;
-        left: 57%;
+        top: 107.8%;
+        left: 60%;
     }
 }
 
@@ -781,7 +682,7 @@ body {
     }
 
     .preco-normal {
-        margin-left: 255px;
+        margin-left: 200px;
     }
 
     .preco-promocao {
@@ -789,13 +690,13 @@ body {
     }
 
     .de {
-        top: 99%;
-        left: 60%;
+        top: 99.3%;
+        left: 62%;
     }
 
     .por {
-        top: 108%;
-        left: 58%;
+        top: 107.8%;
+        left: 60%;
     }
 }
 
@@ -805,7 +706,7 @@ body {
     }
 
     .preco-normal {
-        margin-left: 265px;
+        margin-left: 210px;
     }
 
     .preco-promocao {
@@ -814,12 +715,12 @@ body {
 
     .de {
         top: 99%;
-        left: 62%;
+        left: 63%;
     }
 
     .por {
-        top: 107.8%;
-        left: 59%;
+        top: 107.4%;
+        left: 61%;
     }
 }
 /*Parei a formatacao do de e por aqui*/
@@ -833,17 +734,17 @@ body {
     }
 
     .preco-promocao {
-        margin-left: 260px;
+        margin-left: 290px;
     }
 
     .de {
         top: 99.2%;
-        left: 60%;
+        left: 68%;
     }
 
     .por {
         top: 107%;
-        left: 58%;
+        left: 66%;
     }
 
     .img {
@@ -881,21 +782,21 @@ body {
     }
 
     .preco-normal {
-        margin-left: 300px;
+        margin-left: 250px;
     }
 
     .preco-promocao {
-        margin-left: 285px;
+        margin-left: 290px;
     }
 
     .de {
         top: 99%;
-        left: 62%;
+        left: 66%;
     }
 
     .por {
-        top: 107.2%;
-        left: 59%;
+        top: 106.5%;
+        left: 65%;
     }
 }
 
@@ -905,21 +806,21 @@ body {
     }
 
     .preco-normal {
-        margin-left: 301px;
+        margin-left: 250px;
     }
 
     .preco-promocao {
-        margin-left: 285px;
+        margin-left: 295px;
     }
 
     .de {
-        top: 99.3%;
-        left: 60%;
+        top: 99.1%;
+        left: 66%;
     }
 
     .por {
-        top: 107%;
-        left: 57%;
+        top: 106.3%;
+        left: 65%;
     }
 }
 
@@ -929,21 +830,21 @@ body {
     }
 
     .preco-normal {
-        margin-left: 301px;
+        margin-left: 250px;
     }
 
     .preco-promocao {
-        margin-left: 285px;
+        margin-left: 300px;
     }
 
     .de {
         top: 99.3%;
-        left: 57%;
+        left: 64%;
     }
 
     .por {
-        top: 107%;
-        left: 55%;
+        top: 106.5%;
+        left: 62%;
     }
 }
 
@@ -953,21 +854,21 @@ body {
     }
 
     .preco-normal {
-        margin-left: 320px;
+        margin-left: 260px;
     }
 
     .preco-promocao {
-        margin-left: 296px;
+        margin-left: 315px;
     }
 
     .de {
-        top: 99.2%;
-        left: 57%;
+        top: 99%;
+        left: 64%;
     }
 
     .por {
-        top: 107%;
-        left: 55%;
+        top: 106.5%;
+        left: 62%;
     }
 }
 
@@ -977,21 +878,21 @@ body {
     }
 
     .preco-normal {
-        margin-left: 340px;
+        margin-left: 255px;
     }
 
     .preco-promocao {
-        margin-left: 315px;
+        margin-left: 320px;
     }
 
     .de {
-        top: 99.2%;
-        left: 59%;
+        top: 99%;
+        left: 63%;
     }
 
     .por {
-        top: 107%;
-        left: 57%;
+        top: 106.5%;
+        left: 62%;
     }
 }
 
@@ -1001,7 +902,7 @@ body {
     }
 
     .preco-normal {
-        margin-left: 350px;
+        margin-left: 250px;
     }
 
     .preco-promocao {
@@ -1009,13 +910,13 @@ body {
     }
 
     .de {
-        top: 99.2%;
-        left: 59%;
+        top: 99%;
+        left: 63%;
     }
 
     .por {
-        top: 107%;
-        left: 57%;
+        top: 106.5%;
+        left: 62%;
     }
 }
 
@@ -1025,7 +926,7 @@ body {
     }
 
     .preco-normal {
-        margin-left: 360px;
+        margin-left: 250px;
     }
 
     .preco-promocao {
@@ -1038,13 +939,13 @@ body {
     }
 
     .de {
-        top: 99.2%;
-        left: 60%;
+        top: 99%;
+        left: 62%;
     }
 
     .por {
-        top: 107%;
-        left: 58%;
+        top: 106.5%;
+        left: 61%;
     }
 }
 
@@ -1054,7 +955,7 @@ body {
     }
 
     .preco-normal {
-        margin-left: 370px;
+        margin-left: 260px;
     }
 
     .preco-promocao {
@@ -1062,13 +963,13 @@ body {
     }
 
     .de {
-        top: 99.2%;
-        left: 60%;
+        top: 99%;
+        left: 62%;
     }
 
     .por {
-        top: 107%;
-        left: 58%;
+        top: 106.5%;
+        left: 61%;
     }
 }
 
