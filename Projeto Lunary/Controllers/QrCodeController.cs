@@ -18,7 +18,6 @@ namespace Projeto_Lunary.Controllers
         LunaryEntities bd = new LunaryEntities();
         public ActionResult QR()
         {
-            ViewBag.Estabe = bd.Estabelecimento;
             return View();
         }
 
@@ -33,7 +32,6 @@ namespace Projeto_Lunary.Controllers
 
                 using (Bitmap bitmap = qrCode.GetGraphic(20))
                 {
-             
                     bitmap.Save(ms, ImageFormat.Png);
                     ViewBag.QRCodeImage = "data:image/png;base64," + Convert.ToBase64String(ms.ToArray());
                 }
