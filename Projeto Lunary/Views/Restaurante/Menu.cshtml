@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Projeto_Lunary.Models.Restaurante>
 @{
     ViewBag.Title = "Pratos";
-    
+
 }
 
 <head>
@@ -12,9 +12,17 @@
     <script src="~/Scripts/Menu/HeartClick.js"></script>
     <link href="~/Content/preco.css" rel="stylesheet" />
     <link href="~/Content/Campanha.css" rel="stylesheet" />
-    <link href="~/Content/rank.css" rel="stylesheet"/>
+    <link href="~/Content/rank.css" rel="stylesheet" />
     <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
 </head>
+
+@if (true)
+{
+    @*var site = @Request.Url.Host;*@
+    var site = @Server.MapPath("~/Restaurante/Menu");
+    ViewBag.urls = site;
+}
+
 
 <body>
     <!-- PRELOADER! -->
@@ -246,7 +254,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div id="conteudoModal">
-                        
+
                     </div>
                 </div>
             </div>
@@ -268,28 +276,28 @@
 
 
 
-        $(document).ready(function () {
+            $(document).ready(function () {
 
-            $(".img").click(function () {
+                $(".img").click(function () {
 
 
-                var id = $(this).data("value")
-                console.log(id)
+                    var id = $(this).data("value")
+                    console.log(id)
 
-                $("#conteudoModal").load("/Restaurante/Detalhes/" + id,
-                    function () {
-                        $('#myModal').modal("show")
-                    }
-                );
+                    $("#conteudoModal").load("/Restaurante/Detalhes/" + id,
+                        function () {
+                            $('#myModal').modal("show")
+                        }
+                    );
+                });
+
             });
 
-        });
 
+            $(document).ready(function () {
+                //Like
 
-        $(document).ready(function () {
-        //Like
-           
-        });
+            });
         </script>
     }
 </body>
