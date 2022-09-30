@@ -51,31 +51,44 @@
                 </div>
             </div>
         </div>
-        
+
+        <div>
+            @using (Html.BeginForm("QR", "QrCode", FormMethod.Post))
+            {
+                <div class="container">
+                    <form>
+                        <input type="hidden" name="qrcode" value="@Server.MapPath("~/Restaurante/Menu")" />
+                    </form>
+                    <br />
+                    <br />
+                    <div class="QRCode">
+                        <input class="butao" type="submit" value="Generate" />
+
+                    </div>
+                    @if (ViewBag.QrCodeImage != null)
+                    {
+                        <img src="@ViewBag.QrCodeImage" alt="" style="height:300px;width:300px" />
+                    }
+                </div>
+            }
+        </div>
+
 
         <div class="container">
             <!-- Primeiro Card -->
-            <div class="container">
-                <form>
-                    <input type="hidden" name="qrcode" value="@Server.MapPath("~/Restaurante/Menu")" />
-                </form>
-                <br />
-                <br />
-                <div class="QRCode">
-                    <input class="butao" type="submit" value="Generate" />
+            <div class="card">
+                <div class="content">
+                    <div class="col-md-12 ">
 
+                    </div>
                 </div>
-                @if (ViewBag.QrCodeImage != null)
-                {
-                    <img src="@ViewBag.QrCodeImage" alt="" style="height:300px;width:300px" />
-                }
             </div>
             <br />
             <br />
             <!-- Segundo Card -->
             <div class="card">
                 <div class="content">
-                    <a href="/Campanhas/index">
+                    <a href="/Campanha/index">
                         <div class="col-md-9 ">
                             <div>
                                 <h2>Campanhas</h2>

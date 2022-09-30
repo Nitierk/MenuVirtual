@@ -8,13 +8,23 @@
 <body>
 <h2 class="h2-title text-center">Pratos</h2>
 
+   
+
 
 <main>
+    <p>
+        @using (Html.BeginForm(FormMethod.Get))
+        {
+            @Html.TextBox("Pesquisa")
+            <input type="submit" value="Pesquisar" />
+
+        }
+    </p>
     <table class="table table-striped thead-dark">
         <thead class="thead-cor">
             <tr>
 
-                <td class="text-center">Id</td>               
+                <td class="text-center">Id</td>
                 <td class="text-center">Prato</td>
                 <td class="text-center">Preço</td>
                 <td class="text-center">Descrição</td>
@@ -26,18 +36,18 @@
 
                 <td></td>
 
-               
+
 
             </tr>
 
-                <td></td> 
 
-        </thead>
+
+
         <tbody>
             @foreach (var item in Model)
             {
                 <tr>
-                    
+
                     <td>@item.RESTAUID</td>
                     <td>@item.RESTANOME</td>
                     <td>R$@item.RESTAPRECO.ToString("F")</td>
@@ -45,7 +55,7 @@
                     @if (@item.RESTAPREPROMOCAO != null)
                     {
                         <td class="text-center">
-                            R$ @item.RESTAPREPROMOCAO
+                            R$ @item.RESTAPREPROMOCAO.ToString("F")
                         </td>
                     }
                     else
@@ -64,8 +74,8 @@
                             }
                         }
                     </td>
-                       
-                    
+
+
 
 
 
