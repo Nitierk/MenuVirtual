@@ -4,7 +4,7 @@
 }
 
 .campanhas {
-    width: 380px;
+    width: 400px;
     height: 130px;
     outline: 3px solid brown;
     margin: 50px auto;
@@ -68,5 +68,18 @@
 
     100% {
         left: 0px;
+    }
+}
+
+@media screen and (max-width: 435px) {
+    .campanhas {
+        width: 350px;
+        
+    }
+}
+
+@media screen and (max-width: 395px) {
+    .campanhas {
+        width: 300px;
     }
 }

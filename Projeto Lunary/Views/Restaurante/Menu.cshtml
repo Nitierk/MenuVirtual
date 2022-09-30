@@ -1,7 +1,7 @@
 ﻿@model IEnumerable<Projeto_Lunary.Models.Restaurante>
 @{
     ViewBag.Title = "Pratos";
-    
+
 }
 
 <head>
@@ -17,6 +17,13 @@
 </head>
 
 <body>
+
+    @if (true)
+    {
+        @*var site = @Request.Url.Host;*@
+        var site = @Server.MapPath("~/Restaurante/Menu");
+        ViewBag.urls = site;
+    }
     <!-- início do preloader -->
 
     <div id="preloader">
