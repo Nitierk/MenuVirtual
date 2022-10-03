@@ -124,6 +124,14 @@
 
         <p class="barra">Menu</p>
 
+        <p>
+            @using (Html.BeginForm(FormMethod.Get))
+            {
+                @Html.TextBox("Pesquisar")
+                <input type="submit" value="Pesquisar" />
+            }
+        </p>
+
 
 
         <!-- Filtro Categorias -->
