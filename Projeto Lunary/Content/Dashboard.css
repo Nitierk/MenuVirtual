@@ -15,6 +15,7 @@ body {
     background-repeat: no-repeat;
     background-size: 1600px 1590px;
     position:relative;
+    
 }
 
 
@@ -91,27 +92,27 @@ body {
 @media screen and (min-width: 350px) {
     .container {
         width: 400px;
-        margin-left: 6px;
+        margin-left: 14px;
     }
 }
 
 @media screen and (min-width: 370px) {
     .container {
         width: 400px;
-        margin-left: 1px;
+        margin-left: 2px;
     }
 }
 
 @media screen and (min-width: 390px) {
     .container {
         width: 400px;
-        margin-left: -3px;
+        margin-left: 0.9px;
     }
 }
 
 @media screen and (min-width: 400px) {
     .container {
-        margin-left: 1px;
+        margin-left: 2.5px;
     }
 }
 
@@ -170,7 +171,7 @@ body {
 
 @media screen and (min-width: 540px) {
     .container {
-        margin-left: 40px;
+        margin-left: 43px;
     }
 }
 
@@ -261,7 +262,7 @@ body {
 
 @media screen and (min-width: 765px) {
     .container {
-        margin-left: 85px;
+        margin-left: 87px;
     }
 }
 
@@ -273,13 +274,13 @@ body {
 
 @media screen and (min-width: 795px) {
     .container {
-        margin-left: 95px;
+        margin-left: 60px;
     }
 }
 
 @media screen and (min-width: 810px) {
     .container {
-        margin-left: 100px;
+        margin-left: 102px;
     }
 }
 
@@ -380,7 +381,15 @@ body {
 @media screen and (min-width: 1310px) {
     .container {
         width: 2150px;
+        margin-left:-180px;
     }
+
+    body{
+        position:fixed;
+    }
+}
+
+
 
     /*@media screen and (max-width: 1031px) {
     .container .card {    
