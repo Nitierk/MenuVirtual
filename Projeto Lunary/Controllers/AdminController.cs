@@ -20,7 +20,10 @@ namespace Projeto_Lunary.Controllers
         }
         public ActionResult ListPratos()
         {
-            return View(bd.Restaurante);
+            var lista = bd.Restaurante.ToList();
+           
+
+            return View(lista);
         }
 
         public ActionResult Create()
