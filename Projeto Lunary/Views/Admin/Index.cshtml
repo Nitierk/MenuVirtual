@@ -55,26 +55,26 @@
         <div>
             @using (Html.BeginForm("QR", "QrCode", FormMethod.Post))
             {
-                <div class="container">
-                    
+                <div class="container" id="QrCode">
 
-                        <form>
-                            <input type="hidden" name="qrcode" value="@Server.MapPath("~/Restaurante/Menu")" />
-                        </form>
-                        <br />
-                        <br />
-                        <div class="QRCode">
-                            <input class="butao" type="submit" value="Generate" />
 
-                        </div>
-                        @if (ViewBag.QrCodeImage != null)
-                        {
-                            <img src="@ViewBag.QrCodeImage" alt="" style="height:300px;width:300px" />
-                        }
-                        
+                    <form>
+                        <input type="hidden" name="qrcode" value="@Server.MapPath("~/Restaurante/Menu")" />
+                    </form>
+                    <br />
+                    <br />
+                    <div class="QRCode">
+                        <input class="butao" type="submit" value="Generate" />
+
                     </div>
+                    @if (ViewBag.QrCodeImage != null)
+                    {
+                        <img src="@ViewBag.QrCodeImage" alt="" style="height:300px;width:300px" />
                     }
+
                 </div>
+            }
+        </div>
 
 
         <div class="container">
@@ -97,12 +97,23 @@
     <br />
     <br />
 
+    @section scripts{
 
-   
+        <script>
+            $('#QrCode').click(function () {
+
+                var url = "~/Qrcode/Qr"
+                $.post(url);
+            });
+        </script>
+
+
+    }
 
 
 
-    
+
+
 </body>
 
 
