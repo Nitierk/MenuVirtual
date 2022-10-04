@@ -235,7 +235,6 @@
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\CampanhaController.cs" />
     <Compile Include="Controllers\ContaController.cs" />
-    <Compile Include="Controllers\QrCodeController.cs" />
     <Compile Include="Controllers\RestauranteController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -272,10 +271,10 @@
       <DependentUpon>Model.tt</DependentUpon>
     </Compile>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Controllers\QrCodeController.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\Admin\CRUD.css" />
-    <Content Include="Content\Admin\MaisCurtidos.css" />
+    <Content Include="Content\Admin\PictureInput.css" />
     <Content Include="Content\Admin\TelaAdmin.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
@@ -284,6 +283,7 @@
     <Content Include="Content\Campanha.css" />
     <Content Include="Content\Dashboard.css" />
     <Content Include="Content\Menu\img\HeartAnimation.png" />
+    <Content Include="Content\Menu\img\icons8-restaurant-60.png" />
     <Content Include="Content\Menu\img\LogoLunary.png" />
     <Content Include="Content\Menu\img\PratoExemplo.png" />
     <Content Include="Content\Menu\Menu.css" />
@@ -307,6 +307,8 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
+    <Content Include="Properties\Modal.css" />
+    <Content Include="Scripts\Admin\InputPicture.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="..\.editorconfig">
@@ -355,15 +357,15 @@
     <Content Include="Views\Conta\Login.cshtml" />
     <Content Include="Views\Restaurante\Detalhes.cshtml" />
     <Content Include="Views\Admin\ListPratos.cshtml" />
-    <Content Include="Views\Campanha\index.cshtml" />
+    <Content Include="Views\QrCode\QR.cshtml" />
     <Content Include="Views\Campanha\Create.cshtml" />
     <Content Include="Views\Campanha\Editar.cshtml" />
     <Content Include="Views\Campanha\Excluir.cshtml" />
-    <Content Include="Views\QrCode\QR.cshtml" />
-    <Content Include="Views\Admin\ProdutosMaisCurtidos.cshtml" />
+    <Content Include="Views\Campanha\index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Scripts\QR\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />

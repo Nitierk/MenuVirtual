@@ -27,7 +27,7 @@
         document.getElementById('Categoria').appendChild(Categ);    
     }
    
-
+   
 }
 
 function addClass(element, name) {

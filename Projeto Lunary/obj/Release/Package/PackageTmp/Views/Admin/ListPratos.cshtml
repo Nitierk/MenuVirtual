@@ -13,6 +13,7 @@
     <table class="table table-striped thead-dark">
         <thead class="thead-cor">
             <tr>
+
                 <td class="text-center">Id</td>               
                 <td class="text-center">Prato</td>
                 <td class="text-center">Preço</td>
@@ -22,9 +23,15 @@
                 <br />
                 <td></td>
                 <td></td>
+
                 <td></td>
 
-                
+               
+
+            </tr>
+
+                <td></td> 
+
         </thead>
         <tbody>
             @foreach (var item in Model)
@@ -58,6 +65,10 @@
                         }
                     </td>
                        
+                    
+
+
+
                     <td class="espaco-button">
                         <a href="/Admin/Editar?id=@item.RESTAUID"><button type="button" class="button-green">Editar</button></a>
                         <br />

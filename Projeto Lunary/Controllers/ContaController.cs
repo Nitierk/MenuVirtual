@@ -48,6 +48,13 @@ namespace Projeto_Lunary.Controllers
 
             return View(login);
         }
-
+        
+        [HttpPost]
+        [AllowAnonymous]
+        public ActionResult LogOff()
+        {
+            FormsAuthentication.SignOut();
+            return RedirectToAction("Index", "Admin");
+        }
     }
 }

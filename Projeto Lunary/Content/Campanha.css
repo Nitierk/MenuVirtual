@@ -70,3 +70,16 @@
         left: 0px;
     }
 }
+
+@media screen and (max-width: 435px) {
+    .campanhas {
+        width: 350px;
+        
+    }
+}
+
+@media screen and (max-width: 395px) {
+    .campanhas {
+        width: 300px;
+    }
+}
