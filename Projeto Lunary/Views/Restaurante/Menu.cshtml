@@ -19,8 +19,9 @@
 @if (true)
 {
     @*var site = @Request.Url.Host;*@
-    var site = @Server.MapPath("~/Restaurante/Menu");
+    var site = @Request.Url.AbsoluteUri;
     ViewBag.urls = site;
+
 }
 
 <body>
@@ -78,7 +79,7 @@
         <div class="barraVermelha">.</div>
 
         <div class="curtidos">
-            <h3 class="curtir text-center" style="color:brown">Produtos Mais Curtidos </h3>
+            <h3 class="curtir text-center" style="color:brown">Produtos Mais Curtidos</h3>
         </div>
 
         <!-- Carrossel do Top Rank -->
@@ -126,12 +127,24 @@
             <p>Preços</p>
             <form>
                 <ul>
+                    @{
+                        var curtidas = 0;
+                    }
                     @foreach (var item in ViewBag.Rank)
                     {
                         <li>
                             @item.RESTANOME :
                             R$@item.RESTAPRECO.ToString("F")
                         </li>
+
+                        curtidas += 1;
+
+                        if (curtidas >= 5)
+                        {
+                            break;
+
+                        }
+
                     }
                 </ul>
             </form>

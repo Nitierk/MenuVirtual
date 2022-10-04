@@ -8,7 +8,7 @@
 {
     <div class="container">
         <form>
-            <input type="hidden" name="qrcode" value="@Server.MapPath("~/Restaurante/Menu")" />
+            <input type="hidden" name="qrcode" value="@Request.Url.AbsoluteUri" />
         </form>
         <br />
         <br />

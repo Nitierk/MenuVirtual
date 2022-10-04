@@ -24,7 +24,7 @@ namespace Projeto_Lunary.Controllers
         public ActionResult Menu()
         {
             ViewBag.ListCategorias = bd.Categorias.ToList();
-            ViewBag.Rank = bd.Ranking.ToList();
+            ViewBag.Rank = bd.Restaurante.ToList().OrderByDescending(x => ((uint?)x.Curtidas)).ToList();
             ViewBag.Campanha = bd.Campanhas.ToList();
             return View(bd.Restaurante.ToList());
 
