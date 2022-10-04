@@ -1,0 +1,60 @@
+﻿@model IEnumerable<Projeto_Lunary.Models.Restaurante>
+@{
+    ViewBag.Title = "ProdutosCurtidos";
+}
+
+<h2 class="text-center">Produtos Mais Curtidos</h2>
+
+<body>
+    <main>
+        <form>
+            <table class="table table-striped thead-dark">
+                <thead class="thead-cor">
+                    <tr>
+                        <td>Id</td>
+                        <td>Prato</td>
+                        <td>Preço</td>
+                        <td>Descrição</td>
+                        <td>Preço Promoção</td>
+                        <td>Categoria</td>
+                        <br />
+                        <td></td>
+                        <td></td>
+                        <td></td>
+
+                    </tr>
+                </thead>
+                <tbody>
+                    @{
+                        var curtidas = 0;
+                    }
+                    @foreach (var item in ViewBag.Rank)
+                    {
+                        <tr>
+                            <td>@item.RESTAUID</td>
+                            <td>@item.RESTANOME</td>
+                            <td>R$@item.RESTAPRECO.ToString("F")</td>
+                            <td>@item.RESTADESCRICAO</td>
+                            <td>@item.Curtidas</td>
+                            <td>@item.imagem</td>
+                            <td>@item.RESTAPREPROMOCAO</td>
+                        </tr>
+
+                        <td></td>
+
+                        curtidas += 1;
+
+                        if (curtidas >= 5)
+                        {
+                            break;
+
+                        }
+                    }
+                </tbody>
+                
+            </table>
+        </form>
+    </main>
+</body>
+
+

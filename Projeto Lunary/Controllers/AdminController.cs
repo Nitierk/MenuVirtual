@@ -190,7 +190,7 @@ namespace Projeto_Lunary.Controllers
             return View();
         }
 
-        public ActionResult ProdutosMaisCurtidos()
+        public ActionResult ProdutosCurtidos()
         {
             ViewBag.Rank = bd.Restaurante.ToList().OrderByDescending(x => ((uint?)x.Curtidas)).ToList();
             return View();

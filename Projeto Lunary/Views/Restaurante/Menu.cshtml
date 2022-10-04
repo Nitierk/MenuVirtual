@@ -12,17 +12,28 @@
     <script src="~/Scripts/Menu/HeartClick.js"></script>
     <link href="~/Content/preco.css" rel="stylesheet" />
     <link href="~/Content/Campanha.css" rel="stylesheet" />
-    <link href="~/Content/rank.css" rel="stylesheet"/>
+    <link href="~/Content/rank.css" rel="stylesheet" />
 
 </head>
 
-@if (true)
-{
-    @*var site = @Request.Url.Host;*@
-    var site = @Request.Url.AbsoluteUri;
-    ViewBag.urls = site;
+@{
+    var requisicao = "";
+    if (true)
+    {
+        @*var site = @Request.Url.Host;*@
+        @* var site = @Request.Url.AbsoluteUri;
+            ViewBag.urls = site;*@
 
+        @*var Request.Url.GetComponents()*@
+         requisicao = Request.Url.Authority;
+
+        @*string myRequest = new Request();*@
+    }
 }
+
+
+
+
 
 <body>
     <!-- PRELOADER! -->
@@ -120,7 +131,7 @@
                 </a>
             </div>
         </form>
-        
+
 
 
         <div class="subir text-center">
@@ -275,7 +286,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div id="conteudoModal">
-                        
+
                     </div>
                 </div>
             </div>
@@ -297,28 +308,28 @@
 
 
 
-        $(document).ready(function () {
+            $(document).ready(function () {
 
-            $(".img").click(function () {
+                $(".img").click(function () {
 
 
-                var id = $(this).data("value")
-                console.log(id)
+                    var id = $(this).data("value")
+                    console.log(id)
 
-                $("#conteudoModal").load("/Restaurante/Detalhes/" + id,
-                    function () {
-                        $('#myModal').modal("show")
-                    }
-                );
+                    $("#conteudoModal").load("/Restaurante/Detalhes/" + id,
+                        function () {
+                            $('#myModal').modal("show")
+                        }
+                    );
+                });
+
             });
 
-        });
 
+            $(document).ready(function () {
+                //Like
 
-        $(document).ready(function () {
-        //Like
-           
-        });
+            });
         </script>
     }
 </body>
