@@ -11,6 +11,7 @@ using System.Web.Mvc;
 
 namespace Projeto_Lunary.Controllers
 {
+    [Authorize]
     public class QrCodeController : Controller
     {
         // GET: QrCode
