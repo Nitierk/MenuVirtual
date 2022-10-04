@@ -6,6 +6,9 @@ using System.IO;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using PagedList.Mvc;
+using PagedList;
+
 
 namespace Projeto_Lunary.Controllers
 {
@@ -18,11 +21,9 @@ namespace Projeto_Lunary.Controllers
         {
             return View();
         }
-        public ActionResult ListPratos()
+        public ActionResult ListPratos(int? i)
         {
-            var lista = bd.Restaurante.ToList();
-           
-
+            var lista = bd.Restaurante.ToList().ToPagedList(i ?? 1,15);
             return View(lista);
         }
 

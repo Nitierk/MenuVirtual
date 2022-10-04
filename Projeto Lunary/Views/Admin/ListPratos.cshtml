@@ -1,17 +1,18 @@
-﻿@model IEnumerable<Projeto_Lunary.Models.Restaurante>
+﻿@model IPagedList<Projeto_Lunary.Models.Restaurante>
 @{
     ViewBag.Title = "Pratos";
 
 }
-<link href="~/Content/Admin/CRUD.css" rel="stylesheet" />
-<link href="//cdn.datatables.net/1.12.1/css/jquery.dataTables.min.css" rel="stylesheet" />
 
+@using PagedList.Mvc;
+@using PagedList;
+<link href="~/Content/Admin/CRUD.css" rel="stylesheet" />
 
 <body>
     <h2 class="h2-title text-center">Pratos</h2>
 
     <main>
-        <table class="table table-striped thead-dark" id="table-pagina">
+        <table class="table table-striped thead-dark">
             <thead class="thead-cor">
                 <tr>
                     <td class="text-center">Id</td>
@@ -25,7 +26,7 @@
                     <td></td>
                     <td></td>
 
-
+                </tr>
             </thead>
             <tbody>
                 @{
@@ -75,20 +76,15 @@
 
             </tbody>
         </table>
+        <div class="text-center">
+            @Html.PagedListPager(Model, i => Url.Action("ListPratos", "Admin", new { i, procurar = Request.QueryString["procurar"] }))
+        </div>
 
     </main>
-    <script src="//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js"></script>
 
 </body>
 
-@section Scripts {
-    <script>
-        @Scripts.Render("//cdn.datatables.net/1.12.1/js/jquery.dataTables.min.js")
-        $(document).ready(function () {
-            $('#table-pagina').DataTable();
-        });
-    </script>
-}
+
 
 
 

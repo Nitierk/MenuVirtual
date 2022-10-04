@@ -383,3 +383,7 @@ C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto L
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Text.Encoding.CodePages.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\AngleSharp.xml
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Text.Encoding.CodePages.xml
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\PagedList.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\PagedList.Mvc.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\PagedList.xml
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\PagedList.Mvc.xml
