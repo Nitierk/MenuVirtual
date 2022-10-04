@@ -45,6 +45,10 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="AngleSharp, Version=0.17.1.0, Culture=neutral, PublicKeyToken=e83494dcdc6d31ea, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Bin\AngleSharp.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
     </Reference>
@@ -111,6 +115,12 @@
     </Reference>
     <Reference Include="Microsoft.Net.Http.Headers, Version=2.2.0.0, Culture=neutral, PublicKeyToken=adb9793829ddae60, processorArchitecture=MSIL">
       <HintPath>..\packages\Microsoft.Net.Http.Headers.2.2.0\lib\netstandard2.0\Microsoft.Net.Http.Headers.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList, Version=1.17.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.1.17.0.0\lib\net40\PagedList.dll</HintPath>
+    </Reference>
+    <Reference Include="PagedList.Mvc, Version=4.5.0.0, Culture=neutral, PublicKeyToken=abbb863e9397c5e1, processorArchitecture=MSIL">
+      <HintPath>..\packages\PagedList.Mvc.4.5.0.0\lib\net40\PagedList.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="PresentationCore" />
     <Reference Include="PresentationFramework" />
@@ -279,6 +289,7 @@
     <Content Include="Content\Menu\Menu.css" />
     <Content Include="Content\Menu\Preloader.css" />
     <Content Include="Content\Modal.css" />
+    <Content Include="Content\PagedList.css" />
     <Content Include="Content\preco.css" />
     <Content Include="Content\QRCODE.css" />
     <Content Include="Content\rank.css" />
@@ -323,6 +334,7 @@
     <Content Include="Scripts\Menu\FilterCate.js" />
     <Content Include="Scripts\Menu\HeartClick.js" />
     <Content Include="Scripts\Menu\ModalClick.js" />
+    <Content Include="Scripts\Menu\Pagina.js" />
     <Content Include="Scripts\Menu\preloader.js" />
     <Content Include="Scripts\Menu\ScrollToTop.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />

@@ -9,9 +9,11 @@
 
 namespace Projeto_Lunary.Models
 {
+    using AngleSharp.Io;
     using System;
     using System.Collections.Generic;
-    
+    using System.Web;
+
     public partial class Restaurante
     {
         public int RESTAUID { get; set; }

@@ -13,35 +13,29 @@
     <link href="~/Content/preco.css" rel="stylesheet" />
     <link href="~/Content/Campanha.css" rel="stylesheet" />
     <link href="~/Content/rank.css" rel="stylesheet"/>
-    <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
+
 </head>
 
+@if (true)
+{
+    @*var site = @Request.Url.Host;*@
+    var site = @Server.MapPath("~/Restaurante/Menu");
+    ViewBag.urls = site;
+}
+
 <body>
-
-    @if (true)
-    {
-        @*var site = @Request.Url.Host;*@
-        var site = @Server.MapPath("~/Restaurante/Menu");
-        ViewBag.urls = site;
-    }
-    <!-- início do preloader -->
-
+    <!-- PRELOADER! -->
     <div id="preloader">
-        <div>
-            <h1 class="NomeRest">Lunary</h1class="NomeRest">
-        </div>
         <div class="inner">
-            <!-- HTML DA ANIMAÇÃO MUITO LOUCA DO SEU PRELOADER! -->
+
             <div class="bolas">
-                <div> </div>
+                <div></div>
                 <div></div>
                 <div></div>
             </div>
         </div>
-        <img class="icon" src="~/Content/Menu/img/icons8-restaurant-60.png">
     </div>
 
-    <!-- fim do preloader -->
     <!-- CONTENT -->
     <div class="Conteudo">
         <script src="~/Scripts/Menu/ScrollToTop.js"></script>
@@ -83,10 +77,15 @@
 
         <div class="barraVermelha">.</div>
 
+        <div class="curtidos">
+            <h3 class="curtir text-center" style="color:brown">Produtos Mais Curtidos </h3>
+        </div>
+
         <!-- Carrossel do Top Rank -->
-        <p>Produtos Mais Curtidos</p>
+
         <form enctype="multipart/form-data">
-            <div class="carrossel">
+
+            <div class="carrossel" id="carrosselsite">
                 <ul>
                     @foreach (var item in ViewBag.Rank)
                     {
@@ -100,17 +99,27 @@
                             <il>
                                 <img class="imagem" src="@imgSrc" alt="" height="250px" width="400px"></img>
                             </il>
-                        }
-                        else
-                        {
-                            <il>
-                                <img class="imagem" src="@imgSrc" alt="" height="250px" width="380px"></img>
-                            </il>
+
                         }
                     }
                 </ul>
+
             </div>
         </form>
+
+        <form>
+            <div>
+                <a class="carrossel-control-prev" href="#carrosselsite" role="button" data-slide="prev">
+                    <span class="carrossel-control-prev-icon"></span>
+                    <span class="sr-only">Anterior</span>
+                </a>
+                <a class="carrossel-control-next" href="#carrosselsite" role="button" data-slide="next">
+                    <span class="carrossel-control-next-icon"></span>
+                    <span class="sr-only">Avançar</span>
+                </a>
+            </div>
+        </form>
+        
 
 
         <div class="subir text-center">
@@ -226,16 +235,10 @@
                         </div>
                         <!--Exibindo Preço/Preço Promocional-->
                         <div>
-                            @if (item.RESTAPREPROMOCAO > 0)
+                            @if (item.RESTAPREPROMOCAO != 0)
                             {
-                                <div class="por">
-                                    <p>POR</p>
-                                </div>
-                                <div class="de">
-                                    <p>DE</p>
-                                </div>
-                                <p class="preco-normal">R$ @item.RESTAPRECO.ToString("F")</p>
-                                <p class="preco-promocao">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
+                                <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
+                                <p class="preco">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
 
                             }
                             else
@@ -259,7 +262,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div id="conteudoModal">
-
+                        
                     </div>
                 </div>
             </div>
@@ -281,28 +284,28 @@
 
 
 
-            $(document).ready(function () {
+        $(document).ready(function () {
 
-                $(".img").click(function () {
+            $(".img").click(function () {
 
 
-                    var id = $(this).data("value")
-                    console.log(id)
+                var id = $(this).data("value")
+                console.log(id)
 
-                    $("#conteudoModal").load("/Restaurante/Detalhes/" + id,
-                        function () {
-                            $('#myModal').modal("show")
-                        }
-                    );
-                });
-
+                $("#conteudoModal").load("/Restaurante/Detalhes/" + id,
+                    function () {
+                        $('#myModal').modal("show")
+                    }
+                );
             });
 
+        });
 
-            $(document).ready(function () {
-                //Like
 
-            });
+        $(document).ready(function () {
+        //Like
+           
+        });
         </script>
     }
 </body>

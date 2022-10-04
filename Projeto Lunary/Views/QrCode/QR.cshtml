@@ -1,7 +1,7 @@
 ﻿<link href="~/Content/QRCODE.css" rel="stylesheet" />
 @{
     ViewBag.Title = "QR";
-    Layout=null;
+
 }
 
 @using (Html.BeginForm("QR", "QrCode", FormMethod.Post))
@@ -13,7 +13,7 @@
         <br />
         <br />
         <div class="QRCode">
-            <input type="submit" value="Generate" />
+            <input class="butao" type="submit" value="Generate" />
 
         </div>
         @if (ViewBag.QrCodeImage != null)
@@ -22,4 +22,5 @@
         }
     </div>
 }
+
 

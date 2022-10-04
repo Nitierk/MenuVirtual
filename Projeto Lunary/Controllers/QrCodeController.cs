@@ -1,4 +1,5 @@
-﻿using QRCoder;
+﻿using Projeto_Lunary.Models;
+using QRCoder;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -13,8 +14,8 @@ namespace Projeto_Lunary.Controllers
     public class QrCodeController : Controller
     {
         // GET: QrCode
-        
 
+        LunaryEntities bd = new LunaryEntities();
         public ActionResult QR()
         {
             return View();
