@@ -8,7 +8,7 @@
 
 .container {
     height: 350px;
-    background: #ffff;
+    background: #fff;
     max-width: 410px;
     border-radius: 7px;
     padding: 16px 25px;
@@ -24,7 +24,11 @@
         align-items: center;
         justify-content: center;
         border: 1px solid #987a71;
-
 }
 
+
+
+.run {
+   margin-left:100px;
+}
 
