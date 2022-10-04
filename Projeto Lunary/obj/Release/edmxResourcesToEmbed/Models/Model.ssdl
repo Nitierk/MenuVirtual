@@ -17,8 +17,8 @@
     <Property Name="ESTABNOME" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="ESTABENDERECO" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="ESTABBAIRRO" Type="varchar" MaxLength="100" Nullable="false" />
-    <Property Name="ESTATELEFONE" Type="int" Nullable="false" />
-    <Property Name="ESTABCEP" Type="int" Nullable="false" />
+    <Property Name="ESTATELEFONE" Type="varchar" MaxLength="100" />
+    <Property Name="ESTABCEP" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="ESTABLOGIN" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="ESTABSENHA" Type="varchar" MaxLength="100" Nullable="false" />
     <Property Name="ESTATIPO" Type="varchar" MaxLength="100" />

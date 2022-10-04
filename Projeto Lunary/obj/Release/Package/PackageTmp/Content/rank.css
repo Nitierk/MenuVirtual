@@ -4,7 +4,7 @@
 }
 
 .carrossel {
- width: 380px;
+ width: 400px;
  height: 250px;
  outline: 3px solid brown;
  margin: 50px auto;
@@ -72,4 +72,18 @@
     77% {
         left: 0px;
     }    
+}
+
+@media screen and (max-width: 435px) {
+    .carrossel{
+        width:350px;
+        
+    }
+}
+
+@media screen and (max-width: 395px) {
+    .carrossel {
+        width: 300px;
+        height:230px
+    }
 }

@@ -55,8 +55,8 @@
         <div class="container">
             <!-- Primeiro Card -->
             <div class="card">
-                <div class="content">
-                    <a href="/QrCode/QR">
+                <div class="content" id="QrCode">
+                    <a @*href="/QrCode/QR*@">
                         <div class="col-md-12 ">
                             <div>
                                 <h2>QR CODE</h2>
@@ -70,6 +70,17 @@
             <!-- Segundo Card -->
             <div class="card">
                 <div class="content">
+                    <a href="/Admin/ProdutosMaisCurtidos">
+                        <div class="col-md-12 ">
+                            <div>
+                                <h2>Produtos Mais Curtidos</h2>
+                            </div>
+                        </div>
+                    </a>
+                </div>
+            </div>
+            <div class="card">
+                <div class="content">
                     <a href="/Campanhas/index">
                         <div class="col-md-9 ">
                             <div>
@@ -79,26 +90,27 @@
                     </a>
                 </div>
             </div>
+
         </div>
     </div>
     <br />
     <br />
-        <div class="card">
-            <div class="content">
-                <a href="/Admin/ProdutosMaisCurtidos">
-                    <div class="col-md-9 ">
-                        <div>
-                            <h2>Produtos Mais Curtidos</h2>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
 
 
+    @section scripts{
 
-    
+        <script>
+            $('#QrCode').click(function () {
+                window.location.href = "/Qrcode/Qr"
+                var url = "/Qrcode/Qr"
+                $.post(url);
+            });
+        </script>
+
+
+    }
+
+
 </body>
 
 

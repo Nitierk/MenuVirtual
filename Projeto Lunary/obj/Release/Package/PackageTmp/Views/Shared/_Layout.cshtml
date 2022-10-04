@@ -4,6 +4,8 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/v/dt/dt-1.12.1/datatables.min.css" />
+
     <title>@ViewBag.Title - Lunary</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
@@ -36,7 +38,7 @@
                     @using (Html.BeginForm("LogOff", "Conta", FormMethod.Post, new { id = "logoffForm" }))
                     {
                         <ul class="nav navbar-nav navbar-right">
-                            
+
                             <li><a href="#">Olá @User.Identity.Name</a></li>
 
                             <li><a href="javascript:document.getElementById('logoffForm').submit()">Sair</a></li>
@@ -44,17 +46,16 @@
                             <li>&nbsp;&nbsp;&nbsp;</li>
                         </ul>
                     }
-                    </div>        
+                </div>
             </div>
 
         </div>
     }
+
         <div class="container body-content">
             @RenderBody()
             <hr />
-            <footer>
-                <p>&copy; @DateTime.Now.Year - Lunary</p>
-            </footer>
+            
         </div>
 
         @Scripts.Render("~/bundles/jquery")
