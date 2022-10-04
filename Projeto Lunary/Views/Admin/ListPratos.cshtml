@@ -29,10 +29,8 @@
                 </tr>
             </thead>
             <tbody>
-                @{
-                    foreach (var item in Model)
+                    @foreach (var item in Model)
                     {
-
                         <tr>
                             <td>@item.RESTAUID</td>
                             <td>@item.RESTANOME</td>
@@ -73,7 +71,6 @@
 
                     }
                 }
-
             </tbody>
         </table>
         <div class="text-center">

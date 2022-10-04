@@ -1,4 +1,5 @@
-﻿using Projeto_Lunary.Models;
+﻿using AngleSharp.Io;
+using Projeto_Lunary.Models;
 using QRCoder;
 using System;
 using System.Collections.Generic;
@@ -20,12 +21,15 @@ namespace Projeto_Lunary.Controllers
 
         
         [HttpGet]
+     
         public ActionResult Menu()
         {
             ViewBag.ListCategorias = bd.Categorias.ToList();
-            ViewBag.Rank = bd.Ranking.ToList();
+            ViewBag.Rank = bd.Restaurante.ToList().OrderByDescending(x => ((uint?)x.Curtidas)).ToList();
             ViewBag.Campanha = bd.Campanhas.ToList();
             return View(bd.Restaurante.ToList());
+
+
         }
 
         [HttpGet]
@@ -55,7 +59,6 @@ namespace Projeto_Lunary.Controllers
             bd.SaveChanges();
             return RedirectToAction("menu");
         }
-
 
 
     }

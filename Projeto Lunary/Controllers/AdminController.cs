@@ -1,10 +1,7 @@
 ﻿using Projeto_Lunary.Models;
-using QRCoder;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Drawing;
-using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -24,15 +21,10 @@ namespace Projeto_Lunary.Controllers
         {
             return View();
         }
-        public ActionResult ListPratos(string Pesquisa = "")
+        public ActionResult ListPratos(int? i)
         {
-            var q = bd.Restaurante.AsQueryable();
-            if (!string.IsNullOrEmpty(Pesquisa))
-            {
-                q = q.Where(c => c.RESTANOME.Contains(Pesquisa));
-                q = q.OrderBy(c => c.RESTANOME);
-            }
-            return View(q.ToList());
+            var lista = bd.Restaurante.ToList().ToPagedList(i ?? 1,15);
+            return View(lista);
         }
 
         public ActionResult Create()
@@ -193,12 +185,16 @@ namespace Projeto_Lunary.Controllers
             return RedirectToAction("ListPratos");
         }
 
-        public ActionResult ProdutosMaisCurtidos()
+        public ActionResult QRCODindex()
         {
-            ViewBag.Rank = bd.Ranking.ToList();
             return View();
         }
 
-     
+        public ActionResult ProdutosCurtidos()
+        {
+            ViewBag.Rank = bd.Restaurante.ToList().OrderByDescending(x => ((uint?)x.Curtidas)).ToList();
+            return View();
+        }
+        
     }
 }

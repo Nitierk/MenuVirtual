@@ -13,18 +13,29 @@
     <link href="~/Content/preco.css" rel="stylesheet" />
     <link href="~/Content/Campanha.css" rel="stylesheet" />
     <link href="~/Content/rank.css" rel="stylesheet" />
-    <script src="~/Scripts/Menu/ToggleTema.js"></script>
-    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+
 </head>
 
-@if (true)
-{
-    @*var site = @Request.Url.Host;*@
-    var site = @Server.MapPath("~/Restaurante/Menu");
-    ViewBag.urls = site;
+@{
+    var requisicao = "";
+    if (true)
+    {
+        @*var site = @Request.Url.Host;*@
+        @* var site = @Request.Url.AbsoluteUri;
+            ViewBag.urls = site;*@
+
+        @*var Request.Url.GetComponents()*@
+         requisicao = Request.Url.Authority;
+
+        @*string myRequest = new Request();*@
+    }
 }
 
-<body class="light">
+
+
+
+
+<body>
     <!-- PRELOADER! -->
     <div id="preloader">
         <div class="inner">
@@ -40,21 +51,6 @@
     <!-- CONTENT -->
     <div class="Conteudo">
         <script src="~/Scripts/Menu/ScrollToTop.js"></script>
-
-        <!-- Toggle Tema -->
-        <input type="checkbox" onchange="Toggle()" id="toggle">
-
-        <label class="toggle" onclick="" for="toggle">
-            <i class="bx bxs-sun"></i> <!--ícone do sol-->
-            <i class="bx bx-moon"></i> <!--ícone da lua-->
-            <span class="ball"></span> <!--ícone da bola que troa o modo da tela-->
-        </label>
-
-        <!-- arquivo do js -->
-        <script type="text/javascript" src="~/Scripts/Menu/ToggleTema.js"></script>
-
-
-
 
         <div id="progress">
             <span id="progress-value"><i class="glyphicon glyphicon-arrow-up"></i></span>
@@ -94,7 +90,7 @@
         <div class="barraVermelha">.</div>
 
         <div class="curtidos">
-            <h3 class="curtir text-center" style="color:brown">Produtos Mais Curtidos </h3>
+            <h3 class="curtir text-center" style="color:brown">Produtos Mais Curtidos</h3>
         </div>
 
         <!-- Carrossel do Top Rank -->
@@ -142,12 +138,24 @@
             <p>Preços</p>
             <form>
                 <ul>
+                    @{
+                        var curtidas = 0;
+                    }
                     @foreach (var item in ViewBag.Rank)
                     {
                         <li>
                             @item.RESTANOME :
                             R$@item.RESTAPRECO.ToString("F")
                         </li>
+
+                        curtidas += 1;
+
+                        if (curtidas >= 5)
+                        {
+                            break;
+
+                        }
+
                     }
                 </ul>
             </form>
@@ -278,7 +286,7 @@
             <div class="modal-content">
                 <div class="modal-body">
                     <div id="conteudoModal">
-                        
+
                     </div>
                 </div>
             </div>
@@ -300,28 +308,28 @@
 
 
 
-        $(document).ready(function () {
+            $(document).ready(function () {
 
-            $(".img").click(function () {
+                $(".img").click(function () {
 
 
-                var id = $(this).data("value")
-                console.log(id)
+                    var id = $(this).data("value")
+                    console.log(id)
 
-                $("#conteudoModal").load("/Restaurante/Detalhes/" + id,
-                    function () {
-                        $('#myModal').modal("show")
-                    }
-                );
+                    $("#conteudoModal").load("/Restaurante/Detalhes/" + id,
+                        function () {
+                            $('#myModal').modal("show")
+                        }
+                    );
+                });
+
             });
 
-        });
 
+            $(document).ready(function () {
+                //Like
 
-        $(document).ready(function () {
-        //Like
-           
-        });
+            });
         </script>
     }
 </body>
