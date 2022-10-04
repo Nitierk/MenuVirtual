@@ -276,6 +276,7 @@
   <ItemGroup>
     <Content Include="Content\Admin\PictureInput.css" />
     <Content Include="Content\Admin\TelaAdmin.css" />
+    <Content Include="Content\barrapesquisa.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
     <Content Include="Content\bootstrap.css" />

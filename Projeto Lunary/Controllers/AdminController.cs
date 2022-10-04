@@ -1,7 +1,10 @@
 ﻿using Projeto_Lunary.Models;
+using QRCoder;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Drawing;
+using System.Drawing.Imaging;
 using System.IO;
 using System.Linq;
 using System.Web;
@@ -21,10 +24,15 @@ namespace Projeto_Lunary.Controllers
         {
             return View();
         }
-        public ActionResult ListPratos(int? i)
+        public ActionResult ListPratos(string Pesquisa = "")
         {
-            var lista = bd.Restaurante.ToList().ToPagedList(i ?? 1,15);
-            return View(lista);
+            var q = bd.Restaurante.AsQueryable();
+            if (!string.IsNullOrEmpty(Pesquisa))
+            {
+                q = q.Where(c => c.RESTANOME.Contains(Pesquisa));
+                q = q.OrderBy(c => c.RESTANOME);
+            }
+            return View(q.ToList());
         }
 
         public ActionResult Create()
@@ -185,24 +193,17 @@ namespace Projeto_Lunary.Controllers
             return RedirectToAction("ListPratos");
         }
 
-        public ActionResult QRCODindex()
-        {
-            return View();
-        }
-
         public ActionResult ProdutosMaisCurtidos()
         {
             ViewBag.Rank = bd.Ranking.ToList();
             return View();
         }
-        /*
-        [HttpPost]
-        [Authorize]
-        public ActionResult QRCODindex(string qrcode)
+
+        public ActionResult QR(string qrcode)
         {
             using (MemoryStream ms = new MemoryStream())
             {
-                QRCode  Generator qRCodeGenerator = new QRCodeGenerator();
+                QRCodeGenerator qRCodeGenerator = new QRCodeGenerator();
                 QRCodeData qrCodeData = qRCodeGenerator.CreateQrCode(qrcode, QRCodeGenerator.ECCLevel.Q);
                 QRCode qrCode = new QRCode(qrCodeData);
 
@@ -214,6 +215,6 @@ namespace Projeto_Lunary.Controllers
             }
             return View();
         }
-        */
+     
     }
 }

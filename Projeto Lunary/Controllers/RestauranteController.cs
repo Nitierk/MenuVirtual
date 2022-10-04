@@ -20,14 +20,12 @@ namespace Projeto_Lunary.Controllers
 
         
         [HttpGet]
-     
         public ActionResult Menu()
         {
             ViewBag.ListCategorias = bd.Categorias.ToList();
             ViewBag.Rank = bd.Ranking.ToList();
             ViewBag.Campanha = bd.Campanhas.ToList();
             return View(bd.Restaurante.ToList());
-
         }
 
         [HttpGet]
@@ -56,6 +54,23 @@ namespace Projeto_Lunary.Controllers
             bd.Entry(atulizarLikes).State = EntityState.Modified;
             bd.SaveChanges();
             return RedirectToAction("menu");
+        }
+
+        public ActionResult QR(string qrcode)
+        {
+            using (MemoryStream ms = new MemoryStream())
+            {
+                QRCodeGenerator qRCodeGenerator = new QRCodeGenerator();
+                QRCodeData qrCodeData = qRCodeGenerator.CreateQrCode(qrcode, QRCodeGenerator.ECCLevel.Q);
+                QRCode qrCode = new QRCode(qrCodeData);
+
+                using (Bitmap bitmap = qrCode.GetGraphic(20))
+                {
+                    bitmap.Save(ms, ImageFormat.Png);
+                    ViewBag.QRCodeImage = "data:image/png;base64," + Convert.ToBase64String(ms.ToArray());
+                }
+            }
+            return View();
         }
 
 

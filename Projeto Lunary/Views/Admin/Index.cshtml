@@ -35,6 +35,7 @@
                     </a>
                 </div>
             </div>
+
             <br />
             <br />
             <!-- Terceiro Card -->
@@ -50,27 +51,39 @@
                 </div>
             </div>
         </div>
-        <br />
-        <br />
-        <div class="container">
-            <!-- Primeiro Card -->
-            <div class="card">
-                <div class="content">
-                    <a href="/QrCode/QR">
-                        <div class="col-md-12 ">
-                            <div>
-                                <h2>QR CODE</h2>
-                            </div>
+
+        <div>
+            @using (Html.BeginForm("QR", "QrCode", FormMethod.Post))
+            {
+                <div class="container">
+                    
+
+                        <form>
+                            <input type="hidden" name="qrcode" value="@Server.MapPath("~/Restaurante/Menu")" />
+                        </form>
+                        <br />
+                        <br />
+                        <div class="QRCode">
+                            <input class="butao" type="submit" value="Generate" />
+
                         </div>
-                    </a>
+                        @if (ViewBag.QrCodeImage != null)
+                        {
+                            <img src="@ViewBag.QrCodeImage" alt="" style="height:300px;width:300px" />
+                        }
+                        
+                    </div>
+                    }
                 </div>
-            </div>
+
+
+        <div class="container">
             <br />
             <br />
             <!-- Segundo Card -->
             <div class="card">
                 <div class="content">
-                    <a href="/Campanhas/index">
+                    <a href="/Campanha/index">
                         <div class="col-md-9 ">
                             <div>
                                 <h2>Campanhas</h2>
@@ -83,18 +96,9 @@
     </div>
     <br />
     <br />
-        <div class="card">
-            <div class="content">
-                <a href="/Admin/ProdutosMaisCurtidos">
-                    <div class="col-md-9 ">
-                        <div>
-                            <h2>Produtos Mais Curtidos</h2>
-                        </div>
-                    </div>
-                </a>
-            </div>
-        </div>
-    </div>
+
+
+   
 
 
 

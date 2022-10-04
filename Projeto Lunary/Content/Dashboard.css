@@ -14,7 +14,8 @@ body {
     background-image: url(https://img.freepik.com/vetores-premium/formas-geometricas-abstratas-de-ouro-vermelho-sobre-fundo-branco-adequado-para-plano-de-fundo-de-apresentacao-banner-pagina-de-destino-da-web-interface-do-usuario-aplicativo-movel-design-editorial-folheto-banner-e-outras-ocasioes-relacionadas_181182-14477.jpg);
     background-repeat: no-repeat;
     background-size: 1600px 1590px;
-    position: relative;
+    position:relative;
+    
 }
 
 
@@ -380,17 +381,17 @@ body {
 @media screen and (min-width: 1310px) {
     .container {
         width: 2150px;
-        margin-left: -180px;
+        margin-left:-180px;
     }
 
-    body {
-        position: fixed;
+    body{
+        position:fixed;
     }
 }
 
 
 
-/*@media screen and (max-width: 1031px) {
+    /*@media screen and (max-width: 1031px) {
     .container .card {    
         width: 400px;  
         margin: 10px;
@@ -412,4 +413,5 @@ body {
         margin: 10px;
     }
 }*/
+
 
