@@ -43,7 +43,7 @@
                         </li>
                         <li>@Html.ActionLink("Campanhas", "Index", "Campanha")</li>
                     </ul>
-                    @using (Html.BeginForm("QrCodeController", "QrCode", FormMethod.Post, new { id = "logoffForm" }))
+                    @using (Html.BeginForm("Index", "Admin", FormMethod.Post, new { id = "logoffForm" }))
                     {
                         <ul class="nav navbar-nav navbar-right">
 
