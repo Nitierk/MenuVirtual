@@ -194,7 +194,7 @@
             <!-- Oferta do Dia/Promoção -->
             @foreach (var item in Model)
             {
-                if (item.Oferta || item.RESTAPREPROMOCAO > 0 && item.Disponibilidade)
+                if ((item.Oferta || item.RESTAPREPROMOCAO > 0) && item.Disponibilidade)
                 {
 
                     <!-- Conversão da img-->
@@ -249,8 +249,8 @@
                             <div>
                                 @if (item.RESTAPREPROMOCAO != 0)
                                 {
-                                    <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
-                                    <p class="preco">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
+                                    <p class="preco-normal">R$ @item.RESTAPRECO.ToString("F")</p>
+                                    <p class="preco-promocao">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
 
                                 }
                                 else
@@ -320,8 +320,9 @@
                             <div>
                                 @if (item.RESTAPREPROMOCAO != 0)
                                 {
-                                    <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
-                                    <p class="preco">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
+
+                                    <p class="preco-normal">R$ @item.RESTAPRECO.ToString("F")</p>
+                                    <p class="preco-promocao">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
 
                                 }
                                 else
@@ -391,9 +392,8 @@
                             <div>
                                 @if (item.RESTAPREPROMOCAO != 0)
                                 {
-                                    <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
-                                    <p class="preco">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
-
+                                    <p class="preco-normal">R$ @item.RESTAPRECO.ToString("F")</p>
+                                    <p class="preco-promocao">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
                                 }
                                 else
                                 {
