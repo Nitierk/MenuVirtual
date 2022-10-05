@@ -21,16 +21,25 @@ namespace Projeto_Lunary.Controllers
         {
             return View();
         }
-        public ActionResult ListPratos(int? i)
+        public ActionResult ListPratos(int? i, string Pesquisa = "")
         {
             var lista = bd.Restaurante.ToList().ToPagedList(i ?? 1,15);
             return View(lista);
+
+            var q = bd.Restaurante.AsQueryable();
+            if (!string.IsNullOrEmpty(Pesquisa))
+            {
+                q = q.Where(c => c.RESTANOME.Contains(Pesquisa));
+                q = q.OrderBy(c => c.RESTANOME);
+            }
+            return View(q.ToList());
         }
 
         public ActionResult Create()
         {
             ViewBag.listacategoria = bd.Categorias.ToList();
             return View();
+
         }
 
         [HttpPost]
