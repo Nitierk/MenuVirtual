@@ -13,29 +13,14 @@
     <link href="~/Content/preco.css" rel="stylesheet" />
     <link href="~/Content/Campanha.css" rel="stylesheet" />
     <link href="~/Content/rank.css" rel="stylesheet" />
-
+    <link href="~/Content/Modal.css" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <script src="~/Scripts/Menu/ToggleTema.js"></script>
 </head>
 
-@{
-    var requisicao = "";
-    if (true)
-    {
-        @*var site = @Request.Url.Host;*@
-        @* var site = @Request.Url.AbsoluteUri;
-            ViewBag.urls = site;*@
-
-        @*var Request.Url.GetComponents()*@
-         requisicao = Request.Url.Authority;
-
-        @*string myRequest = new Request();*@
-    }
-}
 
 
-
-
-
-<body>
+<body   >
     <!-- PRELOADER! -->
     <div id="preloader">
         <div class="inner">
@@ -49,8 +34,19 @@
     </div>
 
     <!-- CONTENT -->
-    <div class="Conteudo">
+    <div id="Conteudo">
         <script src="~/Scripts/Menu/ScrollToTop.js"></script>
+
+
+        <!-- Toggle Tema -->
+        <input type="checkbox" id="toggle">
+        <label onclick="Toggle()" class="toggle" for="toggle">
+            <i class="bx bxs-sun"></i> <!--ícone do sol-->
+            <i class="bx bx-moon"></i> <!--ícone da lua-->
+            <span class="ball"></span> <!--ícone da bola que troca o modo da tela-->
+        </label>
+        <!-- Fim Toggle Tema -->
+
 
         <div id="progress">
             <span id="progress-value"><i class="glyphicon glyphicon-arrow-up"></i></span>
@@ -126,8 +122,6 @@
             </div>
         </form>
 
-
-
         <div class="subir text-center">
             <p>Preços</p>
             <form>
@@ -160,8 +154,6 @@
 
 
         <!-- Filtro Categorias -->
-
-
         <div class="dropdown text-center">
 
             <select style="text-transform: uppercase;" onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
@@ -173,8 +165,6 @@
                 }
             </select>
         </div>
-
-
         @{
             var Categorias = ViewBag.ListCategorias as IEnumerable<Projeto_Lunary.Models.Restaurante>;
         }
@@ -192,83 +182,223 @@
         </div>
 
 
-
-
-
         <!-- Pratos -->
         <div>
             @{
                 var imgDefault = "/Content/Menu/img/LogoLunary.png";
             }
+            <!-- Oferta do Dia/Promoção -->
             @foreach (var item in Model)
             {
-
-                <!-- Conversão da img-->
-
-                var imgSrc = "";
-
-
-                if (item.imagem != null)
+                if ((item.Oferta || item.RESTAPREPROMOCAO > 0) && item.Disponibilidade)
                 {
-                    var base64 = Convert.ToBase64String(item.imagem);
-                    imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
 
-                }
-                else
-                {
-                    imgSrc = imgDefault;
-                }
+                    <!-- Conversão da img-->
 
-                <!-- Oferta do Dia-->
+                    var imgSrc = "";
 
 
-                string oferta = "";
-                if (item.Oferta)
-                {
-                    oferta = "Oferta do Dia";
-                }
+                    if (item.imagem != null)
+                    {
+                        var base64 = Convert.ToBase64String(item.imagem);
+                        imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
+                    }
+                    else
+                    {
+                        imgSrc = imgDefault;
+                    }
+
+                    <!-- Oferta do Dia-->
+
+
+                    string oferta = "";
+                    if (item.Oferta)
+                    {
+                        oferta = "Oferta do Dia";
+                    }
 
 
 
-                <div class="row pratos @item.RESTACATEGORIA @oferta">
-                    <div class="col-lg-12">
-                        <div class="img2">
-                            <img class="img" src="@imgSrc" data-value="@item.RESTAUID" width="232" height="232">
-                        </div>
+                    <div class="row pratos @item.RESTACATEGORIA @oferta">
+                        <div class="col-lg-12">
+                            <div class="img2">
+                                <img class="img" src="@imgSrc" data-value="@item.RESTAUID" width="232" height="232">
+                            </div>
 
-                        <h3 class="text-center name">@item.RESTANOME</h3>
+                            <h3 class="text-center name">@item.RESTANOME</h3>
 
-                        <!--Btn Coração-->
-                        <div class="heart-btn">
-                            <div class="content">
-                                <form action="" method="post">
-                                    <span onclick="Like(@item.RESTAUID)" class="heart" id="@item.RESTAUID"></span>
+                            <!--Btn Coração-->
+                            <div class="heart-btn">
+                                <div class="content">
+                                    <form action="" method="post">
+                                        <span onclick="Like(@item.RESTAUID)" class="heart" id="@item.RESTAUID"></span>
 
-                                </form>
-                                <div id="@item.RESTAUID-Curtidadiv">
-                                    <span class="number" id="@item.RESTAUID-Curtida">@item.Curtidas</span>
+                                    </form>
+                                    <div id="@item.RESTAUID-Curtidadiv">
+                                        <span class="number" id="@item.RESTAUID-Curtida">@item.Curtidas</span>
+                                    </div>
+
                                 </div>
+                            </div>
+                            <!--Exibindo Preço/Preço Promocional-->
+                            <div>
+                                @if (item.RESTAPREPROMOCAO != 0)
+                                {
+                                    <p class="preco-normal">R$ @item.RESTAPRECO.ToString("F")</p>
+                                    <p class="preco-promocao">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
 
+                                }
+                                else
+                                {
+                                    <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
+                                }
                             </div>
                         </div>
-                        <!--Exibindo Preço/Preço Promocional-->
-                        <div>
-                            @if (item.RESTAPREPROMOCAO != 0)
-                            {
-                                <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
-                                <p class="preco">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
+                    </div>
+                }
+            }
+            <!-- Padrão -->
+            @foreach (var item in Model)
+            {
+                if (item.Oferta == false && item.RESTAPREPROMOCAO == 0 && item.Disponibilidade)
+                {
 
-                            }
-                            else
-                            {
-                                <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
-                            }
+                    <!-- Conversão da img-->
+
+                    var imgSrc = "";
+
+
+                    if (item.imagem != null)
+                    {
+                        var base64 = Convert.ToBase64String(item.imagem);
+                        imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
+                    }
+                    else
+                    {
+                        imgSrc = imgDefault;
+                    }
+
+                    <!-- Oferta do Dia-->
+
+
+                    string oferta = "";
+                    if (item.Oferta)
+                    {
+                        oferta = "Oferta do Dia";
+                    }
+
+
+
+                    <div class="row pratos @item.RESTACATEGORIA @oferta">
+                        <div class="col-lg-12">
+                            <div class="img2">
+                                <img class="img" src="@imgSrc" data-value="@item.RESTAUID" width="232" height="232">
+                            </div>
+
+                            <h3 class="text-center name">@item.RESTANOME</h3>
+
+                            <!--Btn Coração-->
+                            <div class="heart-btn">
+                                <div class="content">
+                                    <form action="" method="post">
+                                        <span onclick="Like(@item.RESTAUID)" class="heart" id="@item.RESTAUID"></span>
+
+                                    </form>
+                                    <div id="@item.RESTAUID-Curtidadiv">
+                                        <span class="number" id="@item.RESTAUID-Curtida">@item.Curtidas</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--Exibindo Preço/Preço Promocional-->
+                            <div>
+                                @if (item.RESTAPREPROMOCAO != 0)
+                                {
+
+                                    <p class="preco-normal">R$ @item.RESTAPRECO.ToString("F")</p>
+                                    <p class="preco-promocao">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
+
+                                }
+                                else
+                                {
+                                    <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
+                                }
+                            </div>
                         </div>
                     </div>
-                </div>
+                }
+            }
+            <!-- Indisponivel -->
+            @foreach (var item in Model)
+            {
+                if (item.Disponibilidade == false)
+                {
+
+                    <!-- Conversão da img-->
+
+                    var imgSrc = "";
+
+
+                    if (item.imagem != null)
+                    {
+                        var base64 = Convert.ToBase64String(item.imagem);
+                        imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
+                    }
+                    else
+                    {
+                        imgSrc = imgDefault;
+                    }
+
+                    <!-- Oferta do Dia-->
+
+
+                    string oferta = "";
+                    if (item.Oferta)
+                    {
+                        oferta = "Oferta do Dia";
+                    }
 
 
 
+                    <div class="row pratos @item.RESTACATEGORIA @oferta">
+                        <div class="col-lg-12">
+                            <div class="img2-indisponivel">
+                                <img class="img" src="@imgSrc" data-value="@item.RESTAUID" width="232" height="232">
+                            </div>
+
+                            <h3 class="text-center name">@item.RESTANOME</h3>
+
+                            <!--Btn Coração-->
+                            <div class="heart-btn">
+                                <div class="content">
+                                    <form action="" method="post">
+                                        <span class="heart"></span>
+
+                                    </form>
+                                    <div id="@item.RESTAUID-Curtidadiv">
+                                        <span class="number" id="@item.RESTAUID-Curtida">@item.Curtidas</span>
+                                    </div>
+
+                                </div>
+                            </div>
+                            <!--Exibindo Preço/Preço Promocional-->
+                            <div>
+                                @if (item.RESTAPREPROMOCAO != 0)
+                                {
+                                    <p class="preco-normal">R$ @item.RESTAPRECO.ToString("F")</p>
+                                    <p class="preco-promocao">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
+                                }
+                                else
+                                {
+                                    <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                }
             }
 
         </div>
@@ -289,24 +419,40 @@
 
     @section scripts{
 
-
-
-        <script src="~/Scripts/Menu/preloader.js"></script>
+        
         <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
-        <script>
 
+        @*Preloader*@
+        <script type="text/javascript">
+            
+        </script>
+
+        <script>
             window.onload = () => {
                 document.queryCommandIndeterm
                 FiltroCategorias()
+
+
+                $('#preloader').show();
+                $('#Conteudo').hide();
+
+                setTimeout(function () {
+                    $('#preloader').hide();
+                    $('#Conteudo').show();
+                        
+                }, 100);
+
+
+                $(document).ready(function () {
+
+                });
+
+
             }
 
-
-
+            
             $(document).ready(function () {
-
                 $(".img").click(function () {
-
-
                     var id = $(this).data("value")
                     console.log(id)
 
@@ -316,13 +462,6 @@
                         }
                     );
                 });
-
-            });
-
-
-            $(document).ready(function () {
-                //Like
-
             });
         </script>
     }

@@ -14,11 +14,10 @@
         <br />
         <div class="QRCode">
             <input class="butao" type="submit" value="Generate" />
-
         </div>
         @if (ViewBag.QrCodeImage != null)
         {
-            <img src="@ViewBag.QrCodeImage" alt="" style="height:300px;width:300px" />
+            <img class="run" src="@ViewBag.QrCodeImage" alt="" style="height:300px;width:300px;margin-left:30px;margin-top:-27px;" />
         }
     </div>
 }
