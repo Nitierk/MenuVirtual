@@ -4,7 +4,7 @@
 }
 
 .campanhas {
-    width: 350px;
+    width: 400px;
     height: 250px;
     outline: 3px solid brown;
     margin: 50px auto;
@@ -12,17 +12,17 @@
     overflow: hidden;
 }
 
-    .campanhas ul {
-        display: flex;
-        list-style: none;
-        width: 1200px;
-        height: 250px;
-    }
+.campanhas ul {
+ display: flex;
+ list-style: none;
+ width: 1200px;
+ height: 250px;
+}
 
-    .campanhas il {
+.campanhas il {
         position: relative;
         animation: slide 25s infinite ease-out;
-    }
+}
 
 
 @keyframes slide {
