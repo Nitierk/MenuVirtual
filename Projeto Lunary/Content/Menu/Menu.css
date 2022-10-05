@@ -134,7 +134,10 @@ body {
     margin-top: 28px;
     color: brown;
     font-style: italic;
-    
+    position: absolute;
+    top: 95%;
+    left: 30%;
+    transform: translate(-50%, -50%);
     font-size: 13px;
     font-family: arial, sans-serif;
     text-decoration: line-through;
@@ -148,7 +151,7 @@ body {
     color: brown;
     font-style: italic;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 20px;
     font-family: arial, sans-serif;
     position: absolute;
     top: 100%;
@@ -239,7 +242,9 @@ body {
     border-bottom: 4px solid brown;
     border-left: 4px solid brown;
     border-right: 4px solid brown;
-    border-radius: 15px
+    border-radius: 15px;
+    margin-top:20px;
+    
 }
 
 .img2-indisponivel {
@@ -721,10 +726,12 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
 
         .preco-normal {
             margin-left: 165px;
+            
         }
 
         .preco-promocao {
             margin-left: 217px;
+            font-size:20px;
         }
 
         .de {
