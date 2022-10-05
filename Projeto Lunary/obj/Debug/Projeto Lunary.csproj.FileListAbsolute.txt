@@ -234,6 +234,7 @@ C:\Users\android\Desktop\Gtihub Kauan\MenuVirtual\Projeto Lunary\obj\Debug\Proje
 C:\Users\android\Desktop\Gtihub Kauan\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.CopyComplete
 C:\Users\android\Desktop\Gtihub Kauan\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.dll
 C:\Users\android\Desktop\Gtihub Kauan\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.pdb
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Newtonsoft.Json.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Projeto Lunary.dll.config
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Projeto Lunary.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Projeto Lunary.pdb
@@ -311,7 +312,6 @@ C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.Exten
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.Extensions.Primitives.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.Net.Http.Headers.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.Web.Infrastructure.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Newtonsoft.Json.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\PagedList.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\PagedList.Mvc.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\QRCoder.dll

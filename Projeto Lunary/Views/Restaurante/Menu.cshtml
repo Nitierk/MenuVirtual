@@ -93,8 +93,18 @@
 
             <div class="carrossel" id="carrosselsite">
                 <ul>
+                    @{
+                        var imagens = 0;
+                    }
                     @foreach (var item in ViewBag.Rank)
                     {
+                        imagens += 1;
+
+                        if (imagens >= 5)
+                        {
+                            break;
+
+                        }
                         var imgSrc = "";
 
                         if (item.imagem != null)
@@ -105,7 +115,6 @@
                             <il>
                                 <img class="imagem" src="@imgSrc" alt="" height="250px" width="400px"></img>
                             </il>
-
                         }
                     }
                 </ul>

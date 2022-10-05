@@ -32,10 +32,18 @@
                         <li>@Html.ActionLink("Lista dos Pratos", "ListPratos", "Admin")</li>
                         <li>@Html.ActionLink("Adionar Pratos", "Create", "Admin")</li>
                         <li><a href="/Restaurante/Menu/" target="_blank">Menu Virtual</a></li>
-                        <li>@Html.ActionLink("QrCode", "Qr", "QrCode")</li>
+                        <li>
+                            @using (Html.BeginForm("QR", "QrCode",FormMethod.Post))
+                            {
+                                <ul class="nav navbar-nav navbar-right">
+
+                                    <li><a href="/QrCode/Qr">QrCode</a></li>
+                                </ul>
+                            }
+                        </li>
                         <li>@Html.ActionLink("Campanhas", "Index", "Campanha")</li>
                     </ul>
-                    @using (Html.BeginForm("LogOff", "Conta", FormMethod.Post, new { id = "logoffForm" }))
+                    @using (Html.BeginForm("QrCodeController", "QrCode", FormMethod.Post, new { id = "logoffForm" }))
                     {
                         <ul class="nav navbar-nav navbar-right">
 
