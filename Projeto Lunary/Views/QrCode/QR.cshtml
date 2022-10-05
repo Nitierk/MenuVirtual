@@ -6,7 +6,7 @@
 
 @using (Html.BeginForm("QR", "QrCode", FormMethod.Post))
 {
-    <div class="container">
+    <div>
         <form>
             <input type="hidden" name="qrcode" value="@Request.Url.Authority/Restaurante/Menu" />
         </form>
@@ -18,7 +18,7 @@
         </div>
         @if (ViewBag.QrCodeImage != null)
         {
-            <img src="@ViewBag.QrCodeImage" alt="" style="height:300px;width:300px" />
+            <img class="run" src="@ViewBag.QrCodeImage" alt="" style="height:300px;width:300px;margin-left:30px;margin-top:-27px;" />
         }
     </div>
 }
