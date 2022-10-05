@@ -369,7 +369,7 @@
                                 <img class="img" src="@imgSrc" data-value="@item.RESTAUID" width="232" height="232">
                             </div>
 
-                            <h3 class="text-center name">@item.RESTANOME</h3>
+                            <h3 class="text-center name" data-value="Nome-@item.RESTAUID" >@item.RESTANOME</h3>
 
                             <!--Btn Coração-->
                             <div class="heart-btn">
@@ -455,7 +455,13 @@
                 $(".img").click(function () {
                     var id = $(this).data("value")
                     console.log(id)
+                    var prato = document.getElementById(id)
+                    var prato = $().data("value")
+                    var prato = document.getElementById(id)
+                    @*var scr = $prato[0].getAttribute('src');*@
 
+                    console.log(prato)
+                    @*console.log(scr)  *@  
                     $("#conteudoModal").load("/Restaurante/Detalhes/" + id,
                         function () {
                             $('#myModal').modal("show")
