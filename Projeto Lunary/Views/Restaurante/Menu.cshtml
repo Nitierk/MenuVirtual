@@ -14,28 +14,13 @@
     <link href="~/Content/Campanha.css" rel="stylesheet" />
     <link href="~/Content/rank.css" rel="stylesheet" />
     <link href="~/Content/Modal.css" rel="stylesheet" />
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <script src="~/Scripts/Menu/ToggleTema.js"></script>
 </head>
 
-@{
-    var requisicao = "";
-    if (true)
-    {
-        @*var site = @Request.Url.Host;*@
-        @* var site = @Request.Url.AbsoluteUri;
-            ViewBag.urls = site;*@
-
-        @*var Request.Url.GetComponents()*@
-         requisicao = Request.Url.Authority;
-
-        @*string myRequest = new Request();*@
-    }
-}
 
 
-
-
-
-<body>
+<body   >
     <!-- PRELOADER! -->
     <div id="preloader">
         <div class="inner">
@@ -51,6 +36,17 @@
     <!-- CONTENT -->
     <div id="Conteudo">
         <script src="~/Scripts/Menu/ScrollToTop.js"></script>
+
+
+        <!-- Toggle Tema -->
+        <input type="checkbox" id="toggle">
+        <label onclick="Toggle()" class="toggle" for="toggle">
+            <i class="bx bxs-sun"></i> <!--ícone do sol-->
+            <i class="bx bx-moon"></i> <!--ícone da lua-->
+            <span class="ball"></span> <!--ícone da bola que troca o modo da tela-->
+        </label>
+        <!-- Fim Toggle Tema -->
+
 
         <div id="progress">
             <span id="progress-value"><i class="glyphicon glyphicon-arrow-up"></i></span>
