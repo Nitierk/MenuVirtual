@@ -312,6 +312,8 @@ C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.Exten
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.Net.Http.Headers.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.Web.Infrastructure.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Newtonsoft.Json.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\PagedList.dll
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\PagedList.Mvc.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\QRCoder.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Buffers.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Collections.Immutable.dll
@@ -351,6 +353,8 @@ C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.Exten
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.Extensions.Options.xml
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.Extensions.Primitives.xml
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.Net.Http.Headers.xml
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\PagedList.xml
+C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\PagedList.Mvc.xml
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Buffers.xml
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Collections.Immutable.xml
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Diagnostics.DiagnosticSource.xml
@@ -380,10 +384,3 @@ C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto L
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.csproj.CopyComplete
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\obj\Debug\Projeto Lunary.pdb
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\PagedList.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\PagedList.Mvc.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Text.Encoding.CodePages.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\AngleSharp.xml
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\PagedList.xml
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\PagedList.Mvc.xml
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Text.Encoding.CodePages.xml
