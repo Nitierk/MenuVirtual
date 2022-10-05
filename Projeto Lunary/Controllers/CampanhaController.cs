@@ -77,8 +77,20 @@ namespace Projeto_Lunary.Controllers
 
         public ActionResult Excluir(int? id)
         {
-            Campanhas excluir = bd.Campanhas.ToList().Where(x => x.CAMID == id).First();
-            return View(excluir);
+
+            if (id != null)
+            {
+                try
+                {
+                    Campanhas excluir = bd.Campanhas.ToList().Where(x => x.CAMID == id).First();
+                    return View(excluir);
+                }
+                catch (Exception)
+                {
+                    return View("ListPratos");
+                }
+            }
+            return View("ListPratos");
         }
         [HttpPost]
         public ActionResult ExcluirConfirma(int? id)
