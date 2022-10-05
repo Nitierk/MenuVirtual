@@ -4,6 +4,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    
 }
 
 html {
@@ -50,6 +51,7 @@ body {
     margin: 0;
     padding: 0;
     transition: .2s;
+    
 }
 
 
@@ -76,6 +78,7 @@ body {
 
 .body {
     position: fixed;
+    
 }
 
 .subtitulo {
@@ -134,15 +137,13 @@ body {
     margin-top: 28px;
     color: brown;
     font-style: italic;
-    position: absolute;
-    top: 95%;
-    left: 30%;
-    transform: translate(-50%, -50%);
-    font-size: 13px;
+    
+    font-size: 15px;
     font-family: arial, sans-serif;
     text-decoration: line-through;
     padding: 0;
     margin: 0;
+    margin-top:25px;
 }
 
 
@@ -192,6 +193,9 @@ body {
 .name {
     color: brown;
     margin-top: 15px;
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    word-break: break-word;
 }
 
 .pratos {
@@ -243,7 +247,7 @@ body {
     border-left: 4px solid brown;
     border-right: 4px solid brown;
     border-radius: 15px;
-    margin-top:20px;
+    margin-top:55px;
     
 }
 
@@ -316,8 +320,8 @@ body {
     }
 
 }
-
 /* Tema Claro/Escuro */
+
 
 .toggle {
     cursor: pointer;
@@ -654,8 +658,8 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
     }
 
     .preco-promocao {
-        margin-left: 209px;
-        font-size: 14px;
+        margin-left: 200px;
+        
     }
 
     .de {
@@ -679,8 +683,8 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
         }
 
         .preco-promocao {
-            margin-left: 225px;
-            font-size: 14px;
+            margin-left: 220px;
+            
         }
 
         .de {
@@ -705,7 +709,7 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
 
         .preco-promocao {
             margin-left: 225px;
-            font-size: 14px;
+            
         }
 
         .de {
@@ -731,7 +735,7 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
 
         .preco-promocao {
             margin-left: 217px;
-            font-size:20px;
+            
         }
 
         .de {
@@ -780,11 +784,11 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
         }
 
         .preco-normal {
-            margin-left: 200px;
+            margin-left: 250px;
         }
 
         .preco-promocao {
-            margin-left: 245px;
+            margin-left: 270px;
         }
 
         .de {
@@ -1107,23 +1111,23 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
 @media screen and (min-width: 768px) {
     .preco-normal {
         margin-left: 223px;
-        font-size:18px;
+        
     }
 
     .preco-promocao {
         margin-left: 380px;
-        font-size: 22px;
+        
     }
 
     .de {
         top: 98.4%;
         left: 56%;
-        font-size: 18px;
+        
     }
 
     .por {
         top: 106.4%;
         left: 54%;
-        font-size: 22px;
+        
     }
 }
