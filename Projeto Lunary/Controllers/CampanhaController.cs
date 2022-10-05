@@ -30,12 +30,21 @@ namespace Projeto_Lunary.Controllers
             novacampanha.CAMPRECO = CAMPRECO;
             if (Foto != null)
             {
-                using (var memoryStream = new MemoryStream())
+                try
                 {
-                    Foto.InputStream.CopyTo(memoryStream);
-                    novacampanha.CAMFOTO = memoryStream.ToArray();
+                    using (var memoryStream = new MemoryStream())
+                    {
+                        Foto.InputStream.CopyTo(memoryStream);
+                        novacampanha.CAMFOTO = memoryStream.ToArray();
+                    }
                 }
+                catch (Exception)
+                {
+                    return RedirectToAction("caixinha.js");
+                }
+                
             }
+            
             bd.Campanhas.Add(novacampanha);
             bd.SaveChanges();
             return RedirectToAction("Index");

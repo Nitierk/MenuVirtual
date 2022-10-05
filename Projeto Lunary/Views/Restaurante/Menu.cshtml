@@ -3,7 +3,6 @@
     ViewBag.Title = "Pratos";
 
 }
-
 <head>
     <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
@@ -96,7 +95,7 @@
                     {
                         imagens += 1;
 
-                        if (imagens >= 5)
+                        if (imagens >= 6)
                         {
                             break;
 
@@ -109,7 +108,7 @@
                             imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
 
                             <il>
-                                <img class="imagem" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                                <img  class="imagem" src="@imgSrc" alt="" height="250px" width="400px"></img>
                             </il>
                         }
                     }

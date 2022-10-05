@@ -37,7 +37,7 @@
 
         <div class="form-group">
             <label for="categoria">Categoria:</label>
-            <select id="categoria"  name="categoria">
+            <select id="categoria" name="categoria">
                 @foreach (var item in ViewBag.listacategoria)
                 {
                     <option>@item.RESTACATEGORIA</option>
@@ -78,6 +78,8 @@
     </form>
 </div>
 
+
+
 @section scripts{
 
     <script>
@@ -87,8 +89,9 @@
         }
     </script>
 
-   
-    
-    
+
+
+
 }
+
 
