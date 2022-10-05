@@ -54,23 +54,7 @@
         <br />
         <div class="container">
             <!-- Primeiro Card -->
-            @using (Html.BeginForm("QR", "QrCode", FormMethod.Post))
-            {
-                <div class="container">
-                    <form>
-                        <input type="hidden" name="qrcode" value="@Request.Url.Authority/Restaurante/Menu" />
-                    </form>
-                    <br />
-                    <br />
-                    <div class="QRCode">
-                        <input class="butao" type="submit" value="Generate" />
-                    </div>
-                    @if (ViewBag.QrCodeImage != null)
-                    {
-                        <img class="run" src="@ViewBag.QrCodeImage" alt="" style="height:300px;width:300px;margin-left:30px;margin-top:-27px;" />
-                    }
-                </div>
-            }
+            
             <br />
             <br />
             <!-- Segundo Card -->
