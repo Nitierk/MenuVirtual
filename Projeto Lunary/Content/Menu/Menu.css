@@ -267,6 +267,7 @@ body {
     top: 100%;
     left: 40%;
     transform: translate(-50%,-50%);
+    background-color:transparent;
 }
 
 .heart {
@@ -356,8 +357,8 @@ input {
 }
 
 /*
-  -- modo claro --
-*/
+    -- modo claro --
+  */
 
 .light {
     background: #fafafa;
@@ -381,30 +382,30 @@ input {
         }
 
 /*
-  -- modo escuro --
-*/
+    -- modo escuro --
+  */
 
 .dark {
     background: #151d2a;
 }
 
-.dark .toggle {
-background: #151d2a;
-box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
-}
+    .dark .toggle {
+        background: #151d2a;
+        box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
+    }
 
-.dark .toggle .bx-sun {
-    color: #fafafa;
-}
+        .dark .toggle .bx-sun {
+            color: #fafafa;
+        }
 
-.dark .toggle .bxs-moon {
-    color: #151d2a;
-}
+        .dark .toggle .bxs-moon {
+            color: #151d2a;
+        }
 
-.dark .toggle .ball {
-    background: #fafafa;
-    transform: translateX(60px);
-}
+        .dark .toggle .ball {
+            background: #fafafa;
+            transform: translateX(60px);
+        }
 
 
 
@@ -529,6 +530,7 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
         display: flex;
         cursor: pointer;
         background-color: transparent;
+        border: transparent;
     }
 
     .number:before {
@@ -552,6 +554,7 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
         display: flex;
         cursor: pointer;
         background-color: transparent;
+        border: transparent;
     }
 
     .number:before {
@@ -864,6 +867,7 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
             border: 2px solid #eae2e1;
             border-radius: 5px;
             cursor: pointer;
+            border: transparent;
         }
 
         .numb:before {
