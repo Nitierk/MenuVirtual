@@ -40,19 +40,5 @@ namespace Projeto_Lunary.Controllers
             return View();
         }
 
-        public ActionResult Baixar()
-        {
-            string[] filepaths = Directory.GetFiles(Server.MapPath("~/File/"));
-            List<QRC> files = new List<QRC>();
-            foreach (string filepath in filepaths)
-            {
-                files.Add(new QRC {imagem = Path.GetFileName(filepath) });
-            }
-            return View(files);
-        }
-
-       
-
-
     }
 }
