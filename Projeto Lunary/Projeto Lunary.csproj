@@ -364,6 +364,7 @@
     <Content Include="Views\Campanha\Editar.cshtml" />
     <Content Include="Views\Campanha\Excluir.cshtml" />
     <Content Include="Views\Campanha\index.cshtml" />
+    <Content Include="Views\Admin\ProdutosCurtidos.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

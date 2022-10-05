@@ -15,6 +15,7 @@ body {
     background-repeat: no-repeat;
     background-size: 1600px 1590px;
     position:relative;
+    
 }
 
 
@@ -91,33 +92,40 @@ body {
 @media screen and (min-width: 350px) {
     .container {
         width: 400px;
-        margin-left: 10px;
-    }    
+        margin-left: 14px;
+    }
+}
+
+@media screen and (min-width: 370px) {
+    .container {
+        width: 400px;
+        margin-left: 2px;
+    }
 }
 
 @media screen and (min-width: 390px) {
     .container {
         width: 400px;
-        margin-left: 1px;
+        margin-left: 0.9px;
     }
 }
 
-@media screen and (min-width: 392px) {
+@media screen and (min-width: 400px) {
     .container {
-        margin-left: 1px;
+        margin-left: 2.5px;
     }
 }
 
 @media screen and (min-width: 415px) {
     .container {
-        margin-left: 5px;
+        margin-left: -1px;
     }
 }
 
 @media screen and (min-width: 430px) {
     .container {
         width: 400px;
-        margin-left: 10px;
+        margin-left: 3px;
     }
 
         .container .card {
@@ -127,228 +135,261 @@ body {
 
 @media screen and (min-width: 450px) {
     .container {
-       
-        margin-left: 15px;
-    }    
+        margin-left: 9px;
+    }
 }
 
 @media screen and (min-width: 465px) {
     .container {
-       
-        margin-left: 20px;
-    } 
+        margin-left: 13px;
+    }
 }
 
 @media screen and (min-width: 480px) {
     .container {
-        margin-left: 25px;
+        margin-left: 20px;
     }
 }
 
 @media screen and (min-width: 495px) {
     .container {
-        margin-left: 30px;
+        margin-left: 25px;
     }
 }
 
 @media screen and (min-width: 510px) {
     .container {
-        margin-left: 35px;
+        margin-left: 30px;
     }
 }
 
 @media screen and (min-width: 525px) {
     .container {
-        margin-left: 40px;
+        margin-left: 35px;
     }
 }
 
 @media screen and (min-width: 540px) {
     .container {
-        margin-left: 45px;
+        margin-left: 43px;
     }
 }
 
 @media screen and (min-width: 555px) {
     .container {
-        margin-left: 50px;
+        margin-left: 45px;
     }
 }
 
 @media screen and (min-width: 570px) {
     .container {
-        margin-left: 55px;
+        margin-left: 50px;
     }
 }
 
 @media screen and (min-width: 585px) {
     .container {
-        margin-left: 60px;
+        margin-left: 55px;
     }
 }
 
 @media screen and (min-width: 600px) {
     .container {
-        margin-left: 65px;
+        margin-left: 60px;
     }
 }
 
 @media screen and (min-width: 615px) {
     .container {
-        margin-left: 70px;
+        margin-left: 65px;
     }
 }
 
 @media screen and (min-width: 630px) {
     .container {
-        margin-left: 75px;
+        margin-left: 70px;
     }
 }
 
 @media screen and (min-width: 645px) {
     .container {
-        
-        margin-left: 80px;
+        margin-left: 75px;
     }
 }
 
 @media screen and (min-width: 660px) {
     .container {
-        margin-left: 85px;
+        margin-left: 80px;
     }
 }
 
 @media screen and (min-width: 675px) {
     .container {
-        margin-left: 60px;
+        margin-left: 55px;
         width: 500px;
     }
 }
 
 @media screen and (min-width: 690px) {
     .container {
-        margin-left: 65px;
+        margin-left: 60px;
     }
 }
 
 @media screen and (min-width: 705px) {
     .container {
-        margin-left: 70px;
+        margin-left: 65px;
     }
 }
 
 @media screen and (min-width: 720px) {
     .container {
-        margin-left: 75px;
+        margin-left: 70px;
     }
 }
 
 @media screen and (min-width: 735px) {
     .container {
-        margin-left: 80px;
+        margin-left: 75px;
     }
 }
 
 @media screen and (min-width: 750px) {
     .container {
-        margin-left: 95px;
+        margin-left: 80px;
     }
 }
 
 @media screen and (min-width: 765px) {
     .container {
-        margin-left: 100px;
+        margin-left: 87px;
     }
 }
 
 @media screen and (min-width: 780px) {
     .container {
-        margin-left: 105px;
+        margin-left: 90px;
     }
 }
 
 @media screen and (min-width: 795px) {
     .container {
-        margin-left: 110px;
+        margin-left: 60px;
     }
 }
 
 @media screen and (min-width: 810px) {
     .container {
-        margin-left: 115px;
+        margin-left: 102px;
     }
 }
 
 @media screen and (min-width: 825px) {
     .container {
-        margin-left: 120px;
+        margin-left: 105px;
     }
 }
 
 @media screen and (min-width: 840px) {
     .container {
-        margin-left: 125px;
+        margin-left: 110px;
     }
 }
 
 @media screen and (min-width: 855px) {
     .container {
-        margin-left: 130px;
+        margin-left: 115px;
     }
 }
 
 @media screen and (min-width: 870px) {
     .container {
-        margin-left: 135px;
+        margin-left: 120px;
     }
 }
 
 @media screen and (min-width: 885px) {
     .container {
-        margin-left: 140px;
+        margin-left: 125px;
     }
 }
 
 @media screen and (min-width: 900px) {
     .container {
-        margin-left: 145px;
+        margin-left: 130px;
     }
 }
 
 @media screen and (min-width: 915px) {
     .container {
         width: 1150px;
-        margin-left: -8px;
+        margin-left: -40px;
     }
 }
 
 @media screen and (min-width: 965px) {
     .container {
         width: 1150px;
-        margin-left: -18px;
+        margin-left: -60px;
     }
 }
+
+@media screen and (min-width: 1020px) {
+    .container {
+        width: 1150px;
+        margin-left: -14px;
+    }
+}
+
+@media screen and (min-width: 1030px) {
+    .container {
+        width: 1150px;
+        margin-left: -78px;
+    }
+}
+
+@media screen and (min-width: 1090px) {
+    .container {
+        width: 1150px;
+        margin-left: -65px;
+    }
+}
+
+@media screen and (min-width: 1140px) {
+    .container {
+        width: 1150px;
+        margin-left: -40px;
+    }
+}
+
+
 
 @media screen and (min-width: 1203px) {
     .container {
         width: 1150px;
-        margin-left: 2px;
+        margin-left: -25px;
     }
 }
 
-@media screen and (min-width: 1285px) {
+@media screen and (min-width: 1280px) {
     .container {
         width: 1150px;
-        margin-left: 20px;
+        margin-left: 10px;
     }
 }
 
 @media screen and (min-width: 1310px) {
     .container {
         width: 2150px;
-       
+        margin-left:-180px;
+    }
+
+    body{
+        position:fixed;
     }
 }
+
+
 
     /*@media screen and (max-width: 1031px) {
     .container .card {    
