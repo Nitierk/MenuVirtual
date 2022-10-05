@@ -241,8 +241,6 @@ C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.WebP
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.WebPages.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.WebPages.Razor.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\WebGrease.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Text.Encoding.CodePages.dll
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\AngleSharp.xml
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\EntityFramework.xml
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\EntityFramework.SqlServer.xml
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.AspNetCore.Http.Abstractions.xml
@@ -284,7 +282,6 @@ C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Web.WebP
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Newtonsoft.Json.xml
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Antlr3.Runtime.pdb
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\Microsoft.CodeDom.Providers.DotNetCompilerPlatform.xml
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Text.Encoding.CodePages.xml
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.Helpers.resources.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.Mvc.resources.dll
 C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\pt-br\System.Web.Optimization.resources.dll

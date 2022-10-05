@@ -73,13 +73,7 @@
                             imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
 
                             <il>
-                                <img class="img3" src="@imgSrc" alt="" height="250px" width="400px"></img>
-                            </il>
-                        }
-                        else
-                        {
-                            <il>
-                                <img class="img3" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                                <img class="img3" src="@imgSrc" alt="" height="250px" width="350px"></img>
                             </il>
                         }
                     }
@@ -295,24 +289,28 @@
 
     @section scripts{
 
-
-
-        <script src="~/Scripts/Menu/preloader.js"></script>
+        
         <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
-        <script>
 
+        @*Preloader*@
+        <script type="text/javascript">
+            $('#preloader').show();
+            $('#Conteudo').hide();
+
+
+            $(document).ready(function () {
+                $('#preloader').hide();
+                $('#Conteudo').show();
+            });
+        </script>
+
+        <script>
             window.onload = () => {
                 document.queryCommandIndeterm
                 FiltroCategorias()
             }
-
-
-
             $(document).ready(function () {
-
                 $(".img").click(function () {
-
-
                     var id = $(this).data("value")
                     console.log(id)
 
@@ -322,13 +320,6 @@
                         }
                     );
                 });
-
-            });
-
-
-            $(document).ready(function () {
-                //Like
-
             });
         </script>
     }
