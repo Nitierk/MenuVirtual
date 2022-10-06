@@ -23,12 +23,12 @@ namespace Projeto_Lunary.Controllers
         {
             return View();
         }
-        public ActionResult ListPratos(int? i)
+        public ActionResult ListPratos(int? i, string searchString)
         {
             var lista = bd.Restaurante.ToList().ToPagedList(i ?? 1,15);
             return View(lista);
-        }
 
+        }
         public ActionResult Create()
         {
             ViewBag.listacategoria = bd.Categorias.ToList();
