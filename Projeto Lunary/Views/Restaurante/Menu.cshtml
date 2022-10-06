@@ -19,7 +19,10 @@
 
 
 
-<body   >
+<body>
+    @{
+        var imgDefault = "/Content/Menu/img/LogoLunary.png";
+    }
     <!-- PRELOADER! -->
     <div id="preloader">
         <div class="inner">
@@ -62,16 +65,17 @@
 
                         var imgSrc = "";
 
+                        var base64 = Convert.ToBase64String(item.CAMFOTO);
+                        imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
                         if (item.CAMFOTO != null)
                         {
-                            var base64 = Convert.ToBase64String(item.CAMFOTO);
-                            imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
-
                             <il>
                                 <img class="img3" src="@imgSrc" alt="" height="250px" width="400px"></img>
                             </il>
                         }
                     }
+
                 </ul>
             </div>
         </form>
@@ -108,7 +112,7 @@
                             imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
 
                             <il>
-                                <img  class="imagem" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                                <img class="imagem" src="@imgSrc" alt="" height="250px" width="400px"></img>
                             </il>
                         }
                     }
@@ -116,7 +120,6 @@
 
             </div>
         </form>
-
         <form>
             <div>
                 <a class="carrossel-control-prev" href="#carrosselsite" role="button" data-slide="prev">
@@ -192,9 +195,7 @@
 
         <!-- Pratos -->
         <div>
-            @{
-                var imgDefault = "/Content/Menu/img/LogoLunary.png";
-            }
+           
             <!-- Oferta do Dia/Promoção -->
             @foreach (var item in Model)
             {
@@ -427,12 +428,12 @@
 
     @section scripts{
 
-        
+
         <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
 
         @*Preloader*@
         <script type="text/javascript">
-            
+
         </script>
 
         <script>
@@ -447,7 +448,7 @@
                 setTimeout(function () {
                     $('#preloader').hide();
                     $('#Conteudo').show();
-                        
+
                 }, 100);
 
 
@@ -458,7 +459,7 @@
 
             }
 
-            
+
             $(document).ready(function () {
                 $(".img").click(function () {
                     var id = $(this).data("value")

@@ -23,7 +23,7 @@ namespace Projeto_Lunary.Controllers
         {
             return View();
         }
-        public ActionResult ListPratos(int? i, string searchString)
+        public ActionResult ListPratos(int? i)
         {
             var lista = bd.Restaurante.ToList().ToPagedList(i ?? 1,15);
             return View(lista);
