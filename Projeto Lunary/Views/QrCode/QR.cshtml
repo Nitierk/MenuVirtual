@@ -12,9 +12,7 @@
         </form>
         <br />
         <br />
-        <div class="QRCode">
-            <input class="butao" type="submit" value="Generate" style="position: absolute; top: 25%; left: 50%; transform: translate(-50%, -50%);width:150px;height:40px;font-size:20px;color:brown;border-radius:15px;border-color:brown;" />
-        </div>
+        
         @if (ViewBag.QrCodeImage != null)
         {
             <img class="run" src="@ViewBag.QrCodeImage" alt="" style="height:300px;width:300px;margin-left:30px;margin-top:-27px;" />

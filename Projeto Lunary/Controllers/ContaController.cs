@@ -56,5 +56,7 @@ namespace Projeto_Lunary.Controllers
             FormsAuthentication.SignOut();
             return RedirectToAction("Index", "Admin");
         }
+
+
     }
 }
