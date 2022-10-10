@@ -4,7 +4,6 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-
 }
 
 html {
@@ -135,10 +134,7 @@ body {
     margin-top: 28px;
     color: brown;
     font-style: italic;
-    position: absolute;
-    top: 95%;
-    left: 30%;
-    transform: translate(-50%, -50%);
+    
     font-size: 13px;
     font-family: arial, sans-serif;
     text-decoration: line-through;
@@ -152,7 +148,7 @@ body {
     color: brown;
     font-style: italic;
     font-weight: bold;
-    font-size: 20px;
+    font-size: 14px;
     font-family: arial, sans-serif;
     position: absolute;
     top: 100%;
@@ -189,10 +185,10 @@ body {
 }
 
 
+
 .name {
     color: brown;
     margin-top: 15px;
-    text-transform: lowercase;
 }
 
 .pratos {
@@ -243,9 +239,7 @@ body {
     border-bottom: 4px solid brown;
     border-left: 4px solid brown;
     border-right: 4px solid brown;
-    border-radius: 15px;
-    margin-top:20px;
-    
+    border-radius: 15px
 }
 
 .img2-indisponivel {
@@ -264,7 +258,6 @@ body {
     top: 100%;
     left: 40%;
     transform: translate(-50%,-50%);
-    background-color:transparent;
 }
 
 .heart {
@@ -319,7 +312,8 @@ body {
 
 }
 
-/* Tema Claro/Escuro */
+/* Tema Noturno */
+
 
 .toggle {
     cursor: pointer;
@@ -354,8 +348,8 @@ input {
 }
 
 /*
-    -- modo claro --
-  */
+  -- modo claro --
+*/
 
 .light {
     background: #fafafa;
@@ -363,7 +357,7 @@ input {
 
     .light .toggle {
         background: linear-gradient(145deg, #e1e1e1, #fff);
-        box-shadow: 3px 3px 4px #e6e6e6, -3px -3px 4px #ffffff;
+        box-shadow: 3px 3px 4px #b5b5b5, -3px -3px 4px #ffffff;
     }
 
         .light .toggle .bxs-sun {
@@ -379,30 +373,30 @@ input {
         }
 
 /*
-    -- modo escuro --
-  */
+  -- modo escuro --
+*/
 
 .dark {
-    background: #151d2a;
+    background: #151d2a;    
 }
 
-    .dark .toggle {
-        background: #151d2a;
-        box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
-    }
+.dark .toggle {
+background: #151d2a;
+box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
+}
 
-        .dark .toggle .bx-sun {
-            color: #fafafa;
-        }
+.dark .toggle .bx-sun {
+    color: #fafafa;
+}
 
-        .dark .toggle .bxs-moon {
-            color: #151d2a;
-        }
+.dark .toggle .bxs-moon {
+    color: #151d2a;
+}
 
-        .dark .toggle .ball {
-            background: #fafafa;
-            transform: translateX(60px);
-        }
+.dark .toggle .ball {
+    background: #fafafa;
+    transform: translateX(60px);
+}
 
 
 
@@ -527,7 +521,6 @@ input {
         display: flex;
         cursor: pointer;
         background-color: transparent;
-        border: transparent;
     }
 
     .number:before {
@@ -551,7 +544,6 @@ input {
         display: flex;
         cursor: pointer;
         background-color: transparent;
-        border: transparent;
     }
 
     .number:before {
@@ -730,12 +722,10 @@ input {
 
         .preco-normal {
             margin-left: 165px;
-            
         }
 
         .preco-promocao {
             margin-left: 217px;
-            font-size:20px;
         }
 
         .de {
@@ -864,7 +854,6 @@ input {
             border: 2px solid #eae2e1;
             border-radius: 5px;
             cursor: pointer;
-            border: transparent;
         }
 
         .numb:before {
