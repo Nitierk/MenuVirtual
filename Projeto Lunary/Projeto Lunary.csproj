@@ -286,6 +286,7 @@
     <Content Include="Content\Menu\img\HeartAnimation.png" />
     <Content Include="Content\Menu\img\icons8-restaurant-60.png" />
     <Content Include="Content\Menu\img\LogoLunary.png" />
+    <Content Include="Content\Menu\img\Logo_Txt.png" />
     <Content Include="Content\Menu\img\PratoExemplo.png" />
     <Content Include="Content\Menu\Menu.css" />
     <Content Include="Content\Menu\Preloader.css" />
