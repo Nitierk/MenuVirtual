@@ -694,6 +694,11 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
     }
 
     @media screen and (min-width: 360px) {
+        .heart-btn {
+            top: 93%;
+            
+        }
+
         .preco {
             margin-left: 210px;
         }
@@ -762,7 +767,7 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
         }
 
         .heart-btn {
-            top: 91%;
+            top: 92%;
             left: 20%;
         }
 
