@@ -10,7 +10,10 @@ namespace Projeto_Lunary.Controllers
 {
     public class ContaController : Controller
     {
+        LunaryEntities bd = new LunaryEntities();
+
         [AllowAnonymous]
+        
         public ActionResult Login(string returnUrl)
         {
             ViewBag.ReturnUrl = returnUrl;
