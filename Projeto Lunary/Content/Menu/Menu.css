@@ -148,7 +148,7 @@ body {
     color: brown;
     font-style: italic;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 19px;
     font-family: arial, sans-serif;
     position: absolute;
     top: 100%;
@@ -189,6 +189,7 @@ body {
 .name {
     color: brown;
     margin-top: 15px;
+    text-transform: lowercase;
 }
 
 .pratos {
@@ -239,7 +240,9 @@ body {
     border-bottom: 4px solid brown;
     border-left: 4px solid brown;
     border-right: 4px solid brown;
-    border-radius: 15px
+    border-radius: 15px;
+    margin-top:20px;
+    
 }
 
 .img2-indisponivel {
@@ -651,7 +654,7 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
 
     .preco-promocao {
         margin-left: 209px;
-        font-size: 14px;
+        
     }
 
     .de {
@@ -676,7 +679,7 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
 
         .preco-promocao {
             margin-left: 225px;
-            font-size: 14px;
+            
         }
 
         .de {
@@ -701,7 +704,7 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
 
         .preco-promocao {
             margin-left: 225px;
-            font-size: 14px;
+            
         }
 
         .de {
@@ -716,6 +719,12 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
     }
 
     @media screen and (min-width: 375px) {
+
+        .heart-btn {
+            top: 92%;
+           
+        }
+
         .preco {
             margin-left: 220px;
         }
@@ -1101,23 +1110,23 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
 @media screen and (min-width: 768px) {
     .preco-normal {
         margin-left: 223px;
-        font-size:18px;
+        
     }
 
     .preco-promocao {
         margin-left: 380px;
-        font-size: 22px;
+        
     }
 
     .de {
         top: 98.4%;
         left: 56%;
-        font-size: 18px;
+        
     }
 
     .por {
         top: 106.4%;
         left: 54%;
-        font-size: 22px;
+        
     }
 }
