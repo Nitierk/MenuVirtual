@@ -189,7 +189,7 @@ body {
 .name {
     color: brown;
     margin-top: 15px;
-    text-transform: lowercase;
+    text-transform: capitalize;
 }
 
 .pratos {
@@ -644,7 +644,7 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
     }
 }
 
-/*responsividade-preco*/
+/*responsividade-preco e mini coracao*/
 
 
 @media screen and (min-width: 320px) {
@@ -666,6 +666,8 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
         top: 109.1%;
         left: 63%;
     }
+
+    
 }
 
     @media screen and (min-width: 350px) {
@@ -720,6 +722,10 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
         .por {
             top: 108.5%;
             left: 60%;
+        }
+
+        .material-icons {
+            top:200%;
         }
     }
 
