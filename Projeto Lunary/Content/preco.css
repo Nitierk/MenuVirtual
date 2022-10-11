@@ -5,10 +5,10 @@
 }
 
 .subir {
+    background-color: brown;
     font-family: Arial;
     font-size: 15px;
     font-weight: 900;
-    background-color: brown;
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     position: relative;

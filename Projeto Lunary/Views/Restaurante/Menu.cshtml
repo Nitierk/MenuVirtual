@@ -18,6 +18,8 @@
     <script src="~/Scripts/Menu/FilterCate.js"></script>
     <script src="~/Scripts/Menu/HeartClick.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
 </head>
 <body class="light">
     
@@ -78,7 +80,16 @@
         
         <!-- Rank Mais Curtidos -->
         <div class="curtidos">
+
+            <box-icon name='bookmark-heart'></box-icon>
+            <span class="material-icons" style="color: brown; position: absolute; top: 74.5%; left: 89%; transform: translate(-50% -50%);">
+                favorite
+            </span>
             <h3 class="curtir text-center" style="color:brown">Produtos Mais Curtidos</h3>
+            <span class="material-icons" style="color: brown; position: absolute; top: 74.5%; left: 5%; transform: translate(-50% -50%);">
+                favorite
+            </span>
+
         </div>
         <form enctype="multipart/form-data">
             <div class="carrossel" id="carrosselsite">
@@ -111,18 +122,7 @@
 
             </div>
         </form>
-        <form>
-            <div>
-                <a class="carrossel-control-prev" href="#carrosselsite" role="button" data-slide="prev">
-                    <span class="carrossel-control-prev-icon"></span>
-                    <span class="sr-only">Anterior</span>
-                </a>
-                <a class="carrossel-control-next" href="#carrosselsite" role="button" data-slide="next">
-                    <span class="carrossel-control-next-icon"></span>
-                    <span class="sr-only">Avançar</span>
-                </a>
-            </div>
-        </form>
+
         <div class="subir text-center">
             <p>Preços</p>
             <form>

@@ -408,6 +408,15 @@ Create table Estabelecimento (
  ESTATIPO Varchar(100) null,
  )
 
+ Create table Restaurante (
+ RESTAUID int identity (1,1) Primary key,
+ RESTANOME varchar(200) not null,
+ RESTAPRECO float not null,
+ RESTADESCRICAO varchar(300) null,
+ RESTAPREPROMOCAO float null,
+ RESTACATEGORIA varchar (300) not null,
+)
+
 
 
 
