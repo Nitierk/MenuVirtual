@@ -20,8 +20,7 @@ namespace Projeto_Lunary.Controllers
         LunaryEntities bd = new LunaryEntities();
 
         
-        [HttpGet]
-     
+        [HttpGet]     
         public ActionResult Menu()
         {
             ViewBag.ListCategorias = bd.Categorias.ToList();
