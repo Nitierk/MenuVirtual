@@ -55,30 +55,44 @@
 
         <div class="container">
             <!-- Segundo Card -->
-            <div class="card">
-                <div class="content">
-                    <a href="/Admin/ProdutosCurtidos">
-                        <div class="col-md-12 ">
-                            <div>
-                                <h2>Produtos Mais Curtidos</h2>
+            @using (Html.BeginForm("QR", "QrCode", FormMethod.Post, new { id = "QrCoder" }))
+            {
+                <div class="card">
+                    <div class="content">
+                        <a href="javascript:document.getElementById('QrCoder').submit()">
+                            <div class="col-md-12 ">
+                                <div>
+                                    <h2>Gerar Qrcode</h2>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
-            </div>
-            <div class="card">
-                <div class="content">
-                    <a href="/Campanha/index">
-                        <div class="col-md-9 ">
-                            <div>
-                                <h2>Campanhas</h2>
+            }
+                <div class="card">
+                    <div class="content">
+                        <a href="/Admin/ProdutosCurtidos">
+                            <div class="col-md-12 ">
+                                <div>
+                                    <h2>Produtos Mais Curtidos</h2>
+                                </div>
                             </div>
-                        </div>
-                    </a>
+                        </a>
+                    </div>
                 </div>
-            </div>
+                <div class="card">
+                    <div class="content">
+                        <a href="/Campanha/index">
+                            <div class="col-md-9 ">
+                                <div>
+                                    <h2>Campanhas</h2>
+                                </div>
+                            </div>
+                        </a>
+                    </div>
+                </div>
 
-        </div>
+            </div>
     </div>
     <br />
     <br />
