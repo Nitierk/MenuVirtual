@@ -5,24 +5,22 @@
 
 .campanhas {
     width: 400px;
- height: 250px;
- outline: 3px solid brown;
- margin: 50px auto;
- box-shadow: 10px 10px 15px rgba(0,0,0,7);
- overflow: hidden;
+    height: 250px;
+    outline: 3px solid brown;
+    margin: 50px auto;
+    box-shadow: 10px 10px 15px rgba(0,0,0,7);
+    overflow: hidden;
 }
-
-    .campanhas ul {
-        display: flex;
-        list-style: none;
-        width: 1200px;
-        height: 250px;
-    }
-
-    .campanhas il {
+.campanhas ul {
+display: flex;
+list-style: none;
+width: 400px;
+height: 250px;
+}
+.campanhas il {
         position: relative;
         animation: slide 25s infinite ease-out;
-    }
+}
 
 
 @keyframes slide {
@@ -81,6 +79,5 @@
 @media screen and (max-width: 395px) {
     .campanhas {
         width: 300px;
-        height:230px
     }
 }
