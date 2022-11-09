@@ -29,6 +29,7 @@ namespace Projeto_Lunary.Controllers
             ViewBag.Ofertas = bd.Restaurante.Where(x => (x.Oferta == true || x.RESTAPREPROMOCAO > 0) && x.Disponibilidade == true ).ToList();
             ViewBag.Padrao = bd.Restaurante.Where(x => (x.Oferta == false && x.RESTAPREPROMOCAO == 0) && x.Disponibilidade == true).ToList();
             ViewBag.Indisponivel = bd.Restaurante.Where(x => x.Disponibilidade == false).ToList();
+            
             return View(bd.Restaurante.ToList());
         }
 
