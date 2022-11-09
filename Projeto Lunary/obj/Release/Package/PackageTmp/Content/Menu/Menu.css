@@ -148,7 +148,7 @@ body {
     color: brown;
     font-style: italic;
     font-weight: bold;
-    font-size: 14px;
+    font-size: 19px;
     font-family: arial, sans-serif;
     position: absolute;
     top: 100%;
@@ -189,6 +189,7 @@ body {
 .name {
     color: brown;
     margin-top: 15px;
+    text-transform: capitalize;
 }
 
 .pratos {
@@ -239,7 +240,9 @@ body {
     border-bottom: 4px solid brown;
     border-left: 4px solid brown;
     border-right: 4px solid brown;
-    border-radius: 15px
+    border-radius: 15px;
+    margin-top:20px;
+    
 }
 
 .img2-indisponivel {
@@ -311,7 +314,8 @@ body {
     }
 
 }
-/* Tema Claro/Escuro */
+
+/* Tema Noturno */
 
 
 .toggle {
@@ -356,7 +360,7 @@ input {
 
     .light .toggle {
         background: linear-gradient(145deg, #e1e1e1, #fff);
-        box-shadow: 3px 3px 4px #e6e6e6, -3px -3px 4px #ffffff;
+        box-shadow: 3px 3px 4px #b5b5b5, -3px -3px 4px #ffffff;
     }
 
         .light .toggle .bxs-sun {
@@ -376,7 +380,7 @@ input {
 */
 
 .dark {
-    background: #151d2a;
+    background: #151d2a;    
 }
 
 .dark .toggle {
@@ -640,7 +644,7 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
     }
 }
 
-/*responsividade-preco*/
+/*responsividade-preco e mini coracao*/
 
 
 @media screen and (min-width: 320px) {
@@ -650,7 +654,7 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
 
     .preco-promocao {
         margin-left: 209px;
-        font-size: 14px;
+        
     }
 
     .de {
@@ -662,6 +666,8 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
         top: 109.1%;
         left: 63%;
     }
+
+    
 }
 
     @media screen and (min-width: 350px) {
@@ -675,7 +681,7 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
 
         .preco-promocao {
             margin-left: 225px;
-            font-size: 14px;
+            
         }
 
         .de {
@@ -690,6 +696,11 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
     }
 
     @media screen and (min-width: 360px) {
+        .heart-btn {
+            top: 93%;
+            
+        }
+
         .preco {
             margin-left: 210px;
         }
@@ -700,7 +711,7 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
 
         .preco-promocao {
             margin-left: 225px;
-            font-size: 14px;
+            
         }
 
         .de {
@@ -712,9 +723,19 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
             top: 108.5%;
             left: 60%;
         }
+
+        .material-icons {
+            top:200%;
+        }
     }
 
     @media screen and (min-width: 375px) {
+
+        .heart-btn {
+            top: 92%;
+           
+        }
+
         .preco {
             margin-left: 220px;
         }
@@ -752,7 +773,7 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
         }
 
         .heart-btn {
-            top: 91%;
+            top: 92%;
             left: 20%;
         }
 
@@ -1100,23 +1121,29 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
 @media screen and (min-width: 768px) {
     .preco-normal {
         margin-left: 223px;
-        font-size:18px;
+        
     }
 
     .preco-promocao {
         margin-left: 380px;
-        font-size: 22px;
+        
     }
 
     .de {
         top: 98.4%;
         left: 56%;
-        font-size: 18px;
+        
     }
 
     .por {
         top: 106.4%;
         left: 54%;
-        font-size: 22px;
+        
     }
 }
+
+.minicoracao{
+    position:relative;
+}
+
+

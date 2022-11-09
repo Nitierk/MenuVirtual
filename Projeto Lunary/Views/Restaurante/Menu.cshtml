@@ -82,11 +82,6 @@
         <div class="barraVermelha">.</div>
 
         <!-- Rank Mais Curtidos -->
-<<<<<<< HEAD
-       
-
-=======
->>>>>>> fd5412707d56722622b1e205670ec365f2da40d8
         <div class="curtidos">
 
             <box-icon name='bookmark-heart'></box-icon>
@@ -97,19 +92,9 @@
         </div>
         <form enctype="multipart/form-data">
             <div class="carrossel" id="carrosselsite">
-                <ul>
-                    @{
-                        var imagens = 0;
-                    }
+                <ul>                   
                     @foreach (var item in ViewBag.Rank)
                     {
-                        imagens += 1;
-
-                        if (imagens >= 6)
-                        {
-                            break;
-
-                        }
                         var imgSrc = "";
 
                         if (item.imagem != null)
@@ -123,7 +108,6 @@
                         }
                     }
                 </ul>
-
             </div>
         </form>
 
@@ -131,24 +115,13 @@
             <p>Preços</p>
             <form>
                 <ul>
-                    @{
-                        var curtidas = 0;
-                    }
+                   
                     @foreach (var item in ViewBag.Rank)
                     {
                         <li>
                             @item.RESTANOME :
                             R$@item.RESTAPRECO.ToString("F")
                         </li>
-
-                        curtidas += 1;
-
-                        if (curtidas >= 5)
-                        {
-                            break;
-
-                        }
-
                     }
                 </ul>
             </form>
@@ -186,11 +159,8 @@
 
         <!-- Oferta do Dia/Promoção -->
         <div>
-            @foreach (var item in Model)
-            {
-                if ((item.Oferta && item.Disponibilidade) || (item.RESTAPREPROMOCAO > 0 && item.Disponibilidade))
-                {
-
+            @foreach (var item in ViewBag.Ofertas)
+            {           
                     <!-- Conversão da img-->
 
                     var imgSrc = "";
@@ -255,7 +225,7 @@
                         </div>
                     </div>
                 }
-            }
+            
 
         </div>
         <script>
@@ -263,10 +233,9 @@
         </script>
         <!-- Padrão -->
         <div>
-            @foreach (var item in Model)
+            @foreach (var item in ViewBag.Padrao)
             {
-                if (item.Oferta == false && item.RESTAPREPROMOCAO == 0 && item.Disponibilidade)
-                {
+               
                     <!-- Conversão da img-->
 
                     var imgSrc = "";
@@ -284,7 +253,6 @@
                     }
 
                     <!-- Oferta do Dia-->
-
 
                     string oferta = "";
                     if (item.Oferta)
@@ -328,8 +296,6 @@
                             </div>
                         </div>
                     </div>
-                }
-
                 <script>
                     FiltroCategorias()
                 </script>
@@ -340,11 +306,8 @@
 
         <!-- Indisponivel -->
         <div>
-            @foreach (var item in Model)
+            @foreach (var item in ViewBag.Indisponivel)
             {
-                if (item.Disponibilidade == false)
-                {
-
                     <!-- Conversão da img-->
 
                     var imgSrc = "";
@@ -408,19 +371,10 @@
                         </div>
                     </div>
                 }
-            }
+            
 
         </div>
     </div><!-- Fechamento do Conteudo -->
-
-        @*<div>
-            @foreach (var item in Model)
-            {
-                @item.RESTAUID
-                <img class="img" data-scr="/Content/Menu/img/LogoLunary.png" ></img>
-            }
-        </div>*@
-
 
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
