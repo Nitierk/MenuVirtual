@@ -190,7 +190,7 @@ body {
     color: brown;
     margin-top: 15px;
     text-transform: capitalize;
-    font-family:unset;
+    font-family:'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 
 .pratos {
