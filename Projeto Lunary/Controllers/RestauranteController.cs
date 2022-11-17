@@ -24,8 +24,12 @@ namespace Projeto_Lunary.Controllers
         public ActionResult Menu()
         {
             ViewBag.ListCategorias = bd.Categorias.ToList();
-            ViewBag.Rank = bd.Restaurante.ToList().OrderByDescending(x => ((uint)x.Curtidas)).ToList();
+            ViewBag.Rank = bd.Restaurante.ToList().OrderByDescending(x => ((uint)x.Curtidas)).Take(5).ToList();
             ViewBag.Campanha = bd.Campanhas.ToList();
+            ViewBag.Ofertas = bd.Restaurante.Where(x => (x.Oferta == true || x.RESTAPREPROMOCAO > 0) && x.Disponibilidade == true ).ToList();
+            ViewBag.Padrao = bd.Restaurante.Where(x => (x.Oferta == false && x.RESTAPREPROMOCAO == 0) && x.Disponibilidade == true).ToList();
+            ViewBag.Indisponivel = bd.Restaurante.Where(x => x.Disponibilidade == false).ToList();
+            
             return View(bd.Restaurante.ToList());
         }
 
