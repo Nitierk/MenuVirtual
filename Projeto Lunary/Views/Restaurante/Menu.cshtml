@@ -56,7 +56,7 @@
             <img src="~/Content/Menu/img/Logo_Txt.png" alt="Alternate Text" style="align-content: center;width:250px;height:100px;margin-bottom:25px;margin-top:25px;" />
         </div>
 
-        <p class="subtitulo">Cardápio</p>
+        <p class="subtitulo" style="font-family:cursive;font-size:40px;">Cardápio</p>
         <!-- Carrossel das Campanhas -->
         <form enctype="multipart/form-data">
             <div class="campanhas" enctype="multipart/form-data">
@@ -82,16 +82,15 @@
         <div class="barraVermelha">.</div>
 
         <!-- Rank Mais Curtidos -->
-<<<<<<< HEAD
+
        
 
-=======
->>>>>>> fd5412707d56722622b1e205670ec365f2da40d8
+
         <div class="curtidos">
 
             <box-icon name='bookmark-heart'></box-icon>
 
-            <h3 class="curtir text-center" style="color:brown">Produtos Mais Curtidos</h3>
+            <h3 class="curtir text-center" style="color:brown;font-family:cursive;">Produtos Mais Curtidos</h3>
 
 
         </div>
@@ -128,7 +127,7 @@
         </form>
 
         <div class="subir text-center">
-            <p>Preços</p>
+            <p style="font-family:cursive;font-size:25px;">Preços</p>
             <form>
                 <ul>
                     @{
@@ -136,7 +135,7 @@
                     }
                     @foreach (var item in ViewBag.Rank)
                     {
-                        <li>
+                        <li style="font-family:cursive;font-size:18px;">
                             @item.RESTANOME :
                             R$@item.RESTAPRECO.ToString("F")
                         </li>
@@ -155,7 +154,7 @@
         </div>
         <!-- Fim Rank Mais Curtidos -->
 
-        <p class="barra">Menu</p>
+        <p class="barra" style="font-family:inherit;">Menu</p>
         <!-- Filtro Categorias -->
         <div class="dropdown text-center">
             <select style="text-transform: uppercase;" onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
