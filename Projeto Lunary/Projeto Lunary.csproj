@@ -289,6 +289,8 @@
     <Content Include="Content\Menu\img\LogoLunary.png" />
     <Content Include="Content\Menu\img\Logo_Txt.png" />
     <Content Include="Content\Menu\img\PratoExemplo.png" />
+    <Content Include="Content\Menu\img\unnamed-removebg-preview %281%29.png" />
+    <Content Include="Content\Menu\img\unnamed-removebg-preview.png" />
     <Content Include="Content\Menu\Menu.css" />
     <Content Include="Content\Menu\Modal.css" />
     <Content Include="Content\Menu\Preloader.css" />
