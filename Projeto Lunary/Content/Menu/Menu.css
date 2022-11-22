@@ -47,7 +47,7 @@ html {
 }
 .curtir {
     color: brown;
-    font-family: cursive;
+    
 }
 .listrank {
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -95,8 +95,9 @@ body {
     text-align: center;
     color: brown;
     margin-bottom: 60px;
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 40px;
+    font-weight: bold;
 }
 
 .barra {
@@ -456,7 +457,7 @@ box-shadow: 3px 3px 3px #0e131b, -3px -3px 3px #1c2739;
     }
 
     .subtitulo {
-        font-size: 30px;
+        font-size: 0px;
     }
 
     .barra {
