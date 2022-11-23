@@ -1,4 +1,5 @@
 ﻿using AngleSharp.Io;
+using PagedList;
 using Projeto_Lunary.Models;
 using QRCoder;
 using System;
@@ -21,7 +22,7 @@ namespace Projeto_Lunary.Controllers
 
         
         [HttpGet]     
-        public ActionResult Menu()
+        public ActionResult Menu(int? i)
         {
             ViewBag.ListCategorias = bd.Categorias.ToList();
             ViewBag.Rank = bd.Restaurante.ToList().OrderByDescending(x => ((uint)x.Curtidas)).Take(5).ToList();
@@ -29,8 +30,14 @@ namespace Projeto_Lunary.Controllers
             ViewBag.Ofertas = bd.Restaurante.Where(x => (x.Oferta == true || x.RESTAPREPROMOCAO > 0) && x.Disponibilidade == true ).ToList();
             ViewBag.Padrao = bd.Restaurante.Where(x => (x.Oferta == false && x.RESTAPREPROMOCAO == 0) && x.Disponibilidade == true).ToList();
             ViewBag.Indisponivel = bd.Restaurante.Where(x => x.Disponibilidade == false).ToList();
-            
-            return View(bd.Restaurante.ToList());
+            var Petisco = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Petiscos").ToList().ToPagedList(i ?? 1, 15);
+            var Bebidas = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Bebidas").ToList().ToPagedList(i ?? 1, 15);
+            var Refeicoes = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Refeições").ToList().ToPagedList(i ?? 1, 15);
+            var Porcoes = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Porções").ToList().ToPagedList(i ?? 1, 15);
+
+            IPagedList<Projeto_Lunary.Models.Restaurante> pratos = (IPagedList<Restaurante>)Bebidas.Concat(Petisco).Concat(Refeicoes).Concat(Porcoes).ToPagedList(i ?? 1, 15);
+            /*PagedListExtensions pratos = Bebidas.Concat(Petisco).Concat(Refeicoes).Concat(Porcoes);*/
+            return View(pratos);
         }
 
         [HttpGet]

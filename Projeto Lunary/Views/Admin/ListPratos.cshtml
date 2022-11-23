@@ -75,6 +75,7 @@
 
             </tbody>
         </table>
+
         <div class="text-center">
             @Html.PagedListPager(Model, i => Url.Action("ListPratos", "Admin", new { i, procurar = Request.QueryString["procurar"] }))
         </div>
