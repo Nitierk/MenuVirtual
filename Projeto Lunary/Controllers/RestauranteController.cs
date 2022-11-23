@@ -68,6 +68,9 @@ namespace Projeto_Lunary.Controllers
             return RedirectToAction("menu");
         }
 
-
+        public int pratos()
+        {
+            return 0;
+        }
     }
 }
