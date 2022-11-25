@@ -1,4 +1,4 @@
-﻿@model  IPagedList<Projeto_Lunary.Models.Restaurante>
+﻿@model  IEnumerable<Projeto_Lunary.Models.Restaurante>
 @{
     ViewBag.Title = "Pratos";
 
@@ -91,10 +91,6 @@
         <div class="barraVermelha">.</div>
 
         <!-- Rank Mais Curtidos -->
-
-        <div class="text-center">
-            @Html.PagedListPager(Model, i => Url.Action("Menu", "Restaurante", new { i, procurar = Request.QueryString["procurar"] }))
-        </div>
 
         <div class="curtidos">
 
@@ -273,7 +269,7 @@
         <!-- Padrão -->
         <div>
             @foreach (var item in Model)
-            {
+            {   
                 if (item.Oferta == false && item.RESTAPREPROMOCAO == 0 && item.Disponibilidade)
                 {
                     <!-- Conversão da img-->

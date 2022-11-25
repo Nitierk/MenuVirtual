@@ -30,14 +30,15 @@ namespace Projeto_Lunary.Controllers
             ViewBag.Ofertas = bd.Restaurante.Where(x => (x.Oferta == true || x.RESTAPREPROMOCAO > 0) && x.Disponibilidade == true ).ToList();
             ViewBag.Padrao = bd.Restaurante.Where(x => (x.Oferta == false && x.RESTAPREPROMOCAO == 0) && x.Disponibilidade == true).ToList();
             ViewBag.Indisponivel = bd.Restaurante.Where(x => x.Disponibilidade == false).ToList();
-            var Petisco = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Petiscos").ToList().ToPagedList(i ?? 1, 15);
-            var Bebidas = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Bebidas").ToList().ToPagedList(i ?? 1, 15);
-            var Refeicoes = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Refeições").ToList().ToPagedList(i ?? 1, 15);
-            var Porcoes = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Porções").ToList().ToPagedList(i ?? 1, 15);
+            var Petisco = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Petiscos").ToList();
+            var Bebidas = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Bebidas").ToList();
+            var Refeicoes = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Refeições").ToList();
+            var Porcoes = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Porções").ToList();
 
-            IPagedList<Projeto_Lunary.Models.Restaurante> pratos = (IPagedList<Restaurante>)Bebidas.Concat(Petisco).Concat(Refeicoes).Concat(Porcoes).ToPagedList(i ?? 1, 15);
+
+            //IPagedList<Projeto_Lunary.Models.Restaurante> pratos = (IPagedList<Restaurante>)Bebidas.Concat(Petisco).Concat(Refeicoes).Concat(Porcoes).ToPagedList(i ?? 1, 15);
             /*PagedListExtensions pratos = Bebidas.Concat(Petisco).Concat(Refeicoes).Concat(Porcoes);*/
-            return View(pratos);
+            return View(bd.Restaurante.ToList());
         }
 
         [HttpGet]
@@ -68,9 +69,6 @@ namespace Projeto_Lunary.Controllers
             return RedirectToAction("menu");
         }
 
-        public int pratos()
-        {
-            return 0;
-        }
+        
     }
 }
