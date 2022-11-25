@@ -444,11 +444,17 @@
 
     @section scripts{
         <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+        <script src="~/Scripts/Menu/InfiniteScroll.js"></script>
 
         <script>
             const myLazyLoad = new LazyLoad({
                 elements_selector: ".img"
             });
+            window.addEventListener("scroll", () => {
+                if (window.scrollY + window.innerHeight + 5 >
+                    document.body.scrollHeight)
+                    InfiniteScrolling(document.getElementById("TituloCat").innerText);
+            })
         </script>
         <script>
             window.onload = () => {

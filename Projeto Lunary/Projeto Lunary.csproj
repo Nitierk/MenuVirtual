@@ -339,6 +339,7 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\Menu\FilterCate.js" />
     <Content Include="Scripts\Menu\HeartClick.js" />
+    <Content Include="Scripts\Menu\InfiniteScroll.js" />
     <Content Include="Scripts\Menu\ModalClick.js" />
     <Content Include="Scripts\Menu\Pagina.js" />
     <Content Include="Scripts\Menu\ScrollToTop.js" />
