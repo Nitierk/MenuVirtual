@@ -34,11 +34,8 @@ namespace Projeto_Lunary.Controllers
             var Bebidas = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Bebidas").ToList();
             var Refeicoes = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Refeições").ToList();
             var Porcoes = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Porções").ToList();
-
-
-            //IPagedList<Projeto_Lunary.Models.Restaurante> pratos = (IPagedList<Restaurante>)Bebidas.Concat(Petisco).Concat(Refeicoes).Concat(Porcoes).ToPagedList(i ?? 1, 15);
-            /*PagedListExtensions pratos = Bebidas.Concat(Petisco).Concat(Refeicoes).Concat(Porcoes);*/
-            return View(bd.Restaurante.ToList());
+            var pratos = Bebidas.Concat(Petisco).Concat(Refeicoes).Concat(Porcoes);
+            return View(pratos.ToList());
         }
 
         [HttpGet]
