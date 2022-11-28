@@ -69,5 +69,9 @@ namespace Projeto_Lunary.Controllers
         }
 
 
+            prato += 15;
+
+
+
     }
 }
