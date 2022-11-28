@@ -9,11 +9,13 @@ function InfiniteScrolling(categoria) {
     /*console.log(`refeições ${Refeições} pestiscos ${Petiscos} porções ${Porções} bebidas ${Bebidas}`)   */
     var prato = mySettings[categoria]
     console.log(prato)
+    var lista =  $.get(url, { categoria: categoria })
+    console.log($.get(url, { categoria: categoria }))
+    console.log(lista[0])
+    
 
-    $.get()
 
-
-    var pratos = (categoria) => {
+   /* var pratos = (categoria) => {
         if (!(categoria == "Oferta do Dia")) {
             for (var i = prato + 1; i < prato + 16; i++) {
                 console.log(`${categoria+ i}`)
@@ -23,7 +25,7 @@ function InfiniteScrolling(categoria) {
             
  }
     }  
-    pratos(categoria)
+    pratos(categoria)*/
     
 
     

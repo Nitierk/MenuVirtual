@@ -286,10 +286,10 @@
     <Content Include="Content\Menu\img\bookmark-heart-regular-24.png" />
     <Content Include="Content\Menu\img\HeartAnimation.png" />
     <Content Include="Content\Menu\img\icons8-restaurant-60.png" />
-    <Content Include="Content\Menu\img\LogoLunary.png" />
+    <Content Include="Content\Menu\img\LogoLunaryGray.png" />
     <Content Include="Content\Menu\img\Logo_Txt.png" />
     <Content Include="Content\Menu\img\PratoExemplo.png" />
-    <Content Include="Content\Menu\img\unnamed-removebg-preview %281%29.png" />
+    <Content Include="Content\Menu\img\LunaryLogo.png" />
     <Content Include="Content\Menu\img\unnamed-removebg-preview.png" />
     <Content Include="Content\Menu\Menu.css" />
     <Content Include="Content\Menu\Modal.css" />

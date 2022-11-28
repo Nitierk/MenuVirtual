@@ -28,16 +28,17 @@ namespace Projeto_Lunary.Controllers
             ViewBag.Rank = bd.Restaurante.ToList().OrderByDescending(x => ((uint)x.Curtidas)).Take(5).ToList();
             ViewBag.Campanha = bd.Campanhas.ToList();
             ViewBag.Ofertas = bd.Restaurante.Where(x => (x.Oferta == true || x.RESTAPREPROMOCAO > 0) && x.Disponibilidade == true ).ToList();
-            ViewBag.Padrao = bd.Restaurante.Where(x => (x.Oferta == false && x.RESTAPREPROMOCAO == 0) && x.Disponibilidade == true).ToList();
+            /*ViewBag.Padrao = bd.Restaurante.Where(x => (x.Oferta == false && x.RESTAPREPROMOCAO == 0) && x.Disponibilidade == true).ToList();*/
             ViewBag.Indisponivel = bd.Restaurante.Where(x => x.Disponibilidade == false).ToList();
-            var Petisco = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Petiscos").ToList().ToPagedList(i ?? 1, 15);
-            var Bebidas = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Bebidas").ToList().ToPagedList(i ?? 1, 15);
-            var Refeicoes = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Refeições").ToList().ToPagedList(i ?? 1, 15);
-            var Porcoes = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Porções").ToList().ToPagedList(i ?? 1, 15);
+            var Petisco = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Petiscos" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).Take(15).ToList();
+            var Bebidas = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Bebidas" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).Take(15).ToList();
+            var Refeicoes = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Refeições" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).Take(15).ToList();
+            var Porcoes = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Porções" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).Take(15).ToList();
 
-            IPagedList<Projeto_Lunary.Models.Restaurante> pratos = (IPagedList<Restaurante>)Bebidas.Concat(Petisco).Concat(Refeicoes).Concat(Porcoes).ToPagedList(i ?? 1, 15);
+            /*IPagedList<Projeto_Lunary.Models.Restaurante> pratos = (IPagedList<Restaurante>)Bebidas.Concat(Petisco).Concat(Refeicoes).Concat(Porcoes).ToPagedList(i ?? 1, 15);*/
+            ViewBag.Padrao = Bebidas.Concat(Petisco).Concat(Refeicoes).Concat(Porcoes).ToList();
             /*PagedListExtensions pratos = Bebidas.Concat(Petisco).Concat(Refeicoes).Concat(Porcoes);*/
-            return View(pratos);
+            return View();
         }
 
         [HttpGet]
@@ -68,10 +69,25 @@ namespace Projeto_Lunary.Controllers
             return RedirectToAction("menu");
         }
 
-
-            prato += 15;
-
-
+        public JsonResult ListaPratos(string categoria)
+        {
+            switch (categoria)
+            {
+                case "Bebidas":
+                    IList<Restaurante> listaPratos = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Bebidas" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList();
+                    return Json(listaPratos, JsonRequestBehavior.AllowGet);
+                /*return  bd.Restaurante.Where(x => x.RESTACATEGORIA == "Bebidas" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList();*/
+               /* case "Refeições":
+                    return  bd.Restaurante.Where(x => x.RESTACATEGORIA == "Refeições" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList();
+                case "Porções":
+                    return  bd.Restaurante.Where(x => x.RESTACATEGORIA == "Porções" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList();
+                 case "Petiscos":
+                    return  bd.Restaurante.Where(x => x.RESTACATEGORIA == "Petiscos" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList();
+               */ default:
+                    List<Restaurante> vazio = new List<Restaurante>();
+                    return Json(vazio, JsonRequestBehavior.AllowGet);
+            }
+        }
 
     }
 }
