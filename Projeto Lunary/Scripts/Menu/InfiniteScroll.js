@@ -43,10 +43,10 @@ function CarregarMaisPratos(dados) {
 
 
     var html =
-        '<div class="row pratos '   + dados.RESTACATEGORIA +  '">' + 
+        '<div class="row pratos '   + dados.RESTACATEGORIA +  ' show">' + 
             '<div class="col-lg-12" >' +
               '  <div class="img2">' +
-                  '  <img class="img" src="/Content/Menu/img/LogoLunaryGray.png" data-value="' + dados.RESTAUID + '" width="232" height="232"> ' +
+        '  <img class="img" src="data:image/jpg/gif/png;base64,' + Base64(dados.imagem)  + '" data-value="' + dados.RESTAUID + '" width="232" height="232"> ' +
                 '</div>' +
 
                 '<h3 class="text-center name col-md-12">' +  dados.RESTANOME + '</h3>' +
@@ -58,14 +58,13 @@ function CarregarMaisPratos(dados) {
 
                         '</form>' +
                     '<div id="' + dados.RESTAUID + '-Curtidadiv">' +
-                            '<span class="number" id="' + dados.RESTAUID + '-Curtida">' + dados.Curtidas + '</span>'
+                            '<span class="number" id="' + dados.RESTAUID + '-Curtida">' + dados.Curtidas + '</span>' +
                         '</div>'+
 
                     '</div>' +
                 '</div>' +
-
                 '<div>' +
-                    '<p class="preco">R$ ' + dados.RESTAPRECO + '.ToString("F") </p>' +
+        '<p class="preco">R$ ' + dados.RESTAPRECO.toFixed([2]) + '</p>' +
                 '</div>' +
             '</div>' + 
         '</div>' 
@@ -73,3 +72,10 @@ function CarregarMaisPratos(dados) {
     return html;
 
 }
+
+
+function Base64(d, a, e, b, c, f) {
+    c = ""; for (a = e = b = 0; a < 4 * d.length / 3; f = b >> 2 * (++a & 3) & 63, c += String.fromCharCode(f + 71 - (f < 26 ? 6 : f < 52 ? 0 : f < 62 ? 75 : f ^ 63 ? 90 : 87)) + (75 == (a - 1) % 76 ? "\r\n" : ""))a & 3 ^ 3 && (b = b << 8 ^ d[e++]); for (; a++ & 3;)c += "=";
+    return c
+};
+
