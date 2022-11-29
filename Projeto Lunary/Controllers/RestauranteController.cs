@@ -69,23 +69,24 @@ namespace Projeto_Lunary.Controllers
             return RedirectToAction("menu");
         }
 
-        public JsonResult ListaPratos(string categoria)
+        [HttpPost]
+        public JsonResult ListaPratos(string categoria, int qtd)
         {
+           
+
             switch (categoria)
             {
                 case "Bebidas":
-                    IList<Restaurante> listaPratos = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Bebidas" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList();
-                    return Json(listaPratos, JsonRequestBehavior.AllowGet);
-                /*return  bd.Restaurante.Where(x => x.RESTACATEGORIA == "Bebidas" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList();*/
-               /* case "Refeições":
-                    return  bd.Restaurante.Where(x => x.RESTACATEGORIA == "Refeições" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList();
+                    return Json(bd.Restaurante.Where(x => x.RESTACATEGORIA == "Bebidas" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList().Skip(qtd).Take(5).ToList());
+               case "Refeições":
+                    return Json(bd.Restaurante.Where(x => x.RESTACATEGORIA == "Refeições" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList().Skip(qtd).Take(5).ToList());
                 case "Porções":
-                    return  bd.Restaurante.Where(x => x.RESTACATEGORIA == "Porções" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList();
-                 case "Petiscos":
-                    return  bd.Restaurante.Where(x => x.RESTACATEGORIA == "Petiscos" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList();
-               */ default:
-                    List<Restaurante> vazio = new List<Restaurante>();
-                    return Json(vazio, JsonRequestBehavior.AllowGet);
+                    return Json(bd.Restaurante.Where(x => x.RESTACATEGORIA == "Porções" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList().Skip(qtd).Take(5).ToList());
+                case "Petiscos":
+                    return Json(bd.Restaurante.Where(x => x.RESTACATEGORIA == "Petiscos" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList().Skip(qtd).Take(5).ToList());
+                default:
+                    string[] pratos = { "Deu erro" };
+                    return Json(pratos);
             }
         }
 
