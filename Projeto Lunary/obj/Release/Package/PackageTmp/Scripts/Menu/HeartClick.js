@@ -31,7 +31,6 @@
         });
         var qtdLikesBefore = document.getElementById(id + "-Curtida")
         var qtdCurtidas = qtdLikesBefore.innerText;
-        console.log(qtdCurtidas)
         qtdLikesBefore.remove()
         var Curti = document.createElement('span');
         Curti.setAttribute("class", "number");

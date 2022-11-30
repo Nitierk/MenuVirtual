@@ -79,7 +79,7 @@ namespace Projeto_Lunary.Controllers
                 case "Bebidas":
                     return Json(bd.Restaurante.Where(x => x.RESTACATEGORIA == "Bebidas" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList().Skip(qtd).Take(5).ToList());
                case "Refeicoes":
-                    return Json(bd.Restaurante.Where(x => x.RESTACATEGORIA == "Refeições" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList().Skip(qtd).Take(1).ToList());
+                    return Json(bd.Restaurante.Where(x => x.RESTACATEGORIA == "Refeições" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList().Skip(qtd).Take(2).ToList());
                 case "Porcoes":
                     return Json(bd.Restaurante.Where(x => x.RESTACATEGORIA == "Porções" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList().Skip(qtd).Take(5).ToList());
                 case "Petiscos":

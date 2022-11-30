@@ -22,9 +22,16 @@
           rel="stylesheet">
 </head>
 <body class="light">
-    
+
     <!-- PRELOADER! -->
     <div id="preloader">
+        <div class="text-center">
+            <img width="200px" height="100px" style="margin-top:180px;border-radius:7px;" src="~/Content/Menu/img/LunaryLogo.png" />
+        </div>
+
+        <h2 class="text-center" style="color:black;margin-bottom:160px;color:yellow;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Lunary</h2>
+
+
         <div class="inner">
 
             <div class="bolas">
@@ -53,10 +60,10 @@
         </div>
         @*<h1 class="titulo">Lunary</h1>*@
         <div style="text-align: center">
-            <img src="~/Content/Menu/img/Logo_Txt.png" alt="Alternate Text" style="align-content: center;width:250px;height:100px;margin-bottom:25px;margin-top:25px;" />
+            <img src="~/Content/Menu/img/LunaryLogo.png" alt="Alternate Text" style="align-content: center;width:250px;height:100px;margin-bottom:25px;margin-top:25px;" />
         </div>
 
-        <p class="subtitulo" style="font-family:cursive;font-size:40px;">Cardápio</p>
+        <h3 class="curtir text-center" @*style="color:brown;font-size:40px;"*@>Cardápio</h3>
         <!-- Carrossel das Campanhas -->
         <form enctype="multipart/form-data">
             <div class="campanhas" enctype="multipart/form-data">
@@ -82,33 +89,19 @@
         <div class="barraVermelha">.</div>
 
         <!-- Rank Mais Curtidos -->
-
-       
-
-
         <div class="curtidos">
 
             <box-icon name='bookmark-heart'></box-icon>
 
-            <h3 class="curtir text-center" style="color:brown;font-family:cursive;">Produtos Mais Curtidos</h3>
+            <h3 class="curtir text-center" style="color:brown;font-size:40px;">Produtos Mais Curtidos</h3>
 
 
         </div>
         <form enctype="multipart/form-data">
             <div class="carrossel" id="carrosselsite">
                 <ul>
-                    @{
-                        var imagens = 0;
-                    }
                     @foreach (var item in ViewBag.Rank)
                     {
-                        imagens += 1;
-
-                        if (imagens >= 6)
-                        {
-                            break;
-
-                        }
                         var imgSrc = "";
 
                         if (item.imagem != null)
@@ -122,39 +115,27 @@
                         }
                     }
                 </ul>
-
             </div>
         </form>
 
         <div class="subir text-center">
-            <p style="font-family:cursive;font-size:25px;">Preços</p>
+            <p class="titlerank">Preços</p>
             <form>
                 <ul>
-                    @{
-                        var curtidas = 0;
-                    }
+
                     @foreach (var item in ViewBag.Rank)
                     {
-                        <li style="font-family:cursive;font-size:18px;">
+                        <li class="listrank">
                             @item.RESTANOME :
                             R$@item.RESTAPRECO.ToString("F")
                         </li>
-
-                        curtidas += 1;
-
-                        if (curtidas >= 5)
-                        {
-                            break;
-
-                        }
-
                     }
                 </ul>
             </form>
         </div>
         <!-- Fim Rank Mais Curtidos -->
 
-        <p class="barra" style="font-family:inherit;">Menu</p>
+        <p class="barra">Menu</p>
         <!-- Filtro Categorias -->
         <div class="dropdown text-center">
             <select style="text-transform: uppercase;" onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
@@ -180,247 +161,214 @@
         <!-- Fim Filtro Categorias -->
         <!-- Pratos -->
         @{
-            var imgDefault = "/Content/Menu/img/LogoLunary.png";
+            var imgDefault = "/Content/Menu/img/LogoLunaryGray.png";
         }
 
         <!-- Oferta do Dia/Promoção -->
         <div>
-            @foreach (var item in Model)
+            @foreach (var item in ViewBag.Ofertas)
             {
-                if ((item.Oferta && item.Disponibilidade) || (item.RESTAPREPROMOCAO > 0 && item.Disponibilidade))
+                <!-- Conversão da img-->
+
+                var imgSrc = "";
+
+
+                if (item.imagem != null)
                 {
+                    var base64 = Convert.ToBase64String(item.imagem);
+                    imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
 
-                    <!-- Conversão da img-->
+                }
+                else
+                {
+                    imgSrc = imgDefault;
+                }
 
-                    var imgSrc = "";
-
-
-                    if (item.imagem != null)
-                    {
-                        var base64 = Convert.ToBase64String(item.imagem);
-                        imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
-
-                    }
-                    else
-                    {
-                        imgSrc = imgDefault;
-                    }
-
-                    <!-- Oferta do Dia-->
+                <!-- Oferta do Dia-->
 
 
-                    string oferta = "";
-                    if (item.Oferta)
-                    {
-                        oferta = "Oferta do Dia";
-                    }
+                string oferta = "";
+                if (item.Oferta)
+                {
+                    oferta = "Oferta do Dia";
+                }
 
 
 
-                    <div class="row pratos @item.RESTACATEGORIA @oferta">
-                        <div class="col-lg-12">
-                            <div class="img2">
-                                <img class="img" data-src="@imgSrc" data-value="@item.RESTAUID" width="232" height="232">
-                            </div>
+                <div class="row pratos @item.RESTACATEGORIA @oferta">
+                    <div class="col-lg-12">
+                        <div class="img2">
+                            <img class="img" src="@imgSrc" data-value="@item.RESTAUID" width="232" height="232">
+                        </div>
 
-                            <h3 class="text-center name col-md-12">@item.RESTANOME</h3>
+                        <h3 class="text-center name col-md-12">@item.RESTANOME</h3>
 
-                            <!--Btn Coração-->
-                            <div class="heart-btn">
-                                <div class="content">
-                                    <form action="" method="post">
-                                        <span onclick="Like(@item.RESTAUID)" class="heart" id="@item.RESTAUID"></span>
+                        <!--Btn Coração-->
+                        <div class="heart-btn">
+                            <div class="content">
+                                <form action="" method="post">
+                                    <span onclick="Like(@item.RESTAUID)" class="heart" id="@item.RESTAUID"></span>
 
-                                    </form>
-                                    <div id="@item.RESTAUID-Curtidadiv">
-                                        <span class="number" id="@item.RESTAUID-Curtida">@item.Curtidas</span>
-                                    </div>
-
+                                </form>
+                                <div id="@item.RESTAUID-Curtidadiv">
+                                    <span class="number" id="@item.RESTAUID-Curtida">@item.Curtidas</span>
                                 </div>
-                            </div>
-                            <!--Exibindo Preço/Preço Promocional-->
-                            <div>
-                                @if (item.RESTAPREPROMOCAO != 0)
-                                {
-                                    <p class="preco-normal">R$ @item.RESTAPRECO.ToString("F")</p>
-                                    <p class="preco-promocao">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
 
-                                }
-                                else
-                                {
-                                    <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
-                                }
                             </div>
                         </div>
+                        <!--Exibindo Preço/Preço Promocional-->
+                        <div>
+                            @if (item.RESTAPREPROMOCAO != 0)
+                            {
+                                <p class="preco-normal">R$ @item.RESTAPRECO.ToString("F")</p>
+                                <p class="preco-promocao">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
+
+                            }
+                            else
+                            {
+                                <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
+                            }
+                        </div>
                     </div>
-                }
+                </div>
             }
+
 
         </div>
         <script>
             preloaderTime()
         </script>
         <!-- Padrão -->
-        <div>
-            @foreach (var item in Model)
+        <div id="pratos">
+            @for (int i = 0; i < ViewBag.Padrao.Count; i++)
             {
-                if (item.Oferta == false && item.RESTAPREPROMOCAO == 0 && item.Disponibilidade)
+                <!-- Conversão da img-->
+
+                var imgSrc = "";
+
+
+                if (ViewBag.Padrao[i].imagem != null)
                 {
-                    <!-- Conversão da img-->
+                    var base64 = Convert.ToBase64String(ViewBag.Padrao[i].imagem);
+                    imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
 
-                    var imgSrc = "";
-
-
-                    if (item.imagem != null)
-                    {
-                        var base64 = Convert.ToBase64String(item.imagem);
-                        imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
-
-                    }
-                    else
-                    {
-                        imgSrc = imgDefault;
-                    }
-
-                    <!-- Oferta do Dia-->
-
-
-                    string oferta = "";
-                    if (item.Oferta)
-                    {
-                        oferta = "Oferta do Dia";
-                    }
-                    <div class="row pratos @item.RESTACATEGORIA @oferta">
-                        <div class="col-lg-12">
-                            <div class="img2">
-                                <img class="img" data-src="@imgSrc" data-value="@item.RESTAUID" width="232" height="232">
-                            </div>
-
-                            <h3 class="text-center name col-md-12">@item.RESTANOME</h3>
-
-                            <!--Btn Coração-->
-                            <div class="heart-btn">
-                                <div class="content">
-                                    <form action="" method="post">
-                                        <span onclick="Like(@item.RESTAUID)" class="heart" id="@item.RESTAUID"></span>
-
-                                    </form>
-                                    <div id="@item.RESTAUID-Curtidadiv">
-                                        <span class="number" id="@item.RESTAUID-Curtida">@item.Curtidas</span>
-                                    </div>
-
-                                </div>
-                            </div>
-                            <!--Exibindo Preço/Preço Promocional-->
-                            <div>
-                                @if (item.RESTAPREPROMOCAO != 0)
-                                {
-
-                                    <p class="preco-normal">R$ @item.RESTAPRECO.ToString("F")</p>
-                                    <p class="preco-promocao">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
-
-                                }
-                                else
-                                {
-                                    <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
-                                }
-                            </div>
-                        </div>
-                    </div>
+                }
+                else
+                {
+                    imgSrc = imgDefault;
                 }
 
+                <!-- Oferta do Dia-->
+
+                string oferta = "";
+                if (ViewBag.Padrao[i].Oferta)
+                {
+                    oferta = "Oferta do Dia";
+                }
+                <div class="row pratos @ViewBag.Padrao[i].RESTACATEGORIA @oferta">
+                    <div class="col-lg-12">
+                        <div class="img2">
+                            <img class="img" src="@imgSrc" data-value="@ViewBag.Padrao[i].RESTAUID" width="232" height="232">
+                        </div>
+
+                        <h3 class="text-center name col-md-12">@ViewBag.Padrao[i].RESTANOME</h3>
+
+                        <!--Btn Coração-->
+                        <div class="heart-btn">
+                            <div class="content">
+                                <form action="" method="post">
+                                    <span onclick="Like(@ViewBag.Padrao[i].RESTAUID)" class="heart" id="@ViewBag.Padrao[i].RESTAUID"></span>
+
+                                </form>
+                                <div id="@ViewBag.Padrao[i].RESTAUID-Curtidadiv">
+                                    <span class="number" id="@ViewBag.Padrao[i].RESTAUID-Curtida">@ViewBag.Padrao[i].Curtidas</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--Exibindo Preço-->
+                        <div>
+                            <p class="preco">R$ @ViewBag.Padrao[i].RESTAPRECO.ToString("F")</p>
+                        </div>
+                    </div>
+                </div>
                 <script>
+                     @*const myLazyLoad_@ViewBag.Padrao[i].RESTAUID = new LazyLoad({
+                        elements_selector: ".img"
+                    });*@
                     FiltroCategorias()
                 </script>
 
+
             }
+
+
+
 
         </div>
 
         <!-- Indisponivel -->
         <div>
-            @foreach (var item in Model)
+            @for (int i = 0; i < ViewBag.Indisponivel.Count; i++)
             {
-                if (item.Disponibilidade == false)
+                <!-- Conversão da img-->
+
+                var imgSrc = "";
+
+
+                if (ViewBag.Indisponivel[i].imagem != null)
                 {
+                    var base64 = Convert.ToBase64String(ViewBag.Indisponivel[i].imagem);
+                    imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
 
-                    <!-- Conversão da img-->
+                }
+                else
+                {
+                    imgSrc = imgDefault;    
+                }
 
-                    var imgSrc = "";
+                <!-- Oferta do Dia-->
 
+                string oferta = "";
+                if (ViewBag.Indisponivel[i].Oferta)
+                {
+                    oferta = "Oferta do Dia";
+                }
+                <div class="row pratos @ViewBag.Indisponivel[i].RESTACATEGORIA @oferta">
+                    <div class="col-lg-12">
+                        <div class="img2">
+                            <img class="img" data-src="@imgSrc" data-value="@ViewBag.Indisponivel[i].RESTAUID" width="232" height="232">
+                        </div>
 
-                    if (item.imagem != null)
-                    {
-                        var base64 = Convert.ToBase64String(item.imagem);
-                        imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+                        <h3 class="text-center name col-md-12">@ViewBag.Indisponivel[i].RESTANOME</h3>
 
-                    }
-                    else
-                    {
-                        imgSrc = imgDefault;
-                    }
+                        <!--Btn Coração-->
+                        <div class="heart-btn">
+                            <div class="content">
+                                <form action="" method="post">
+                                    <span onclick="Like(@ViewBag.Indisponivel[i].RESTAUID)" class="heart" id="@ViewBag.Indisponivel[i].RESTAUID"></span>
 
-                    <!-- Oferta do Dia-->
-
-
-                    string oferta = "";
-                    if (item.Oferta)
-                    {
-                        oferta = "Oferta do Dia";
-                    }
-
-
-
-                    <div class="row pratos @item.RESTACATEGORIA @oferta">
-                        <div class="col-lg-12">
-                            <div class="img2-indisponivel ">
-                                <img class="img" data-src="@imgSrc" data-value="@item.RESTAUID" width="232" height="232">
-                            </div>
-
-                            <h3 class="text-center name col-md-12">@item.RESTANOME</h3>
-
-                            <!--Btn Coração-->
-                            <div class="heart-btn">
-                                <div class="content">
-                                    <form action="" method="post">
-                                        <span class="heart"></span>
-
-                                    </form>
-                                    <div id="@item.RESTAUID-Curtidadiv">
-                                        <span class="number" id="@item.RESTAUID-Curtida">@item.Curtidas</span>
-                                    </div>
-
+                                </form>
+                                <div id="@ViewBag.Indisponivel[i].RESTAUID-Curtidadiv">
+                                    <span class="number" id="@ViewBag.Indisponivel[i].RESTAUID-Curtida">@ViewBag.Indisponivel[i].Curtidas</span>
                                 </div>
-                            </div>
-                            <!--Exibindo Preço/Preço Promocional-->
-                            <div>
-                                @if (item.RESTAPREPROMOCAO != 0)
-                                {
-                                    <p class="preco-normal">R$ @item.RESTAPRECO.ToString("F")</p>
-                                    <p class="preco-promocao">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
-                                }
-                                else
-                                {
-                                    <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
-                                }
+
                             </div>
                         </div>
+                        <!--Exibindo Preço/Preço Promocional-->
+                        <div>
+                            <p class="preco">R$ @ViewBag.Indisponivel[i].RESTAPRECO.ToString("F")</p>
+                        </div>
                     </div>
-                }
-            }
+                </div>
+                <script>
+                    FiltroCategorias()
+                </script>
 
+
+            }
         </div>
     </div><!-- Fechamento do Conteudo -->
-
-        @*<div>
-            @foreach (var item in Model)
-            {
-                @item.RESTAUID
-                <img class="img" data-scr="/Content/Menu/img/LogoLunary.png" ></img>
-            }
-        </div>*@
-
-
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
         <div class="modal-dialog" role="document">
@@ -436,17 +384,25 @@
 
     @section scripts{
         <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
-        
+        <script src="~/Scripts/Menu/InfiniteScroll.js"></script>
+
         <script>
-                const myLazyLoad = new LazyLoad({
-                    elements_selector: ".img"
-                });
+            const myLazyLoad = new LazyLoad({
+                elements_selector: ".img"
+            });
+
+            window.addEventListener("scroll", () => {
+                var categoria = document.getElementById("TituloCat").innerText
+                if (window.scrollY + window.innerHeight + 5 >
+                    document.body.scrollHeight && categoria != "Oferta do Dia" )
+                    InfiniteScrolling(categoria);
+            })
         </script>
         <script>
             window.onload = () => {
                 document.queryCommandIndeterm
-                FiltroCategorias()                
-            }         
+                FiltroCategorias()
+            }
             $(document).ready(function () {
                 $(".img").click(function () {
                     var id = $(this).data("value")

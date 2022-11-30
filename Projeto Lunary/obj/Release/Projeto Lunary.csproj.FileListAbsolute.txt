@@ -445,4 +445,3 @@ C:\Users\android\Documents\GitHub\MenuVirtual2\Projeto Lunary\obj\Release\Projet
 C:\Users\android\Documents\GitHub\MenuVirtual2\Projeto Lunary\obj\Release\Projeto Lunary.csproj.CopyComplete
 C:\Users\android\Documents\GitHub\MenuVirtual2\Projeto Lunary\obj\Release\Projeto Lunary.dll
 C:\Users\android\Documents\GitHub\MenuVirtual2\Projeto Lunary\obj\Release\Projeto Lunary.pdb
-C:\Users\android\Documents\GitHub\MenuVirtual\Projeto Lunary\bin\System.Text.Encoding.CodePages.dll
