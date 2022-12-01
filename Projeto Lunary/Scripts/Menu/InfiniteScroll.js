@@ -3,6 +3,10 @@ var url = "/Restaurante/ListaPratos";
 
 
 function InfiniteScrolling(categoria) {
+    var buttonGet = document.querySelector("#CarregarMais")
+    buttonGet.remove()
+
+
     switch (categoria) {
         case "Refeições":
             categoria = "Refeicoes"
@@ -26,6 +30,12 @@ function InfiniteScrolling(categoria) {
             }
             mySettings[categoria] += data.length;
         })
+    var button = document.createElement('button');
+    button.setAttribute("class", "btn btn-success center-block");
+    button.setAttribute("id", "CarregarMais");
+    button.innerHTML = "Carregar mais..."
+    document.getElementById("buttonRefresh").appendChild(button);
+    console.log("Botão");   
 }
 
 function CarregarMaisPratos(dados = 0) {

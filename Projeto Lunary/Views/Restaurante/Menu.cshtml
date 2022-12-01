@@ -368,6 +368,11 @@
 
             }
         </div>
+        <div id="buttonRefresh">
+            <BR />
+            <br />
+            <button id="CarregarMais" class="btn btn-success center-block">Carregar Mais...</button>
+        </div>
     </div><!-- Fechamento do Conteudo -->
     <!-- Modal -->
     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
@@ -391,12 +396,12 @@
                 elements_selector: ".img"
             });
 
-            window.addEventListener("scroll", () => {
+           @* window.addEventListener("scroll", () => {
                 var categoria = document.getElementById("TituloCat").innerText
                 if (window.scrollY + window.innerHeight + 5 >
                     document.body.scrollHeight && categoria != "Oferta do Dia" )
                     InfiniteScrolling(categoria);
-            })
+                })*@
         </script>
         <script>
             window.onload = () => {
@@ -414,7 +419,14 @@
                         }
                     );
                 });
-            });
+
+                $("#CarregarMais").click(function () {
+                    var categoria = document.getElementById("TituloCat").innerText
+                    if (window.scrollY + window.innerHeight + 5 >
+                        document.body.scrollHeight && categoria != "Oferta do Dia")
+                        InfiniteScrolling(categoria);   
+                });
+            }); 
         </script>
     }
 </body>
