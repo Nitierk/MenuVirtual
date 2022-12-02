@@ -29,13 +29,34 @@ function InfiniteScrolling(categoria) {
                 document.getElementById('pratos').innerHTML += CarregarMaisPratos(data[i])
             }
             mySettings[categoria] += data.length;
+            var button = document.createElement('button');
+            button.setAttribute("class", "btn btn-success center-block");
+            button.setAttribute("id", "CarregarMais");
+            button.innerHTML = "Carregar Mais..."
+            document.getElementById("buttonRefresh").appendChild(button);
+            document.querySelector("#CarregarMais").addEventListener('click', function () {
+                var categoria = document.getElementById("TituloCat").innerText
+                if (window.scrollY + window.innerHeight + 5 >
+                    document.body.scrollHeight && categoria != "Oferta do Dia")
+                    InfiniteScrolling(categoria);
+            });
+            
+            document.querySelectorAll('.img').forEach((el) =>
+                {
+                    el.addEventListener('click', function(e) {
+                        var id = $(this).data("value")
+                        console.log(id)
+                        $("#conteudoModal").load("/Restaurante/Detalhes/" + id,
+                            function () {
+                            $('#myModal').modal("show")
+                            }   
+                        )
+                    })
+                });     
+
+            console.log("Botão");   
         })
-    var button = document.createElement('button');
-    button.setAttribute("class", "btn btn-success center-block");
-    button.setAttribute("id", "CarregarMais");
-    button.innerHTML = "Carregar mais..."
-    document.getElementById("buttonRefresh").appendChild(button);
-    console.log("Botão");   
+    
 }
 
 function CarregarMaisPratos(dados = 0) {
@@ -44,8 +65,8 @@ function CarregarMaisPratos(dados = 0) {
     var html =
         '<div class="row pratos '   + dados.RESTACATEGORIA +  ' show">' + 
             '<div class="col-lg-12" >' +
-              '  <div class="img2">' +
-        '  <img class="img" src="' + Base64(dados.imagem)  + '" data-value="' + dados.RESTAUID + '" width="232" height="232"> ' +
+                '  <div class="img2">' +
+                    '<img class="img" src="' + Base64(dados.imagem)  + '" data-value="' + dados.RESTAUID + '" width="232" height="232"> ' +
                 '</div>' +
 
                 '<h3 class="text-center name col-md-12">' +  dados.RESTANOME + '</h3>' +
