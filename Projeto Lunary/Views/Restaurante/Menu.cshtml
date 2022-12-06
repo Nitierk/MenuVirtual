@@ -364,14 +364,12 @@
                 <script>
                     FiltroCategorias()
                 </script>
-
-
             }
         </div>
         <div id="buttonRefresh">
-            <BR />
             <br />
-            <button id="CarregarMais" class="btn btn-success center-block">Carregar Mais...</button>
+            <br />
+            <button id="CarregarMais" class="pratos Bebidas Petiscos Refeições Porções btn btn-success center-block">Carregar Mais...</button>
         </div>
     </div><!-- Fechamento do Conteudo -->
     <!-- Modal -->
@@ -407,6 +405,7 @@
             window.onload = () => {
                 document.queryCommandIndeterm
                 FiltroCategorias()
+                getDados()
             }
             $(document).ready(function () {
                 $(".img").click(function () {

@@ -72,18 +72,30 @@ namespace Projeto_Lunary.Controllers
         [HttpPost]
         public JsonResult ListaPratos(string categoria, int qtd)
         {
-           
+            List<Restaurante> Refeições = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Refeições" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList();
+            List<Restaurante> Bebidas = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Bebidas" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList();
+            List<Restaurante> Porções = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Porções" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList();
+            List<Restaurante> Petiscos = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Petiscos" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList();
 
+
+
+
+            //Dados
             switch (categoria)
             {
                 case "Bebidas":
-                    return Json(bd.Restaurante.Where(x => x.RESTACATEGORIA == "Bebidas" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList().Skip(qtd).Take(5).ToList());
-               case "Refeicoes":
-                    return Json(bd.Restaurante.Where(x => x.RESTACATEGORIA == "Refeições" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList().Skip(qtd).Take(2).ToList());
+                    return Json(Bebidas.Skip(qtd).Take(5).ToList());
+                case "Refeicoes":
+                    return Json(Refeições.Skip(qtd).Take(2).ToList());
                 case "Porcoes":
-                    return Json(bd.Restaurante.Where(x => x.RESTACATEGORIA == "Porções" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList().Skip(qtd).Take(5).ToList());
+                    return Json(Porções.Skip(qtd).Take(5).ToList());
                 case "Petiscos":
-                    return Json(bd.Restaurante.Where(x => x.RESTACATEGORIA == "Petiscos" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).ToList().Skip(qtd).Take(5).ToList());
+                    return Json(Petiscos.Skip(qtd).Take(5).ToList());
+
+                case "Quantidade de Pratos":
+                    int[] qtdPratos = { Bebidas.Count, Refeições.Count, Porções.Count, Petiscos.Count };
+                    return Json(qtdPratos);
+
                 default:
                     string[] pratos = { "Deu erro" };
                     return Json(pratos);
