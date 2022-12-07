@@ -21,36 +21,7 @@ namespace Projeto_Lunary.Controllers
         // GET: Admin
         public ActionResult Index()
         {
-          /* foreach (var item in bd.Restaurante)
-            {
-                Restaurante atualizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == item.RESTAUID).First();
-                HttpPostedFileBase novaImagem = (HttpPostedFileBase)new MemoryPostedFile(atualizarrestaurante.imagem);
-                Image imageOriginal = Image.FromStream(novaImagem.InputStream, true, true);
-                //dimensoes originais de imagem
-                double largura = imageOriginal.Width;
-                double altura = imageOriginal.Height;
-                //obter nova altura
-                double proporcao = 232 / largura;
-                int novaAltura = (int)(proporcao * altura);
-                var miniatura = new Bitmap(imageOriginal, new Size(232, novaAltura));
-                if (miniatura != null)
-                {
-                    ImageConverter _imageConverter = new ImageConverter();
-                    atualizarrestaurante.imagem = (byte[])_imageConverter.ConvertTo(miniatura, typeof(byte[]));
-                }
-                atualizarrestaurante.RESTANOME = item.RESTANOME;
-                atualizarrestaurante.RESTAPRECO = item.RESTAPRECO;
-                atualizarrestaurante.RESTADESCRICAO = item.RESTADESCRICAO;
-                atualizarrestaurante.RESTAPREPROMOCAO = item.RESTAPREPROMOCAO;
-                atualizarrestaurante.RESTACATEGORIA = item.RESTACATEGORIA;
-
-                bd.Entry(atualizarrestaurante).State = EntityState.Modified;
-                bd.SaveChanges();
-            }
-*/
-
             return View();
-
         }
         public ActionResult ListPratos(int? i)
         {
@@ -253,33 +224,5 @@ namespace Projeto_Lunary.Controllers
             }
             return View();
         }
-
-        [HttpPost]
-        public ActionResult Convertor()
-        {
-           
-            return RedirectToAction("Index", "Admin");
-        }
-    
-        public class MemoryPostedFile : HttpPostedFileBase
-        {
-            private readonly byte[] fileBytes;
-
-            public MemoryPostedFile(byte[] fileBytes, string fileName = null)
-            {
-                this.fileBytes = fileBytes;
-                this.FileName = fileName;
-                this.InputStream = new MemoryStream(fileBytes);
-            }
-
-            public override int ContentLength => fileBytes.Length;
-
-            public override string FileName { get; }
-
-            public override Stream InputStream { get; }
-        }
-
-
-    
     }
 }
