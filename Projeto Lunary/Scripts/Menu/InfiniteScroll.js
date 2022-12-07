@@ -40,14 +40,10 @@ function InfiniteScrolling(categoria) {
 
     var prato = mySettings[categoria]
     console.log(prato)
-    try {
         $.post(url, { categoria: categoria, qtd: mySettings[categoria] })
         .done(function (data) {
             console.log(data[0].RESTANOME)
-
-
             for (var i = 0; i < data.length; i++) {
-
                 document.getElementById('pratos').innerHTML += CarregarMaisPratos(data[i])
             }
             mySettings[categoria] += data.length;
@@ -66,10 +62,10 @@ function InfiniteScrolling(categoria) {
                 });     
             console.log("Botão");   
         })
-    } catch (error) {
-        alert ("Não foi possível carregar, tente novamente!")
-        InserirBotao()
-    }
+        .fail(function(xhr, status, error) {
+            alert ("Não foi possível carregar, tente novamente!")
+            InserirBotao()
+        });    
     
     
 }
