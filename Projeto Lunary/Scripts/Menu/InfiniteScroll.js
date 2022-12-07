@@ -40,7 +40,8 @@ function InfiniteScrolling(categoria) {
 
     var prato = mySettings[categoria]
     console.log(prato)
-    $.post(url, { categoria: categoria, qtd: mySettings[categoria] })
+    try {
+        $.post(url, { categoria: categoria, qtd: mySettings[categoria] })
         .done(function (data) {
             console.log(data[0].RESTANOME)
 
@@ -50,45 +51,7 @@ function InfiniteScrolling(categoria) {
                 document.getElementById('pratos').innerHTML += CarregarMaisPratos(data[i])
             }
             mySettings[categoria] += data.length;
-            var button = document.createElement('button');
-
-
-            button.setAttribute("class", "pratos btn btn-success center-block");
-            button.setAttribute("id", "CarregarMais");
-            button.innerHTML = "Carregar Mais..."
-            for (var i = 0; i < 4; i++) {
-
-                if (mySettings[Categorias[i]] < QtdPratos[Categorias[i]]) {
-
-                    switch (Categorias[i]) {
-                        case "Refeicoes":
-                            button.classList.add("Refeições")
-                            break
-                        case "Porcoes":
-                            button.classList.add("Porções")
-                            break
-                        default:
-                            button.classList.add(Categorias[i])
-                    }
-                    console.log("Classe adicionada:" + Categorias[i])
-
-                }
-            }
-            document.getElementById("buttonRefresh").appendChild(button);
-            FiltroCategorias()
-
-            
-
-
-
-
-            document.querySelector("#CarregarMais").addEventListener('click', function () {
-                var categoria = document.getElementById("TituloCat").innerText
-                if (window.scrollY + window.innerHeight + 5 >
-                    document.body.scrollHeight && categoria != "Oferta do Dia")
-                    InfiniteScrolling(categoria);
-            });
-            
+            InserirBotao()
             document.querySelectorAll('.img').forEach((el) =>
                 {
                     el.addEventListener('click', function(e) {
@@ -101,11 +64,46 @@ function InfiniteScrolling(categoria) {
                         )
                     })
                 });     
-
             console.log("Botão");   
         })
+    } catch (error) {
+        alert ("Não foi possível carregar, tente novamente!")
+        InserirBotao()
+    }
+    
     
 }
+
+function InserirBotao() {
+            var button = document.createElement('button');
+            button.setAttribute("class", "pratos btn btn-success center-block");
+            button.setAttribute("id", "CarregarMais");
+            button.innerHTML = "Carregar Mais..."
+            for (var i = 0; i < 4; i++) {
+                if (mySettings[Categorias[i]] < QtdPratos[Categorias[i]]) {
+                    switch (Categorias[i]) {
+                        case "Refeicoes":
+                            button.classList.add("Refeições")
+                            break
+                        case "Porcoes":
+                            button.classList.add("Porções")
+                            break
+                        default:
+                            button.classList.add(Categorias[i])
+                    }
+                    console.log("Classe adicionada:" + Categorias[i])
+                }
+            }
+            document.getElementById("buttonRefresh").appendChild(button);
+            FiltroCategorias()
+            document.querySelector("#CarregarMais").addEventListener('click', function () {
+                var categoria = document.getElementById("TituloCat").innerText
+                if (window.scrollY + window.innerHeight + 5 >
+                    document.body.scrollHeight && categoria != "Oferta do Dia")
+                    InfiniteScrolling(categoria);
+            });
+}
+
 
 function CarregarMaisPratos(dados = 0) {
 

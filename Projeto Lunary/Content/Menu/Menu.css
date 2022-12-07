@@ -47,16 +47,16 @@ html {
 }
 .curtir {
     color: brown;
-    font-family: cursive;
+    font-family: inherit;
+    font-size:40px;
 }
 .listrank {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: inherit;
     font-size: 18px;
 }
 .titlerank {
-    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-family: inherit;
     font-size: 25px;
-    
 }
 
 body {
