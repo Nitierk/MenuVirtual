@@ -290,6 +290,8 @@
     <Content Include="Content\Menu\img\Logo_Txt.png" />
     <Content Include="Content\Menu\img\PratoExemplo.png" />
     <Content Include="Content\Menu\img\LunaryLogo.png" />
+    <Content Include="Content\Menu\img\spiner_light.gif" />
+    <Content Include="Content\Menu\img\spiner_dark.gif" />
     <Content Include="Content\Menu\img\unnamed-removebg-preview.png" />
     <Content Include="Content\Menu\Menu.css" />
     <Content Include="Content\Menu\Modal.css" />

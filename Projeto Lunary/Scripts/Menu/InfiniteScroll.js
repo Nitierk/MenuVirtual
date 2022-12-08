@@ -11,22 +11,20 @@ function getDados() {
             QtdPratos["Refeicoes"] = data[1]
             QtdPratos["Porcoes"] = data[2]
             QtdPratos["Petiscos"] = data[3]
-            console.log(QtdPratos["Bebidas"])
-            console.log(QtdPratos["Refeicoes"])
-            console.log(QtdPratos["Porcoes"])
-            console.log(QtdPratos["Petiscos"])
         })
 }
-
-
-
-
-
 
 function InfiniteScrolling(categoria) {
     var buttonGet = document.querySelector("#CarregarMais")
     buttonGet.remove()
-
+    var imagem = document.createElement('img');
+    imagem.setAttribute("id", "LoadingPratos");
+    var modo = document.body.classList.contains("dark") ? "dark" : "light"
+    imagem.src = "/Content/Menu/img/spiner_" + modo + ".gif";
+    imagem.classList.add("center-block");
+    imagem.width = "80"
+    imagem.height = "80"
+    document.getElementById("buttonRefresh").appendChild(imagem);
 
     switch (categoria) {
         case "Refeições":
@@ -40,7 +38,6 @@ function InfiniteScrolling(categoria) {
 
     var prato = mySettings[categoria]
     console.log(prato)
-    try {
         $.post(url, { categoria: categoria, qtd: mySettings[categoria] })
         .done(function (data) {
             console.log(data[0].RESTANOME)
@@ -51,6 +48,8 @@ function InfiniteScrolling(categoria) {
                 document.getElementById('pratos').innerHTML += CarregarMaisPratos(data[i])
             }
             mySettings[categoria] += data.length;
+            var Loading = document.querySelector("#LoadingPratos")
+            Loading.remove();
             InserirBotao()
             document.querySelectorAll('.img').forEach((el) =>
                 {
@@ -66,10 +65,13 @@ function InfiniteScrolling(categoria) {
                 });     
             console.log("Botão");   
         })
-    } catch (error) {
-        alert ("Não foi possível carregar, tente novamente!")
-        InserirBotao()
-    }
+        .fail(function () {
+            alert("Não foi possível carregar, tente novamente!")
+            var Loading = document.querySelector("#LoadingPratos")
+            Loading.remove();
+            InserirBotao()
+        })
+    
     
     
 }
@@ -146,7 +148,6 @@ function Base64(d, a, e, b, c, f) {
         return '/Content/Menu/img/LogoLunaryGray.png'
     }
     else {
-
         c = ""; for (a = e = b = 0; a < 4 * d.length / 3; f = b >> 2 * (++a & 3) & 63, c += String.fromCharCode(f + 71 - (f < 26 ? 6 : f < 52 ? 0 : f < 62 ? 75 : f ^ 63 ? 90 : 87)) + (75 == (a - 1) % 76 ? "\r\n" : ""))a & 3 ^ 3 && (b = b << 8 ^ d[e++]); for (; a++ & 3;)c += "=";
         return "data:image/jpg/gif/png;base64," + c
     }
