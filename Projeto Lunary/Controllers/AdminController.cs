@@ -117,6 +117,7 @@ namespace Projeto_Lunary.Controllers
 
         public ActionResult Editar(int? id, string nome, float preco, string descricao, float precopromocao, string categoria, HttpPostedFileBase imagem, string oferta, string disponibilidade)
         {
+            string[] oi = { "ola" };
             Image imageOriginal = Image.FromStream(imagem.InputStream, true, true);
             //dimensoes originais de imagem
             double largura = imageOriginal.Width;
