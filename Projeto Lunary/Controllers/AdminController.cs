@@ -14,9 +14,11 @@ using System.Drawing;
 
 namespace Projeto_Lunary.Controllers
 {
+    [Route("Adm")]
     [Authorize]
     public class AdminController : Controller
     {
+        
         LunaryEntities bd = new LunaryEntities();
         // GET: Admin
         public ActionResult Index()

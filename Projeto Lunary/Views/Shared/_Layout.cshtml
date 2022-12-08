@@ -43,13 +43,13 @@
                             <li>@Html.ActionLink("Produtos Mais Curtidos", "ProdutosCurtidos", "Admin")</li>
                         </ul>
                     }
-                        @using (Html.BeginForm("LogOff", "Conta", FormMethod.Post, new { id = "logoffForm" }))
+                        @using (Html.BeginForm("LogOff", "Conta", FormMethod.Post, new { id = "LogOff" }))
                         {
                             <ul class="nav navbar-nav navbar-right">
 
                                 <li><a href="#">Olá @User.Identity.Name</a></li>
 
-                                <li><a href="javascript:document.getElementById('logoffForm').submit()">Sair</a></li>
+                                <li><a href="javascript:document.getElementById('LogOff').submit()">Sair</a></li>
                                 <li>&nbsp;&nbsp;&nbsp;</li>
                                 <li>&nbsp;&nbsp;&nbsp;</li>
                             </ul>
