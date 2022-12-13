@@ -2,7 +2,7 @@
 @{
     ViewBag.Title = "Editar";
     var base64 = Convert.ToBase64String(Model.imagem);
-    var imgSrc = String.Format("data:image/gif;base64,{0}", base64);
+    var imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
 }
 <link href="~/Content/Admin/PictureInput.css" rel="stylesheet" />
 
@@ -74,11 +74,11 @@
                 <label onclick="InputImgEdit(@imgSrc)" onload="InputImgEdit(@imgSrc)" for="arquivo">Imagem:</label>
             </div>
             @{
-                if (Model.imagem != null)
-                {
-                    base64 = Convert.ToBase64String(Model.imagem);
-                    imgSrc = String.Format("data:image/gif;base64,{0}", base64);
-                    <label onload="InputImgCreate()" class="picture" for="imagem" tabIndex="0">
+                    if (Model.imagem != null)
+                    {
+                        base64 = Convert.ToBase64String(Model.imagem);
+                        imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+                        <label onload="InputImgCreate()" class="picture" for="imagem" tabIndex="0">
                     <span title="Clique para adicionar Imagem" class="imagem">
                         <img class="imagem" id="imagemEdit"/>
                     </span> 
