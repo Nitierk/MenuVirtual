@@ -43,28 +43,34 @@ namespace Projeto_Lunary.Controllers
         [HttpPost]
         public ActionResult Create(int? id, string nome, float preco, string descricao, float precopromocao, string categoria, HttpPostedFileBase imagem, string oferta, string disponibilidade)
         {
-            Image imageOriginal = Image.FromStream(imagem.InputStream, true, true);
-            //dimensoes originais de imagem
-            double largura = imageOriginal.Width;
-            double altura = imageOriginal.Height;
-            //obter nova altura
-            double proporcao = 232 / largura;
-            int novaAltura = (int)(proporcao * altura);
-
-            var miniatura = new Bitmap(imageOriginal, new Size(232, novaAltura));
-
             Restaurante novoRestaurante = new Restaurante();
             novoRestaurante.RESTANOME = nome;
             novoRestaurante.RESTAPRECO = preco;
             novoRestaurante.RESTADESCRICAO = descricao;
             novoRestaurante.RESTAPREPROMOCAO = precopromocao;
             novoRestaurante.RESTACATEGORIA = categoria;
-            if (miniatura != null)
-            {
-                ImageConverter _imageConverter = new ImageConverter();
-                novoRestaurante.imagem = (byte[])_imageConverter.ConvertTo(miniatura, typeof(byte[]));
-            }
-
+            if (imagem != null)
+	        {
+                try
+                {
+                    Image imageOriginal = Image.FromStream(imagem.InputStream, true, true);
+                    //dimensoes originais de imagem
+                    double largura = imageOriginal.Width;
+                    double altura = imageOriginal.Height;
+                    //obter nova altura
+                    double proporcao = 232 / largura;
+                    int novaAltura = (int)(proporcao * altura);
+                    var miniatura = new Bitmap(imageOriginal, new Size(232, novaAltura));
+                    ImageConverter _imageConverter = new ImageConverter();
+                    novoRestaurante.imagem = (byte[])_imageConverter.ConvertTo(miniatura, typeof(byte[]));
+                }
+                catch (Exception)
+                {
+                    Response.Write(@"<script language='javascript'>alert('Message: \n" + "Hi!" + " .');</script>");
+                    
+                }
+                
+	        }
             if (oferta == "true")
             {
                 novoRestaurante.Oferta = true;
@@ -83,16 +89,12 @@ namespace Projeto_Lunary.Controllers
             {
                 novoRestaurante.Disponibilidade = false;
             }
-
-
-            //novoRestaurante.Oferta = oferta;
             bd.Restaurante.Add(novoRestaurante);
             bd.SaveChanges();
             return RedirectToAction("Index", "Admin");
         }
 
         [HttpGet]
-
         public ActionResult Editar(int? id)
         {
             if (id != null)
@@ -118,18 +120,6 @@ namespace Projeto_Lunary.Controllers
 
         public ActionResult Editar(int? id, string nome, float preco, string descricao, float precopromocao, string categoria, HttpPostedFileBase imagem, string oferta, string disponibilidade)
         {
-            string path = "";
-            imagem.InputStream.Seek(0, SeekOrigin.Begin);
-            Image imageOriginal = Image.FromStream(imagem.InputStream, true, true);
-            imageOriginal.Save(@path, System.Drawing.Imaging.ImageFormat.Png);
-            //dimensoes originais de imagem
-            double largura = imageOriginal.Width;
-            double altura = imageOriginal.Height;
-            //obter nova altura
-            double proporcao = 232 / largura;
-            int novaAltura = (int)(proporcao * altura);
-
-            var miniatura = new Bitmap(imageOriginal, new Size(232, novaAltura));
             Restaurante atualizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
             atualizarrestaurante.RESTANOME = nome;
             atualizarrestaurante.RESTAPRECO = preco;
@@ -137,11 +127,27 @@ namespace Projeto_Lunary.Controllers
             atualizarrestaurante.RESTAPREPROMOCAO = precopromocao;
             atualizarrestaurante.RESTACATEGORIA = categoria;
 
-            if (miniatura != null)
-            {
-                ImageConverter _imageConverter = new ImageConverter();
-                atualizarrestaurante.imagem = (byte[])_imageConverter.ConvertTo(miniatura, typeof(byte[]));
-            }
+            if (imagem != null)
+	        {
+                try
+                {
+                    Image imageOriginal = Image.FromStream(imagem.InputStream, true, true);
+                    //dimensoes originais de imagem
+                    double largura = imageOriginal.Width;
+                    double altura = imageOriginal.Height;
+                    //obter nova altura
+                    double proporcao = 232 / largura;
+                    int novaAltura = (int)(proporcao * altura);
+                    var miniatura = new Bitmap(imageOriginal, new Size(232, novaAltura));
+                    ImageConverter _imageConverter = new ImageConverter();
+                    atualizarrestaurante.imagem = (byte[])_imageConverter.ConvertTo(miniatura, typeof(byte[]));
+                }
+                catch (Exception)
+                {
+                    return Content("<script language='javascript' type='text/javascript'>alert('Formato não aceito');</script>");
+                }
+                
+	        }
 
             if (oferta == "true")
             {
