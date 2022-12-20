@@ -1,7 +1,7 @@
 ﻿
 .text-box {
-    margin-left: 44vw;
-    margin-top: 42vh;
+    margin-left: 0vw;
+    margin-top: -5vh;
     font-family: sans-serif;
     font-weight: bold;
 }
@@ -29,7 +29,7 @@
 
 .btn-white {
     background-color: brown;
-    color: chocolate;
+    color: white;
 }
 
 .btn::after {
@@ -46,7 +46,7 @@
 }
 
 .btn-white::after {
-    background-color: brown;
+    background-color: white;
 }
 
 .btn:hover::after {
