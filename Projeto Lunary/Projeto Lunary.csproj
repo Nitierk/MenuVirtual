@@ -292,6 +292,7 @@
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Dashboard.css" />
     <Content Include="Content\Menu\Campanha.css" />
+    <Content Include="Content\Menu\editar.css" />
     <Content Include="Content\Menu\img\bookmark-heart-regular-24.png" />
     <Content Include="Content\Menu\brilho.css" />
     <Content Include="Content\Menu\img\HeartAnimation.png" />
@@ -329,6 +330,10 @@
     <Content Include="..\.editorconfig">
       <Link>.editorconfig</Link>
     </Content>
+    <None Include="Dockerfile" />
+    <None Include=".dockerignore">
+      <DependentUpon>Dockerfile</DependentUpon>
+    </None>
     <EntityDeploy Include="Models\Model.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Model.Designer.cs</LastGenOutput>
@@ -336,10 +341,6 @@
     <Content Include="Models\Model.edmx.diagram">
       <DependentUpon>Model.edmx</DependentUpon>
     </Content>
-    <None Include="Dockerfile" />
-    <None Include=".dockerignore">
-      <DependentUpon>Dockerfile</DependentUpon>
-    </None>
     <None Include="Scripts\jquery-3.4.1.intellisense.js" />
     <Content Include="Scripts\caixinha.js" />
     <Content Include="Scripts\jquery-3.4.1.js" />

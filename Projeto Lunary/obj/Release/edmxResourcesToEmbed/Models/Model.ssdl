@@ -54,13 +54,14 @@ warning 6002: The table/view 'Lunary.dbo.Ranking' does not have a primary key de
       <PropertyRef Name="RESTANOME" />
       <PropertyRef Name="RESTAPRECO" />
       <PropertyRef Name="RESTACATEGORIA" />
+      <PropertyRef Name="Curtidas" />
     </Key>
     <Property Name="RESTAUID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="RESTANOME" Type="varchar" MaxLength="200" Nullable="false" />
     <Property Name="RESTAPRECO" Type="float" Nullable="false" />
     <Property Name="RESTADESCRICAO" Type="varchar" MaxLength="300" />
     <Property Name="RESTACATEGORIA" Type="varchar" MaxLength="300" Nullable="false" />
-    <Property Name="Curtidas" Type="int" />
+    <Property Name="Curtidas" Type="int" Nullable="false" />
     <Property Name="imagem" Type="varbinary(max)" />
     <Property Name="RESTAPREPROMOCAO" Type="float" />
   </EntityType>

@@ -44,6 +44,10 @@
     height: 500px;
 }
 
+.bottom-edit{
+
+}
+
 @media screen and (min-width: 280px) {
     .imgModal {
         width: 200px;
@@ -78,12 +82,4 @@
         height: 265px;
     }
 }
-<<<<<<< HEAD
-=======
 
-
-
-
-
-
->>>>>>> efccc11f31d1fa24c305839adc45247dfa6a46bf

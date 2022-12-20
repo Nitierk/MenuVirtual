@@ -16,7 +16,7 @@ namespace Projeto_Lunary.Controllers
     {
         // GET: QrCode
 
-        LunaryEntities bd = new LunaryEntities();
+        LunaryEntities1 bd = new LunaryEntities1();
         public ActionResult QR()
         {
             return View();

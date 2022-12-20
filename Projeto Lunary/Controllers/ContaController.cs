@@ -10,7 +10,7 @@ namespace Projeto_Lunary.Controllers
 {
     public class ContaController : Controller
     {
-        LunaryEntities bd = new LunaryEntities();
+        LunaryEntities1 bd = new LunaryEntities1();
 
         [AllowAnonymous]
         

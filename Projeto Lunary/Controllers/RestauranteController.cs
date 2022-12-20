@@ -18,7 +18,7 @@ namespace Projeto_Lunary.Controllers
     public class RestauranteController : Controller
     {
         // GET: Restaurante
-        LunaryEntities bd = new LunaryEntities();
+        LunaryEntities1 bd = new LunaryEntities1();
 
         
         [HttpGet]     

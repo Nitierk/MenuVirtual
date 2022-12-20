@@ -12,7 +12,7 @@ namespace Projeto_Lunary.Controllers
     public class CampanhaController : Controller
     {
         // GET: Campanha
-        LunaryEntities bd = new LunaryEntities();
+        LunaryEntities1 bd = new LunaryEntities1();
         public ActionResult Index()
         {
             return View(bd.Campanhas.ToList());

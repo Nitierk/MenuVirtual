@@ -20,7 +20,7 @@ namespace Projeto_Lunary.Controllers
     public class AdminController : Controller
     {
         
-        LunaryEntities bd = new LunaryEntities();
+        LunaryEntities1 bd = new LunaryEntities1();
         // GET: Admin
         public ActionResult Index()
         {
