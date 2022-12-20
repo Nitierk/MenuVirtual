@@ -66,7 +66,7 @@ namespace Projeto_Lunary.Controllers
                 }
                 catch (Exception)
                 {
-                    Response.Write(@"<script language='javascript'>alert('Message: \n" + "Hi!" + " .');</script>");
+                    Response.Write(@"<script language='javascript'>alert('Formato não aceito');</script>");
                     
                 }
                 
@@ -120,6 +120,7 @@ namespace Projeto_Lunary.Controllers
 
         public ActionResult Editar(int? id, string nome, float preco, string descricao, float precopromocao, string categoria, HttpPostedFileBase imagem, string oferta, string disponibilidade)
         {
+            ViewBag.Error = "";
             Restaurante atualizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
             atualizarrestaurante.RESTANOME = nome;
             atualizarrestaurante.RESTAPRECO = preco;
@@ -144,7 +145,8 @@ namespace Projeto_Lunary.Controllers
                 }
                 catch (Exception)
                 {
-                    return Content("<script language='javascript' type='text/javascript'>alert('Formato não aceito');</script>");
+                    ViewBag.Error = "Formato não aceito";
+                    return View(Request.Url.AbsoluteUri);
                 }
                 
 	        }

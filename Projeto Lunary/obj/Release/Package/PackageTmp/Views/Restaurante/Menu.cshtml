@@ -62,7 +62,7 @@
         <div style="text-align: center">
             <img src="~/Content/Menu/img/LunaryLogo.png" alt="Alternate Text" style="align-content: center;width:250px;height:100px;margin-bottom:25px;margin-top:25px;" />
         </div>
-
+        <!--Letreiro Evento -->
         <div class="brilho text-center">
             <span>E</span>
             <span>V</span>
@@ -125,7 +125,6 @@
                 </ul>
             </div>
         </form>
-
         <div class="subir text-center">
             <p class="titlerank">Preços</p>
             <form>
@@ -142,7 +141,6 @@
             </form>
         </div>
         <!-- Fim Rank Mais Curtidos -->
-
         <p class="barra">Menu</p>
         <!-- Filtro Categorias -->
         <div class="dropdown text-center">
@@ -174,32 +172,44 @@
 
         <!-- Oferta do Dia/Promoção -->
         <div>
-            @foreach (var item in ViewBag.Ofertas)
-            {
+           
+            
+            @{ 
+                if (ViewBag.OfertasCount == 0)
+                {
+                    <div class="Oferta do Dia pratos show">
+                        <div class="Categoria" style="color: gray"> Não há nenhuma Ofeta Disponivel!</div>
+                    </div>
+                }
+
+
+                foreach (var item in ViewBag.Ofertas)
+                {
                 <!-- Conversão da img-->
 
-                var imgSrc = "";
+                    var imgSrc = "";
 
 
-                if (item.imagem != null)
-                {
-                    var base64 = Convert.ToBase64String(item.imagem);
-                    imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+                    if (item.imagem != null)
+                    {
+                        var base64 = Convert.ToBase64String(item.imagem);
+                        imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
 
-                }
-                else
-                {
-                    imgSrc = imgDefault;
-                }
+                    }
+                    else
+                    {
+                        imgSrc = imgDefault;
+                    }
 
                 <!-- Oferta do Dia-->
 
 
-                string oferta = "";
-                if (item.Oferta)
-                {
-                    oferta = "Oferta do Dia";
-                }
+                    string oferta = "";
+                    if (item.Oferta)
+                    {
+                        oferta = "Oferta do Dia";
+                    }
+
 
 
 
@@ -239,9 +249,9 @@
                         </div>
                     </div>
                 </div>
-            }
+                    }
 
-
+                }
         </div>
         <script>
             preloaderTime()
@@ -332,7 +342,7 @@
                 }
                 else
                 {
-                    imgSrc = imgDefault;    
+                    imgSrc = imgDefault;
                 }
 
                 <!-- Oferta do Dia-->
@@ -401,20 +411,12 @@
             const myLazyLoad = new LazyLoad({
                 elements_selector: ".img"
             });
-
-           @* window.addEventListener("scroll", () => {
-                var categoria = document.getElementById("TituloCat").innerText
-                if (window.scrollY + window.innerHeight + 5 >
-                    document.body.scrollHeight && categoria != "Oferta do Dia" )
-                    InfiniteScrolling(categoria);
-                })*@
         </script>
         <script>
             window.onload = () => {
                 document.queryCommandIndeterm
                 FiltroCategorias()
                 getDados()
-                console.log(@ViewBag.OfertasCount)
             }
             $(document).ready(function () {
                 $(".img").click(function () {

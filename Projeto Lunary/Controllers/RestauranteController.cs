@@ -28,7 +28,7 @@ namespace Projeto_Lunary.Controllers
             ViewBag.Rank = bd.Restaurante.ToList().OrderByDescending(x => ((uint)x.Curtidas)).Take(5).ToList();
             ViewBag.Campanha = bd.Campanhas.ToList();
             ViewBag.Ofertas = bd.Restaurante.Where(x => (x.Oferta == true || x.RESTAPREPROMOCAO > 0) && x.Disponibilidade == true ).ToList();
-            ViewBag.OfertasCount = ViewBag.Ofertas.Count;
+            ViewBag.OfertasCount = bd.Restaurante.Where(x => (x.Oferta == true && x.Disponibilidade == true)).ToList().Count;
             ViewBag.Indisponivel = bd.Restaurante.Where(x => x.Disponibilidade == false).ToList();
             var Petisco = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Petiscos" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).Take(15).ToList();
             var Bebidas = bd.Restaurante.Where(x => x.RESTACATEGORIA == "Bebidas" && x.Oferta == false && x.RESTAPREPROMOCAO == 0 && x.Disponibilidade == true).Take(15).ToList();
