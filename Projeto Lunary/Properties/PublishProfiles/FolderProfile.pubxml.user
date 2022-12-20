@@ -5,7 +5,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <_PublishTargetUrl>C:\Users\Usuário\Desktop\1912</_PublishTargetUrl>
-    <History>True|2022-12-20T01:01:48.1385778Z;True|2022-12-19T20:00:46.3579160-03:00;False|2022-12-19T19:53:51.3739533-03:00;True|2022-12-19T18:12:26.4148000-03:00;</History>
+    <History>True|2022-12-20T17:41:50.6657027Z;True|2022-12-20T12:25:53.5396276-03:00;True|2022-12-20T12:11:57.5288439-03:00;True|2022-12-20T10:48:51.3149930-03:00;True|2022-12-20T10:38:41.5987541-03:00;True|2022-12-20T10:16:21.7848218-03:00;True|2022-12-19T22:01:48.1385778-03:00;True|2022-12-19T20:00:46.3579160-03:00;False|2022-12-19T19:53:51.3739533-03:00;True|2022-12-19T18:12:26.4148000-03:00;</History>
   </PropertyGroup>
   <ItemGroup>
     <File Include=".editorconfig">
@@ -102,10 +102,10 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/13/2022 20:14:52</publishTime>
     </File>
     <File Include="bin/Projeto Lunary.dll">
-      <publishTime>12/19/2022 22:01:33</publishTime>
+      <publishTime>12/20/2022 14:41:39</publishTime>
     </File>
     <File Include="bin/Projeto Lunary.pdb">
-      <publishTime>12/19/2022 22:01:33</publishTime>
+      <publishTime>12/20/2022 14:41:39</publishTime>
     </File>
     <File Include="bin/pt-br/System.Web.Helpers.resources.dll">
       <publishTime>09/07/2022 09:51:08</publishTime>
@@ -366,7 +366,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/13/2022 20:14:29</publishTime>
     </File>
     <File Include="Content/Menu/brilho.css">
-      <publishTime>12/09/2022 18:17:16</publishTime>
+      <publishTime>12/20/2022 08:18:57</publishTime>
     </File>
     <File Include="Content/Menu/Campanha.css">
       <publishTime>11/24/2022 20:13:10</publishTime>
@@ -519,7 +519,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>10/13/2022 20:14:30</publishTime>
     </File>
     <File Include="Views/Admin/Editar.cshtml">
-      <publishTime>12/15/2022 13:38:15</publishTime>
+      <publishTime>12/20/2022 14:40:35</publishTime>
     </File>
     <File Include="Views/Admin/Excluir.cshtml">
       <publishTime>10/13/2022 20:14:30</publishTime>
@@ -555,7 +555,7 @@ https://go.microsoft.com/fwlink/?LinkID=208121.
       <publishTime>12/03/2022 12:01:19</publishTime>
     </File>
     <File Include="Views/Restaurante/Menu.cshtml">
-      <publishTime>12/09/2022 18:17:17</publishTime>
+      <publishTime>12/20/2022 11:06:41</publishTime>
     </File>
     <File Include="Views/Shared/Error.cshtml">
       <publishTime>09/07/2022 09:51:03</publishTime>
