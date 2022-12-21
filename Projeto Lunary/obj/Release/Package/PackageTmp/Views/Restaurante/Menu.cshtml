@@ -1,0 +1,443 @@
+﻿@model IEnumerable<Projeto_Lunary.Models.Restaurante>
+@{
+    ViewBag.Title = "Pratos";
+
+}
+
+<head onload="preloaderTime()">
+    <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
+    <link href="~/Content/Menu/Preloader.css" rel="stylesheet" />
+    <link href="~/Content/preco.css" rel="stylesheet" />
+    <link href="~/Content/Menu/Campanha.css" rel="stylesheet" />
+    <link href="~/Content/Menu/rank.css" rel="stylesheet" />
+    <script src="~/Scripts/Menu/PreloaderTimer.js"></script>
+    <script src="~/Scripts/Menu/ScrollToTop.js"></script>
+    <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
+    <link href="https://unpkg.com/boxicons@2.1.2/css/boxicons.min.css" rel="stylesheet">
+    <script src="~/Scripts/Menu/ToggleTema.js"></script>
+    <script src="~/Scripts/Menu/FilterCate.js"></script>
+    <script src="~/Scripts/Menu/HeartClick.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/vanilla-lazyload@17.8.3/dist/lazyload.min.js"></script>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="~/Content/Menu/brilho.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-tour.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap-tour.min.js"></script>
+</head>
+<body class="light">
+
+    <!-- PRELOADER! -->
+    <div id="preloader">
+        <div class="text-center">
+            <img width="200px" height="100px" style="margin-top:180px;border-radius:7px;" src="~/Content/Menu/img/LunaryLogo.png" />
+        </div>
+
+        <h2 class="text-center" style="color:black;margin-bottom:160px;color:yellow;font-family:'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif">Lunary</h2>
+
+
+        <div class="inner">
+
+            <div class="bolas">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- CONTENT -->
+    <div id="Conteudo">
+
+        <!-- Toggle Tema -->
+        <input type="checkbox" id="toggle">
+        <label id="ToggleTheme" onclick="Toggle()" class="toggle" for="toggle">
+            <i class="bx bxs-sun" id="sun"></i> <!--ícone do sol-->
+            <i class="bx bx-moon" id="moon"></i> <!--ícone da lua-->
+            <span class="ball"></span> <!--ícone da bola que troca o modo da tela-->
+        </label>
+        <!-- Fim Toggle Tema -->
+
+
+        <div id="progress">
+            <span id="progress-value"><i class="glyphicon glyphicon-arrow-up"></i></span>
+        </div>
+        <div style="text-align: center">
+            <img src="~/Content/Menu/img/LunaryLogo.png" alt="Alternate Text" style="align-content: center;width:250px;height:100px;margin-bottom:25px;margin-top:25px;" />
+        </div>
+        <!--Letreiro Evento -->
+        <div class="brilho text-center">
+            <span>E</span>
+            <span>V</span>
+            <span>E</span>
+            <span>N</span>
+            <span>T</span>
+            <span>O</span>
+            <span>S</span>
+        </div>
+        <!-- Carrossel das Campanhas -->
+        <form enctype="multipart/form-data">
+            <div id="Eventos" class="campanhas" enctype="multipart/form-data">
+                <ul>
+                    @foreach (var item in ViewBag.Campanha)
+                    {
+
+                        var imgSrc = "";
+
+                        if (item.CAMFOTO != null)
+                        {
+                            var base64 = Convert.ToBase64String(item.CAMFOTO);
+                            imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
+                            <il>
+                                <img class="img3" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                            </il>
+                        }
+                    }
+                </ul>
+            </div>
+        </form>
+        <div class="barraVermelha">.</div>
+
+        <!-- Rank Mais Curtidos -->
+        <div class="curtidos">
+
+            <box-icon name='bookmark-heart'></box-icon>
+
+            <h3 class="curtir text-center">Produtos Mais Curtidos</h3>
+
+
+        </div>
+        <form enctype="multipart/form-data">
+            <div id="maisCurtidos" class="carrossel" id="carrosselsite">
+                <ul>
+                    @foreach (var item in ViewBag.Rank)
+                    {
+                        var imgSrc = "";
+
+                        if (item.imagem != null)
+                        {
+                            var base64 = Convert.ToBase64String(item.imagem);
+                            imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
+                            <il>
+                                <img class="img3" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                            </il>
+                        }
+                    }
+                </ul>
+            </div>
+        </form>
+        <div class="subir text-center">
+            <p class="titlerank">Preços</p>
+            <form>
+                <ul>
+
+                    @foreach (var item in ViewBag.Rank)
+                    {
+                        <li class="listrank">
+                            @item.RESTANOME :
+                            R$@item.RESTAPRECO.ToString("F")
+                        </li>
+                    }
+                </ul>
+            </form>
+        </div>
+        <!-- Fim Rank Mais Curtidos -->
+        <p class="barra">Menu</p>
+        <!-- Filtro Categorias -->
+        <div id="filterCategoria" class="dropdown text-center">
+            <select style="text-transform: uppercase;" onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
+                <option onchange="FiltroCategorias()" value='Oferta do Dia'>Oferta do Dia</option>
+                @foreach (var item in ViewBag.ListCategorias)
+                {
+                    <option onchange="FiltroCategorias()" value="@item.RESTACATEGORIA">@item.RESTACATEGORIA</option>
+                }
+            </select>
+        </div>
+        @{
+            var Categorias = ViewBag.ListCategorias as IEnumerable<Projeto_Lunary.Models.Restaurante>;
+        }
+        <div>
+            <div id="Categoria" class="Categoria"></div>
+
+            <div class="semiprogress">
+                <div class="progress" style="height: 2px; width: 160px;">
+                    <div class="progress-bar" role="progressbar" style="width: 100%;" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+            </div>
+        </div>
+        <!-- Fim Filtro Categorias -->
+        <!-- Pratos -->
+        @{
+            var imgDefault = "/Content/Menu/img/LogoLunaryGray.png";
+        }
+
+        <!-- Oferta do Dia/Promoção -->
+        <div>
+           
+            
+            @{ 
+                if (ViewBag.OfertasCount == 0)
+                {
+                    <div class="Oferta do Dia pratos show">
+                        <div class="Categoria" style="color: gray"> Não há nenhuma Oferta Disponível!</div>
+                    </div>
+                }
+
+
+                foreach (var item in ViewBag.Ofertas)
+                {
+                <!-- Conversão da img-->
+
+                    var imgSrc = "";
+
+
+                    if (item.imagem != null)
+                    {
+                        var base64 = Convert.ToBase64String(item.imagem);
+                        imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
+                    }
+                    else
+                    {
+                        imgSrc = imgDefault;
+                    }
+
+                <!-- Oferta do Dia-->
+
+
+                    string oferta = "";
+                    if (item.Oferta)
+                    {
+                        oferta = "Oferta do Dia";
+                    }
+
+
+
+
+                <div class="row pratos @item.RESTACATEGORIA @oferta">
+                    <div class="col-lg-12">
+                        <div class="img2">
+                            <img class="img" src="@imgSrc" data-value="@item.RESTAUID" width="232" height="232">
+                        </div>
+
+                        <h3 class="text-center name col-md-12">@item.RESTANOME</h3>
+
+                        <!--Btn Coração-->
+                        <div class="heart-btn">
+                            <div class="content">
+                                <form action="" method="post">
+                                    <span onclick="Like(@item.RESTAUID)" class="heart" id="@item.RESTAUID"></span>
+
+                                </form>
+                                <div id="@item.RESTAUID-Curtidadiv">
+                                    <span class="number" id="@item.RESTAUID-Curtida">@item.Curtidas</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--Exibindo Preço/Preço Promocional-->
+                        <div>
+                            @if (item.RESTAPREPROMOCAO != 0)
+                            {
+                                <p class="preco-normal">R$ @item.RESTAPRECO.ToString("F")</p>
+                                <p class="preco-promocao">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
+
+                            }
+                            else
+                            {
+                                <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
+                            }
+                        </div>
+                    </div>
+                </div>
+                    }
+
+                }
+        </div>
+        <script>
+            preloaderTime()
+        </script>
+        <!-- Padrão -->
+        <div id="pratos">
+            @for (int i = 0; i < ViewBag.Padrao.Count; i++)
+            {
+                <!-- Conversão da img-->
+
+                var imgSrc = "";
+
+
+                if (ViewBag.Padrao[i].imagem != null)
+                {
+                    var base64 = Convert.ToBase64String(ViewBag.Padrao[i].imagem);
+                    imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
+                }
+                else
+                {
+                    imgSrc = imgDefault;
+                }
+
+                <!-- Oferta do Dia-->
+
+                string oferta = "";
+                if (ViewBag.Padrao[i].Oferta)
+                {
+                    oferta = "Oferta do Dia";
+                }
+                <div class="row pratos @ViewBag.Padrao[i].RESTACATEGORIA @oferta">
+                    <div class="col-lg-12">
+                        <div class="img2">
+                            <img class="img" src="@imgSrc" data-value="@ViewBag.Padrao[i].RESTAUID" width="232" height="232">
+                        </div>
+
+                        <h3 class="text-center name col-md-12">@ViewBag.Padrao[i].RESTANOME</h3>
+
+                        <!--Btn Coração-->
+                        <div class="heart-btn">
+                            <div class="content">
+                                <form action="" method="post">
+                                    <span onclick="Like(@ViewBag.Padrao[i].RESTAUID)" class="heart" id="@ViewBag.Padrao[i].RESTAUID"></span>
+
+                                </form>
+                                <div id="@ViewBag.Padrao[i].RESTAUID-Curtidadiv">
+                                    <span class="number" id="@ViewBag.Padrao[i].RESTAUID-Curtida">@ViewBag.Padrao[i].Curtidas</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--Exibindo Preço-->
+                        <div>
+                            <p class="preco">R$ @ViewBag.Padrao[i].RESTAPRECO.ToString("F")</p>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                     @*const myLazyLoad_@ViewBag.Padrao[i].RESTAUID = new LazyLoad({
+                        elements_selector: ".img"
+                    });*@
+                    FiltroCategorias()
+                </script>
+
+
+            }
+
+
+
+
+        </div>
+
+        <!-- Indisponivel -->
+        <div>
+            @for (int i = 0; i < ViewBag.Indisponivel.Count; i++)
+            {
+                <!-- Conversão da img-->
+
+                var imgSrc = "";
+
+
+                if (ViewBag.Indisponivel[i].imagem != null)
+                {
+                    var base64 = Convert.ToBase64String(ViewBag.Indisponivel[i].imagem);
+                    imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
+                }
+                else
+                {
+                    imgSrc = imgDefault;
+                }
+
+                <!-- Oferta do Dia-->
+
+                string oferta = "";
+                if (ViewBag.Indisponivel[i].Oferta)
+                {
+                    oferta = "Oferta do Dia";
+                }
+                <div class="row pratos @ViewBag.Indisponivel[i].RESTACATEGORIA @oferta">
+                    <div class="col-lg-12">
+                        <div class="img2">
+                            <img class="img" data-src="@imgSrc" data-value="@ViewBag.Indisponivel[i].RESTAUID" width="232" height="232">
+                        </div>
+
+                        <h3 class="text-center name col-md-12">@ViewBag.Indisponivel[i].RESTANOME</h3>
+
+                        <!--Btn Coração-->
+                        <div class="heart-btn">
+                            <div class="content">
+                                <form action="" method="post">
+                                    <span onclick="Like(@ViewBag.Indisponivel[i].RESTAUID)" class="heart" id="@ViewBag.Indisponivel[i].RESTAUID"></span>
+
+                                </form>
+                                <div id="@ViewBag.Indisponivel[i].RESTAUID-Curtidadiv">
+                                    <span class="number" id="@ViewBag.Indisponivel[i].RESTAUID-Curtida">@ViewBag.Indisponivel[i].Curtidas</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <!--Exibindo Preço/Preço Promocional-->
+                        <div>
+                            <p class="preco">R$ @ViewBag.Indisponivel[i].RESTAPRECO.ToString("F")</p>
+                        </div>
+                    </div>
+                </div>
+                <script>
+                    FiltroCategorias()
+                </script>
+            }
+        </div>
+        <div id="buttonRefresh">
+            <br />
+            <br />
+            <button id="CarregarMais" class="pratos Bebidas Petiscos Refeições Porções btn btn-success center-block">Carregar Mais...</button>
+        </div>
+    </div><!-- Fechamento do Conteudo -->
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-body">
+                    <div id="conteudoModal">
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="~/Scripts/Menu/TourScript.js"></script>
+    @section scripts{
+        <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
+        <script src="~/Scripts/Menu/InfiniteScroll.js"></script>
+
+        <script>
+            const myLazyLoad = new LazyLoad({
+                elements_selector: ".img"
+            });
+        </script>
+        <script>
+            window.onload = () => {
+                document.queryCommandIndeterm
+                FiltroCategorias()
+                getDados()
+            }
+            $(document).ready(function () {
+                $(".img").click(function () {
+                    var id = $(this).data("value")
+                    console.log(id)
+
+                    $("#conteudoModal").load("/Restaurante/Detalhes/" + id,
+                        function () {
+                            $('#myModal').modal("show")
+                        }
+                    );
+                });
+
+                $("#CarregarMais").click(function () {
+                    var categoria = document.getElementById("TituloCat").innerText
+                    if (window.scrollY + window.innerHeight + 5 >
+                        document.body.scrollHeight && categoria != "Oferta do Dia")
+                        InfiniteScrolling(categoria);   
+                });
+            }); 
+        </script>
+    }
+</body>

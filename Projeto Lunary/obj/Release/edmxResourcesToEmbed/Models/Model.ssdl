@@ -1,0 +1,90 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="LunaryModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Campanhas">
+    <Key>
+      <PropertyRef Name="CAMID" />
+    </Key>
+    <Property Name="CAMID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CAMDESCRICAO" Type="varchar" MaxLength="100" />
+    <Property Name="CAMFOTO" Type="varbinary(max)" />
+    <Property Name="CAMPRECO" Type="float" />
+  </EntityType>
+  <EntityType Name="Estabelecimento">
+    <Key>
+      <PropertyRef Name="ESTABID" />
+    </Key>
+    <Property Name="ESTABID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ESTABNOME" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ESTABENDERECO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ESTABBAIRRO" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ESTATELEFONE" Type="varchar" MaxLength="100" />
+    <Property Name="ESTABCEP" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ESTABLOGIN" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ESTABSENHA" Type="varchar" MaxLength="100" Nullable="false" />
+    <Property Name="ESTATIPO" Type="varchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="Restaurante">
+    <Key>
+      <PropertyRef Name="RESTAUID" />
+    </Key>
+    <Property Name="RESTAUID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RESTANOME" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="RESTAPRECO" Type="float" Nullable="false" />
+    <Property Name="RESTADESCRICAO" Type="varchar" MaxLength="300" />
+    <Property Name="RESTACATEGORIA" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="imagem" Type="varbinary(max)" />
+    <Property Name="Oferta" Type="bit" Nullable="false" />
+    <Property Name="RESTAPREPROMOCAO" Type="float" />
+    <Property Name="Disponibilidade" Type="bit" Nullable="false" />
+    <Property Name="Curtidas" Type="int" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Lunary.dbo.Categorias' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Categorias">
+    <Key>
+      <PropertyRef Name="RESTACATEGORIA" />
+    </Key>
+    <Property Name="RESTACATEGORIA" Type="varchar" MaxLength="300" Nullable="false" />
+  </EntityType>
+  <!--Errors Found During Generation:
+warning 6002: The table/view 'Lunary.dbo.Ranking' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+  <EntityType Name="Ranking">
+    <Key>
+      <PropertyRef Name="RESTAUID" />
+      <PropertyRef Name="RESTANOME" />
+      <PropertyRef Name="RESTAPRECO" />
+      <PropertyRef Name="RESTACATEGORIA" />
+      <PropertyRef Name="Curtidas" />
+    </Key>
+    <Property Name="RESTAUID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="RESTANOME" Type="varchar" MaxLength="200" Nullable="false" />
+    <Property Name="RESTAPRECO" Type="float" Nullable="false" />
+    <Property Name="RESTADESCRICAO" Type="varchar" MaxLength="300" />
+    <Property Name="RESTACATEGORIA" Type="varchar" MaxLength="300" Nullable="false" />
+    <Property Name="Curtidas" Type="int" Nullable="false" />
+    <Property Name="imagem" Type="varbinary(max)" />
+    <Property Name="RESTAPREPROMOCAO" Type="float" />
+  </EntityType>
+  <EntityContainer Name="LunaryModelStoreContainer">
+    <EntitySet Name="Campanhas" EntityType="Self.Campanhas" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Estabelecimento" EntityType="Self.Estabelecimento" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Restaurante" EntityType="Self.Restaurante" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Categorias" EntityType="Self.Categorias" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Categorias].[RESTACATEGORIA] AS [RESTACATEGORIA]
+    FROM [dbo].[Categorias] AS [Categorias]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="Ranking" EntityType="Self.Ranking" store:Type="Views" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+    [Ranking].[RESTAUID] AS [RESTAUID], 
+    [Ranking].[RESTANOME] AS [RESTANOME], 
+    [Ranking].[RESTAPRECO] AS [RESTAPRECO], 
+    [Ranking].[RESTADESCRICAO] AS [RESTADESCRICAO], 
+    [Ranking].[RESTACATEGORIA] AS [RESTACATEGORIA], 
+    [Ranking].[Curtidas] AS [Curtidas], 
+    [Ranking].[imagem] AS [imagem], 
+    [Ranking].[RESTAPREPROMOCAO] AS [RESTAPREPROMOCAO]
+    FROM [dbo].[Ranking] AS [Ranking]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

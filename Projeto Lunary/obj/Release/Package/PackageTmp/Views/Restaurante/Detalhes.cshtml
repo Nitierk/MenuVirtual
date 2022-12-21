@@ -1,0 +1,56 @@
+﻿@model Projeto_Lunary.Models.Restaurante
+
+<head>
+    <link href="~/Content/Menu/Modal.css" rel="stylesheet" />
+    <link href="~/Content/Menu/editar.css" rel="stylesheet"/>
+</head>
+
+@{
+    ViewBag.Title = "Detalhes";
+    <!-- Conversão img -->
+    var imgDefault = "/Content/Menu/img/LogoLunaryGray.png";
+    var imgSrc = "";
+    if (Model.imagem != null)
+    {
+        var base64 = Convert.ToBase64String(Model.imagem);
+        imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
+    }
+    else
+    {
+        imgSrc = imgDefault;
+    }
+    <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
+}
+<h3><i class="glyphicon glyphicon-circle-arrow-left" data-dismiss="modal"></i></h3>
+
+<h2 class=" detalhes text-center">
+    Detalhes do produto:
+</h2>
+    </br>
+
+<div class="Nome text-center">@Model.RESTANOME</div>
+    </br>
+
+
+<div id="dov">
+    <img class="imgModal" src="@imgSrc" alt="@Model.RESTANOME" />
+</div>
+     </br>
+@if (Model.RESTADESCRICAO != null && Model.RESTADESCRICAO != "")
+{
+    <div class="descricao text-center">(@Model.RESTADESCRICAO)</div>
+}
+
+<div class="preco text-center">R$@Model.RESTAPRECO.ToString("F")</div>
+
+@if (Request.IsAuthenticated)
+{
+    <div class="text-box">
+        <a href="/Admin/Editar?id=@Model.RESTAUID"><button type="button" class="btn btn-white btn-				 animate">Editar Prato</button></a>
+    </div>
+}
+
+
+
+
