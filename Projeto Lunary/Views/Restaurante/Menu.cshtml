@@ -259,7 +259,7 @@
         <script>
             preloaderTime()
         </script>
-        <script src="~/Scripts/Menu/TourScript.js"></script>
+        
         <!-- Padrão -->
         <div id="pratos">
             @for (int i = 0; i < ViewBag.Padrao.Count; i++)
@@ -328,7 +328,7 @@
 
 
         </div>
-
+        <script src="~/Scripts/Menu/TourScript.js"></script>
         <!-- Indisponivel -->
         <div>
             @for (int i = 0; i < ViewBag.Indisponivel.Count; i++)
@@ -406,7 +406,6 @@
             </div>
         </div>
     </div>
-   
     @section scripts{
         <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
         <script src="~/Scripts/Menu/InfiniteScroll.js"></script>
