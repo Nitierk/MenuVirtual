@@ -117,12 +117,16 @@
             document.queryCommandIndeterm
             InputImgEdit();
         }
+        
         $("#imagemEdit").attr('src', '@imgSrc');
-        alert(@ViewBag.Error)
-        @*
-        if (@ViewBag.Error !== "") {
-            alert(@ViewBag.Error)
-        }*@
+        
+    </script>
+
+    <script>
+        var Msg = @ViewBag.Error; 
+        if (Msg == " ") {
+            alert(@ViewBag.Error);
+        }
     </script>
 }
 

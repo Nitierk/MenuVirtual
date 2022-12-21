@@ -120,7 +120,7 @@ namespace Projeto_Lunary.Controllers
 
         public ActionResult Editar(int? id, string nome, float preco, string descricao, float precopromocao, string categoria, HttpPostedFileBase imagem, string oferta, string disponibilidade)
         {
-            ViewBag.Error = "";
+           
             Restaurante atualizarrestaurante = bd.Restaurante.ToList().Where(x => x.RESTAUID == id).First();
             atualizarrestaurante.RESTANOME = nome;
             atualizarrestaurante.RESTAPRECO = preco;
@@ -150,7 +150,7 @@ namespace Projeto_Lunary.Controllers
                 }
                 
 	        }
-
+            ViewBag.Error = "";
             if (oferta == "true")
             {
                 atualizarrestaurante.Oferta = true;

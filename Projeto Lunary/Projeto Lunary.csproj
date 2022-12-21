@@ -288,6 +288,10 @@
     <Content Include="Content\barrapesquisa.css" />
     <Content Include="Content\bootstrap-theme.css" />
     <Content Include="Content\bootstrap-theme.min.css" />
+    <Content Include="Content\bootstrap-tour-standalone.css" />
+    <Content Include="Content\bootstrap-tour-standalone.min.css" />
+    <Content Include="Content\bootstrap-tour.css" />
+    <Content Include="Content\bootstrap-tour.min.css" />
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\Dashboard.css" />
@@ -323,8 +327,11 @@
       <DependentUpon>Model.edmx</DependentUpon>
       <LastGenOutput>Model.cs</LastGenOutput>
     </Content>
-    <Content Include="Properties\Modal.css" />
     <Content Include="Scripts\Admin\InputPicture.js" />
+    <Content Include="Scripts\bootstrap-tour-standalone.js" />
+    <Content Include="Scripts\bootstrap-tour-standalone.min.js" />
+    <Content Include="Scripts\bootstrap-tour.js" />
+    <Content Include="Scripts\bootstrap-tour.min.js" />
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="..\.editorconfig">
@@ -359,6 +366,7 @@
     <Content Include="Scripts\Menu\Pagina.js" />
     <Content Include="Scripts\Menu\ScrollToTop.js" />
     <Content Include="Scripts\Menu\ToggleTema.js" />
+    <Content Include="Scripts\Menu\TourScript.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
