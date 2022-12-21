@@ -24,12 +24,14 @@
         animation: slide 15s infinite ease-out;
     }
 
-.listrank {
-    font-family: inherit;
-    font-size: 16px;
-    font-weight: bold;
-    color: brown;
+.nomepreco {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }
+
+
 
 @keyframes slide {
     0% {
@@ -77,24 +79,148 @@
     }
 }
 
+@media screen and (min-width: 436px){
+    .nomepreco {
+        top: 115%;
+        font-size: 18px;
+        font-family: inherit;
+        font-weight: bold;
+    }
+}
+
 @media screen and (max-width: 435px) {
     .carrossel {
         width: 350px;
     }
-    .listrank{
-        font-size:14px;
+    .imgg{
+        width:395px;
     }
+
+    .nomepreco {
+        top: 115%;
+        font-size: 18px;
+        font-family: inherit;
+        font-weight: bold;
+    }
+
+    @keyframes slide {
+        0% {
+            left: -31px;
+        }
+
+        8% {
+            left: -31px;
+        }
+
+        13% {
+            left: -419px;
+        }
+
+        21% {
+            left: -419px;
+        }
+
+        29% {
+            left: -810px;
+        }
+
+        37% {
+            left: -810px;
+        }
+
+        45% {
+            left: -1200px;
+        }
+
+        53% {
+            left: -1200px;
+        }
+
+        61% {
+            left: -1597px;
+        }
+
+        69% {
+            left: -1597px;
+        }
+
+        77% {
+            left: -31px;
+        }
+
+        100% {
+            left: -31px;
+        }
+    }
+    
 }
 
 @media screen and (max-width: 395px) {
     .carrossel {
         width: 300px;
-        font-size: 14px;
+        
+    }
+
+    .nomepreco {
+        top: 115%;
+        font-size: 18px;
+        font-family: inherit;
+        font-weight: bold;
+    }
+
+    .imgg {
+        width: 385px;
+    }
+
+    @keyframes slide {
+        0% {
+            left: -47px;
+        }
+
+        8% {
+            left: -47px;
+        }
+
+        13% {
+            left: -419px;
+        }
+
+        21% {
+            left: -419px;
+        }
+
+        29% {
+            left: -810px;
+        }
+
+        37% {
+            left: -810px;
+        }
+
+        45% {
+            left: -1200px;
+        }
+
+        53% {
+            left: -1200px;
+        }
+
+        61% {
+            left: -1597px;
+        }
+
+        69% {
+            left: -1597px;
+        }
+
+        77% {
+            left: -47px;
+        }
+
+        100%{
+            left: -47px;
+        }
     }
 }
 
-@media screen and (max-width: 390px) {
-    .listrank {
-        margin-left:10px;
-    }
-}
+
