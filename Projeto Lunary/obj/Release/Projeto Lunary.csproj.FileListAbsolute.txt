@@ -745,3 +745,4 @@ C:\Users\Usuário\Documents\MenuVirtual\Projeto Lunary\obj\Release\Projeto Lunar
 C:\Users\Usuário\Documents\MenuVirtual\Projeto Lunary\obj\Release\Projeto Lunary.csproj.CopyComplete
 C:\Users\Usuário\Documents\MenuVirtual\Projeto Lunary\obj\Release\Projeto Lunary.dll
 C:\Users\Usuário\Documents\MenuVirtual\Projeto Lunary\obj\Release\Projeto Lunary.pdb
+C:\Users\Usuário\Documents\MenuVirtual\Projeto Lunary\obj\Release\Projeto Lunary.csproj.AssemblyReference.cache

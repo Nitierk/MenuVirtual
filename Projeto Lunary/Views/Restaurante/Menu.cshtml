@@ -21,6 +21,8 @@
     <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
     <link href="~/Content/Menu/brilho.css" rel="stylesheet" />
     <link href="~/Content/bootstrap-tour.min.css" rel="stylesheet" />
+    <link href="~/Content/bootstrap-tour-standalone.min.css" rel="stylesheet" />
+    <script src="~/Scripts/bootstrap-tour-standalone.min.js"></script>
     <script src="~/Scripts/bootstrap-tour.min.js"></script>
 </head>
 <body class="light">
@@ -144,8 +146,8 @@
         <!-- Fim Rank Mais Curtidos -->
         <p class="barra">Menu</p>
         <!-- Filtro Categorias -->
-        <div id="filterCategoria" class="dropdown text-center">
-            <select style="text-transform: uppercase;" onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
+        <div class="dropdown text-center">
+            <select  style="text-transform: uppercase;" onchange="FiltroCategorias()" id="FiltroCategorias" class="btn btn-danger dropdown-toggle">
                 <option onchange="FiltroCategorias()" value='Oferta do Dia'>Oferta do Dia</option>
                 @foreach (var item in ViewBag.ListCategorias)
                 {
@@ -173,9 +175,9 @@
 
         <!-- Oferta do Dia/Promoção -->
         <div>
-           
-            
-            @{ 
+
+
+            @{
                 if (ViewBag.OfertasCount == 0)
                 {
                     <div class="Oferta do Dia pratos show">
@@ -186,7 +188,7 @@
 
                 foreach (var item in ViewBag.Ofertas)
                 {
-                <!-- Conversão da img-->
+                    <!-- Conversão da img-->
 
                     var imgSrc = "";
 
@@ -202,7 +204,7 @@
                         imgSrc = imgDefault;
                     }
 
-                <!-- Oferta do Dia-->
+                    <!-- Oferta do Dia-->
 
 
                     string oferta = "";
@@ -214,49 +216,50 @@
 
 
 
-                <div class="row pratos @item.RESTACATEGORIA @oferta">
-                    <div class="col-lg-12">
-                        <div class="img2">
-                            <img class="img" src="@imgSrc" data-value="@item.RESTAUID" width="232" height="232">
-                        </div>
+                    <div class="row pratos @item.RESTACATEGORIA @oferta">
+                        <div class="col-lg-12">
+                            <div class="img2">
+                                <img class="img" src="@imgSrc" data-value="@item.RESTAUID" width="232" height="232">
+                            </div>
 
-                        <h3 class="text-center name col-md-12">@item.RESTANOME</h3>
+                            <h3 class="text-center name col-md-12">@item.RESTANOME</h3>
 
-                        <!--Btn Coração-->
-                        <div class="heart-btn">
-                            <div class="content">
-                                <form action="" method="post">
-                                    <span onclick="Like(@item.RESTAUID)" class="heart" id="@item.RESTAUID"></span>
+                            <!--Btn Coração-->
+                            <div class="heart-btn">
+                                <div class="content">
+                                    <form action="" method="post">
+                                        <span onclick="Like(@item.RESTAUID)" class="heart" id="@item.RESTAUID"></span>
 
-                                </form>
-                                <div id="@item.RESTAUID-Curtidadiv">
-                                    <span class="number" id="@item.RESTAUID-Curtida">@item.Curtidas</span>
+                                    </form>
+                                    <div id="@item.RESTAUID-Curtidadiv">
+                                        <span class="number" id="@item.RESTAUID-Curtida">@item.Curtidas</span>
+                                    </div>
+
                                 </div>
+                            </div>
+                            <!--Exibindo Preço/Preço Promocional-->
+                            <div>
+                                @if (item.RESTAPREPROMOCAO != 0)
+                                {
+                                    <p class="preco-normal">R$ @item.RESTAPRECO.ToString("F")</p>
+                                    <p class="preco-promocao">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
 
+                                }
+                                else
+                                {
+                                    <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
+                                }
                             </div>
                         </div>
-                        <!--Exibindo Preço/Preço Promocional-->
-                        <div>
-                            @if (item.RESTAPREPROMOCAO != 0)
-                            {
-                                <p class="preco-normal">R$ @item.RESTAPRECO.ToString("F")</p>
-                                <p class="preco-promocao">R$ @item.RESTAPREPROMOCAO.ToString("F")</p>
-
-                            }
-                            else
-                            {
-                                <p class="preco">R$ @item.RESTAPRECO.ToString("F")</p>
-                            }
-                        </div>
                     </div>
-                </div>
-                    }
-
                 }
+
+            }
         </div>
         <script>
             preloaderTime()
         </script>
+        <script src="~/Scripts/Menu/TourScript.js"></script>
         <!-- Padrão -->
         <div id="pratos">
             @for (int i = 0; i < ViewBag.Padrao.Count; i++)
@@ -388,7 +391,7 @@
         <div id="buttonRefresh">
             <br />
             <br />
-            <button id="CarregarMais" class="pratos Bebidas Petiscos Refeições Porções btn btn-success center-block">Carregar Mais...</button>
+            <button id="CarregarMais" class="btn pratos Bebidas Petiscos Refeições Porções btn-success center-block">Carregar Mais...</button>
         </div>
     </div><!-- Fechamento do Conteudo -->
     <!-- Modal -->
@@ -403,7 +406,7 @@
             </div>
         </div>
     </div>
-    <script src="~/Scripts/Menu/TourScript.js"></script>
+   
     @section scripts{
         <script type="text/javascript" src="~/Scripts/bootstrap.js"></script>
         <script src="~/Scripts/Menu/InfiniteScroll.js"></script>
