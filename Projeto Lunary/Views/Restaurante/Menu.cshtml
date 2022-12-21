@@ -5,9 +5,10 @@
 }
 
 <head onload="preloaderTime()">
+    <link rel="stylesheet"
+          href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
     <link href="~/Content/Menu/brilho.css" rel="stylesheet" />
-    <link href="~/Content/Menu/slide.css" rel="stylesheet" />
-    <script src="~/Scripts/Menu/slide.js"></script>
+
     <link href="~/Content/Menu/Menu.css" rel="stylesheet" />
     <link href="~/Content/Menu/Preloader.css" rel="stylesheet" />
     <link href="~/Content/preco.css" rel="stylesheet" />
@@ -108,70 +109,66 @@
 
 
         </div>
-        @* <form enctype="multipart/form-data">
-        <div class="carrossel" id="carrosselsite">*@
-        <div class="slider">
-            <div class="slides">
-                <input type="radio" name="radio-btn" id="radio1" />
-                <input type="radio" name="radio-btn" id="radio2" />
-                <input type="radio" name="radio-btn" id="radio3" />
-                <input type="radio" name="radio-btn" id="radio4" />
-
-                @foreach (var item in ViewBag.Rank)
-                {
-                    var imgSrc = "";
-
-                    if (item.imagem != null)
-                    {
-                        var base64 = Convert.ToBase64String(item.imagem);
-                        imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
-
-                        <div class="slide first">
-                            <img class="img3" src="@imgSrc" height="250px" width="400px"><img />
-                        </div>
-
-
-                        @*<img class="img3" src="@imgSrc" alt="" height="250px" width="400px"></img>*@
-
-                    }
-                }
-
-
-                <div class="navigation-auto">
-                    <div class="auto-btn1"></div>
-                    <div class="auto-btn2"></div>
-                    <div class="auto-btn3"></div>
-                    <div class="auto-btn4"></div>
-                </div>
-
-                <div class="manual-navigation">
-                    <label for="radio1" class="manual-btn"></label>
-                    <label for="radio2" class="manual-btn"></label>
-                    <label for="radio3" class="manual-btn"></label>
-                    <label for="radio4" class="manual-btn"></label>
-                </div>
-
-            </div>
-        </div>
-
-        @* </div>
-        </form>*@
-
-        <div class="subir text-center">
-            <p class="titlerank">Preços</p>
-            <form>
+        <form enctype="multipart/form-data">
+            <div class="carrossel" id="carrosselsite">
+            
                 <ul>
+                    @foreach (var item in ViewBag.Rank)
+                    {
+                        var imgSrc = "";
+
+                        if (item.imagem != null)
+                        {
+                            var base64 = Convert.ToBase64String(item.imagem);
+                            imgSrc = String.Format("data:image/jpg/gif/png;base64,{0}", base64);
+
+                            <il>
+                                <img class="img3" src="@imgSrc" alt="" height="250px" width="400px"></img>
+                                <h2 class="listrank text-center">
+                                Nome: @item.RESTANOME 
+                                    <br />
+                                
+                                 Preço: R$@item.RESTAPRECO.ToString("F")
+                                </h2>
+                            </il>
+                            
+
+                        }
+                    }
+
+                </ul>
+            </div>     
+        </form>
+                    
+       
+
+        @*<main class="principal">
+            <section class="slider-conteiner">
+                <div class="slider">
+                    <div class="mask">
+                        <article class="text01">
+
+                        </article>
+                    </div>
+                </div>
+            </section>
+        </main>
+            <h2 class="titlerank">Preços</h2>
+            <form>
+               
 
                     @foreach (var item in ViewBag.Rank)
                     {
-                        <li class="listrank">
+                        <p class="listrank">
                             @item.RESTANOME :
                             R$@item.RESTAPRECO.ToString("F")
-                        </li>
+                        </p>
                     }
-                </ul>
-            </form>
-        </div>
+                
+            </form>*@
+        
+
+
         <!-- Fim Rank Mais Curtidos -->
 
         <p class="barra">Menu</p>

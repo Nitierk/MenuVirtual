@@ -1,100 +1,40 @@
-﻿body {
-    padding:0;
-    margin:0;
-    justify-content:center;
-    align-items:center;
+﻿* {
+    margin: 0;
+    padding: 0;
 }
 
-.slider{
-    margin:0 auto;
-   
-    overflow:hidden;
+
+
+.carrossel {
+    width: 400px;
+    height: 250px;
+    outline: 3px solid brown;
+    margin: 50px auto;
+    box-shadow: 10px 10px 15px rgba(0,0,0,7);
+    overflow: hidden;
 }
 
-.slides{
-    
-    display:flex;
+    .carrossel ul {
+        display: flex;
+        list-style: none;
+        width: 400px;
+        height: 250px;
+    }
+
+    .carrossel il {
+        position: relative;
+    }
+
+
+@media screen and (max-width: 435px) {
+    .carrossel {
+        width: 350px;
+    }
 }
 
-.slides input{
-    display:none;
-}
-
-.slide{
-    width:25%;
-    position:relative;
-}
-
-.slide img{
-    width:400px;
-}
-
-.manual-navigation{
-    position:absolute;
-    width:800px;
-    margin-top:-40px;
-    display:flex;
-    justify-content:center;
-}
-
-.manual-btn{
-    border:2px solid #fff;
-    padding:5px;
-    border-radius:10px;
-    cursor:pointer;
-    transition:1s;
-}
-
-.manual-btn:not(:last-child){
-    margin-right:40px;
-}
-
-.manual-btn:hover{
-    background-color:#fff;
-}
-
-#radio1:checked ~ .first{
-    margin-left:0;
-}
-#radio2:checked ~ .first{
-    margin-left:-25%;
-}
-#radio3:checked ~ .first{
-    margin-left:-50%;
-}
-#radio4:checked ~ .first{
-    margin-left:-75%;
-}
-
-.navigation-auto div{
-    border: 2px solid #20a6ff;
-    padding:5px;
-    border-radius:10px;
-    cursor:pointer;
-    transition:1s;
-}
-
-.navigation-auto{
-    position:absolute;
-    width:800px;
-    margin-top:360px;
-    display:flex;
-    justify-content:center;
-}
-
-.navigation-auto div:not(:last-child){
-    margin-right:40px;
-}
-
-#radio1:checked ~ .navigation-auto .auto-btn1{
-    background-color:#fff;
-}
-#radio1:checked ~ .navigation-auto .auto-btn2{
-    background-color:#fff;
-}
-#radio1:checked ~ .navigation-auto .auto-btn3{
-    background-color:#fff;
-}
-#radio1:checked ~ .navigation-auto .auto-btn4{
-    background-color:#fff;
+@media screen and (max-width: 395px) {
+    .carrossel {
+        width: 300px;
+        height: 230px
+    }
 }

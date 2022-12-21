@@ -1,26 +1,36 @@
 ﻿* {
- margin: 0;
- padding: 0;
-}
-.carrossel {
- width: 400px;
- height: 250px;
- outline: 3px solid brown;
- margin: 50px auto;
- box-shadow: 10px 10px 15px rgba(0,0,0,7);
- overflow: hidden;
-}
-.carrossel ul {
- display: flex;
- list-style: none;
- width: 400px;
- height: 250px;
+    margin: 0;
+    padding: 0;
 }
 
-.carrossel il {
- position: relative;
- animation: slide 15s infinite ease-out;
+.carrossel {
+    width: 400px;
+    height: 350px;
+    outline: 3px solid brown;
+    margin: 50px auto;
+    box-shadow: 10px 10px 15px rgba(0,0,0,7);
+    overflow: hidden;
 }
+
+    .carrossel ul {
+        display: flex;
+        list-style: none;
+        width: 400px;
+        height: 250px;
+    }
+
+    .carrossel il {
+        position: relative;
+        animation: slide 15s infinite ease-out;
+    }
+
+.listrank {
+    font-family: inherit;
+    font-size: 16px;
+    font-weight: bold;
+    color: brown;
+}
+
 @keyframes slide {
     0% {
         left: 0px;
@@ -64,19 +74,27 @@
 
     77% {
         left: 0px;
-    }    
+    }
 }
 
 @media screen and (max-width: 435px) {
-    .carrossel{
-        width:350px;
-        
+    .carrossel {
+        width: 350px;
+    }
+    .listrank{
+        font-size:14px;
     }
 }
 
 @media screen and (max-width: 395px) {
     .carrossel {
         width: 300px;
-        height:230px
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 390px) {
+    .listrank {
+        margin-left:10px;
     }
 }
