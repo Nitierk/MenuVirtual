@@ -118,9 +118,11 @@
             InputImgEdit();
         }
         $("#imagemEdit").attr('src', '@imgSrc');
-        if (@ViewBag.Error != "") {
+        alert(@ViewBag.Error)
+        @*
+        if (@ViewBag.Error !== "") {
             alert(@ViewBag.Error)
-        }
+        }*@
     </script>
 }
 
